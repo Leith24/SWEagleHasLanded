@@ -1,5 +1,4 @@
 # http://docs.travis-ci.com/user/build-configuration/
-#Leith24
 notifications:
   slack: team-esports:Z3HriIY2Jov03r692QabHYQH
 
