@@ -1,0 +1,33 @@
+# http://docs.travis-ci.com/user/build-configuration/
+
+language: python
+
+python:
+    - "3.4"
+
+sudo: false
+
+install:
+    - pip install --upgrade pip
+    - pip --version
+    - pip install coverage
+    - pip install numpy
+    - pip install requests
+
+before_script:
+    - uname -a
+    - printenv
+    - pip list
+
+script:
+    - date
+    - ls -al
+    - make IDB-tests
+    - ls -al
+    - make IDB.html
+    - ls -al
+    - make IDB.log
+    - ls -al
+    - make test
+    - ls -al
+    - make check
