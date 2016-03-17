@@ -1,7 +1,7 @@
 # models.py
 
 from sqlalchemy import MetaData, Column, Integer, String, Float
-from sqlalchemy.ext.declarative import delcarative_base
+from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
 
@@ -18,8 +18,8 @@ class Meteorite(Base):
 	reclong = Column(Float)
 	reclat = Column(Float)
 
-	def __init__(self, mass = 0, nametype = None, recclass = None,
-	 fall = None, name = None, year = None, reclong = 0.0, reclat = 0.0):
+	def __init__(self, mass = 0, nametype = None, recclass = None, 
+	fall = None, name = None, year = None, reclong = 0.0, reclat = 0.0):
 		self.mass = mass
 		self.nametype = nametype
 		self.recclass = recclass
@@ -64,7 +64,7 @@ class Location(Base):
 	highestLat = Column(Float)
 
 	def __init__(self, country = None, earliestYear = 0, lowestLat = 0.0,
-	lowestLong = 0.0, highestLat = 0.0, highestLong = 0.0)
+	lowestLong = 0.0, highestLat = 0.0, highestLong = 0.0):
 		self.country = country
 		self.earliestYear = earliestYear
 		self.lowestLong = lowestLong
