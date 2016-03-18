@@ -4,13 +4,13 @@
 'use strict';   // See note about 'use strict'; below
 
 var myApp = angular.module('myApp', [
- 'ngRoute',
+ 'ngRoute'
 ]);
 
 myApp.config(['$routeProvider',
      function($routeProvider) {
          $routeProvider.
-             when('/', {
-                 templateUrl: '../templates/index.html',
+             when('/meteorites', {
+                 templateUrl: '../partials/meteorites.html',
              });
     }]);
