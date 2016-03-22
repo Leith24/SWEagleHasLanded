@@ -1,0 +1,57 @@
+
+body
+{
+	background-color: #031426;
+	font-family: 'Advent Pro', sans-serif;
+	font-weight: 100;
+	color: white;
+}
+
+h1
+{
+	font-family: 'Advent Pro', sans-serif;
+	background-color: #e12e77;
+	width: 160px;
+	border-radius: 25px;
+	padding: 8px;
+}
+
+.col-sm-2
+{
+	width: 200px;
+    height: 550px;
+	background-image: url('../images/navbar.png');
+	background-size: 100% 100%
+}
+
+#nav_links
+{
+	padding-top: 12px;
+	padding-right: 12px;
+	padding-left: 30px;
+	font-color: #ffffff;
+}
+
+#nav_links a
+{
+	background-color: transparent;
+	text-decoration: none;	
+	color: #ffffff;
+	font-size: 15px;
+}
+
+#nav_links a:hover
+{
+	background-color: transparent;
+	text-decoration: none;	
+	color: #e12e77;
+}
+
+#footer
+{
+	padding: 10px;
+}
+
+
+
+
