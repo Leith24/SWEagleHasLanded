@@ -10,7 +10,7 @@
 		<link rel="stylesheet" type="text/css" href="../css/custom.css">
 		<link href='https://fonts.googleapis.com/css?family=Advent+Pro' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Advent+Pro:100' rel='stylesheet' type='text/css'>
-
+		<link rel="stylesheet" type="text/css" href="../DataTables/datatables.css"/>
 	</head>
 
 	<body>
@@ -30,7 +30,7 @@
 						<h1>Meteorites</h1>
 					</div>
 
-        			<table class="table table-bordered">
+        			<table class="table table-bordered" id="meteorite-table">
 		    			<thead>
 		        			<tr>
 		           				<th>Name</th>
@@ -90,6 +90,15 @@
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+			<script type="text/javascript" src="../DataTables/datatables.js"></script>
+			<script type='text/javascript'>
+			$(document).ready( function () {
+						$('#meteorite-table').dataTable({
+							paging : false,
+							searching : false
+						});
+					} );
+					</script>
 
 	</body>
 
