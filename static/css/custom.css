@@ -11,9 +11,46 @@ h1
 {
 	font-family: 'Advent Pro', sans-serif;
 	background-color: #e12e77;
-	width: 160px;
+	width: 250px;
 	border-radius: 25px;
 	padding: 8px;
+}
+
+#main_header
+{
+	float: left;
+}
+
+#meteorite_name
+{
+	float: middle;
+	padding-top: 15px;
+	padding-left: 280px;
+}
+
+#stats_names
+{
+	float: left;
+	font-size: 20px;
+	background-color: #e12e77;
+	width: 250px;
+	border-radius: 25px;
+	padding: 8px;
+	text-align: right;
+}
+
+#stats
+{
+	font-size: 20px;
+	float: middle;
+	padding-top: 10px;
+	padding-left: 280px;
+	width: 100%;
+}
+
+.align_right
+{
+	float: right;
 }
 
 .col-sm-2
@@ -24,27 +61,36 @@ h1
 	background-size: 100% 100%
 }
 
+#content a
+{
+	background-color: transparent;
+	text-decoration: none;	
+	color: #ffffff;
+}
+
+#content a:hover
+{
+	background-color: transparent;
+	text-decoration: none;	
+	color: #e12e77;
+}
+
 #nav_links
 {
 	padding-top: 12px;
 	padding-right: 12px;
-	padding-left: 30px;
+	padding-left: 20px;
 	font-color: #ffffff;
 }
 
 #nav_links a
 {
-	background-color: transparent;
-	text-decoration: none;	
-	color: #ffffff;
-	font-size: 15px;
+	font-size: 20px;
 }
 
-#nav_links a:hover
+.col-sm-4
 {
-	background-color: transparent;
-	text-decoration: none;	
-	color: #e12e77;
+	padding-top: 100px;
 }
 
 #footer
