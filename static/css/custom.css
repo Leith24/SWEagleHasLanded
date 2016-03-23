@@ -88,9 +88,19 @@ h1
 	font-size: 20px;
 }
 
+#twitter_feed
+{
+	padding-top: 80px;
+}
+
 .col-sm-4
 {
 	padding-top: 100px;
+}
+
+#map
+{
+	padding-top: 80px;
 }
 
 #footer
