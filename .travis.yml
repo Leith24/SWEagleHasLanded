@@ -24,9 +24,7 @@ before_script:
 script:
     - date
     - ls -al
-    - make IDB-tests
-    - ls -al
-    - make IDB.html
+    - make model.html
     - ls -al
     - make IDB.log
     - ls -al
