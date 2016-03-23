@@ -39,8 +39,8 @@ status:
 test: Runidb.tmp Testidb.tmp
 
 
-model.html: model.py
-	pydoc3 -w app.py
+model.html: models.py
+	pydoc -w models
 
 IDB.log:
 	git log > IDB1.log

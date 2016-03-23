@@ -28,4 +28,6 @@ script:
     - ls -al
     - make IDB.log
     - ls -al
+    - make test
+    - ls -al
     - make check
