@@ -11,6 +11,10 @@ meteoriteApp.config(function($routeProvider, $locationProvider) {
             templateUrl : 'static/partials/locations.html',
             controller  : 'locationsController'
         })
+        .when('/locations/:postId', {
+			templateUrl: '/static/partials/post-detail.html',
+			controller: PostDetailController
+		})
         .when('/meteorites', {
             templateUrl : 'static/partials/meteorites.html',
             controller  : 'meteoritesController'
@@ -22,9 +26,6 @@ meteoriteApp.config(function($routeProvider, $locationProvider) {
         .when('/about', {
             templateUrl : 'static/partials/about.html',
             controller  : 'aboutController'
-        })
-        .otherwise({
-            redirectTo: '/'
         });
 
     $locationProvider.html5Mode(true);
