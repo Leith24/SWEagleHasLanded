@@ -115,7 +115,7 @@ class Country(Base):
 		self.name = name
 		self._instances.add(weakref.ref(self))
 		self.area = area #api call goes here
-		self.centorid = centroid
+		self.centroid = centroid
 		self.meteorites = [meteorite]
 		numberFound =  len(meteorites)
 
