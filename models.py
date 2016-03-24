@@ -8,6 +8,12 @@ Base = declarative_base()
 geolocator = Nominatim()
 
 class Meteorite(Base):
+
+	"""
+	Model for Meteorites, has an id, mass, recclass, fall,
+	name, year, and country
+
+	"""
 	__tablename__ = 'meteorite'
 	_instances = set()
 
@@ -45,6 +51,12 @@ class Meteorite(Base):
 		cls._instances -= dead
 
 class Classification(Base):
+
+		"""
+	Model for Classification, has an id, compostion, parentBody,
+	numberFound, and meteorites
+
+	"""
 	__tablename__ = 'Classifications'
 	_instances = set()
 
@@ -80,6 +92,12 @@ class Classification(Base):
 
 
 class Country(Base):
+
+	"""
+	Model for Country, has an id_num, country, 
+	earliestYear, and numberFound
+
+	"""
 	__tablename__ = 'Countries'
 	_instances = set()
 
