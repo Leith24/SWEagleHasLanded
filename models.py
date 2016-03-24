@@ -19,7 +19,7 @@ class Meteorite(Base):
 	year = Column(String)
 	country = Column(String)
 
-	def __init__(self, id_num, mass = 0, recclass = None, name = None, year = None, reclong = 0.0, reclat = 0.0)
+	def __init__(self, id_num, mass = 0, recclass = None, name = None, year = None, reclong = 0.0, reclat = 0.0):
 		self.name = name
 		self._instances.add(weakref.ref(self))
 		self.mass = mass
@@ -44,7 +44,7 @@ class Meteorite(Base):
 				dead.add(ref)
 		cls._instances -= dead
 
-class Classifications(Base):
+class Classification(Base):
 	__tablename__ = 'Classifications'
 	_instances = set()
 
@@ -65,7 +65,7 @@ class Classifications(Base):
 
 
 	def __repr__(self):
-		return '<Classifications %r>' % (self.name)
+		return '<Classification %r>' % (self.name)
 
 	@classmethod
 	def getinstances(cls):
@@ -97,7 +97,7 @@ class Country(Base):
 		numberFound =  len(meteorites)
 
 	def __repr__(self):
-		return '<country %r>' % (self.country)
+		return '<Country %r>' % (self.Country)
 
 	@classmethod
 	def getinstances(cls):
@@ -113,16 +113,16 @@ class Country(Base):
 	def add_meteorite(meteorite):
 		country = geolocator.reverse(meteorite.geolocation, language ='en')
 		country = country.address.split(',')
-		name = country.addMeteorite(country[-1])
+		name = country[-1]
 		exists = False
-		for loc in country.getinstances():
+		for loc in Country.getinstances():
 			if(loc.name == name):
-				exists = obj
+				exists = loc
 				break
 		if exists is not False:
 			exists.meteorites += meteorite
 		else:
-			exists = country(name, meteorite)
+			exists = Country(name, meteorite)
 			session.add(exists)
 			session.commit()
 		return exists
