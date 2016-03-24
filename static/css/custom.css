@@ -21,6 +21,22 @@ h1
 	float: left;
 }
 
+#about_header
+{
+	text-align: center;
+}
+
+#about_header_title
+{
+	text-align: center;
+	padding-top: 12px;
+}
+
+#stat
+{
+	padding-top: 8px;
+}
+
 #meteorite_name
 {
 	float: middle;
