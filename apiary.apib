@@ -1,13 +1,13 @@
 FORMAT: 1A
 HOST: http://polls.apiblueprint.org/
 
-# meteorites
+# Meteorites
 
-Polls is a simple API allowing consumers to view polls and vote in them.
+Meteorites is an API that gives information on meteorites as well as their location and classification
 
-## Questions Collection [/questions]
+## Meteorites Collection [/meteorites]
 
-### List All Questions [GET]
+### List All Meteorites [GET]
 
 + Response 200 (application/json)
 
@@ -33,6 +33,7 @@ Polls is a simple API allowing consumers to view polls and vote in them.
             }
         ]
 
+<<<<<<< HEAD
 ### Create a New Question [POST]
 
 You may create your own question using this action. It takes a JSON
@@ -40,6 +41,16 @@ object containing a question and a collection of answers in the
 form of choices.
 
 + Request (application/json)
+=======
+## Single Meteor [/meteorites/{meteor_id}]
+
+### List One Meteor [GET]
+
++ Parameters
+    + meteor_id (number) - Unique id of the meteor requested
+
++ Response 200 (application/json)
+>>>>>>> 8ecda87f086319e4219fa1bf8d0653b3f6fc40c0
 
         {
             "question": "Favourite programming language?",
@@ -49,6 +60,7 @@ form of choices.
                 "Objective-C",
                 "Ruby"
             ]
+<<<<<<< HEAD
         }
 
 + Response 201 (application/json)
@@ -78,3 +90,6 @@ form of choices.
                     }
                 ]
             }
+=======
+        }
+>>>>>>> 8ecda87f086319e4219fa1bf8d0653b3f6fc40c0
