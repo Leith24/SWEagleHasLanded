@@ -63,6 +63,10 @@ meteoriteApp.config(function($stateProvider, $urlRouterProvider, $locationProvid
           url: "/kenya",
           templateUrl: "static/partials/kenya.html"
       })
+      .state('ensisheim', {
+          url: "/ensisheim",
+          templateUrl: "static/partials/ensisheim.html"
+      })
       .state('about', {
           url: "/about",
           templateUrl: 'static/partials/about.html',
