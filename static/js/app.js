@@ -17,10 +17,10 @@ meteoriteApp.config(function($stateProvider, $urlRouterProvider, $locationProvid
           templateUrl: "static/partials/meteorites.html",
           //controller: 'meteoritesController'
       })
-      .state('locations', {
-          url: "/locations",
-          templateUrl: "static/partials/locations.html",
-          //controller: 'locationsController'
+      .state('countries', {
+          url: "/countries",
+          templateUrl: "static/partials/countries.html",
+          //controller: 'countriesController'
       })
       .state('classifications', {
           url: "/classifications",
