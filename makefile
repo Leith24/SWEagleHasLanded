@@ -2,7 +2,6 @@ FILES :=                              \
     .travis.yml                       \
     models.html                      \
     IDB1.log                       \
-    idb.py                        \
     apiary.apib                     \
     makefile                  \
     models.py                     \
