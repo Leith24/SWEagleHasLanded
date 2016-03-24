@@ -29,27 +29,39 @@ meteoriteApp.config(function($stateProvider, $urlRouterProvider, $locationProvid
       })
       .state('alby', {
           url: "/alby",
-          templateUrl: "static/partials/alby.html",
+          templateUrl: "static/partials/alby.html"
       })
       .state('bunburra_rockhole', {
           url: "/bunburra_rockhole",
-          templateUrl: "static/partials/bunburra_rockhole.html",
+          templateUrl: "static/partials/bunburra_rockhole.html"
       })
       .state('EUC', {
           url: "/EUC",
-          templateUrl: "static/partials/EUC.html",
+          templateUrl: "static/partials/EUC.html"
       })
       .state('H6', {
           url: "/H6",
-          templateUrl: "static/partials/H6.html",
+          templateUrl: "static/partials/H6.html"
       })
       .state('L5', {
           url: "/L5",
-          templateUrl: "static/partials/L5.html",
+          templateUrl: "static/partials/L5.html"
       })
       .state('thika', {
           url: "/thika",
-          templateUrl: "static/partials/thika.html",
+          templateUrl: "static/partials/thika.html"
+      })
+      .state('australia', {
+          url: "/australia",
+          templateUrl: "static/partials/australia.html"
+      })
+      .state('france', {
+          url: "/france",
+          templateUrl: "static/partials/france.html"
+      })
+      .state('kenya', {
+          url: "/kenya",
+          templateUrl: "static/partials/kenya.html"
       })
       .state('about', {
           url: "/about",
