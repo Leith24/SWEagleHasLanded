@@ -1,0 +1,218 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module models</title>
+<meta charset="utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>models</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/Users/gavinleith/cs373-idb/models.py">/Users/gavinleith/cs373-idb/models.py</a></font></td></tr></table>
+    <p><tt>#&nbsp;models.py</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial">sqlalchemy.ext.declarative.api.Base(<a href="__builtin__.html#object">__builtin__.object</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="models.html#Classification">Classification</a>
+</font></dt><dt><font face="helvetica, arial"><a href="models.html#Country">Country</a>
+</font></dt><dt><font face="helvetica, arial"><a href="models.html#Meteorite">Meteorite</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Classification">class <strong>Classification</strong></a>(sqlalchemy.ext.declarative.api.Base)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Model&nbsp;for&nbsp;<a href="#Classification">Classification</a>,&nbsp;has&nbsp;an&nbsp;id,&nbsp;compostion,&nbsp;parentBody,<br>
+numberFound,&nbsp;and&nbsp;meteorites<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="models.html#Classification">Classification</a></dd>
+<dd>sqlalchemy.ext.declarative.api.Base</dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Classification-__init__"><strong>__init__</strong></a>(self, name<font color="#909090">=None</font>, compositionalType<font color="#909090">=None</font>, parentBody<font color="#909090">=None</font>)</dt></dl>
+
+<dl><dt><a name="Classification-__repr__"><strong>__repr__</strong></a>(self)</dt></dl>
+
+<hr>
+Class methods defined here:<br>
+<dl><dt><a name="Classification-getinstances"><strong>getinstances</strong></a>(cls)<font color="#909090"><font face="helvetica, arial"> from <a href="sqlalchemy.ext.declarative.api.html#DeclarativeMeta">sqlalchemy.ext.declarative.api.DeclarativeMeta</a></font></font></dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>composition</strong></dt>
+</dl>
+<dl><dt><strong>id_num</strong></dt>
+</dl>
+<dl><dt><strong>meteorites</strong></dt>
+</dl>
+<dl><dt><strong>name</strong></dt>
+</dl>
+<dl><dt><strong>numberFound</strong></dt>
+</dl>
+<dl><dt><strong>parentBody</strong></dt>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x1070bd510; Classification&gt;</dl>
+
+<dl><dt><strong>__table__</strong> = Table('Classifications', MetaData(bind=None), Co... String(), table=&lt;Classifications&gt;), schema=None)</dl>
+
+<dl><dt><strong>__tablename__</strong> = 'Classifications'</dl>
+
+<hr>
+Data descriptors inherited from sqlalchemy.ext.declarative.api.Base:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from sqlalchemy.ext.declarative.api.Base:<br>
+<dl><dt><strong>metadata</strong> = MetaData(bind=None)</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Country">class <strong>Country</strong></a>(sqlalchemy.ext.declarative.api.Base)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Model&nbsp;for&nbsp;<a href="#Country">Country</a>,&nbsp;has&nbsp;an&nbsp;id_num,&nbsp;country,&nbsp;<br>
+earliestYear,&nbsp;and&nbsp;numberFound<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="models.html#Country">Country</a></dd>
+<dd>sqlalchemy.ext.declarative.api.Base</dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Country-__init__"><strong>__init__</strong></a>(self, name<font color="#909090">=None</font>, area<font color="#909090">=0</font>, centroid<font color="#909090">='0.0, 0.0'</font>, meteorite<font color="#909090">=None</font>)</dt></dl>
+
+<dl><dt><a name="Country-__repr__"><strong>__repr__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Country-add_meteorite"><strong>add_meteorite</strong></a>(meteorite)</dt></dl>
+
+<hr>
+Class methods defined here:<br>
+<dl><dt><a name="Country-getinstances"><strong>getinstances</strong></a>(cls)<font color="#909090"><font face="helvetica, arial"> from <a href="sqlalchemy.ext.declarative.api.html#DeclarativeMeta">sqlalchemy.ext.declarative.api.DeclarativeMeta</a></font></font></dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>country</strong></dt>
+</dl>
+<dl><dt><strong>earliestYear</strong></dt>
+</dl>
+<dl><dt><strong>id_num</strong></dt>
+</dl>
+<dl><dt><strong>numberFound</strong></dt>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x1070bd910; Country&gt;</dl>
+
+<dl><dt><strong>__table__</strong> = Table('Countries', MetaData(bind=None), Column('...und', Integer(), table=&lt;Countries&gt;), schema=None)</dl>
+
+<dl><dt><strong>__tablename__</strong> = 'Countries'</dl>
+
+<hr>
+Data descriptors inherited from sqlalchemy.ext.declarative.api.Base:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from sqlalchemy.ext.declarative.api.Base:<br>
+<dl><dt><strong>metadata</strong> = MetaData(bind=None)</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Meteorite">class <strong>Meteorite</strong></a>(sqlalchemy.ext.declarative.api.Base)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Model&nbsp;for&nbsp;Meteorites,&nbsp;has&nbsp;an&nbsp;id,&nbsp;mass,&nbsp;recclass,&nbsp;fall,<br>
+name,&nbsp;year,&nbsp;and&nbsp;country<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="models.html#Meteorite">Meteorite</a></dd>
+<dd>sqlalchemy.ext.declarative.api.Base</dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Meteorite-__init__"><strong>__init__</strong></a>(self, id_num, mass<font color="#909090">=0</font>, recclass<font color="#909090">=None</font>, name<font color="#909090">=None</font>, year<font color="#909090">=None</font>, reclong<font color="#909090">=0.0</font>, reclat<font color="#909090">=0.0</font>)</dt></dl>
+
+<dl><dt><a name="Meteorite-__repr__"><strong>__repr__</strong></a>(self)</dt></dl>
+
+<hr>
+Class methods defined here:<br>
+<dl><dt><a name="Meteorite-getinstances"><strong>getinstances</strong></a>(cls)<font color="#909090"><font face="helvetica, arial"> from <a href="sqlalchemy.ext.declarative.api.html#DeclarativeMeta">sqlalchemy.ext.declarative.api.DeclarativeMeta</a></font></font></dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>country</strong></dt>
+</dl>
+<dl><dt><strong>fall</strong></dt>
+</dl>
+<dl><dt><strong>id_num</strong></dt>
+</dl>
+<dl><dt><strong>mass</strong></dt>
+</dl>
+<dl><dt><strong>name</strong></dt>
+</dl>
+<dl><dt><strong>recclass</strong></dt>
+</dl>
+<dl><dt><strong>year</strong></dt>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x107094d10; Meteorite&gt;</dl>
+
+<dl><dt><strong>__table__</strong> = Table('meteorite', MetaData(bind=None), Column('...ntry', String(), table=&lt;meteorite&gt;), schema=None)</dl>
+
+<dl><dt><strong>__tablename__</strong> = 'meteorite'</dl>
+
+<hr>
+Data descriptors inherited from sqlalchemy.ext.declarative.api.Base:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from sqlalchemy.ext.declarative.api.Base:<br>
+<dl><dt><strong>metadata</strong> = MetaData(bind=None)</dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>engine</strong> = Engine(sqlite:///)<br>
+<strong>geolocator</strong> = &lt;geopy.geocoders.osm.Nominatim object&gt;<br>
+<strong>session</strong> = sessionmaker(class_='Session',autoflush=True, bi...te:///), autocommit=False, expire_on_commit=True)</td></tr></table>
+</body></html>
