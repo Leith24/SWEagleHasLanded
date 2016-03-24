@@ -9,12 +9,12 @@ class TestMeteorite(TestCase):
 		app.config['SQLALCHEMY_DATABASE_URI'] = TEST_DATABASE_URI
 		return app
 
-	def begin_meteorite(self):
+	def create_meteorites(self):
 		create_all()
-		meteorite = Meteorite(324, 48653, "Valid", "Eucrite", "Fell", 2007, 129.190000, -31.350000)
-		meteor2 = Meteorite(252, 458, "Valid", "Eucrite-mmict", "Fell", 2002, 6.015330, 45.821330)
-		session.add(meteorite)
-		session.add(meteor2)
+		m1 = Meteorite(324, 48653, "Eucrite", 2007, 129.190000, -31.350000, "129.190000, -31.350000")
+		m2 = Meteorite(252, 458, "Eucrite-mmict", 2002, 6.015330, 45.821330, "6.015330, 45.821330")
+		session.add(m)
+		session.add(m2)
 		session.commit()
 
 	def end_meteorite(self):
