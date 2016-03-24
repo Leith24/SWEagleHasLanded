@@ -1,8 +1,13 @@
 # models.py
 
-from sqlalchemy import MetaData, Column, Integer, String, Float
+from sqlalchemy import MetaData, Column, Integer, String, Float, create_engine
+from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 from geopy.geocoders import Nominatim
+
+engine = create_engine('sqlite:///')
+session = sessionmaker()
+session.configure(bind=engine)
 
 Base = declarative_base()
 geolocator = Nominatim()
