@@ -1,0 +1,53 @@
+FORMAT: 1A
+HOST: http://polls.apiblueprint.org/
+
+# Meteorites
+
+Meteorites is an API that gives information on meteorites as well as their location and classification
+
+## Meteorites Collection [/meteorites]
+
+### List All Meteorites [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "question": "Favourite programming language?",
+                "published_at": "2015-08-05T08:40:51.620Z",
+                "choices": [
+                    {
+                        "choice": "Swift",
+                        "votes": 2048
+                    }, {
+                        "choice": "Python",
+                        "votes": 1024
+                    }, {
+                        "choice": "Objective-C",
+                        "votes": 512
+                    }, {
+                        "choice": "Ruby",
+                        "votes": 256
+                    }
+                ]
+            }
+        ]
+
+## Single Meteor [/meteorites/{meteor_id}]
+
+### List One Meteor [GET]
+
++ Parameters 
+    + meteor_id (number) - Unique id of the meteor requested
+
++ Response 200 (application/json)
+
+        {
+            "question": "Favourite programming language?",
+            "choices": [
+                "Swift",
+                "Python",
+                "Objective-C",
+                "Ruby"
+            ]
+        }
