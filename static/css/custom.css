@@ -61,6 +61,8 @@ h1
 	background-size: 100% 100%
 }
 
+
+
 #splash
 {
   margin-left: 43%;
@@ -101,9 +103,9 @@ h1
 		transform: translateY(0%);
 	}
 }
-
 #content a
 {
+
 	background-color: transparent;
 	text-decoration: none;
 	color: #ffffff;

@@ -16,30 +16,11 @@
 </head>
 <body ng-controller="mainController">
 
-    <!-- HEADER AND NAVBAR -->
-    <header>
-        <nav class="navbar navbar-default">
-        <div class="container">
-
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
-                <li><a href="#about"><i class="fa fa-shield"></i> About</a></li>
-                <li><a href="#contact"><i class="fa fa-comment"></i> Contact</a></li>
-            </ul>
-        </div>
-        </nav>
-    </header>
-    <a ui-sref="state1">State 1</a>
-    <a ui-sref="state2">State 2</a>
-
     <!-- MAIN CONTENT AND INJECTED VIEWS -->
     <div id="main" >
         <!-- angular templating -->
         <!-- this is where content will be injected -->
-
         <div ui-view></div>
-
-
 
     </div>
 

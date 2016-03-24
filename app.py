@@ -7,12 +7,13 @@ app = Flask(__name__)
 #db = SQLAlchemy(app)
 
 
-#Use flask to do all RESTful API routing and angular to do user/client routing
-@app.route('/')
-@app.route('/about')
-@app.route('/locations')
-@app.route('/meteorites')
-@app.route('/classifications')
+#Use flask to do all RESTful API routing
+
+
+
+# Use Angular to do user/client routing
+@app.route('/', defaults={'path': ''})
+@app.route('/<path:path>')
 def index(**kwargs):
     return make_response(open('static/index.html').read())
 
