@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Meteorite-Landings</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/custom.css">
+		<link href='https://fonts.googleapis.com/css?family=Advent+Pro' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Advent+Pro:100' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="../DataTables/datatables.css"/>
+	</head>
+
+	<body>
+		<div id = "content">
+			<div class="row">
+        		<div class="col-sm-12" id="splash">
+	        		<ul class="nav nav-pills nav-stacked" id = "nav_links">
+						<li><a href="meteorite_table.html">Meteorites</a></li>
+						<li><a href="classifications_table.html">Classes</a></li>
+						<li><a href="#">Locations</a></li>
+					</ul>
+        		</div>
+    		</div>
+		</div>
+
+		<div style="margin-left: 41%" class="col-sm-12" id = "footer">
+        	<p>&copy; Copyright 2016 | All rights reserved</p>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+			<script type="text/javascript" src="../DataTables/datatables.js"></script>
+			<script type='text/javascript'>
+			$(document).ready( function () {
+						$('#meteorite-table').dataTable({
+							paging : false,
+							searching : false
+						});
+					} );
+					</script>
+
+	</body>
+
+</html>
