@@ -25,7 +25,7 @@ class Meteorite(Base):
 	year = Column(String)
 	country = Column(String)
 
-	def __init__(self, id_num, mass = 0, recclass = None, name = None, year = None, reclong = 0.0, reclat = 0.0)
+	def __init__(self, id_num, mass = 0, recclass = None, name = None, year = None, reclong = 0.0, reclat = 0.0) :
 		self.name = name
 		self._instances.add(weakref.ref(self))
 		self.mass = mass
