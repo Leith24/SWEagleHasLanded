@@ -21,6 +21,22 @@ h1
 	float: left;
 }
 
+#about_header
+{
+	text-align: center;
+}
+
+#about_header_title
+{
+	text-align: center;
+	padding-top: 12px;
+}
+
+#stat
+{
+	padding-top: 8px;
+}
+
 #meteorite_name
 {
 	float: middle;
@@ -63,9 +79,9 @@ h1
 
 #splash
 {
-  margin-left: 43%;
-	width: 200px;
-	height: 550px;
+  margin-left: 40%;
+	width: 300px;
+	height: 650px;
 	background-image: url('../images/navbar.png');
 	background-size: 100% 100%;
 	animation-name: slideDown;
