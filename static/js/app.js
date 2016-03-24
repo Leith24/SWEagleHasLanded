@@ -11,10 +11,6 @@ meteoriteApp.config(function($routeProvider, $locationProvider) {
             templateUrl : 'static/partials/locations.html',
             controller  : 'locationsController'
         })
-        .when('/locations/:postId', {
-			templateUrl: '/static/partials/post-detail.html',
-			controller: PostDetailController
-		})
         .when('/meteorites', {
             templateUrl : 'static/partials/meteorites.html',
             controller  : 'meteoritesController'
