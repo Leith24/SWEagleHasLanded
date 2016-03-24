@@ -1,95 +1,205 @@
 FORMAT: 1A
-HOST: http://polls.apiblueprint.org/
+HOST: http://meteorite-landings.me/
 
 # Meteorites
 
-Meteorites is an API that gives information on meteorites as well as their location and classification
+Meteorites is an API for information on meteorites that have landed on Earth as well as their classifications and locations.
+# Group Meteorites
 
 ## Meteorites Collection [/meteorites]
-
-### List All Meteorites [GET]
+### Get a list of all meteorites [GET]
 
 + Response 200 (application/json)
-
+        
         [
             {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
+                "Name" : "Alby sur Cheran",
+                "Mass" : "252",
+                "ID" : "#458",
+                "Class" :
                     {
-                        "choice": "Swift",
-                        "votes": 2048
-                    }, {
-                        "choice": "Python",
-                        "votes": 1024
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 512
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 256
+                        "Name" : "Eucrite-mmict"
+                     },
+                "Year" : "2002"
+                "longitude" : "10-12-2015 19:12:00",
+                "latitude" : "Graffiti of pig on building",
+                "Location" :
+                    {
+                        "Name" : ""
                     }
-                ]
+            },
+            {
+                "Name" : "Thika",
+                "Mass" : "14200",
+                "ID" : "#54493",
+                "Class" :
+                    {
+                        "Name" : "L6"
+                     },
+                "Year" : "2011"
+                "longitude" : "10-12-2015 19:12:00",
+                "latitude" : "Graffiti of pig on building",
+                "Location" :
+                    {
+                        "Name" : ""
+                    }
+            },
+            {
+                "Name" : "Bunburra Rockhole",
+                "Mass" : "324",
+                "ID" : "#48653",
+                "Class" :
+                    {
+                        "Name" : "Eucrite"
+                     },
+                "Year" : "2007"
+                "longitude" : "10-12-2015 19:12:00",
+                "latitude" : "Graffiti of pig on building",
+                "Location" :
+                    {
+                        "Name" : ""
+                    }
             }
         ]
 
-<<<<<<< HEAD
-### Create a New Question [POST]
+## Single Meteor [/meteorites/{ID}]
 
-You may create your own question using this action. It takes a JSON
-object containing a question and a collection of answers in the
-form of choices.
-
-+ Request (application/json)
-=======
-## Single Meteor [/meteorites/{meteor_id}]
-
-### List One Meteor [GET]
-
-+ Parameters
-    + meteor_id (number) - Unique id of the meteor requested
++ Parameters 
+    + ID (number) - Unique id of the meteor requested
+    
+### Get information about a specific meteor [GET]
 
 + Response 200 (application/json)
->>>>>>> 8ecda87f086319e4219fa1bf8d0653b3f6fc40c0
-
+        
         {
-            "question": "Favourite programming language?",
-            "choices": [
-                "Swift",
-                "Python",
-                "Objective-C",
-                "Ruby"
-            ]
-<<<<<<< HEAD
+            "Name" : "Alby sur Cheran",
+            "Mass" : "252",
+            "ID" : "#458",
+            "Class" :
+                {
+                    "Name" : "Eucrite-mmict"
+                 },
+            "Year" : "2002"
+            "longitude" : "10-12-2015 19:12:00",
+            "latitude" : "Graffiti of pig on building",
+            "Location" :
+                {
+                    "Name" : ""
+                }
         }
 
-+ Response 201 (application/json)
+# Group Classes
 
-    + Headers
+## Classes Collection [/classes]
+### Get a list of all classes [GET]
 
-            Location: /questions/2
-
-    + Body
-
++ Response 200 (application/json)
+        
+        [
             {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 0
-                    }, {
-                        "choice": "Python",
-                        "votes": 0
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 0
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 0
-                    }
-                ]
+                "Name": "L5",
+                "Class_ID": "Chondrite",
+                "Compositional_Type": "Story",
+                "Parent_Body": "Flora Family"
+                "Number_Found": "1"
+                "Meteorites_in_the_Classification": "1"
+            },
+            {
+                "Name": "H6",
+                "Class_ID": "Chondrite",
+                "Compositional_Type": "Story",
+                "Parent_Body": "Flora Family"
+                "Number_Found": "1"
+                "Meteorites_in_the_Classification": "1"
+            },
+            {
+                "Name": "EUC",
+                "Class_ID": "Achondrite",
+                "Compositional_Type": "Story",
+                "Parent_Body": "Asteroid 4 Vesta"
+                "Number_Found": "1"
+                "Meteorites_in_the_Classification": "1"
             }
-=======
+        ]
+
+
+## Single Class [/classes/{class_id}]
+
++ Parameters 
+    + class_id (number) - Unique id of the class requested
+
+### Get information about a specific class [GET]
+
++ Response 200 (application/json)
+        
+        {
+            "Name": "L5",
+            "Class_ID": "Chondrite",
+            "Compositional_Type": "Story",
+            "Parent_Body": "Flora Family"
+            "Number_Found": "1"
+            "Meteorites_in_the_Classification": "1"
         }
->>>>>>> 8ecda87f086319e4219fa1bf8d0653b3f6fc40c0
+
+# Group Locations
+
+## Locations Collection [/locations]
+### Get a list of all locations where a meteor has fallen [GET]
+
++ Response 200 (application/json)
+        
+        [
+            {
+                "crime_type_id": "1",
+                "name": "Vandalism",
+                "desc": "Vandalism is bad",
+                "worstZip":
+                    {
+                        "zip_id": "1",
+                        "zip_code": "78704"
+                    },
+                "worstWeek":
+                    {
+                        "week_id": "1",
+                        "start_date": "10/11/15"
+                    }
+                , "crimes":
+                [
+                    {"crime_id": "1",
+                     "description": "Graffiti of pig on building"}
+                ]
+            },
+            {"crime_type_id": "2", "name": "Burglary", "desc": "Burglary is bad", "worstZip": {"zip_id": "2", "zip_code": "78705"}, "worstWeek": {"week_id": "2", "start_date": "10/18/15"}, "crimes": [{"crime_id": "2", "description": "Burglary at Quacks Bakery"}, {"crime_id": "2", "description": "Burglary at Quacks Bakery"}, {"crime_id": "2", "description": "Burglary at Quacks Bakery"}]},
+            {"crime_type_id": "3", "name": "Assault", "desc": "Assault is bad", "worstZip": {"zip_id": "3", "zip_code": "78706"}, "worstWeek": {"week_id": "3", "start_date": "10/25/15"}, "crimes": [{"crime_id": "3", "description": "Murder on 12th and Chicon"}]},
+        ]
+
+
+## Single Location [/locations/{location_id}]
+
++ Parameters 
+    + location_id (number) - Unique id of the location requested
+
+### Get information about a specific location [GET]
+
++ Response 200 (application/json)
+        
+        {
+            "crime_type_id": "1",
+            "name": "Vandalism",
+            "desc": "Vandalism is bad",
+            "worstZip":
+                {
+                    "zip_id": "1",
+                    "zip_code": "78704"
+                },
+            "worstWeek":
+                {
+                    "week_id": "1",
+                    "start_date": "10/11/15"
+                }
+            , "crimes":
+            [
+                {"crime_id": "1",
+                 "description": "Graffiti of pig on building"}
+            ]
+        }

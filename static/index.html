@@ -2,42 +2,30 @@
 <!DOCTYPE html>
 <html ng-app="meteoriteApp">
 <head>
-  <!-- SCROLLS -->
-  <!-- load bootstrap and fontawesome via CDN -->
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+    <!-- SCROLLS -->
+    <!-- load bootstrap and fontawesome via CDN -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
 
-  <!-- SPELLS -->
-  <!-- load angular and angular route via CDN -->
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
-  <script src="static/js/app.js"></script>
+    <!-- SPELLS -->
+    <!--Angular-->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js"></script>
+
+    <script src="static/js/app.js"></script>
+
 </head>
 <body ng-controller="mainController">
-
-    <!-- HEADER AND NAVBAR -->
-    <header>
-        <nav class="navbar navbar-default">
-        <div class="container">
-
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
-                <li><a href="#about"><i class="fa fa-shield"></i> About</a></li>
-                <li><a href="#contact"><i class="fa fa-comment"></i> Contact</a></li>
-            </ul>
-        </div>
-        </nav>
-    </header>
 
     <!-- MAIN CONTENT AND INJECTED VIEWS -->
     <div id="main" >
         <!-- angular templating -->
         <!-- this is where content will be injected -->
-        <div ng-view id="view">
-                {{ message }}
+        <div ui-view></div>
 
-        </div>
     </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </body>
 </html>
