@@ -38,8 +38,7 @@
 		            			<th>Country</th>
 		            			<th>Class</th>
 		            			<th>Year</th>
-		            			<th>Longitude</th>
-                      <th>Latitude</th>
+		            			<th>Geolocation</th>
 		        			</tr>
 		    			</thead>
 		    			<tbody>
@@ -49,8 +48,7 @@
                                 <td>France</td>
 					            <td>LL6</td>
 					            <td>1492</td>
-					            <td>7.350000</td>
-					            <td>47.866670</td>
+					            <td>47.866670, 7.350000</td>
 		        			</tr>
 		        			<tr>
 					            <td><a href="thika">Thika</a></td>
@@ -58,8 +56,7 @@
                                 <td>Kenya</td>
 					            <td>L6</td>
 					            <td>2011</td>
-					            <td>37.150280</td>
-					            <td>-1.002780</td>
+					            <td>-1.002780, 37.150280</td>
 		        			</tr>
 		        			<tr>
 					            <td><a href="bunburra_rockhole">Bunburra Rockhole</a></td>
@@ -67,8 +64,7 @@
                                 <td>Australia</td>
 					            <td>Eucrite</td>
 					            <td>2007</td>
-					            <td>129.190000</td>
-					            <td>-31.350000</td>
+					            <td>-31.350000, 129.190000</td>
 		        			</tr>
 		    			</tbody>
 					</table>
@@ -81,8 +77,8 @@
         </div>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-
-			<script type="text/javascript" src="../DataTables/datatables.js"></script>
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+			<script type="text/javascript" charset="utf8" src="static/DataTables/datatables.js"></script>
 			<script type='text/javascript'>
 			$(document).ready( function () {
 						$('#meteorite-table').dataTable({

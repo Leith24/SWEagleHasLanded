@@ -39,13 +39,13 @@ meteoriteApp.config(function($stateProvider, $urlRouterProvider, $locationProvid
           url: "/EUC",
           templateUrl: "static/partials/EUC.html"
       })
-      .state('H6', {
-          url: "/H6",
-          templateUrl: "static/partials/H6.html"
+      .state('L6', {
+          url: "/L6",
+          templateUrl: "static/partials/L6.html"
       })
-      .state('L5', {
-          url: "/L5",
-          templateUrl: "static/partials/L5.html"
+      .state('LL6', {
+          url: "/LL6",
+          templateUrl: "static/partials/LL6.html"
       })
       .state('thika', {
           url: "/thika",
