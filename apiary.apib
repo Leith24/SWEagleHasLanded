@@ -3,7 +3,7 @@ HOST: http://meteorite-landings.me/
 
 # Meteorites
 
-Meteorites is an API for information on meteorites that have landed on Earth as well as their classifications and locations.
+Meteorites is an API for information on meteorites that have landed on Earth as well as their classifications and countries.
 # Group Meteorites
 
 ## Meteorites Collection [/meteorites]
@@ -13,79 +13,87 @@ Meteorites is an API for information on meteorites that have landed on Earth as 
         
         [
             {
-                "Name" : "Alby sur Cheran",
-                "Mass" : "252",
-                "ID" : "#458",
-                "Class" :
+                "name" : "Ensisheim",
+                "meteor_id" : "1",
+                "mass" : "127000",
+                "country" :
                     {
-                        "Name" : "Eucrite-mmict"
+                        "name" : "France",
+                        "country_id": "2"
+                    },
+                "class" :
+                    {
+                        "name" : "LL6",
+                        "classification_id": "1"
                      },
-                "Year" : "2002"
-                "longitude" : "10-12-2015 19:12:00",
-                "latitude" : "Graffiti of pig on building",
-                "Location" :
-                    {
-                        "Name" : ""
-                    }
+                "year" : "1492"
+                "longitude" : "7.350000",
+                "latitude" : "47.866670"
             },
             {
-                "Name" : "Thika",
-                "Mass" : "14200",
-                "ID" : "#54493",
-                "Class" :
+                "name" : "Thika",
+                "meteor_id" : "2",
+                "mass" : "14200",
+                "country" :
                     {
-                        "Name" : "L6"
+                        "name" : "Kenya",
+                        "country_id": "3"
+                    },
+                "class" :
+                    {
+                        "name" : "L6",
+                        "classification_id": "2"
                      },
-                "Year" : "2011"
-                "longitude" : "10-12-2015 19:12:00",
-                "latitude" : "Graffiti of pig on building",
-                "Location" :
-                    {
-                        "Name" : ""
-                    }
+                "year" : "2011"
+                "longitude" : "37.150280",
+                "latitude" : "-1.002780"
             },
             {
-                "Name" : "Bunburra Rockhole",
-                "Mass" : "324",
-                "ID" : "#48653",
-                "Class" :
+                "name" : "Bunburra Rockhole",
+                "meteor_id" : "3",
+                "mass" : "324",
+                "country" :
                     {
-                        "Name" : "Eucrite"
+                        "name" : "Australia",
+                        "country_id": "1"
+                    },
+                "class" :
+                    {
+                        "name" : "Eucrite",
+                        "classification_id": "3"
                      },
-                "Year" : "2007"
-                "longitude" : "10-12-2015 19:12:00",
-                "latitude" : "Graffiti of pig on building",
-                "Location" :
-                    {
-                        "Name" : ""
-                    }
+                "year" : "2007"
+                "longitude" : "129.190000",
+                "latitude" : "-31.350000"
             }
         ]
 
-## Single Meteor [/meteorites/{ID}]
+## Single Meteor [/meteorites/{meteor_id}]
 
 + Parameters 
-    + ID (number) - Unique id of the meteor requested
+    + meteor_id (number) - Unique id of the meteor requested
     
 ### Get information about a specific meteor [GET]
 
 + Response 200 (application/json)
         
         {
-            "Name" : "Alby sur Cheran",
-            "Mass" : "252",
-            "ID" : "#458",
-            "Class" :
+            "name" : "Ensisheim",
+            "meteor_id" : "1",
+            "mass" : "127000",
+            "country" :
                 {
-                    "Name" : "Eucrite-mmict"
+                    "name" : "France",
+                    "country_id": "2"
+                },
+            "class" :
+                {
+                    "name" : "LL6",
+                    "classification_id": "1"
                  },
-            "Year" : "2002"
-            "longitude" : "10-12-2015 19:12:00",
-            "latitude" : "Graffiti of pig on building",
-            "Location" :
-                {
-                    "Name" : ""
-                }
+            "year" : "1492"
+            "longitude" : "7.350000",
+            "latitude" : "47.866670"
         }
 
 # Group Classes
@@ -97,109 +105,143 @@ Meteorites is an API for information on meteorites that have landed on Earth as 
         
         [
             {
-                "Name": "L5",
-                "Class_ID": "Chondrite",
-                "Compositional_Type": "Story",
-                "Parent_Body": "Flora Family"
-                "Number_Found": "1"
-                "Meteorites_in_the_Classification": "1"
+                "name": "LL6",
+                "classification_id": "1",
+                "class_ID": "Chondrite",
+                "compositional_Type": "Stony",
+                "parent_Body": "Unknown"
+                "number_Found": "1"
+                "meteorites": 
+                    [
+                        {"name": "Ensisheim",
+                        "meteor_id": "1"
+                        }
+                    ]
             },
             {
-                "Name": "H6",
-                "Class_ID": "Chondrite",
-                "Compositional_Type": "Story",
-                "Parent_Body": "Flora Family"
-                "Number_Found": "1"
-                "Meteorites_in_the_Classification": "1"
+                "name": "L6",
+                "classification_id": "2",
+                "class_ID": "Chondrite",
+                "compositional_Type": "Stony",
+                "parent_Body": "Flora Family"
+                "number_Found": "1"
+                "meteorites": 
+                    [
+                        {"name": "Thika",
+                        "meteor_id": "2"
+                        }
+                    ]
             },
             {
-                "Name": "EUC",
-                "Class_ID": "Achondrite",
-                "Compositional_Type": "Story",
-                "Parent_Body": "Asteroid 4 Vesta"
-                "Number_Found": "1"
-                "Meteorites_in_the_Classification": "1"
+                "name": "Eucrite",
+                "classification_id": "3",
+                "class_ID": "Achondrite",
+                "compositional_Type": "Stony",
+                "parent_Body": "Asteroid 4 Vesta"
+                "number_Found": "1"
+                "meteorites": 
+                    [
+                        {"name": "Bunburra Rockhole",
+                        "meteor_id": "3"
+                        }
+                    ]
             }
         ]
 
 
-## Single Class [/classes/{class_id}]
+## Single Class [/classes/{classification_id}]
 
 + Parameters 
-    + class_id (number) - Unique id of the class requested
+    + classification_id (number) - Unique id of the class requested
 
 ### Get information about a specific class [GET]
 
 + Response 200 (application/json)
         
         {
-            "Name": "L5",
-            "Class_ID": "Chondrite",
-            "Compositional_Type": "Story",
-            "Parent_Body": "Flora Family"
-            "Number_Found": "1"
-            "Meteorites_in_the_Classification": "1"
-        }
+                "name": "LL6",
+                "classification_id": "1",
+                "class_ID": "Chondrite",
+                "compositional_Type": "Stony",
+                "parent_Body": "Unknown"
+                "number_Found": "1"
+                "meteorites": 
+                    [
+                        {"name": "Ensisheim",
+                        "meteor_id": "1"
+                        }
+                    ]
+            }
 
-# Group Locations
+# Group Countries
 
-## Locations Collection [/locations]
-### Get a list of all locations where a meteor has fallen [GET]
+## Countries Collection [/countries]
+### Get a list of all countries where a meteor has fallen [GET]
 
 + Response 200 (application/json)
         
         [
             {
-                "crime_type_id": "1",
-                "name": "Vandalism",
-                "desc": "Vandalism is bad",
-                "worstZip":
-                    {
-                        "zip_id": "1",
-                        "zip_code": "78704"
-                    },
-                "worstWeek":
-                    {
-                        "week_id": "1",
-                        "start_date": "10/11/15"
-                    }
-                , "crimes":
-                [
-                    {"crime_id": "1",
-                     "description": "Graffiti of pig on building"}
-                ]
+                "name": "Australia",
+                "country_id": "1",
+                "area": "7692024",
+                "centroid": "-25.274398, 133.775136",
+                "number_found": "1",
+                "meteorites": 
+                    [
+                        {"name" : "Bunburra Rockhole",
+                        "meteor_id" : "3"
+                        }
+                    ]
             },
-            {"crime_type_id": "2", "name": "Burglary", "desc": "Burglary is bad", "worstZip": {"zip_id": "2", "zip_code": "78705"}, "worstWeek": {"week_id": "2", "start_date": "10/18/15"}, "crimes": [{"crime_id": "2", "description": "Burglary at Quacks Bakery"}, {"crime_id": "2", "description": "Burglary at Quacks Bakery"}, {"crime_id": "2", "description": "Burglary at Quacks Bakery"}]},
-            {"crime_type_id": "3", "name": "Assault", "desc": "Assault is bad", "worstZip": {"zip_id": "3", "zip_code": "78706"}, "worstWeek": {"week_id": "3", "start_date": "10/25/15"}, "crimes": [{"crime_id": "3", "description": "Murder on 12th and Chicon"}]},
+            {
+                "name": "France",
+                "country_id": "2",
+                "area": "643801",
+                "centroid": "46.227638, 2.213749",
+                "number_found": "1",
+                "meteorites": 
+                    [
+                        {"name" : "Ensisheim",
+                        "meteor_id" : "1"
+                        }
+                    ]
+            },
+            {
+                "name": "Kenya",
+                "country_id": "3",
+                "area": "581309",
+                "centroid": "-0.023559, 37.906193",
+                "number_found": "1",
+                "meteorites": 
+                    [
+                        {"name" : "Thika",
+                        "meteor_id" : "2"
+                        }
+                    ]
+            }
         ]
 
 
-## Single Location [/locations/{location_id}]
+## Single Country [/countries/{country_id}]
 
 + Parameters 
-    + location_id (number) - Unique id of the location requested
+    + country_id (number) - Unique id of the country requested
 
-### Get information about a specific location [GET]
+### Get information about a specific country [GET]
 
 + Response 200 (application/json)
         
         {
-            "crime_type_id": "1",
-            "name": "Vandalism",
-            "desc": "Vandalism is bad",
-            "worstZip":
-                {
-                    "zip_id": "1",
-                    "zip_code": "78704"
-                },
-            "worstWeek":
-                {
-                    "week_id": "1",
-                    "start_date": "10/11/15"
-                }
-            , "crimes":
-            [
-                {"crime_id": "1",
-                 "description": "Graffiti of pig on building"}
-            ]
-        }
+                "name": "Australia",
+                "country_id": "1",
+                "area": "7692024",
+                "centroid": "-25.274398, 133.775136",
+                "number_found": "1",
+                "meteorites": 
+                    [
+                        {"name" : "Bunburra Rockhole",
+                        "meteor_id" : "3",
+                        }
+                    ]
+            },
