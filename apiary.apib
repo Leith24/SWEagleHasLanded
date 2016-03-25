@@ -1,80 +1,247 @@
 FORMAT: 1A
-HOST: http://polls.apiblueprint.org/
+HOST: http://meteorite-landings.me/
 
-# meteorites
+# Meteorites
 
-Polls is a simple API allowing consumers to view polls and vote in them.
+Meteorites is an API for information on meteorites that have landed on Earth as well as their classifications and countries.
+# Group Meteorites
 
-## Questions Collection [/questions]
-
-### List All Questions [GET]
+## Meteorites Collection [/meteorites]
+### Get a list of all meteorites [GET]
 
 + Response 200 (application/json)
-
+        
         [
             {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
+                "name" : "Ensisheim",
+                "meteor_id" : "1",
+                "mass" : "127000",
+                "country" :
                     {
-                        "choice": "Swift",
-                        "votes": 2048
-                    }, {
-                        "choice": "Python",
-                        "votes": 1024
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 512
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 256
-                    }
-                ]
+                        "name" : "France",
+                        "country_id": "2"
+                    },
+                "class" :
+                    {
+                        "name" : "LL6",
+                        "classification_id": "1"
+                     },
+                "year" : "1492"
+                "longitude" : "7.350000",
+                "latitude" : "47.866670"
+            },
+            {
+                "name" : "Thika",
+                "meteor_id" : "2",
+                "mass" : "14200",
+                "country" :
+                    {
+                        "name" : "Kenya",
+                        "country_id": "3"
+                    },
+                "class" :
+                    {
+                        "name" : "L6",
+                        "classification_id": "2"
+                     },
+                "year" : "2011"
+                "longitude" : "37.150280",
+                "latitude" : "-1.002780"
+            },
+            {
+                "name" : "Bunburra Rockhole",
+                "meteor_id" : "3",
+                "mass" : "324",
+                "country" :
+                    {
+                        "name" : "Australia",
+                        "country_id": "1"
+                    },
+                "class" :
+                    {
+                        "name" : "Eucrite",
+                        "classification_id": "3"
+                     },
+                "year" : "2007"
+                "longitude" : "129.190000",
+                "latitude" : "-31.350000"
             }
         ]
 
-### Create a New Question [POST]
+## Single Meteor [/meteorites/{meteor_id}]
 
-You may create your own question using this action. It takes a JSON
-object containing a question and a collection of answers in the
-form of choices.
++ Parameters 
+    + meteor_id (number) - Unique id of the meteor requested
+    
+### Get information about a specific meteor [GET]
 
-+ Request (application/json)
-
++ Response 200 (application/json)
+        
         {
-            "question": "Favourite programming language?",
-            "choices": [
-                "Swift",
-                "Python",
-                "Objective-C",
-                "Ruby"
-            ]
+            "name" : "Ensisheim",
+            "meteor_id" : "1",
+            "mass" : "127000",
+            "country" :
+                {
+                    "name" : "France",
+                    "country_id": "2"
+                },
+            "class" :
+                {
+                    "name" : "LL6",
+                    "classification_id": "1"
+                 },
+            "year" : "1492"
+            "longitude" : "7.350000",
+            "latitude" : "47.866670"
         }
 
-+ Response 201 (application/json)
+# Group Classes
 
-    + Headers
+## Classes Collection [/classes]
+### Get a list of all classes [GET]
 
-            Location: /questions/2
-
-    + Body
-
++ Response 200 (application/json)
+        
+        [
             {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 0
-                    }, {
-                        "choice": "Python",
-                        "votes": 0
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 0
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 0
-                    }
-                ]
+                "name": "LL6",
+                "classification_id": "1",
+                "class_ID": "Chondrite",
+                "compositional_Type": "Stony",
+                "parent_Body": "Unknown"
+                "number_Found": "1"
+                "meteorites": 
+                    [
+                        {"name": "Ensisheim",
+                        "meteor_id": "1"
+                        }
+                    ]
+            },
+            {
+                "name": "L6",
+                "classification_id": "2",
+                "class_ID": "Chondrite",
+                "compositional_Type": "Stony",
+                "parent_Body": "Flora Family"
+                "number_Found": "1"
+                "meteorites": 
+                    [
+                        {"name": "Thika",
+                        "meteor_id": "2"
+                        }
+                    ]
+            },
+            {
+                "name": "Eucrite",
+                "classification_id": "3",
+                "class_ID": "Achondrite",
+                "compositional_Type": "Stony",
+                "parent_Body": "Asteroid 4 Vesta"
+                "number_Found": "1"
+                "meteorites": 
+                    [
+                        {"name": "Bunburra Rockhole",
+                        "meteor_id": "3"
+                        }
+                    ]
             }
+        ]
+
+
+## Single Class [/classes/{classification_id}]
+
++ Parameters 
+    + classification_id (number) - Unique id of the class requested
+
+### Get information about a specific class [GET]
+
++ Response 200 (application/json)
+        
+        {
+                "name": "LL6",
+                "classification_id": "1",
+                "class_ID": "Chondrite",
+                "compositional_Type": "Stony",
+                "parent_Body": "Unknown"
+                "number_Found": "1"
+                "meteorites": 
+                    [
+                        {"name": "Ensisheim",
+                        "meteor_id": "1"
+                        }
+                    ]
+            }
+
+# Group Countries
+
+## Countries Collection [/countries]
+### Get a list of all countries where a meteor has fallen [GET]
+
++ Response 200 (application/json)
+        
+        [
+            {
+                "name": "Australia",
+                "country_id": "1",
+                "area": "7692024",
+                "centroid": "-25.274398, 133.775136",
+                "number_found": "1",
+                "meteorites": 
+                    [
+                        {"name" : "Bunburra Rockhole",
+                        "meteor_id" : "3"
+                        }
+                    ]
+            },
+            {
+                "name": "France",
+                "country_id": "2",
+                "area": "643801",
+                "centroid": "46.227638, 2.213749",
+                "number_found": "1",
+                "meteorites": 
+                    [
+                        {"name" : "Ensisheim",
+                        "meteor_id" : "1"
+                        }
+                    ]
+            },
+            {
+                "name": "Kenya",
+                "country_id": "3",
+                "area": "581309",
+                "centroid": "-0.023559, 37.906193",
+                "number_found": "1",
+                "meteorites": 
+                    [
+                        {"name" : "Thika",
+                        "meteor_id" : "2"
+                        }
+                    ]
+            }
+        ]
+
+
+## Single Country [/countries/{country_id}]
+
++ Parameters 
+    + country_id (number) - Unique id of the country requested
+
+### Get information about a specific country [GET]
+
++ Response 200 (application/json)
+        
+        {
+                "name": "Australia",
+                "country_id": "1",
+                "area": "7692024",
+                "centroid": "-25.274398, 133.775136",
+                "number_found": "1",
+                "meteorites": 
+                    [
+                        {"name" : "Bunburra Rockhole",
+                        "meteor_id" : "3",
+                        }
+                    ]
+            },
