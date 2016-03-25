@@ -4,6 +4,10 @@ from models import Meteorite, Classification, Country
 
 class TestMeteorite(TestCase):
 
+	# ------
+	# Database Testing
+	# ------
+
 	def create_app(self):
 		app.config['SQLALCHEMY_DATABASE_URI'] = TEST_DATABASE_URI
 		return app
@@ -12,8 +16,6 @@ class TestMeteorite(TestCase):
 		create_all()
 		m1 = Meteorite(1914, 10, "Acapulcoite", 1914, 16.88333, -99.9)
 		m2 = Meteorite(252, 458, "Eucrite-mmict", 2002, 6.015330, 45.821330)
-		assert(m1.country.name == 'Mexico')
-		assert(m2.country.name == 'Morocco')
 		session.add(m1)
 		session.add(m2)
 		session.commit()
@@ -30,8 +32,10 @@ class TestMeteorite(TestCase):
 	# Adding Meterorites to Countries
 	# ------
 
-	def test_countries
+	def test_countries1
 		countries = Countries.query.all()
 		assert len(countries) = 2
+
+	
 
 
