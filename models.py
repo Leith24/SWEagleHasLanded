@@ -110,6 +110,8 @@ class Country(Base):
 	country = Column(String)
 	earliestYear = Column(Integer)
 	numberFound = Column(Integer)
+	area = Column(Integer)
+	recent = Column(String)
 
 	def __init__(self, name = None, area = 0, centroid = "0.0, 0.0", meteorite = None):
 		self.name = name
@@ -117,6 +119,7 @@ class Country(Base):
 		self.area = area #api call goes here
 		self.centroid = centroid
 		self.meteorites = [meteorite]
+		self.recent = meteorite
 		numberFound =  len(meteorites)
 
 	def __repr__(self):
@@ -144,8 +147,13 @@ class Country(Base):
 				break
 		if exists is not False:
 			exists.meteorites += meteorite
+			exists.set_recent(meteorite)
 		else:
 			exists = Country(name, meteorite)
 			session.add(exists)
 			session.commit()
 		return exists
+
+	def set_recent(meteorite):
+		if self.recent.year < meteorite.year:
+			self.recent = meteorite
