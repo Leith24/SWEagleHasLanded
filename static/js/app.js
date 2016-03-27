@@ -1,5 +1,5 @@
 // app.js
-var meteoriteApp = angular.module('meteoriteApp', ['ui.router']);
+var meteoriteApp = angular.module('meteoriteApp', ['ui.router', 'datatables']);
 
 meteoriteApp.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
   //
@@ -15,7 +15,7 @@ meteoriteApp.config(function($stateProvider, $urlRouterProvider, $locationProvid
       .state('meteorites', {
           url: "/meteorites",
           templateUrl: "static/partials/meteorites.html",
-          //controller: 'meteoritesController'
+          controller: 'meteoritesController'
       })
       .state('countries', {
           url: "/countries",
@@ -78,6 +78,11 @@ meteoriteApp.config(function($stateProvider, $urlRouterProvider, $locationProvid
 });
 
 meteoriteApp.controller('mainController', function($scope) {
+    // create a message to display in our view
+    $scope.message = 'Everyone come and see how good I look!';
+});
+
+meteoriteApp.controller('meteoritesController', function($scope) {
     // create a message to display in our view
     $scope.message = 'Everyone come and see how good I look!';
 });
