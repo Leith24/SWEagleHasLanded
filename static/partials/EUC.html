@@ -10,7 +10,7 @@
 		<link rel="stylesheet" type="text/css" href="static/css/custom.css">
 		<link href='https://fonts.googleapis.com/css?family=Advent+Pro' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Advent+Pro:100' rel='stylesheet' type='text/css'>
-
+		<link rel="stylesheet" type="text/css" href="static/DataTables/datatables.css"/>
 	</head>
 
 	<body>
@@ -60,13 +60,44 @@
 						<div class="col-sm-4" id="padimagetop">
         			<img src="static/images/classifications_table-EUC.png" class="img-rounded" alt="Rounded Image" height="300" width="600">
 						</div>
+						<div class="col-sm-9">
+						<table class="table table-bordered" id="classes-meteorite-table">
+						<thead>
+								<tr>
+										<th>Name</th>
+										<th>Mass</th>
+										<th>Country</th>
+										<th>Class</th>
+										<th>Year</th>
+										<th>Geolocation</th>
+								</tr>
+						</thead>
+						<tbody>
+							<tr>
+									<td><a href="bunburra_rockhole">Bunburra Rockhole</a></td>
+									<td>324</td>
+														<td>Australia</td>
+									<td>Eucrite</td>
+									<td>2007</td>
+									<td>-31.350000, 129.190000</td>
+							</tr>
+						</tbody>
+				</table>
+			</div>
     		</div>
 		</div>
 
 		<div id = "footer">
         	<p>&copy; Copyright 2016 | All rights reserved</p>
         </div>
-
+				<script type='text/javascript'>
+					$(document).ready( function () {
+								$('#classes-meteorite-table').dataTable({
+									paging : false,
+									searching : false
+								});
+							} );
+				</script>
 
 	</body>
 
