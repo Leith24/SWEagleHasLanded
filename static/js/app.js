@@ -69,8 +69,7 @@ meteoriteApp.config(function($stateProvider, $urlRouterProvider, $locationProvid
       })
       .state('about', {
           url: "/about",
-          templateUrl: 'static/partials/about.html',
-          controller: 'aboutController'
+          templateUrl: 'static/partials/about.html'
       })
       .state('2007', {
           url: "/2007",
