@@ -73,7 +73,7 @@ h1
 {
 	width: 200px;
     height: 550px;
-	background-image: url('static/images/navbar.png');
+	background-image: url('../images/navbar.png');
 	background-size: 100% 100%
 }
 
@@ -92,7 +92,7 @@ h1
 {
 	width: 200px;
 	height: 550px;
-	background-image: url('static/images/navbar.png');
+	background-image: url('../images/navbar.png');
 	background-size: 100% 100%;
 	animation-name: slideDown;
 	-webkit-animation-name: slideDown;
@@ -144,8 +144,7 @@ h1
 
 #nav_links
 {
-	padding-top: 12px;
-	padding-right: 20px;
+	line-height: 20px;
 	padding-left: 8px;
 	font-color: #ffffff;
 }
