@@ -1,5 +1,6 @@
 #Module containing Flask application
 from flask import Flask, send_file, send_from_directory, make_response
+from flask.ext.sqlalchemy import SQLAlchemy
 
 
 app = Flask(__name__)
