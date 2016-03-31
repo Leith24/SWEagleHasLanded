@@ -6,26 +6,26 @@
 		<title>France</title>
 
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="static/css/custom.css">
 		<link href='https://fonts.googleapis.com/css?family=Advent+Pro' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Advent+Pro:100' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" type="text/css" href="static/DataTables/datatables.css"/>
+
 	</head>
 
 	<body>
-		<div id = "content">
-			<div class="row">
-        		<div class="col-sm-2 hidden-xs">
-                    <ul class="nav nav-pills nav-stacked" id = "nav_links">
-                        <li><a href="meteorites">Meteorites</a></li>
-                        <li><a href="classifications">Classifications</a></li>
-                        <li><a href="countries">Countries</a></li>
-						<li><a href="about">About</a></li>
-                    </ul>
-                </div>
 
-                <div class="hidden-sm hidden-md hidden-lg" id = "nav_links_mobile">
+		<div id="content">
+			<div class="row">
+				<div class="col-sm-2 hidden-xs" id="navbarbackground">
+					<ul class="nav nav-pills nav-stacked" id = "nav_links">
+							<li><a href="meteorites">Meteorites</a></li>
+							<li><a href="classifications">Classifications</a></li>
+							<li><a href="countries">Countries</a></li>
+							<li><a href="about">About</a></li>
+					</ul>
+				</div>
+				<div class="hidden-sm hidden-md hidden-lg" id = "nav_links_mobile">
 						<ul class="nav nav-pills">
 								<li><a href="meteorites">Meteorites</a></li>
 								<li><a href="classifications">Classifications</a></li>
@@ -33,70 +33,99 @@
 								<li><a href="about">About</a></li>
 						</ul>
 				</div>
+				<div class="col-sm-10">
+					<div class="row">
+						<div class="col-sm-7 col-md-6">
+							<div id = "main_header">
+		            <h1>Country Name</h1>
+		          </div>
 
-        		<div class="col-sm-6">
+							<div id = "meteorite_name">
+								<h2>France<h2>
+							</div>
 
-        			<div id = "main_header">
-						<h1>Country Name</h1>
+							<div id = "stats_names">
+								<p>Area(km²)</p>
+								<p>Centroid</p>
+							  <p>Number Found</p>
+							  <p>Last Meteorite Found</p>
+							</div>
 
+							<div id = "stats">
+								<p>643,801</p>
+								<p>46.227638, 2.213749</p>
+								<p>1</p>
+								<p><a href="ensisheim">Ensisheim</a></p>
+							</div>
+						</div>
+						<div class="col-sm-2 col-sm-offset-1 col-md-4">
+							<img src="static/images/france.png" class="img-rounded" alt="Rounded Image" id="img-styling" height="300" width="300">
+						</div>
 					</div>
-
-					<div id = "meteorite_name">
-						<h2>France<h2>
+					<div class="row">
+						<div class="col-sm-10">
+							<div id = "map">
+							  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5652758.363554236!2d-2.2686729267159187!3d46.227641690198645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDbCsDEzJzM5LjUiTiAywrAxMic0OS41IkU!5e0!3m2!1sen!2sus!4v1458851547646" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+							</div>
+						</div>
 					</div>
-
-        			<div id = "stats_names">
-        				<p>Area(km²)</p>
-                        <p>Centroid</p>
-                        <p>Number Found</p>
-                        <p>Last Meteorite Found</p>
-        			</div>
-
-        			<div id = "stats">
-        				<p>643,801</p>
-        				<p>46.227638, 2.213749</p>
-        				<p>1</p>
-        				<p><a href="ensisheim">Ensisheim</a></p>
-        			</div>
-
-							<table class="table table-bordered" id="country_meteorites_table">
+				</div>
+				<div class="row">
+					<div class="col-sm-10 col-md-offset-1 hidden-xs">
+						<table class="table table-bordered" id="country_meteorites_table" style="margin-left: 100px;">
 							<thead>
-									<tr>
-											<th>Name</th>
-											<th>Mass</th>
-											<th>Country</th>
-											<th>Class</th>
-											<th>Year</th>
-											<th>Geolocation</th>
-									</tr>
+								<tr>
+									<th>Name</th>
+									<th>Mass</th>
+									<th>Country</th>
+									<th>Class</th>
+									<th>Year</th>
+									<th>Geolocation</th>
+								</tr>
 							</thead>
 							<tbody>
 								<tr>
-										<td><a href="ensisheim">Ensisheim</a></td>
-										<td>127000</td>
-															<td>France</td>
-										<td>LL6</td>
-										<td>1492</td>
-										<td>47.866670, 7.350000</td>
+									<td><a href="ensisheim">Ensisheim</a></td>
+									<td>127000</td>
+									<td>France</td>
+									<td>LL6</td>
+									<td>1492</td>
+									<td>47.866670, 7.350000</td>
 								</tr>
 							</tbody>
-					</table>
-
-                    <div id = "map">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5652758.363554236!2d-2.2686729267159187!3d46.227641690198645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDbCsDEzJzM5LjUiTiAywrAxMic0OS41IkU!5e0!3m2!1sen!2sus!4v1458851547646" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
-                    </div>
-        		</div>
-
-        		<div class="col-sm-4" id="padimagetop">
-        			<img src="static/images/france.png" class="img-rounded" alt="Rounded Image" height="300" width="300">
-        		</div>
-    		</div>
+						</table>
+					</div>
+					<div class="col-xs-10 col-xs-offset-1 hidden-lg hidden-md hidden-sm">
+						<table class="table table-bordered" id="country_meteorites_table">
+							<thead>
+								<tr>
+									<th>Name</th>
+									<th>Mass</th>
+									<th>Country</th>
+									<th>Class</th>
+									<th>Year</th>
+									<th>Geolocation</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><a href="ensisheim">Ensisheim</a></td>
+									<td>127000</td>
+									<td>France</td>
+									<td>LL6</td>
+									<td>1492</td>
+									<td>47.866670, 7.350000</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
 		</div>
 
 		<div id = "footer">
         	<p>&copy; Copyright 2016 | All rights reserved</p>
         </div>
-
 				<script type='text/javascript'>
 					$(document).ready( function () {
 								$('#country_meteorites_table').dataTable({
