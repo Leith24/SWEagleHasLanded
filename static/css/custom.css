@@ -83,9 +83,12 @@ h1
 	display: inline-block;
 }
 
-#nav_links_mobile
+#nav_links_mobile ul
 {
-	padding-left: 40px;
+	background-color: #34dad6;
+	border-radius: 25px;
+	padding-left: 10px;
+	font-size: 18px;
 }
 
 #img-styling
