@@ -1,5 +1,5 @@
 # models.py
-
+from app import db
 from sqlalchemy import MetaData, Column, Integer, String, Float, create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
@@ -22,13 +22,13 @@ class Meteorite(Base):
 	__tablename__ = 'meteorite'
 	_instances = set()
 
-	id_num = Column(Integer, primary_key=True)
-	mass = Column(Integer)
-	recclass = Column(String(50))
-	fall = Column(String(10))
-	name = Column(String(50), unique=True)
-	year = Column(String)
-	country = Column(String)
+	id_num = db.Column(Integer, primary_key=True)
+	mass = db.Column(Integer)
+	recclass = db.Column(String(50))
+	fall = db.Column(String(10))
+	name = db.Column(String(50), unique=True)
+	year = db.Column(String)
+	country = db.Column(String)
 
 	def __init__(self, id_num, mass = 0, recclass = None, name = None, year = None, reclong = 0.0, reclat = 0.0):
 		self.name = name
@@ -65,12 +65,12 @@ class Classification(Base):
 	__tablename__ = 'Classifications'
 	_instances = set()
 
-	id_num = Column(Integer, primary_key = True)
-	name = Column(String)
-	composition = Column(String)
-	parentBody = Column(String)
-	numberFound = Column(Integer)
-	meteorites = Column(String)
+	id_num = db.Column(Integer, primary_key = True)
+	name = db.Column(String)
+	composition = db.Column(String)
+	parentBody = db.Column(String)
+	numberFound = db.Column(Integer)
+	meteorites = db.Column(String)
 
 	def __init__(self, name = None, compositionalType = None, parentBody = None):
 		self.name = name
@@ -106,12 +106,12 @@ class Country(Base):
 	__tablename__ = 'Countries'
 	_instances = set()
 
-	id_num = Column(Integer, primary_key=True)
-	country = Column(String)
-	earliestYear = Column(Integer)
-	numberFound = Column(Integer)
-	area = Column(Integer)
-	recent = Column(String)
+	id_num = db.Column(Integer, primary_key=True)
+	country = db.Column(String)
+	earliestYear = db.Column(Integer)
+	numberFound = db.Column(Integer)
+	area = db.Column(Integer)
+	recent = db.Column(String)
 
 	def __init__(self, name = None, area = 0, centroid = "0.0, 0.0", meteorite = None):
 		self.name = name

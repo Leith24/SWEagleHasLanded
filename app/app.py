@@ -4,7 +4,7 @@ from flask import Flask, send_file, send_from_directory, make_response
 
 app = Flask(__name__)
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://username:password@localhost/db_name'
-#db = SQLAlchemy(app)
+db = SQLAlchemy(app)
 
 
 #Use flask to do all RESTful API routing
