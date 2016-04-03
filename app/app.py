@@ -14,7 +14,17 @@ db = SQLAlchemy(app)
 @app.route('/api/get_meteorites')
 def get_meteorites() :
     #TODO: refine GET to only return relevant data
-    meteorites = requests.get('https://data.nasa.gov/resource/y77d-th95.json').json()
+    #meteorites = requests.get('https://data.nasa.gov/resource/y77d-th95.json').json()
+
+    #meteorite = requests.get('https://data.nasa.gov/resource/y77d-th95.json?id=' + id).json()
+    #id = str(meteorite[0]['id'])
+    #mass = str(meteorite[0]['mass'])
+    #name = str(meteorite[0]['name'])
+    #year = str(meteorite[0]['year'])
+   # classification = str(meteorite[0]['recclass'])
+    #TODO: Determine country from geolocation
+    #longitude = float(meteorite[0]['reclong'])
+    #lattitude = float(meteorite[0]['reclat'])
 
     return 'meteorites'
 

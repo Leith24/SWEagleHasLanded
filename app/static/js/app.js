@@ -1,5 +1,6 @@
-// app.js
-var meteoriteApp = angular.module('meteoriteApp', ['ui.router']);
+// app.js'use strict';
+
+var meteoriteApp = angular.module('meteoriteApp', ['ui.router', 'datatables']);
 
 meteoriteApp.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
   //
@@ -17,6 +18,11 @@ meteoriteApp.config(function($stateProvider, $urlRouterProvider, $locationProvid
           templateUrl: "static/partials/meteorites.html",
           //controller: 'meteoritesController'
       })
+      .state('meteorite', {
+          url: "/meteorite/{id}",
+          templateUrl: "static/partials/meteorite.html",
+          //controller: 'meteoritesIdController'
+      })
       .state('countries', {
           url: "/countries",
           templateUrl: "static/partials/countries.html",
@@ -26,52 +32,8 @@ meteoriteApp.config(function($stateProvider, $urlRouterProvider, $locationProvid
           url: "/classifications",
           templateUrl: "static/partials/classifications.html",
           //controller: 'classificationsController'
-      })
-      .state('alby', {
-          url: "/alby",
-          templateUrl: "static/partials/alby.html"
-      })
-      .state('bunburra_rockhole', {
-          url: "/bunburra_rockhole",
-          templateUrl: "static/partials/bunburra_rockhole.html"
-      })
-      .state('EUC', {
-          url: "/EUC",
-          templateUrl: "static/partials/EUC.html"
-      })
-      .state('L6', {
-          url: "/L6",
-          templateUrl: "static/partials/L6.html"
-      })
-      .state('LL6', {
-          url: "/LL6",
-          templateUrl: "static/partials/LL6.html"
-      })
-      .state('thika', {
-          url: "/thika",
-          templateUrl: "static/partials/thika.html"
-      })
-      .state('australia', {
-          url: "/australia",
-          templateUrl: "static/partials/australia.html"
-      })
-      .state('france', {
-          url: "/france",
-          templateUrl: "static/partials/france.html"
-      })
-      .state('kenya', {
-          url: "/kenya",
-          templateUrl: "static/partials/kenya.html"
-      })
-      .state('ensisheim', {
-          url: "/ensisheim",
-          templateUrl: "static/partials/ensisheim.html"
-      })
-      .state('about', {
-          url: "/about",
-          templateUrl: 'static/partials/about.html',
-          controller: 'aboutController'
       });
+
 
 
   $locationProvider.html5Mode(true);
