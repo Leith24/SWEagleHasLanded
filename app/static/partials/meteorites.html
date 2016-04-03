@@ -7,7 +7,7 @@
 
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="static/css/custom.css">
+		<link rel="stylesheet" type="text/css" href="../static/css/custom.css">
 		<link href='https://fonts.googleapis.com/css?family=Advent+Pro' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Advent+Pro:100' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="static/DataTables/datatables.css"/>
@@ -35,7 +35,7 @@
         		<div class="col-sm-10">
 
         			<div id = main_header>
-						<h1>Meteorites</h1>
+						<h1>Meteorites!</h1>
 					</div>
 
         			<table class="table table-bordered" id="meteorite-table">
@@ -50,29 +50,13 @@
 		        			</tr>
 		    			</thead>
 		    			<tbody>
-		        			<tr>
-					            <td><a href="ensisheim">Ensisheim</a></td>
-					            <td>127000</td>
-                                <td>France</td>
-					            <td>LL6</td>
-					            <td>1492</td>
-					            <td>47.866670, 7.350000</td>
-		        			</tr>
-		        			<tr>
-					            <td><a href="thika">Thika</a></td>
-					            <td>14200</td>
-                                <td>Kenya</td>
-					            <td>L6</td>
-					            <td>2011</td>
-					            <td>-1.002780, 37.150280</td>
-		        			</tr>
-		        			<tr>
-					            <td><a href="bunburra_rockhole">Bunburra Rockhole</a></td>
-					            <td>324</td>
-                                <td>Australia</td>
-					            <td>Eucrite</td>
-					            <td>2007</td>
-					            <td>-31.350000, 129.190000</td>
+		        			<tr ng-repeat="meteorite in meteorites">
+					            <td><a href="meteorite/{{ meteorite.id}}">{{ meteorite.name }}</a></td>
+					            <td>{{ meteorite.mass }}</td>
+                                <td>Country</td>
+					            <td>{{ meteorite.recclass }}</td>
+					            <td>{{ meteorite.year }}</td>
+					            <td>{{ meteorite.reclong }},{{ meteorite.reclat }}</td>
 		        			</tr>
 		    			</tbody>
 					</table>

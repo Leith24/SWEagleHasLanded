@@ -1,5 +1,5 @@
 #Module containing Flask application
-from flask import Flask, send_file, send_from_directory, make_response, jsonify
+from flask import Flask, send_file, send_from_directory, make_response, jsonify, json
 from flask.ext.sqlalchemy import SQLAlchemy
 import requests
 
@@ -11,22 +11,21 @@ db = SQLAlchemy(app)
 
 
 #Flask handles API calls
+
+#Returns a list of dictionaries, each of which contains information about a single meteorite
 @app.route('/api/get_meteorites')
-def get_meteorites() :
-    #TODO: refine GET to only return relevant data
-    #meteorites = requests.get('https://data.nasa.gov/resource/y77d-th95.json').json()
+def get_meteorites():
+    meteorites = requests.get('https://data.nasa.gov/resource/y77d-th95.json').json()
 
-    #meteorite = requests.get('https://data.nasa.gov/resource/y77d-th95.json?id=' + id).json()
-    #id = str(meteorite[0]['id'])
-    #mass = str(meteorite[0]['mass'])
-    #name = str(meteorite[0]['name'])
-    #year = str(meteorite[0]['year'])
-   # classification = str(meteorite[0]['recclass'])
-    #TODO: Determine country from geolocation
-    #longitude = float(meteorite[0]['reclong'])
-    #lattitude = float(meteorite[0]['reclat'])
+    #these are the only keys we care about.
+    meteorite_keys = ['id', 'mass', 'name', 'year', 'reclong', 'recclass', 'reclat']
+    m = []
+    for meteorite in meteorites:
+        meteorite = { meteorite_key : meteorite[meteorite_key] for meteorite_key in meteorite_keys if meteorite_key in meteorite}
+        m.append(meteorite)
 
-    return 'meteorites'
+    return json.dumps(m)
+
 
 @app.route('/api/get_meteorite/<id>')
 def get_meteorite(id) :
@@ -65,6 +64,7 @@ def get_country(id) :
 
 # Use Angular to do user/client routing
 @app.route('/', defaults={'path': ''})
+@app.route('/meteorites')
 #@app.route('/<path:path>')
 def index(**kwargs):
     return make_response(open('static/index.html').read())

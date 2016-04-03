@@ -1,21 +1,16 @@
-
-
-meteoriteApp.controller('meteoritesController', function($scope) {
-
+meteoriteApp.controller('mainController', function($scope) {
+    // create a message to display in our view
     $scope.message = 'Everyone come and see how good I look!';
-
-    //Make call to API and get_meteorites
-
-
 });
 
-meteoriteApp.controller('meteoriteIdController', function($scope, $state, $stateParams) {
-    // create a message to display in our view
-    $scope.message = 'meteroite ID controller';
+meteoriteApp.controller('meteoritesController', function($scope, meteoritesObj) {
+    $scope.message = 'meteoritesObj';
+    console.log(meteoritesObj);
+    $scope.meteorites = meteoritesObj.data;
+});
 
-    $scope.params = $stateParams;
-    console.log($scope.params);
-    //Make call to API and get_meteorite/{id}
-
+meteoriteApp.controller('meteoriteController', function($scope, $stateParams, meteoriteObj) {
+    $scope.meteorite = meteoriteObj;
+    $scope.message = $stateParams;
 
 });
