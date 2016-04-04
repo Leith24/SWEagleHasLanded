@@ -5,7 +5,7 @@ version: "2"
 services:
   lb:
     # The load balancer container. Built from the lb/Dockerfile.
-    container_name: pythonwebapp_lb
+    container_name: phase2lb
     build: lb
     restart: unless-stopped
     networks:

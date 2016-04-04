@@ -7,7 +7,7 @@ services:
     extends:
       file: docker-compose-common.yml
       service: lb
-    image: leith24/pythonwebapp_lb
+    image: leith24/phase2lb
     environment:
       # Always deploy to n1 so the lb always has the same IP address. This is
       # just for convenience and isn't strictly necessary.
@@ -17,7 +17,7 @@ services:
     extends:
       file: docker-compose-common.yml
       service: app
-    image: leith24/pythonwebapp_app
+    image: leith24/phase2app
     expose:
       # Expose port 8000 so it's only visibile on the container, not the host
       - "8000"
