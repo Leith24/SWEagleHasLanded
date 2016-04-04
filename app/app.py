@@ -63,9 +63,9 @@ def get_country(id) :
 
 
 # Use Angular to do user/client routing
-@app.route('/', defaults={'path': ''})
 @app.route('/meteorites')
 #@app.route('/<path:path>')
+@app.route('/', defaults={'path': ''})
 def index(**kwargs):
     return make_response(open('static/index.html').read())
 
