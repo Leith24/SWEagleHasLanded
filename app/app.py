@@ -53,17 +53,21 @@ def get_classification(id) :
     return 'class id'
 
 @app.route('/api/get_countries')
-def get_countries() :
-    return 'country'
+def get_countries():
+    countries = requests.get('http://knoema.com/api/1.0/data/observed-meteorite-falls-by-country').json()
+    return str(list(countries))
 
 @app.route('/api/get_country/<id>')
-def get_country(id) :
+def get_country(id):
     return 'country id'
 
 
 
 # Use Angular to do user/client routing
 @app.route('/meteorites')
+@app.route('/countries')
+@app.route('/classifications')
+@app.route('/about')
 #@app.route('/<path:path>')
 @app.route('/', defaults={'path': ''})
 def index(**kwargs):

@@ -58,6 +58,10 @@ meteoriteApp.config(function($stateProvider, $urlRouterProvider, $locationProvid
             url: "/classification/{name}",
             templateUrl: "static/partials/classification.html"
             //controller: 'classificationsController'
+        })
+        .state('about', {
+            url: "/about",
+            templateUrl: "static/partials/about.html"
         });
     $locationProvider.html5Mode(true);
 
