@@ -10,7 +10,8 @@
 		<link rel="stylesheet" type="text/css" href="../static/css/custom.css">
 		<link href='https://fonts.googleapis.com/css?family=Advent+Pro' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Advent+Pro:100' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" type="text/css" href="static/DataTables/datatables.css"/>
+
+
 	</head>
 
 	<body>
@@ -38,19 +39,49 @@
 						<h1>Meteorites!</h1>
 					</div>
 
-        			<table class="table table-bordered" id="meteorite-table">
+        			<table class="table table-bordered" >
 		    			<thead>
 		        			<tr>
-		           				<th>Name</th>
-		            			<th>Mass</th>
-		            			<th>Country</th>
-		            			<th>Class</th>
-		            			<th>Year</th>
-		            			<th>Geolocation</th>
+		           				<td>
+                                    <a href="#" ng-click="sortType = 'name'">
+                                        Name
+                                        <span ng-show="sortType == 'name'" class="fa fa-caret-down"></span>
+                                    </a>
+                                </td>
+		            			<td>
+                                    <a href="#" ng-click="sortType = 'mass'">
+                                        Mass
+                                        <span ng-show="sortType == 'mass'" class="fa fa-caret-down"></span>
+                                    </a>
+                                </td>
+		            			<td>
+                                    <a href="#" ng-click="sortType = 'country'">
+                                        Country
+                                        <span ng-show="sortType == 'country'" class="fa fa-caret-down"></span>
+                                    </a>
+                                </td>
+		            			<td>
+                                    <a href="#" ng-click="sortType = 'class'">
+                                        Class
+                                        <span ng-show="sortType == 'class'" class="fa fa-caret-down"></span>
+                                    </a>
+                                </td>
+		            			<td>
+                                    <a href="#" ng-click="sortType = 'year'">
+                                        Year
+                                        <span ng-show="sortType == 'year'" class="fa fa-caret-down"></span>
+                                    </a>
+                                </td>
+		            			<td>
+                                    <a href="#" ng-click="sortType = 'geolocation'">
+                                        Geolocation
+                                        <span ng-show="sortType == 'geolocation'" class="fa fa-caret-down"></span>
+                                    </a>
+                                </td>
 		        			</tr>
 		    			</thead>
 		    			<tbody>
-		        			<tr ng-repeat="meteorite in meteorites">
+		        			<tr ng-repeat="meteorite in meteorites | orderBy:sortType:sortReverse">
 					            <td><a href="meteorite/{{ meteorite.id}}">{{ meteorite.name }}</a></td>
 					            <td>{{ meteorite.mass }}</td>
                                 <td>Country</td>
@@ -69,16 +100,7 @@
         </div>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-			<script type="text/javascript" charset="utf8" src="static/DataTables/datatables.js"></script>
-			<script type='text/javascript'>
-			$(document).ready( function () {
-						$('#meteorite-table').dataTable({
-							paging : false,
-							searching : false
-						});
-					} );
-					</script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 	</body>
 
