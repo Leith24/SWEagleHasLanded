@@ -71,7 +71,7 @@ class Classification(db.Model):
 	def __init__(self, name = None, class_id = None, composition = None, parentBody = None):
 		
 		self.name = name
-		self.parent_class = class_id
+		self.pclass = class_id
 		self.composition = composition
 		self.origin = parentBody
 		self.numberFound = numberFound
