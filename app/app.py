@@ -7,8 +7,8 @@ import os
 import unicodedata
 import re
 
-#GOOGLE_API_KEY = AIzaSyCL_AcVa4WucI3grBntaNB7QGxTOQW_iMg
-#COUNTRIES_API_KEY = gFg7FXcHPWmshS7mUcHPw1wWR2cup132sJnjsntcFkuO3xN6oO
+GOOGLE_API_KEY = "AIzaSyCL_AcVa4WucI3grBntaNB7QGxTOQW_iMg"
+COUNTRIES_API_KEY = "gFg7FXcHPWmshS7mUcHPw1wWR2cup132sJnjsntcFkuO3xN6oO"
 app = Flask(__name__)
 
 db = SQLAlchemy(app)
@@ -36,14 +36,14 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 def get_meteorites():
     #these are the only keys we care about.
     with open(meteorites.json) as datafile:
-        m = json.(datafile)
+        m = json.load(datafile)
     return m
 
 
 @app.route('/api/get_meteorite/<name>')
 def get_meteorite(name):
     with open(meteorites.json) as datafile:
-        m = json.(datafile)
+        m = json.load(datafile)
     meteorite = [item for item in m if item['name'] == name]
     return meteorite
 
@@ -97,13 +97,13 @@ def get_classification(name) :
 @app.route('/api/get_countries')
 def get_countries():
     with open(countries.json) as datafile:
-        c = json.(datafile)
+        c = json.load(datafile)
     return c
 
 @app.route('/api/get_country/<id>')
 def get_country(name):
     with open(countries.json) as datafile:
-        c = json.(datafile)
+        c = json.load(datafile)
     return c['name']
 
 
