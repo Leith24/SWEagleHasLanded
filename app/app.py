@@ -5,10 +5,12 @@ import requests
 
 #GOOGLE API KEY = AIzaSyCL_AcVa4WucI3grBntaNB7QGxTOQW_iMg
 app = Flask(__name__)
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://username:password@localhost/db_name'
+
 db = SQLAlchemy(app)
 
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:O6xu3W2HCvK656@127.0.0.1/test_models'
 
+from models import *
 
 #Flask handles API calls
 
