@@ -80,12 +80,12 @@ meteoriteApp.config(function($stateProvider, $urlRouterProvider, $locationProvid
         })
         .state('classification', {
             url: "/classification/:id",
-            templateUrl: "static/partials/classification.html",
+            templateUrl: "../static/partials/classification.html",
             resolve: {
                 classificationObj:['$http', '$stateParams', function ($http, $stateParams){
                     return $http({
                         method:'GET',
-                        url:'/api/get_classification/' + $stateParams.id
+                        url:'/api/get_classification/' + $stateParams.name
                     });
                 }]
             },

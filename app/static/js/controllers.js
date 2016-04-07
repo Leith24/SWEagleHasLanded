@@ -30,7 +30,7 @@ meteoriteApp.controller('classificationsController', function($scope, classifica
 });
 
 meteoriteApp.controller('classificationController', function($scope, $stateParams, classificationObj) {
-    $scope.meteorite = classificationObj.data;
+    $scope.classification = classificationObj.data;
     //TODO: Get country from geolocation
     //$scope.country = geolocation b
 
