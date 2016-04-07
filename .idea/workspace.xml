@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
+    <list default="true" id="a1d5ae5a-79fe-401f-9af5-6d0c189a5a4d" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/populate_db.py" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models.py" afterPath="$PROJECT_DIR$/app/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/populate.py" afterPath="$PROJECT_DIR$/app/populate.py" />
+    </list>
+=======
     <list default="true" id="a1d5ae5a-79fe-401f-9af5-6d0c189a5a4d" name="Default" comment="" />
+>>>>>>> 575a38276e3a394caef40b1a137d81549033cc03
     <ignored path="cs373-idb.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -24,12 +33,55 @@
     <favorites_list name="cs373-idb" />
   </component>
   <component name="FileEditorManager">
+<<<<<<< HEAD
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="76" column="34" selection-start-line="76" selection-start-column="34" selection-end-line="76" selection-end-column="34" />
+              <folding>
+                <element signature="e#12#30#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/app.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="32" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="populate.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/populate.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="505">
+              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="classifications.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/classifications.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="11" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="17" />
+=======
     <leaf>
       <file leaf-file-name="about.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/static/partials/about.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.27114967">
               <caret line="22" column="38" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
+>>>>>>> 575a38276e3a394caef40b1a137d81549033cc03
               <folding />
             </state>
           </provider>
@@ -43,7 +95,52 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/app/controllers.py" />
+        <option value="$PROJECT_DIR$/app/views.py" />
+        <option value="$PROJECT_DIR$/run.py" />
+        <option value="$PROJECT_DIR$/config.py" />
+        <option value="$PROJECT_DIR$/api.py" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/templates/meteorite_table.html" />
+        <option value="$PROJECT_DIR$/templates/classifications_table.html" />
+        <option value="$PROJECT_DIR$/templates/classifications.html" />
+        <option value="$PROJECT_DIR$/templates/locations.html" />
+        <option value="$PROJECT_DIR$/templates/index.html" />
+        <option value="$PROJECT_DIR$/static/js/directives.js" />
+        <option value="$PROJECT_DIR$/static/partials/about.html" />
+        <option value="$PROJECT_DIR$/static/partials/state1.list.html" />
+        <option value="$PROJECT_DIR$/static/partials/state2.list.html" />
+        <option value="$PROJECT_DIR$/static/partials/state2.html" />
+        <option value="$PROJECT_DIR$/static/partials/state1.html" />
+        <option value="$PROJECT_DIR$/app.py" />
+        <option value="$PROJECT_DIR$/static/js/controllers.js" />
+        <option value="$PROJECT_DIR$/static/css/custom.css" />
+        <option value="$PROJECT_DIR$/static/partials/locations.html" />
+        <option value="$PROJECT_DIR$/static/partials/thika.html" />
+        <option value="$PROJECT_DIR$/static/partials/bunburra_rockhole.html" />
+        <option value="$PROJECT_DIR$/static/partials/splash.html" />
+        <option value="$PROJECT_DIR$/static/partials/EUC.html" />
+        <option value="$PROJECT_DIR$/static/partials/H6.html" />
+        <option value="$PROJECT_DIR$/static/partials/kenya.html" />
+        <option value="$PROJECT_DIR$/static/partials/L5.html" />
+        <option value="$PROJECT_DIR$/static/partials/france.html" />
+        <option value="$PROJECT_DIR$/static/partials/australia.html" />
+        <option value="$PROJECT_DIR$/static/partials/alby.html" />
+        <option value="$PROJECT_DIR$/static/js/app.js" />
+        <option value="$PROJECT_DIR$/static/css/angular-database.css" />
+        <option value="$PROJECT_DIR$/static/index.html" />
+        <option value="$PROJECT_DIR$/static/partials/classifications.html" />
+        <option value="$PROJECT_DIR$/static/partials/countries.html" />
+        <option value="$PROJECT_DIR$/static/partials/meteorites.html" />
+        <option value="$PROJECT_DIR$/models.py" />
+        <option value="$PROJECT_DIR$/app/manage.py" />
+        <option value="$PROJECT_DIR$/app/app.py" />
+        <option value="$PROJECT_DIR$/app/models.py" />
+        <option value="$PROJECT_DIR$/app/populate.py" />
+=======
         <option value="$PROJECT_DIR$/app/static/partials/about.html" />
+>>>>>>> 575a38276e3a394caef40b1a137d81549033cc03
       </list>
     </option>
   </component>
@@ -588,8 +685,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/populate.py">
+    <entry file="file://$PROJECT_DIR$/app/populate_db.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="32" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
+=======
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
           <folding>
@@ -650,6 +759,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> 575a38276e3a394caef40b1a137d81549033cc03
           <folding />
         </state>
       </provider>
@@ -696,6 +806,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/static/index.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="420">
+          <caret line="76" column="34" selection-start-line="76" selection-start-column="34" selection-end-line="76" selection-end-column="34" />
+=======
         <state vertical-scroll-proportion="0.61538464">
           <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
           <folding>
@@ -774,6 +888,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> 575a38276e3a394caef40b1a137d81549033cc03
           <folding>
             <marker date="1460060813883" expanded="true" signature="47:1019" placeholder="..." />
             <marker date="1460060813883" expanded="true" signature="128:194" placeholder="..." />
@@ -809,8 +924,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/app.py">
+    <entry file="file://$PROJECT_DIR$/classifications.json">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="85">
+          <caret line="5" column="11" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="17" />
+=======
         <state vertical-scroll-proportion="0.73214287">
           <caret line="94" column="0" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
           <folding>
@@ -870,7 +989,18 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.27114967">
           <caret line="22" column="38" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
+>>>>>>> 575a38276e3a394caef40b1a137d81549033cc03
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/populate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="505">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

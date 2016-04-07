@@ -21,9 +21,9 @@ class Meteorite(db.Model):
 	name = db.Column(db.String(50), primary_key=True)
 	mass = db.Column(db.Float)
 	recclass = db.Column(db.String(50))
-	reclong = db.Column(db.Float)
-	reclat = db.Column(db.Float)
 	year = db.Column(db.Integer)
+	reclat = db.Column(db.Float)
+	reclong = db.Column(db.Float)
 	geolocation = db.Column(db.String(50))
 	
 	#One to many relationship between Meteorites and Countries
@@ -33,13 +33,13 @@ class Meteorite(db.Model):
 	recclass = db.Column(db.String(50), db.ForeignKey('classification.name'))
 
 
-	def __init__(self, name = None, mass = 0, recclass = None, year = None, reclong = 0.0, reclat = 0.0):
+	def __init__(self, name = None, mass = 0, recclass = None, year = None, reclat = 0.0, reclong = 0.0):
 		self.name = name
 		self.mass = mass
 		self.recclass = recclass
 		self.year = year
-		self.reclong = reclong
 		self.reclat = reclat
+		self.reclong = reclong
 		self.geolocation = str(reclat) + ', ' + str(reclong)
 		self.country = locate(geolocation)
 
@@ -71,7 +71,7 @@ class Classification(db.Model):
 	def __init__(self, name = None, class_id = None, composition = None, parentBody = None):
 		
 		self.name = name
-		self.parent_class = class_id
+		self.pclass = class_id
 		self.composition = composition
 		self.origin = parentBody
 		self.numberFound = numberFound
