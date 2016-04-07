@@ -57,13 +57,13 @@
 	{
 		"Class_ID" : "Chondrite",
 		"Compositional_Type" : "Stony",
-		"Api-Call" : "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=jsonfm&titles=H_chondrite&rvsection=0"
+		"Api-Call" : "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=json&titles=H_chondrite&rvsection=0"
 	},
 	"L" :
 	{
 		"Class_ID" : "Chondrite",
 		"Compositional_Type" : "Stony",
-		"Api-Call" : "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=jsonfm&titles=L_chondrite&rvsection=0"
+		"Api-Call" : "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=json&titles=L_chondrite&rvsection=0"
 	},
 	"LL" :
 	{
@@ -75,13 +75,13 @@
 	{
 		"Class_ID" : "Chondrite",
 		"Compositional_Type" : "Stony",
-		"Api-Call" : "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=jsonfm&titles=Enstatite_chondrite&rvsection=0"
+		"Api-Call" : "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=json&titles=Enstatite_chondrite&rvsection=0"
 	},
 	"EL" :
 	{
 		"Class_ID" : "Chondrite",
 		"Compositional_Type" : "Stony",
-		"Api-Call" : "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=jsonfm&titles=Enstatite_chondrite&rvsection=0"
+		"Api-Call" : "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=json&titles=Enstatite_chondrite&rvsection=0"
 	},
 	"R" :
 	{
@@ -129,7 +129,7 @@
 	{
 		"Class_ID" : "Primitive Achondrite",
 		"Compositional_Type" : "Iron",
-		"Api-Call" : "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=jsonfm&titles=IAB_meteorite&rvsection=0"
+		"Api-Call" : "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=json&titles=IAB_meteorite&rvsection=0"
 	},
 	"Achondrite" :
 	{
@@ -141,31 +141,31 @@
 	{
 		"Class_ID" : "Achondrite",
 		"Compositional_Type" : "Stony",
-		"Api-Call" : "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=jsonfm&titles=Angrite&rvsection=0"
+		"Api-Call" : "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=json&titles=Angrite&rvsection=0"
 	},
 	"Aubrite" :
 	{
 		"Class_ID" : "Achondrite",
 		"Compositional_Type" : "Stony",
-		"Api-Call" : "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=jsonfm&titles=Aubrite&rvsection=0"
+		"Api-Call" : "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=json&titles=Aubrite&rvsection=0"
 	},
 	"Eucrite" :
 	{
 		"Class_ID" : "Achondrite",
 		"Compositional_Type" : "Stony",
-		"Api-Call" : "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=jsonfm&titles=Eucrite&rvsection=0"
+		"Api-Call" : "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=json&titles=Eucrite&rvsection=0"
 	},
 	"Diogenite" :
 	{
 		"Class_ID" : "Achondrite",
 		"Compositional_Type" : "Stony",
-		"Api-Call" : "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=jsonfm&titles=Diogenite&rvsection=0"
+		"Api-Call" : "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=json&titles=Diogenite&rvsection=0"
 	},
 	"Howardite" :
 	{
 		"Class_ID" : "Achondrite",
 		"Compositional_Type" : "Stony",
-		"Api-Call" : "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=jsonfm&titles=Howardite&rvsection=0"
+		"Api-Call" : "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=json&titles=Howardite&rvsection=0"
 	},
 	"Mesosiderite" :
 	{
@@ -201,7 +201,7 @@
 	{
 		"Class_ID" : "Achondrite",
 		"Compositional_Type" : "Iron",
-		"Api-Call" : "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=jsonfm&titles=IIE_iron_meteorite&rvsection=0"
+		"Api-Call" : "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=json&titles=IIE_iron_meteorite&rvsection=0"
 	},
 	"Iron, IIIAB" :
 	{
@@ -219,18 +219,18 @@
 	{
 		"Class_ID" : "Achondrite",
 		"Compositional_Type" : "Stony",
-		"Api-Call" : "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=jsonfm&titles=Martian_meteorite&rvsection=0"
+		"Api-Call" : "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=json&titles=Martian_meteorite&rvsection=0"
 	},
 	"Nakhlites" :
 	{
 		"Class_ID" : "Achondrite",
 		"Compositional_Type" : "Stony",
-		"Api-Call" : "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=jsonfm&titles=Martian_meteorite&rvsection=0"
+		"Api-Call" : "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=json&titles=Martian_meteorite&rvsection=0"
 	},
 	"Chassignites" :
 	{
 		"Class_ID" : "Achondrite",
 		"Compositional_Type" : "Stony",
-		"Api-Call" : "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=jsonfm&titles=Martian_meteorite&rvsection=0"
+		"Api-Call" : "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=json&titles=Martian_meteorite&rvsection=0"
 	}
 }

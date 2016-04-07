@@ -68,6 +68,7 @@ def get_classifications() :
     for classification in classifications:
         class_id = classifications[classification]['Class_ID']
         comp_type = classifications[classification]['Compositional_Type']
+        
         if classifications[classification]['Api-Call'] == "Unknown":
             parent = "Unknown"
         else:
@@ -80,6 +81,7 @@ def get_classifications() :
             s = s.split('Parent_body')[1]
             s = re.search('(\[\[([0-9]*?[ ]?[A-z]+)\]\])', s)
             parent = s.group(2)
+
         data.append({"name" : classification, "class_id" : class_id, "composition" : comp_type, "parentBody" : parent, "numberFound" : 0})
 
     return json.dumps(data)
