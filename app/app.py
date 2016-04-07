@@ -49,11 +49,48 @@ def get_meteorite(id) :
 
 @app.route('/api/get_classifications')
 def get_classifications() :
-    return 'classifcations'
+    
+    data = []
+    classifications = requests.get('https://raw.githubusercontent.com/Leith24/cs373-idb/dev/classifications.json').json()
+    for classification in classifications:
+        class_id = classifications[classification]['Class_ID']
+        comp_type = classifications[classification]['Compositional_Type']
+        if classifications[classification]['Api-Call'] == "Unknown":
+            parent = "Unknown"
+        else:
+            data = requests.get(classifications[classification]['Api-Call']).json()
+            key = ""
+            for k in data['query']['pages']:
+                key = k
+            s = data['query']['pages'][k]['revisions'][0]['*']
+            s = unicodedata.normalize('NFKD', s).encode('ascii','ignore')
+            s = s.split('Parent_body')[1]
+            s = re.search('(\[\[([0-9]*?[ ]?[A-z]+)\]\])', s)
+            parent = s.group(2)
+        data.append({"name" : classification, "class_id" : class_id, "composition" : comp_type, "parentBody" : parent, "numberFound" : 0})
+
+    return json.dumps(data)
 
 @app.route('/api/get_classification/<id>')
 def get_classification(id) :
-    return 'class id'
+
+    classifications = requests.get('https://raw.githubusercontent.com/Leith24/cs373-idb/dev/classifications.json').json()
+    class_id = classifications[id]['Class_ID']
+    comp_type = classifications[id]['Compositional_Type']
+    if classifications[id]['Api-Call'] == "Unknown":
+        parent = "Unknown"
+    else:
+        data = requests.get(classifications[id]['Api-Call']).json()
+        key = ""
+        for k in data['query']['pages']:
+            key = k
+        s = data['query']['pages'][k]['revisions'][0]['*']
+        s = unicodedata.normalize('NFKD', s).encode('ascii','ignore')
+        s = s.split('Parent_body')[1]
+        s = re.search('(\[\[([0-9]*?[ ]?[A-z]+)\]\])', s)
+        parent = s.group(2)
+
+    return jsonify(name = id, class_id = class_id, composition = comp_type, parentBody = parent, numberFound = 0)
 
 @app.route('/api/get_countries')
 def get_countries():
