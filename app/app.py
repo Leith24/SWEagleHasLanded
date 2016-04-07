@@ -2,13 +2,16 @@
 from flask import Flask, send_file, send_from_directory, make_response, jsonify, json
 from flask.ext.sqlalchemy import SQLAlchemy
 import requests
+from flask_script import Manager
 
 #GOOGLE API KEY = AIzaSyCL_AcVa4WucI3grBntaNB7QGxTOQW_iMg
 app = Flask(__name__)
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://username:password@localhost/db_name'
+
 db = SQLAlchemy(app)
+manager = Manager(app)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:O6xu3W2HCvK656@127.0.0.1/test_models'
 
-
+from models import *
 
 #Flask handles API calls
 
@@ -73,5 +76,12 @@ def get_country(id):
 def index(**kwargs):
     return make_response(open('static/index.html').read())
 
+@manager.command
+def createdb():
+    from app import db
+    db.drop_all()
+    db.create_all()
+
 if __name__ == '__main__':
+    manager.run()
     app.run(debug=True)
