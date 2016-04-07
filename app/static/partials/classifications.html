@@ -10,7 +10,6 @@
 		<link rel="stylesheet" type="text/css" href="static/css/custom.css">
 		<link href='https://fonts.googleapis.com/css?family=Advent+Pro' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Advent+Pro:100' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" type="text/css" href="static/DataTables/datatables.css"/>
 
 	</head>
 
@@ -19,19 +18,19 @@
 			<div class="row" style="padding-top: 10px;">
         		<div class="col-sm-2 hidden-xs">
                     <ul class="nav nav-pills nav-stacked" id = "nav_links">
-                        <li><a href="meteorites">Meteorites</a></li>
-                        <li><a href="classifications">Classifications</a></li>
-                        <li><a href="countries">Countries</a></li>
-                         <li><a href="about">About</a></li>
+                        <li><a ui-sref="meteorites">Meteorites</a></li>
+                        <li><a ui-sref="classifications">Classifications</a></li>
+                        <li><a ui-sref="countries">Countries</a></li>
+                         <li><a ui-sref="about">About</a></li>
                     </ul>
                 </div>
 
                 <div class="col-sx-2 hidden-sm hidden-md hidden-lg">
                     <ul class="nav nav-pills" id = "nav_links_mobile">
-                        <li><a href="meteorites">Meteorites</a></li>
-                        <li><a href="classifications">Classifications</a></li>
-                        <li><a href="countries">Countries</a></li>
-                         <li><a href="about">About</a></li>
+                        <li><a ui-sref="meteorites">Meteorites</a></li>
+                        <li><a ui-sref="classifications">Classifications</a></li>
+                        <li><a ui-sref="countries">Countries</a></li>
+                         <li><a ui-sref="about">About</a></li>
                     </ul>
                 </div>
 
@@ -48,7 +47,7 @@
 		        			<tr>
 		           				<td>
                                     <a href="#" ng-click="sortType = 'name'; sortReverse = !sortReverse">
-                                        Name
+                                        Class Name
                                         <span ng-show="sortType == 'name' && !sortReverse" class="fa fa-caret-down"></span>
                                         <span ng-show="sortType == 'name' && sortReverse" class="fa fa-caret-up"></span>
 
@@ -85,12 +84,12 @@
 		        			</tr>
 		    			</thead>
 		    			<tbody>
-		        			<tr dir-paginate="meteorite in meteorites | orderBy:sortType:sortReverse | itemsPerPage: pageSize">
-					            <td><a href="meteorite/{{ classification.name}}">{{ classification.name }}</a></td>
-					            <td>{{ classification.classId }}</td>
-                                <td>{{ classification.compType }}</td>
-					            <td>{{ classification.recclass }}</td>
-                                <td>{{ classification.numFound }}</td>
+		        			<tr dir-paginate="classification in classifications | orderBy:sortType:sortReverse | itemsPerPage: pageSize">
+					            <td><a href="classification/{{classification.name}}">{{ classification.name }}</a></td>
+					            <td>{{ classification.class_id }}</td>
+                                <td>{{ classification.composition }}</td>
+					            <td>{{ classification.parentBody }}</td>
+                                <td>{{ classification.numberFound}}</td>
 
 		        			</tr>
 		    			</tbody>
@@ -109,14 +108,7 @@
          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
          <script type="text/javascript" src="static/DataTables/datatables.js"></script>
 
-        <script type='text/javascript'>
-            $(document).ready( function () {
-                        $('#classes-table').dataTable({
-                            paging : false,
-                            searching : false
-                        });
-                    } );
-        </script>
+
 
 	</body>
 

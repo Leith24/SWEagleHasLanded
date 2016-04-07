@@ -1,52 +1,134 @@
-from unittest import main
+import unittest
 from flask.ext.testing import TestCase
+from db import db, app
 from models import Meteorite, Classification, Country
+class TestMeteorites(TestCase):
 
-class TestMeteorite(TestCase):
+    def create_app(self):
+        app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
+        return app
 
-	# ----------------------------------
-	# Testing get_instance for each page
-	# ----------------------------------
+    def setUp(self):
+        db.create_all()
+        meteorite_1 = Meteorite("Aachen", 21.0, "L", 1880, 50.775000, 6.083330, "50.775000, 6.083330")
+        meteorite_2 = Meteorite("Aarhus", 720.0, "H", 1951, 56.183330, 10.233330, "56.183330, 10.233330")
+        db.session.add(meteorite_1)
+        db.session.add(meteorite_2)
+        db.session.commit()
 
-	def get_meteorites(self):
-		meteors = Meteorite.getinstances()
-		assert len(meteors) == 3
+    def tearDown(self):
+        db.session.remove()
+        db.drop_all()
 
-	def get_countries(self):
-		countries = Country.getinstances()
-		assert len(countries) = 3
+    # Tests that the total # of meteorites is equal to 2 from set up
+    def test_get_all_meteorites(self):
+        meteorites = Meteorite.query.all()
+        assert len(meteorites) == 2
 
-	def get_classifications(self):
-		classifications = Classification.getinstances()
-		assert len(classifications) = 3
+    # Tests simple selections from the table match expected values
+    def test_filtering_meteorites(self):   
+        meteorite_1 = Meteorite.query.filter(Meteorite.year == 1880).first()
+        assert meteorite_1.name == "Aachen" and meteorite_1.recclass  == "L"
 
-	# --------------------------------------------------
-	# Testing add_meteorite and set_recent for each page
-	# --------------------------------------------------
+        meteorite_2 = Meteorite.query.filter(Meteorite.recclass == "H").first()
+        assert meteorite_2.name == 'Aarhus' and meteorite_2.year == 1951
 
-	def create_meteorite_1(self):
-		m1 = Meteorite(1914, 10, "Acapulcoite", 1914, 16.88333, -99.9)
-		assert(m1.country.name == 'Mexico')
-		Country.add(m1)
+    # Tests adding a new meteorite and removing that meteorite from the db
+    def test_add_delete_meteorites(self):
+        meteorite = Meteorite("Abee", 107000.0, "EH", 1952, 54.216670, -113.000000, "54.216670, -113.000000")
+        db.session.add(meteorite)
+        db.session.commit()
+        assert len(Meteorite.query.all()) == 3
 
-	def check_set_recent_1(self):
-		m1 = Meteorite(1914, 10, "Acapulcoite", 1914, 16.88333, -99.9)
-		assert(m1.country.recent is m1)
+        Meteorite.query.filter(Meteorite.name == 'Abee').delete()
+        db.session.commit()
+        assert len(Meteorite.query.all()) == 2
 
-	def create_meteorite_2(self):
-		m2 = Meteorite(252, 458, "Eucrite-mmict", 2002, 6.015330, 45.821330)
-		assert(m2.country.name == 'Morocco')
-		Country.add(m2)
+class TestClassifications(TestCase):
 
-	def check_set_recent_2(self):
-		m2 = Meteorite(252, 458, "Eucrite-mmict", 2002, 6.015330, 45.821330)
-		assert(m2.country.recent is m2)
+    def create_app(self):
+        app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
+        return app
 
-	def create_meteorite_3(self):
-		m3 = Meteorite(10000, 248, "H6", 2005, 14.045360, 5.821330)
-		assert(m3.country.name == 'Niger')
-		Country.add(m2)
+    def setUp(self):
+        db.create_all()
+        classification_1 = Classification("Brachinite", "Primitive Achondrite", "Stony", "Unknown")
+        classification_2 = Classification("Chassignites", "Achondrite", "Stony", "Mars")
+        db.session.add(classification_1)
+        db.session.add(classification_2)
+        db.session.commit()
 
-	def check_set_recent_3(self):
-		m3 = Meteorite(10000, 248, "H6", 2005, 14.045360, 5.821330)
-		assert(m3.country.recent is m3)
+    def tearDown(self):
+        db.session.remove()
+        db.drop_all()
+
+    # Tests that the total # of classifications is equal to 2 from set up
+    def test_get_all_classifications(self):
+        classifications = Classification.query.all()
+        assert len(classifications) == 2
+
+    # Tests simple selections from the db match expected values
+    def test_filtering_classifications(self):   
+        classification_1 = Classification.query.filter(Classification.name == 'Brachinite').first()
+        assert classification_1.class_id == "Primitive Achondrite"
+
+        classification_2 = Classification.query.filter(Classification.class_id == "Achondrite").first()
+        assert classification_2.parentBody == 'Mars'
+
+    # Tests adding a new classification to the table and removing it
+    def test_add_delete_classification(self):
+        classification = Classification("Iron, IAB", "Primitive Achondrite", "Iron", "kamacite")
+        db.session.add(classification)
+        db.session.commit()
+        assert len(Classification.query.all()) == 3
+
+        Classification.query.filter(Classification.composition == "Iron").delete()
+        db.session.commit()
+        assert len(Classification.query.all()) == 2
+
+
+class TestCountries(TestCase):
+
+    def create_app(self):
+        app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
+        return app
+
+    def setUp(self):
+        db.create_all()
+        country_1 = Country()
+        country_2 = Country()
+        db.session.add(country_1)
+        db.session.add(country_2)
+        db.session.commit()
+
+    def tearDown(self):
+        db.session.remove()
+        db.drop_all()
+
+    # Tests that the total # of countries is equal to 2 from set up
+    def test_get_all_countries(self):
+        countries = Country.query.all()
+        assert len(countries) == 2
+
+    # Tests simple selections from the db match expected values
+    def test_filtering_countries(self):   
+        country_1 = Country.query.filter(Country.area == 0.0).first()
+        assert country_1.name == "" 
+
+        country_2 = Country.query.filter(Country.centroid == "0.0, 0.0").first()
+        assert country_2.name == ""  
+
+    # Tests adding a new country to the table and then removing it
+    def test_add_delete_countries(self):
+        country = Country()
+        db.session.add(country)
+        db.session.commit()
+        assert len(Country.query.all()) == 3
+
+        Country.query.filter(Country.centroid == "").delete()
+        db.session.commit()
+        assert len(Country.query.all()) == 2
+
+
+if __name__ == '__main__':
+	unittest.main(verbosity = 2)
