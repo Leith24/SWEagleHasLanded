@@ -22,11 +22,11 @@ meteoriteApp.controller('meteoriteController', function($scope, $stateParams, me
 meteoriteApp.controller('classificationsController', function($scope, classificationsObj) {
     $scope.sortType     = 'name'; // set the default sort type
     $scope.sortReverse  = false;  // set the default sort order
-    $scope.searchMeteorites   = '';     // set the default search/filter term
+    $scope.searchClassifications   = '';     // set the default search/filter term
     $scope.currentPage = 1;
     $scope.pageSize = 15;
 
-    $scope.meteorites = classificationsObj.data;
+    $scope.classifications = classificationsObj.data;
 });
 
 meteoriteApp.controller('classificationController', function($scope, $stateParams, classificationObj) {
@@ -43,7 +43,7 @@ meteoriteApp.controller('countriesController', function($scope, countriesObj) {
     $scope.currentPage = 1;
     $scope.pageSize = 15;
 
-    $scope.meteorites = countriesObj.data;
+    $scope.countries = countryObj.data;
 });
 
 meteoriteApp.controller('countryController', function($scope, $stateParams, countryObj) {
