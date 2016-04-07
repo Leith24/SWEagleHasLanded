@@ -1,8 +1,8 @@
 # models.py
 from app import db
-#from sqlalchemy import Metadata, Table, Column, Integer, String, Float, ForeignKey, create_engine
-#from sqlalchemy.orm import sessionmaker, relationship
-#from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import Metadata, Table, Column, Integer, String, Float, ForeignKey, create_engine
+from sqlalchemy.orm import sessionmaker, relationship
+from sqlalchemy.ext.declarative import declarative_base
 from geopy.geocoders import Nominatim
 
 #engine = create_engine('sqlite:///')
@@ -31,6 +31,7 @@ class Meteorite(db.Model):
 
 	#One to many relationship between Meteorites and Classifications
 	recclass = db.Column(db.String(50), db.ForeignKey('classification.name'))
+
 
 	def __init__(self, name = None, mass = 0, recclass = None, year = None, reclong = 0.0, reclat = 0.0):
 		self.name = name
@@ -65,7 +66,7 @@ class Classification(db.Model):
 	numberFound = db.Column(db.Integer)
 
 	#Many to one relationship btwn Classifications and Meteorites
-	meteorites= db.relationship('Meteorite',backref='recclass', lazy='dynamic')
+	meteorites = db.relationship('Meteorite',backref='recclass', lazy='dynamic')
 
 	def __init__(self, name = None, class_id = None, composition = None, parentBody = None):
 		

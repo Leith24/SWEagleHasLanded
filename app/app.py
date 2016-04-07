@@ -3,15 +3,29 @@ from flask import Flask, send_file, send_from_directory, make_response, jsonify,
 from flask.ext.sqlalchemy import SQLAlchemy
 import requests
 from flask_script import Manager
+import os
 
-#GOOGLE API KEY = AIzaSyCL_AcVa4WucI3grBntaNB7QGxTOQW_iMg
+GOOGLE_API_KEY = AIzaSyCL_AcVa4WucI3grBntaNB7QGxTOQW_iMg
+COUNTRIES_API_KEY = gFg7FXcHPWmshS7mUcHPw1wWR2cup132sJnjsntcFkuO3xN6oO
 app = Flask(__name__)
 
 db = SQLAlchemy(app)
 manager = Manager(app)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:Crzd1245!@127.0.0.1/test_models'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:Crzd1245!@127.0.0.1/test_models'
 
-from models import *
+SQLALCHEMY_DATABASE_URI = \
+    '{engine}://{username}:{password}@{hostname}/{database}'.format(
+        engine='mysql+pymysql',
+        username=os.getenv('MYSQL_USER'),
+        password=os.getenv('MYSQL_PASSWORD'),
+        hostname=os.getenv('MYSQL_HOST'),
+        database=os.getenv('MYSQL_DATABASE'))
+
+app.config['SQLALCHEMY_DATABASE_URI'] = SQLALCHEMY_DATABASE_URI
+app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = True
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+#from models import *
 
 #Flask handles API calls
 
@@ -55,6 +69,7 @@ def get_classifications() :
     for classification in classifications:
         class_id = classifications[classification]['Class_ID']
         comp_type = classifications[classification]['Compositional_Type']
+        
         if classifications[classification]['Api-Call'] == "Unknown":
             parent = "Unknown"
         else:
@@ -67,6 +82,7 @@ def get_classifications() :
             s = s.split('Parent_body')[1]
             s = re.search('(\[\[([0-9]*?[ ]?[A-z]+)\]\])', s)
             parent = s.group(2)
+
         data.append({"name" : classification, "class_id" : class_id, "composition" : comp_type, "parentBody" : parent, "numberFound" : 0})
 
     return json.dumps(data)
@@ -118,6 +134,37 @@ def createdb():
     from app import db
     db.drop_all()
     db.create_all()
+
+@manager.command
+def getfiles():
+    #remove existing files
+    os.remove(countries.json)
+    os.remove(meteorites.json)
+
+    #create countries
+    x = open(countries.json, w)
+    countries = requests.get('https://restcountries-v1.p.mashape.com/all',
+         headers={"X-Mashape-Key": COUNTRIES_API_KEY, "Accept": "application/json"}).json
+    c = []
+    c_keys = ['name', 'area', 'latlng']
+    for country in countries :
+        country = {c_key : country[c_key] for c_key in c_keys if c_key in country}
+        c.append()
+    x.write(c)
+    x.close()
+
+    #create meteorites
+    x = open(meteorites.json, w)
+    meteorites = requests.get('https://data.nasa.gov/resource/y77d-th95.json').json()
+
+    #these are the only keys we care about.
+    meteorite_keys = ['name', 'mass', 'year', 'reclong', 'reclat', 'recclass']
+    m = []
+    for meteorite in meteorites:
+        meteorite = { meteorite_key : meteorite[meteorite_key] for meteorite_key in meteorite_keys if meteorite_key in meteorite}
+        m.append(meteorite)
+    x.write(m)
+    x.close
 
 if __name__ == '__main__':
     manager.run()
