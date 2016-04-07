@@ -5,7 +5,8 @@ import requests
 from flask_script import Manager
 import os
 
-#GOOGLE API KEY = AIzaSyCL_AcVa4WucI3grBntaNB7QGxTOQW_iMg
+GOOGLE_API_KEY = AIzaSyCL_AcVa4WucI3grBntaNB7QGxTOQW_iMg
+COUNTRIES_API_KEY = gFg7FXcHPWmshS7mUcHPw1wWR2cup132sJnjsntcFkuO3xN6oO
 app = Flask(__name__)
 
 db = SQLAlchemy(app)
@@ -133,6 +134,37 @@ def createdb():
     from app import db
     db.drop_all()
     db.create_all()
+
+@manager.command
+def getfiles():
+    #remove existing files
+    os.remove(countries.json)
+    os.remove(meteorites.json)
+
+    #create countries
+    x = open(countries.json, w)
+    countries = requests.get('https://restcountries-v1.p.mashape.com/all',
+         headers={"X-Mashape-Key": COUNTRIES_API_KEY, "Accept": "application/json"}).json
+    c = []
+    c_keys = ['name', 'area', 'latlng']
+    for country in countries :
+        country = {c_key : country[c_key] for c_key in c_keys if c_key in country}
+        c.append()
+    x.write(c)
+    x.close()
+
+    #create meteorites
+    x = open(meteorites.json, w)
+    meteorites = requests.get('https://data.nasa.gov/resource/y77d-th95.json').json()
+
+    #these are the only keys we care about.
+    meteorite_keys = ['name', 'mass', 'year', 'reclong', 'reclat', 'recclass']
+    m = []
+    for meteorite in meteorites:
+        meteorite = { meteorite_key : meteorite[meteorite_key] for meteorite_key in meteorite_keys if meteorite_key in meteorite}
+        m.append(meteorite)
+    x.write(m)
+    x.close
 
 if __name__ == '__main__':
     manager.run()
