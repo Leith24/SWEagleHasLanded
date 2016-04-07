@@ -41,23 +41,55 @@ meteoriteApp.config(function($stateProvider, $urlRouterProvider, $locationProvid
         })
         .state('countries', {
             url: "/countries",
-            templateUrl: "static/partials/countries.html"
-            //controller: 'countriesController'
+            templateUrl: "static/partials/countries.html",
+            resolve: {
+                meteoriteObj:['$http', '$stateParams', function ($http){
+                    return $http({
+                        method:'GET',
+                        url:'/api/get_country/'
+                    });
+                }]
+            },
+            controller: 'countriesController'
         })
         .state('country', {
-            url: "/country/{name}",
-            templateUrl: "static/partials/country.html"
-            //controller: 'countriesController'
+            url: "/country/:id",
+            templateUrl: "static/partials/country.html",
+            resolve: {
+                meteoriteObj:['$http', '$stateParams', function ($http){
+                    return $http({
+                        method:'GET',
+                        url:'/api/get_country/' + $stateParams.id
+                    });
+                }]
+            },
+            controller: 'countriesController'
         })
         .state('classifications', {
             url: "/classifications",
-            templateUrl: "static/partials/classifications.html"
-            //controller: 'classificationsController'
+            templateUrl: "static/partials/classifications.html",
+            resolve: {
+                meteoriteObj:['$http', '$stateParams', function ($http){
+                    return $http({
+                        method:'GET',
+                        url:'/api/get_classifications'
+                    });
+                }]
+            },
+            controller: 'classificationsController'
         })
         .state('classification', {
-            url: "/classification/{name}",
-            templateUrl: "static/partials/classification.html"
-            //controller: 'classificationsController'
+            url: "/classification/:id",
+            templateUrl: "static/partials/classification.html",
+            resolve: {
+                meteoriteObj:['$http', '$stateParams', function ($http, $stateParams){
+                    return $http({
+                        method:'GET',
+                        url:'/api/get_classification/' + $stateParams.id
+                    });
+                }]
+            },
+            controller: 'classificationController'
         })
         .state('about', {
             url: "/about",
