@@ -30,7 +30,11 @@ class Meteorite(db.Model):
 	country = db.Column(db.String(50), db.ForeignKey('country.name'))
 
 	#One to many relationship between Meteorites and Classifications
+<<<<<<< HEAD:models.py
+	recclass = db.Column(String, db.ForeignKey('classification.name'))
+=======
 	recclass = db.Column(db.String(50), db.ForeignKey('classification.name'))
+>>>>>>> origin/dev:app/models.py
 
 	def __init__(self, name = None, mass = 0, recclass = None, year = None, reclong = 0.0, reclat = 0.0):
 		self.name = name
@@ -65,7 +69,7 @@ class Classification(db.Model):
 	numberFound = db.Column(db.Integer)
 
 	#Many to one relationship btwn Classifications and Meteorites
-	meteorites= db.relationship('Meteorite',backref='recclass', lazy='dynamic')
+	meteorites = db.relationship('Meteorite',backref='recclass', lazy='dynamic')
 
 	def __init__(self, name = None, class_id = None, composition = None, parentBody = None):
 		
