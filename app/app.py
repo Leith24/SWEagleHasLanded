@@ -140,19 +140,19 @@ def getfiles():
     os.remove(meteorites.json)
 
     #create countries
-    file x = open(countries.json, w)
+    x = open(countries.json, w)
     countries = requests.get('https://restcountries-v1.p.mashape.com/all',
-         headers=["X-Mashape-Key": COUNTRIES_API_KEY, "Accept": "application/json"]).json
+         headers={"X-Mashape-Key": COUNTRIES_API_KEY, "Accept": "application/json"}).json
     c = []
     c_keys = ['name', 'area', 'latlng']
-    for country in countries
+    for country in countries :
         country = {c_key : country[c_key] for c_key in c_keys if c_key in country}
         c.append()
     x.write(c)
     x.close()
 
     #create meteorites
-    file x = open(meteorites.json, w)
+    x = open(meteorites.json, w)
     meteorites = requests.get('https://data.nasa.gov/resource/y77d-th95.json').json()
 
     #these are the only keys we care about.
