@@ -2,11 +2,11 @@
 <html>
 ​
   <head>
-    <title>About Us</title>
+    <title>About</title>
 ​
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="static/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="../css/custom.css">
     <link href='https://fonts.googleapis.com/css?family=Advent+Pro' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Advent+Pro:100' rel='stylesheet' type='text/css'>
 
@@ -14,91 +14,150 @@
 ​
   <body>
     <div id = "content">
-      <div class="row">
-            <div class="col-sm-2">
-              <ul class="nav nav-pills nav-stacked" id = "nav_links">
-            <li><a href="meteorite_table.html">Meteorites</a></li>
-            <li><a href="classifications_table.html">Classes</a></li>
-            <li><a href="countries">Countries</a></li>
-            <li><a href="about">About</a></li>
-          </ul>
-            </div>
-​
-            <div class="col-sm-3">
-              <div id="about_header">
-            <h1>Group Name</h1>
-            <h1>Group Members</h1>
-            <h1>Stats : </h1>
-              </div>
-​
-            </div>
-            <div class="col-sm-6">
-              <div id="about_header_title">
-              <h2>The SWEagle Has Landed</h2>
-              <h2>Darragh Murphy, Jordan Lavatai, Declan Duffy, Ovais Panjwani, Adam Thompson, Gavin Leith</h2>
+      <div class="row" style="padding-top: 10px;">
+            <div class="col-sm-2 hidden-xs">
+                    <ul class="nav nav-pills nav-stacked" id = "nav_links">
+                        <li><a href="meteorites">Meteorites</a></li>
+                        <li><a href="classifications">Classifications</a></li>
+                        <li><a href="countries">Countries</a></li>
+                         <li><a href="about">About</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-sx-2 hidden-sm hidden-md hidden-lg">
+                    <ul class="nav nav-pills" id = "nav_links_mobile">
+                        <li><a href="meteorites">Meteorites</a></li>
+                        <li><a href="classifications">Classifications</a></li>
+                        <li><a href="countries">Countries</a></li>
+                         <li><a href="about">About</a></li>
+                    </ul>
+                </div>
+
+            <div class="col-sm-10" id = "about_info">
+
               <div class="row">
-              <div class="col-sm-5">
-              <h1>Total Commits</h1>
+                <div class="col-sm-10">
+                  <h1 style="text-align:left;float:left;">Group Name</h1>
+                  <h2 style="text-align:right;float:right; padding-top: 10px; padding-right: 20px;">The SWEagle Has Landed</h2>
+                </div>
               </div>
-              <div class="col-sm-1">
-              <h2 id="stat">102</h2>
-              </div>
-              </div>
+
               <div class="row">
-              <div class="col-sm-5">
-              <h1>Total Issues</h1>
+                <div class="col-md-10">
+                  <h1>Group Members</h1>
+                </div>
               </div>
-              <div class="col-sm-1">
-              <h2 id="stat">15</h2>
-              </div>
-              </div>
+
               <div class="row">
-              <div class="col-sm-5">
-              <h1>Total Unit Tests</h1>
+                <div class="col-md-6" style="padding-top: 10px;">
+                  <img src="../images/jordan.jpg" class="img-rounded" alt="Rounded Image" height="250" width="250">
+                    <h3>Name</h3><p>Jordan Lavatai</p>
+                    <h3>Bio</h3><p>I dislike Carina and RackSpace</p>
+                    <h3>Responsibilities</h3>
+                    <h3>No. Commits</h3>
+                    <h3>No. Issues</h3>
+                    <h3>No. Unit Tests</h3>
+                </div>
+                <div class="col-md-6" style="padding-top: 10px;">
+                  <img src="../images/darragh.jpg" class="img-rounded" alt="Rounded Image" height="250" width="250">
+                  <h3>Name</h3><p>Darragh Murphy</p>
+                  <h3>Bio</h3><p>Irish exchange student at UT Austin</p>
+                  <h3>Responsibilities</h3>
+                  <h3>No. Commits</h3>
+                  <h3>No. Issues</h3>
+                  <h3>No. Unit Tests</h3>
+                </div>
               </div>
-              <div class="col-sm-1">
-              <h2 id="stat">9</h2>
+
+              <div class="row">
+                <div class="col-md-6" style="padding-top: 10px;">
+                  <img src="../images/declan.jpg" class="img-rounded" alt="Rounded Image" height="250" width="250">
+                  <h3>Name</h3><p>Declan Duffy</p>
+                  <h3>Bio</h3><p>Irish exchange student studying in UT for Spring 2016 semester</p>
+                  <h3>Responsibilities</h3>
+                  <h3>No. Commits</h3>
+                  <h3>No. Issues</h3>
+                  <h3>No. Unit Tests</h3>
+                </div>
+                <div class="col-md-6" style="padding-top: 10px;">
+                  <img src="../images/gavin.jpg" class="img-rounded" alt="Rounded Image" height="250" width="250">
+                  <h3>Name</h3><p>Gavin Leith</p>
+                  <h3>Bio</h3><p>Senior at UT, enjoys long walks on the beach and sunsets</p>
+                  <h3>Responsibilities</h3>
+                  <h3>No. Commits</h3>
+                  <h3>No. Issues</h3>
+                  <h3>No. Unit Tests</h3>
+                </div>
               </div>
+
+              <div class="row">
+                <div class="col-md-6" style="padding-top: 10px;">
+                  <img src="../images/adam.jpg" class="img-rounded" alt="Rounded Image" height="250" width="250">
+                  <h3>Name</h3><p>Adam Thompson</p>
+                  <h3>Bio</h3><p>I've never been much good at talking about myself</p>
+                  <h3>Responsibilities</h3>
+                  <h3>No. Commits</h3>
+                  <h3>No. Issues</h3>
+                  <h3>No. Unit Tests</h3>
+                </div>
+                <div class="col-md-6" style="padding-top: 10px;">
+                  <img src="../images/ovais.jpg" class="img-rounded" alt="Rounded Image" height="250" width="250">
+                  <h3>Name</h3><p>Ovais Panjwani</p>
+                  <h3>Bio</h3><p>Senior  in CS, intern at Under Armour</p>
+                  <h3>Responsibilities</h3>
+                  <h3>No. Commits</h3>
+                  <h3>No. Issues</h3>
+                  <h3>No. Unit Tests</h3>
+                </div>
               </div>
+
+              <div class="row" id = "github_links">
+                <div class="col-md-6">
+                  <h1><a href="http://docs.meteorites1.apiary.io/">Apiary</a></h1>
+                  <h1><a href="https://github.com/Leith24/cs373-idb/issues">Github Issues</a></h1>
+                </div>
+                <div class="col-md-6">
+                  <h1><a href="https://github.com/Leith24/cs373-idb">Github Repo</a></h1>
+                  <h1><a href="https://github.com/Leith24/cs373-idb/wiki">Github Wiki</a></h1>
+                </div>
               </div>
-            </div>
-            <div class="row">
-              <div class="col-sm-3">
-                <h1><a href="http://docs.meteorites1.apiary.io/">Apiary</a></h1>
-                <h1><a href="https://github.com/Leith24/cs373-idb/issues">Github Issue Tracker</a></h1>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <h1>Tools</h1>
+                  <div style="padding-left: 10px;">
+                    <p>Bootstrap</p>
+                    <p>AngularJS</p>
+                    <p>Rackspace/Carina</p>
+                    <p>Apiary</p>
+                    <p>Flask</p>
+                    <p>SQLAlchemy</p>
+                    <p>MySQL</p>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <h1>Data</h1>
+                  <div style="padding-left: 10px;">
+                    <p><a href="http://restcountries.eu/">Countries (REST Countries)</a></p>
+                    <p><a href="https://en.wikipedia.org/">Classifications (Wikipedia)</a></p>
+                    <p><a href="https://data.nasa.gov/resource/gh4g-9sfh.json">Meteorites (NASA)</a></p>
+                  </div>
+                </div>
               </div>
-              <div class="col-sm-3">
-                <h1><a href="https://github.com/Leith24/cs373-idb">Github Repo</a></h1>
-                <h1><a href="https://github.com/Leith24/cs373-idb/wiki">Github Wiki</a></h1>
+
+              <div class="row">
+                <div class="col-md-12">
+                  <h1>Tests</h1>
+                </div>
               </div>
-          </div>
-          <div class="row">
-            
-          </div>
-          <div class="row">
-          </div>
-          <div class="row">
-          </div>
-          <div class="row">
-          </div>
-          <div class="row">
-          </div>
-          <div class="row">
-          </div>
-          <div class="row">
-          </div>
-          <div class="row">
-          </div>
-          <div class="row">
-          </div>
-          <div class="row">
-          </div>
         </div>
+      </div>
     </div>
 ​
     <div id = "footer">
-          <p>&copy; Copyright 2016 | All rights reserved</p>
-        </div>
+      <p>&copy; Copyright 2016 | All rights reserved</p>
+    </div>
 ​
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
