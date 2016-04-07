@@ -7,6 +7,8 @@ meteoriteApp.controller('meteoritesController', function($scope, meteoritesObj) 
     $scope.sortType     = 'name'; // set the default sort type
     $scope.sortReverse  = false;  // set the default sort order
     $scope.searchMeteorites   = '';     // set the default search/filter term
+    $scope.currentPage = 1;
+    $scope.pageSize = 15;
 
     $scope.meteorites = meteoritesObj.data;
 });

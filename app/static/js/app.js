@@ -1,6 +1,6 @@
-// app.js'use strict';
+'use strict';
 
-var meteoriteApp = angular.module('meteoriteApp', ['ui.router', 'datatables']);
+var meteoriteApp = angular.module('meteoriteApp', ['ui.router', 'angularUtils.directives.dirPagination']);
 
 meteoriteApp.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
   //

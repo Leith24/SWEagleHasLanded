@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 db = SQLAlchemy(app)
 manager = Manager(app)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:O6xu3W2HCvK656@127.0.0.1/test_models'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:Crzd1245!@127.0.0.1/test_models'
 
 from models import *
 
@@ -94,7 +94,7 @@ def get_classification(id) :
 
 @app.route('/api/get_countries')
 def get_countries():
-    countries = requests.get('http://knoema.com/api/1.0/data/observed-meteorite-falls-by-country').json()
+    countries = requests.get('http://knoema.com/api/1.0/data/pjnxlgg/observed-meteorite-falls-by-country').json()
     return str(list(countries))
 
 @app.route('/api/get_country/<id>')
