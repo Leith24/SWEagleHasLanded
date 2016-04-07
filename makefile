@@ -38,7 +38,7 @@ status:
 test: Runidb.tmp Testidb.tmp
 
 
-model.html: models.py
+model.html: app/models.py
 	pydoc -w models
 
 IDB.log:
