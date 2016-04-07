@@ -4,9 +4,11 @@ from flask.ext.sqlalchemy import SQLAlchemy
 import requests
 from flask_script import Manager
 import os
+import unicodedata
+import re
 
-GOOGLE_API_KEY = AIzaSyCL_AcVa4WucI3grBntaNB7QGxTOQW_iMg
-COUNTRIES_API_KEY = gFg7FXcHPWmshS7mUcHPw1wWR2cup132sJnjsntcFkuO3xN6oO
+#GOOGLE_API_KEY = AIzaSyCL_AcVa4WucI3grBntaNB7QGxTOQW_iMg
+#COUNTRIES_API_KEY = gFg7FXcHPWmshS7mUcHPw1wWR2cup132sJnjsntcFkuO3xN6oO
 app = Flask(__name__)
 
 db = SQLAlchemy(app)
@@ -64,7 +66,7 @@ def get_meteorite(id) :
 @app.route('/api/get_classifications')
 def get_classifications() :
     
-    data = []
+    result = []
     classifications = requests.get('https://raw.githubusercontent.com/Leith24/cs373-idb/dev/classifications.json').json()
     for classification in classifications:
         class_id = classifications[classification]['Class_ID']
@@ -83,20 +85,20 @@ def get_classifications() :
             s = re.search('(\[\[([0-9]*?[ ]?[A-z]+)\]\])', s)
             parent = s.group(2)
 
-        data.append({"name" : classification, "class_id" : class_id, "composition" : comp_type, "parentBody" : parent, "numberFound" : 0})
+        result.append({"name" : classification, "class_id" : class_id, "composition" : comp_type, "parentBody" : parent, "numberFound" : 0})
 
-    return json.dumps(data)
+    return json.dumps(result)
 
-@app.route('/api/get_classification/<id>')
-def get_classification(id) :
+@app.route('/api/get_classification/<name>')
+def get_classification(name) :
 
     classifications = requests.get('https://raw.githubusercontent.com/Leith24/cs373-idb/dev/classifications.json').json()
-    class_id = classifications[id]['Class_ID']
-    comp_type = classifications[id]['Compositional_Type']
-    if classifications[id]['Api-Call'] == "Unknown":
+    class_id = classifications[name]['Class_ID']
+    comp_type = classifications[name]['Compositional_Type']
+    if classifications[name]['Api-Call'] == "Unknown":
         parent = "Unknown"
     else:
-        data = requests.get(classifications[id]['Api-Call']).json()
+        data = requests.get(classifications[name]['Api-Call']).json()
         key = ""
         for k in data['query']['pages']:
             key = k
@@ -106,7 +108,7 @@ def get_classification(id) :
         s = re.search('(\[\[([0-9]*?[ ]?[A-z]+)\]\])', s)
         parent = s.group(2)
 
-    return jsonify(name = id, class_id = class_id, composition = comp_type, parentBody = parent, numberFound = 0)
+    return jsonify(name = name, class_id = class_id, composition = comp_type, parentBody = parent, numberFound = 0)
 
 @app.route('/api/get_countries')
 def get_countries():
