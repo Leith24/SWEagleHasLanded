@@ -85,7 +85,7 @@
 		    			</thead>
 		    			<tbody>
 		        			<tr dir-paginate="classification in classifications | orderBy:sortType:sortReverse | itemsPerPage: pageSize">
-					            <td><a href="classification/{{ classification.name}}">{{ classification.name }}</a></td>
+					            <td><a href="classification/{{classification.name}}">{{ classification.name }}</a></td>
 					            <td>{{ classification.class_id }}</td>
                                 <td>{{ classification.composition }}</td>
 					            <td>{{ classification.parentBody }}</td>
