@@ -3,15 +3,28 @@ from flask import Flask, send_file, send_from_directory, make_response, jsonify,
 from flask.ext.sqlalchemy import SQLAlchemy
 import requests
 from flask_script import Manager
+import os
 
 #GOOGLE API KEY = AIzaSyCL_AcVa4WucI3grBntaNB7QGxTOQW_iMg
 app = Flask(__name__)
 
 db = SQLAlchemy(app)
 manager = Manager(app)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:O6xu3W2HCvK656@127.0.0.1/test_models'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:Crzd1245!@127.0.0.1/test_models'
 
-from models import *
+SQLALCHEMY_DATABASE_URI = \
+    '{engine}://{username}:{password}@{hostname}/{database}'.format(
+        engine='mysql+pymysql',
+        username=os.getenv('MYSQL_USER'),
+        password=os.getenv('MYSQL_PASSWORD'),
+        hostname=os.getenv('MYSQL_HOST'),
+        database=os.getenv('MYSQL_DATABASE'))
+
+app.config['SQLALCHEMY_DATABASE_URI'] = SQLALCHEMY_DATABASE_URI
+app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = True
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+#from models import *
 
 #Flask handles API calls
 
@@ -49,15 +62,52 @@ def get_meteorite(id) :
 
 @app.route('/api/get_classifications')
 def get_classifications() :
-    return 'classifcations'
+    
+    data = []
+    classifications = requests.get('https://raw.githubusercontent.com/Leith24/cs373-idb/dev/classifications.json').json()
+    for classification in classifications:
+        class_id = classifications[classification]['Class_ID']
+        comp_type = classifications[classification]['Compositional_Type']
+        if classifications[classification]['Api-Call'] == "Unknown":
+            parent = "Unknown"
+        else:
+            data = requests.get(classifications[classification]['Api-Call']).json()
+            key = ""
+            for k in data['query']['pages']:
+                key = k
+            s = data['query']['pages'][k]['revisions'][0]['*']
+            s = unicodedata.normalize('NFKD', s).encode('ascii','ignore')
+            s = s.split('Parent_body')[1]
+            s = re.search('(\[\[([0-9]*?[ ]?[A-z]+)\]\])', s)
+            parent = s.group(2)
+        data.append({"name" : classification, "class_id" : class_id, "composition" : comp_type, "parentBody" : parent, "numberFound" : 0})
+
+    return json.dumps(data)
 
 @app.route('/api/get_classification/<id>')
 def get_classification(id) :
-    return 'class id'
+
+    classifications = requests.get('https://raw.githubusercontent.com/Leith24/cs373-idb/dev/classifications.json').json()
+    class_id = classifications[id]['Class_ID']
+    comp_type = classifications[id]['Compositional_Type']
+    if classifications[id]['Api-Call'] == "Unknown":
+        parent = "Unknown"
+    else:
+        data = requests.get(classifications[id]['Api-Call']).json()
+        key = ""
+        for k in data['query']['pages']:
+            key = k
+        s = data['query']['pages'][k]['revisions'][0]['*']
+        s = unicodedata.normalize('NFKD', s).encode('ascii','ignore')
+        s = s.split('Parent_body')[1]
+        s = re.search('(\[\[([0-9]*?[ ]?[A-z]+)\]\])', s)
+        parent = s.group(2)
+
+    return jsonify(name = id, class_id = class_id, composition = comp_type, parentBody = parent, numberFound = 0)
 
 @app.route('/api/get_countries')
 def get_countries():
-    countries = requests.get('http://knoema.com/api/1.0/data/observed-meteorite-falls-by-country').json()
+    countries = requests.get('http://knoema.com/api/1.0/data/pjnxlgg/observed-meteorite-falls-by-country').json()
     return str(list(countries))
 
 @app.route('/api/get_country/<id>')
