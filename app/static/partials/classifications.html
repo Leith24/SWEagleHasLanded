@@ -42,37 +42,62 @@
 					</div>
 
         			<table class="table table-bordered" id="classes-table">
-		    			<thead>
+
+		    			</tbody>
+                        <thead>
 		        			<tr>
-		           				<th>Name</th>
-		            			<th>Parent Class</th>
-		            			<th>Composition</th>
-		            			<th>Origin</th>
-		            			<th>Number Found</th>
+		           				<td>
+                                    <a href="#" ng-click="sortType = 'name'; sortReverse = !sortReverse">
+                                        Name
+                                        <span ng-show="sortType == 'name' && !sortReverse" class="fa fa-caret-down"></span>
+                                        <span ng-show="sortType == 'name' && sortReverse" class="fa fa-caret-up"></span>
+
+                                    </a>
+                                </td>
+		            			<td>
+                                    <a href="#" ng-click="sortType = 'classID'; sortReverse = !sortReverse">
+                                        Classification ID
+                                        <span ng-show="sortType == 'classID' && !sortReverse" class="fa fa-caret-down"></span>
+                                        <span ng-show="sortType == 'classID' && sortReverse" class="fa fa-caret-up"></span>
+                                    </a>
+                                </td>
+		            			<td>
+                                    <a href="#" ng-click="sortType = 'composition'; sortReverse = !sortReverse">
+                                        Composition Type
+                                        <span ng-show="sortType == 'composition' && !sortReverse" class="fa fa-caret-down"></span>
+                                        <span ng-show="sortType == 'composition' && sortReverse" class="fa fa-caret-up"></span>
+                                    </a>
+                                </td>
+		            			<td>
+                                    <a href="#" ng-click="sortType = 'parentBody'; sortReverse = !sortReverse">
+                                        Parent Body
+                                        <span ng-show="sortType == 'parentBody' && !sortReverse" class="fa fa-caret-down"></span>
+                                        <span ng-show="sortType == 'parentBody' && sortReverse" class="fa fa-caret-up"></span>
+                                    </a>
+                                </td>
+		            			<td>
+                                    <a href="#" ng-click="sortType = 'numFound'; sortReverse = !sortReverse">
+                                        Number Found
+                                        <span ng-show="sortType == 'numFound' && !sortReverse" class="fa fa-caret-down"></span>
+                                        <span ng-show="sortType == 'numFound' && sortReverse" class="fa fa-caret-up"></span>
+                                    </a>
+                                </td>
 		        			</tr>
 		    			</thead>
 		    			<tbody>
-		        			<tr>
-					            <td><a href="LL6">LL6</a></td>
-					            <td>Chondrite</td>
-					            <td>Stony</td>
-					            <td>Unknown</td>
-					            <td>1</td>
+		        			<tr dir-paginate="meteorite in meteorites | orderBy:sortType:sortReverse | itemsPerPage: pageSize">
+					            <td><a href="meteorite/{{ classification.name}}">{{ classification.name }}</a></td>
+					            <td>{{ classification.classId }}</td>
+                                <td>{{ classification.compType }}</td>
+					            <td>{{ classification.recclass }}</td>
+                                <td>{{ classification.numFound }}</td>
+
 		        			</tr>
-		        			<tr>
-					            <td><a href="L6">L6</a></td>
-					            <td>Chondrite</td>
-					            <td>Stony</td>
-					            <td>Flora Family</td>
-					            <td>1</td>
-		        			</tr>
-		        			<tr>
-					            <td><a href="EUC">Eucrite</a></td>
-					            <td>Achondrite</td>
-					            <td>Stony</td>
-					            <td>Asteroid 4 Vesta</td>
-					            <td>1</td>
 		    			</tbody>
+                        <dir-pagination-controls>
+                            template-url="../static/partials/dirPagination.tpl.html"
+                            on-page-change="pageChange(newPageNumber)">
+                        </dir-pagination-controls>
 					</table>
         		</div>
     		</div>
