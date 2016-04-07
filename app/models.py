@@ -27,10 +27,10 @@ class Meteorite(db.Model):
 	geolocation = db.Column(db.String(50))
 	
 	#One to many relationship between Meteorites and Countries
-	country = db.Column(db.String, db.ForeignKey('country.name'))
+	country = db.Column(db.String(50), db.ForeignKey('country.name'))
 
 	#One to many relationship between Meteorites and Classifications
-	recclass = db.Column(db.String, db.ForeignKey('recclass.name'))
+	recclass = db.Column(db.String(50), db.ForeignKey('classification.name'))
 
 	def __init__(self, name = None, mass = 0, recclass = None, year = None, reclong = 0.0, reclat = 0.0):
 		self.name = name
