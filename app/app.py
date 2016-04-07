@@ -34,34 +34,18 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 #Returns a list of dictionaries, each of which contains information about a single meteorite
 @app.route('/api/get_meteorites')
 def get_meteorites():
-    meteorites = requests.get('https://data.nasa.gov/resource/y77d-th95.json').json()
-
     #these are the only keys we care about.
-    meteorite_keys = ['id', 'mass', 'name', 'year', 'reclong', 'recclass', 'reclat']
-    m = []
-    for meteorite in meteorites:
-        meteorite = { meteorite_key : meteorite[meteorite_key] for meteorite_key in meteorite_keys if meteorite_key in meteorite}
-        m.append(meteorite)
-
-    return json.dumps(m)
+    with open(meteorites.json) as datafile:
+        m = json.(datafile)
+    return m
 
 
-@app.route('/api/get_meteorite/<id>')
-def get_meteorite(id) :
-
-    meteorite = requests.get('https://data.nasa.gov/resource/y77d-th95.json?id=' + id).json()
-    id = str(meteorite[0]['id'])
-    mass = str(meteorite[0]['mass'])
-    name = str(meteorite[0]['name'])
-    year = str(meteorite[0]['year'])
-    classification = str(meteorite[0]['recclass'])
-    #TODO: Determine country from geolocation
-    #longitude = float(meteorite[0]['reclong'])
-    #lattitude = float(meteorite[0]['reclat'])
-
-
-
-    return jsonify(id = id, mass = mass, name = name, year = year, classification = classification )
+@app.route('/api/get_meteorite/<name>')
+def get_meteorite(name):
+    with open(meteorites.json) as datafile:
+        m = json.(datafile)
+    meteorite = [item for item in m if item['name'] == name]
+    return meteorite
 
 @app.route('/api/get_classifications')
 def get_classifications() :
@@ -112,13 +96,15 @@ def get_classification(name) :
 
 @app.route('/api/get_countries')
 def get_countries():
-    countries = requests.get('http://knoema.com/api/1.0/data/pjnxlgg/observed-meteorite-falls-by-country').json()
-    return str(list(countries))
+    with open(countries.json) as datafile:
+        c = json.(datafile)
+    return c
 
 @app.route('/api/get_country/<id>')
-def get_country(id):
-    return 'country id'
-
+def get_country(name):
+    with open(countries.json) as datafile:
+        c = json.(datafile)
+    return c['name']
 
 
 # Use Angular to do user/client routing

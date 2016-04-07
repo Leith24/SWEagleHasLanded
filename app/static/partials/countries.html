@@ -30,7 +30,7 @@
                         <li><a href="meteorites">Meteorites</a></li>
                         <li><a href="classifications">Classifications</a></li>
                         <li><a href="countries">Countries</a></li>
-                         <li><a href="about">About</a></li>
+                        <li><a href="about">About</a></li>
                     </ul>
                 </div>
 
@@ -41,38 +41,60 @@
 					</div>
 
         			<table class="table table-bordered" id="classes-table">
+                        <table class="table table-bordered" >
 		    			<thead>
 		        			<tr>
-		           				<th>Country Name</th>
-		            			<th>Area(km²)</th>
-		            			<th>Centroid</th>
-		            			<th>Number Found</th>
-		            			<th>Last Meteorite Found</th>
+		           				<td>
+                                    <a href="#" ng-click="sortType = 'name'; sortReverse = !sortReverse">
+                                        Country Name
+                                        <span ng-show="sortType == 'name' && !sortReverse" class="fa fa-caret-down"></span>
+                                        <span ng-show="sortType == 'name' && sortReverse" class="fa fa-caret-up"></span>
+
+                                    </a>
+                                </td>
+		            			<td>
+                                    <a href="#" ng-click="sortType = 'area'; sortReverse = !sortReverse">
+                                        Area(km²)
+                                        <span ng-show="sortType == 'area' && !sortReverse" class="fa fa-caret-down"></span>
+                                        <span ng-show="sortType == 'area' && sortReverse" class="fa fa-caret-up"></span>
+                                    </a>
+                                </td>
+		            			<td>
+                                    <a href="#" ng-click="sortType = 'centroid'; sortReverse = !sortReverse">
+                                        Centroid
+                                        <span ng-show="sortType == 'centroid' && !sortReverse" class="fa fa-caret-down"></span>
+                                        <span ng-show="sortType == 'centroid' && sortReverse" class="fa fa-caret-up"></span>
+                                    </a>
+                                </td>
+		            			<td>
+                                    <a href="#" ng-click="sortType = 'numFound'; sortReverse = !sortReverse">
+                                        Number Found
+                                        <span ng-show="sortType == 'numFound' && !sortReverse" class="fa fa-caret-down"></span>
+                                        <span ng-show="sortType == 'numFound' && sortReverse" class="fa fa-caret-up"></span>
+                                    </a>
+                                </td>
+		            			<td>
+                                    <a href="#" ng-click="sortType = 'lastFound'; sortReverse = !sortReverse">
+                                        Last Meteorite Found
+                                        <span ng-show="sortType == 'lastFound' && !sortReverse" class="fa fa-caret-down"></span>
+                                        <span ng-show="sortType == 'lastFound' && sortReverse" class="fa fa-caret-up"></span>
+                                    </a>
+                                </td>
 		        			</tr>
 		    			</thead>
 		    			<tbody>
-		        			<tr>
-					            <td><a href="australia">Australia</a></td>
-					            <td>7.692 million</td>
-					            <td>-25.274398, 133.775136</td>
-					            <td>1</td>
-					            <td><a href="bunburra_rockhole">Bunburra Rockhole</a></td>
-		        			</tr>
-		        			<tr>
-					            <td><a href="france">France</a></td>
-					            <td>643,801</td>
-					            <td>46.227638, 2.213749</td>
-					            <td>1</td>
-					            <td><a href="ensisheim">Ensisheim</a></td>
-		        			</tr>
-		        			<tr>
-					            <td><a href="kenya">Kenya</a></td>
-					            <td>582,650</td>
-					            <td>-0.023559, 37.906193</td>
-					            <td>1</td>
-					            <td><a href="thika">Thika</a></td>
+		        			<tr dir-paginate="country in countries | orderBy:sortType:sortReverse | itemsPerPage: pageSize">
+					            <td><a href="country/{{ country.name}}">{{ mcountry.name }}</a></td>
+					            <td>{{ country.area }}</td>
+					            <td>{{ country.centroid }}</td>
+					            <td>{{ country.numFound }}</td>
+					            <td>{{ country.lastFound }}</td>
 		        			</tr>
 		    			</tbody>
+                        <dir-pagination-controls>
+                            template-url="../static/partials/dirPagination.tpl.html"
+                            on-page-change="pageChange(newPageNumber)">
+                        </dir-pagination-controls>
 					</table>
         		</div>
     		</div>

@@ -3,77 +3,69 @@
 <html>
 
 	<head>
-		<title>Classes Table</title>
+		<title>France</title>
 
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="static/css/custom.css">
 		<link href='https://fonts.googleapis.com/css?family=Advent+Pro' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Advent+Pro:100' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" type="text/css" href="static/DataTables/datatables.css"/>
+
 	</head>
 
 	<body>
 		<div id = "content">
-			<div class="row" style="padding-top: 10px;">
+			<div class="row">
         		<div class="col-sm-2 hidden-xs">
                     <ul class="nav nav-pills nav-stacked" id = "nav_links">
-                        <li><a href="meteorites">Meteorites</a></li>
-                        <li><a href="classifications">Classifications</a></li>
-                        <li><a href="countries">Countries</a></li>
-                         <li><a href="about">About</a></li>
+                        <li><a ui-sref="meteorites">Meteorites</a></li>
+                        <li><a ui-sref="classifications">Classifications</a></li>
+                        <li><a ui-sref="countries">Countries</a></li>
+                        <li><a ui-sref="about">About</a></li>
                     </ul>
                 </div>
 
                 <div class="col-sx-2 hidden-sm hidden-md hidden-lg">
                     <ul class="nav nav-pills" id = "nav_links_mobile">
-                        <li><a href="meteorites">Meteorites</a></li>
-                        <li><a href="classifications">Classifications</a></li>
-                        <li><a href="countries">Countries</a></li>
-                         <li><a href="about">About</a></li>
+                        <li><a ui-sref="meteorites">Meteorites</a></li>
+                        <li><a ui-sref="classifications">Classifications</a></li>
+                        <li><a ui-sref="countries">Countries</a></li>
+                        <li><a ui-sref="about">About</a></li>
                     </ul>
                 </div>
 
-        		<div class="col-sm-10">
+        		<div class="col-sm-6">
 
-        			<div id = main_header>
-						<h1>Countries</h1>
+        			<div id = "main_header">
+						<h1>Country Name</h1>
+
 					</div>
 
-        			<table class="table table-bordered" id="classes-table">
-		    			<thead>
-		        			<tr>
-		           				<th>Country Name</th>
-		            			<th>Area(km²)</th>
-		            			<th>Centroid</th>
-		            			<th>Number Found</th>
-		            			<th>Last Meteorite Found</th>
-		        			</tr>
-		    			</thead>
-		    			<tbody>
-		        			<tr>
-					            <td><a href="australia">Australia</a></td>
-					            <td>7.692 million</td>
-					            <td>-25.274398, 133.775136</td>
-					            <td>1</td>
-					            <td><a href="bunburra_rockhole">Bunburra Rockhole</a></td>
-		        			</tr>
-		        			<tr>
-					            <td><a href="france">France</a></td>
-					            <td>643,801</td>
-					            <td>46.227638, 2.213749</td>
-					            <td>1</td>
-					            <td><a href="ensisheim">Ensisheim</a></td>
-		        			</tr>
-		        			<tr>
-					            <td><a href="kenya">Kenya</a></td>
-					            <td>582,650</td>
-					            <td>-0.023559, 37.906193</td>
-					            <td>1</td>
-					            <td><a href="thika">Thika</a></td>
-		        			</tr>
-		    			</tbody>
-					</table>
+					<div id = "meteorite_name">
+						<h2>{{ country.name }}<h2>
+					</div>
+
+        			<div id = "stats_names">
+        				<p>Area(km²)</p>
+                        <p>Centroid</p>
+                        <p>Number Found</p>
+                        <p>Last Meteorite Found</p>
+        			</div>
+
+        			<div id = "stats">
+        				<p>{{ country.area }}</p>
+        				<p>{{ country.centroid }}</p>
+        				<p>{{ country.numFound }}</p>
+        				<p>{{ country.lastFound }}</p>
+        			</div>
+
+                    <div id = "map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5652758.363554236!2d-2.2686729267159187!3d46.227641690198645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDbCsDEzJzM5LjUiTiAywrAxMic0OS41IkU!5e0!3m2!1sen!2sus!4v1458851547646" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
+        		</div>
+
+        		<div class="col-sm-4">
+        			<img src="static/images/france.png" class="img-rounded" alt="Rounded Image" height="300" width="300">
         		</div>
     		</div>
 		</div>
@@ -82,17 +74,6 @@
         	<p>&copy; Copyright 2016 | All rights reserved</p>
         </div>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-
-			<script type="text/javascript" src="../DataTables/datatables.js"></script>
-			<script type='text/javascript'>
-			$(document).ready( function () {
-						$('#classes-table').dataTable({
-							paging : false,
-							searching : false
-						});
-					} );
-					</script>
 
 	</body>
 
