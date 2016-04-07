@@ -12,148 +12,117 @@ session.configure(bind=engine)
 Base = declarative_base()
 geolocator = Nominatim()
 
-class Meteorite(Base):
+class Meteorite(db.Model):
 
 	"""
-	Model for Meteorites, has an id, mass, recclass, fall,
-	name, year, and country
+	Model for Meteorites, has an name mass, recclass, year, and country
 
 	"""
-	__tablename__ = 'meteorite'
-	_instances = set()
-
 	name = db.Column(String(50), primary_key=True)
 	mass = db.Column(Float)
 	recclass = db.Column(String(50))
 	reclong = db.Column(Float)
 	reclat = db.Column(Float)
 	year = db.Column(Integer)
-	country = db.Column(String)
+	geolocation = db.Column(String)
+	
+	#One to many relationship between Meteorites and Countries
+	country = db.Column(String, db.ForeignKey('country.name'))
 
-	def __init__(self, id_num, mass = 0, recclass = None, name = None, year = None, reclong = 0.0, reclat = 0.0):
+	#One to many relationship between Meteorites and Classifications
+	recclass = db.Column(String, db.ForeignKey('recclass.name'))
+
+	def __init__(self, name = None, mass = 0, recclass = None, year = None, reclong = 0.0, reclat = 0.0):
 		self.name = name
-		self._instances.add(weakref.ref(self))
 		self.mass = mass
-		self.recclass = Classification.get(recclass)
+		self.recclass = recclass
 		self.year = year
 		self.reclong = reclong
 		self.reclat = reclat
 		self.geolocation = str(reclat) + ', ' + str(reclong)
-		self.country = country.addMeteorite(self)
+		self.country = locate(geolocation)
 
 	def __repr__(self):
 		return '<Meteorite %r>' % (self.name)
 
-	@classmethod
-	def getinstances(cls):
-		dead = set()
-		for ref in cls._instances:
-			obj = ref()
-			if obj is not None:
-				yield obj
-			else:
-				dead.add(ref)
-		cls._instances -= dead
+	def locate(geolocation):
+		country = geolocator.reverse(geolocation, language ='en')
+		country = country.address.split(',')
+		return country[-1]
 
-class Classification(Base):
+
+class Classification(db.Model):
 
 	"""
 	Model for Classification, has an id, compostion, parentBody,
 	numberFound, and meteorites
 
 	"""
-	__tablename__ = 'Classifications'
-	_instances = set()
-
-	id_num = db.Column(Integer, primary_key = True)
-	name = db.Column(String)
+	name = db.Column(String, primary_key = True)
+	pclass = db.Column(String)
 	composition = db.Column(String)
-	parentBody = db.Column(String)
+	origin = db.Column(String)
 	numberFound = db.Column(Integer)
-	meteorites = db.Column(String)
 
-	def __init__(self, name = None, compositionalType = None, parentBody = None):
+	#Many to one relationship btwn Classifications and Meteorites
+	meteorites= db.relationship('Meteorite',backref='recclass', lazy='dynamic')
+
+	def __init__(self, name = None, class_id = None, composition = None, parentBody = None):
+		
 		self.name = name
-		self._instances.add(weakref.ref(self))
-		self.composition = compositionalType
-		self.parentBody = parentBody
+		self.parent_class = class_id
+		self.composition = composition
+		self.origin = parentBody
 		self.numberFound = numberFound
-		self.meteorites = []
-
 
 	def __repr__(self):
 		return '<Classification %r>' % (self.name)
 
-	@classmethod
-	def getinstances(cls):
-		dead = set()
-		for ref in cls._instances:
-			obj = ref()
-			if obj is not None:
-				yield obj
-			else:
-				dead.add(ref)
-		cls._instances -= dead
 
-
-class Country(Base):
+class Country(db.Model):
 
 	"""
 	Model for Country, has an id_num, country, 
 	earliestYear, and numberFound
 
 	"""
-	__tablename__ = 'Countries'
-	_instances = set()
-
-	id_num = db.Column(Integer, primary_key=True)
-	country = db.Column(String)
-	earliestYear = db.Column(Integer)
-	numberFound = db.Column(Integer)
+	name = db.Column(String, primary_key=True)
 	area = db.Column(Integer)
+	centroid = db.Column(String)
+	numberFound = db.Column(Integer)
 	recent = db.Column(String)
 
-	def __init__(self, name = None, area = 0, centroid = "0.0, 0.0", meteorite = None):
+	#Many to one relationship btwn Countries and Meteorites
+	meteorites= db.relationship('Meteorite',backref='country', lazy='dynamic')
+
+	def __init__(self, name, area = 0, centroid = "0.0, 0.0", recent= "None", numberFound = 0):
 		self.name = name
-		self._instances.add(weakref.ref(self))
-		self.area = area #api call goes here
+		self.area = area 
 		self.centroid = centroid
-		self.meteorites = [meteorite]
-		self.recent = meteorite
-		numberFound =  len(meteorites)
+		self.recent = recent
+		self.numberFound = numberFound
 
 	def __repr__(self):
-		return '<Country %r>' % (self.Country)
+		return '<Country %r>' % (self.name)
 
-	@classmethod
-	def getinstances(cls):
-		dead = set()
-		for ref in cls._instances:
-			obj = ref()
-			if obj is not None:
-				yield obj
-			else:
-				dead.add(ref)
-		cls._instances -= dead
+	# def add_meteorite(meteorite):
+	# 	country = geolocator.reverse(meteorite.geolocation, language ='en')
+	# 	country = country.address.split(',')
+	# 	name = country[-1]
+	# 	exists = False
+	# 	for loc in Country.getinstances():
+	# 		if(loc.name == name):
+	# 			exists = loc
+	# 			break
+	# 	if exists is not False:
+	# 		exists.meteorites += meteorite
+	# 		exists.set_recent(meteorite)
+	# 	else:
+	# 		exists = Country(name, meteorite)
+	# 		session.add(exists)
+	# 		session.commit()
+	# 	return exists
 
-	def add_meteorite(meteorite):
-		country = geolocator.reverse(meteorite.geolocation, language ='en')
-		country = country.address.split(',')
-		name = country[-1]
-		exists = False
-		for loc in Country.getinstances():
-			if(loc.name == name):
-				exists = loc
-				break
-		if exists is not False:
-			exists.meteorites += meteorite
-			exists.set_recent(meteorite)
-		else:
-			exists = Country(name, meteorite)
-			session.add(exists)
-			session.commit()
-		return exists
-
-	def set_recent(meteorite):
-		if self.recent.year < meteorite.year:
-			self.recent = meteorite
+	# def set_recent(meteorite):
+	# 	if self.recent.year < meteorite.year:
+	# 		self.recent = meteorite
