@@ -16,9 +16,6 @@ class TestMeteorites(TestCase):
         db.session.add(meteorite_2)
         db.session.commit()
 
-    def tearDown(self):
-        db.session.remove()
-        db.drop_all()
 
     # Tests that the total # of meteorites is equal to 2 from set up
     def test_get_all_meteorites(self):
@@ -44,6 +41,9 @@ class TestMeteorites(TestCase):
         db.session.commit()
         assert len(Meteorite.query.all()) == 2
 
+    def tearDown(self):
+        db.session.remove()
+        db.drop_all()
 class TestClassifications(TestCase):
 
     def create_app(self):
@@ -58,9 +58,6 @@ class TestClassifications(TestCase):
         db.session.add(classification_2)
         db.session.commit()
 
-    def tearDown(self):
-        db.session.remove()
-        db.drop_all()
 
     # Tests that the total # of classifications is equal to 2 from set up
     def test_get_all_classifications(self):
@@ -86,6 +83,9 @@ class TestClassifications(TestCase):
         db.session.commit()
         assert len(Classification.query.all()) == 2
 
+    def tearDown(self):
+        db.session.remove()
+        db.drop_all()
 
 class TestCountries(TestCase):
 
@@ -95,15 +95,12 @@ class TestCountries(TestCase):
 
     def setUp(self):
         db.create_all()
-        country_1 = Country()
-        country_2 = Country()
+        country_1 = Country("Australia", 7692000, "-25.274398, 133.775136", "Bunburra Rockhole", 1)
+        country_2 = Country("France", 643801, "46.227638, 22.13749", "Ensisheim", 1)
         db.session.add(country_1)
         db.session.add(country_2)
         db.session.commit()
 
-    def tearDown(self):
-        db.session.remove()
-        db.drop_all()
 
     # Tests that the total # of countries is equal to 2 from set up
     def test_get_all_countries(self):
@@ -112,23 +109,26 @@ class TestCountries(TestCase):
 
     # Tests simple selections from the db match expected values
     def test_filtering_countries(self):   
-        country_1 = Country.query.filter(Country.area == 0.0).first()
-        assert country_1.name == "" 
+        country_1 = Country.query.filter(Country.area == 7692000).first()
+        assert country_1.name == "Australia" 
 
-        country_2 = Country.query.filter(Country.centroid == "0.0, 0.0").first()
-        assert country_2.name == ""  
+        country_2 = Country.query.filter(Country.centroid == "46.227638, 22.13749").first()
+        assert country_2.name == "France"  
 
     # Tests adding a new country to the table and then removing it
     def test_add_delete_countries(self):
-        country = Country()
+        country = Country("Kenya", 582650, "-0.023559, 37.906193", "Thika", 1)
         db.session.add(country)
         db.session.commit()
         assert len(Country.query.all()) == 3
 
-        Country.query.filter(Country.centroid == "").delete()
+        Country.query.filter(Country.centroid == "-0.023559, 37.906193").delete()
         db.session.commit()
         assert len(Country.query.all()) == 2
 
+    def tearDown(self):
+        db.session.remove()
+        db.drop_all()
 
 if __name__ == '__main__':
 	unittest.main(verbosity = 2)
