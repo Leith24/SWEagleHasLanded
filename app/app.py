@@ -6,6 +6,7 @@ from flask_script import Manager
 import os
 import unicodedata
 import re
+import sys
 
 GOOGLE_API_KEY = "AIzaSyCL_AcVa4WucI3grBntaNB7QGxTOQW_iMg"
 COUNTRIES_API_KEY = "gFg7FXcHPWmshS7mUcHPw1wWR2cup132sJnjsntcFkuO3xN6oO"
@@ -117,23 +118,23 @@ def createdb():
 @manager.command
 def getfiles():
     #remove existing files
-    os.remove(countries.json)
-    os.remove(meteorites.json)
+    # os.remove('countries.json')
+    # os.remove('meteorites.json')
 
     #create countries
-    x = open(countries.json, w)
+    x = open('countries.json', 'w+')
     countries = requests.get('https://restcountries-v1.p.mashape.com/all',
-         headers={"X-Mashape-Key": COUNTRIES_API_KEY, "Accept": "application/json"}).json
+         headers={"X-Mashape-Key": COUNTRIES_API_KEY, "Accept": "application/json"}).json()
     c = []
     c_keys = ['name', 'area', 'latlng']
     for country in countries :
         country = {c_key : country[c_key] for c_key in c_keys if c_key in country}
-        c.append()
-    x.write(c)
+        c.append(country)
+    json.dump(c, x)
     x.close()
 
     #create meteorites
-    x = open(meteorites.json, w)
+    x = open('meteorites.json', 'w+')
     meteorites = requests.get('https://data.nasa.gov/resource/y77d-th95.json').json()
 
     #these are the only keys we care about.
@@ -142,11 +143,11 @@ def getfiles():
     for meteorite in meteorites:
         meteorite = { meteorite_key : meteorite[meteorite_key] for meteorite_key in meteorite_keys if meteorite_key in meteorite}
         m.append(meteorite)
-    x.write(m)
+    json.dump(m, x)
     x.close()
 
     #create classifications
-    x = open(classes.json, w)
+    x = open('classes.json', 'w+')
     cls = []
     classifications = requests.get('https://raw.githubusercontent.com/Leith24/cs373-idb/dev/classifications.json').json()
     for classification in classifications:
@@ -166,7 +167,7 @@ def getfiles():
             parent = s.group(2)
 
         cls.append({"name" : classification, "class_id" : class_id, "composition" : comp_type, "parentBody" : parent, "numberFound" : 0})
-    x.write(cls)
+    json.dump(cls, x)
     x.close()
 
 if __name__ == '__main__':
