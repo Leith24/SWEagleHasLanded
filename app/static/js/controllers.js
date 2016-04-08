@@ -56,10 +56,10 @@ meteoriteApp.controller('countryController', function($scope, $stateParams, coun
 });
 meteoriteApp.controller('aboutController', ['$scope', 'unit_test_service', function($scope, unit_test_service) {
     $scope.run_u_tests = function() {
-        $scope.testOutput = "Tests are running..."
+        $scope.test_output = "Tests are running..."
         unit_test_service.run_unit_tests().then(function(output) {
-            $scope.testOutput = output.output;
-        });
+            $scope.test_output = output.output;
+        })
     }
 
-}])
+}]);
