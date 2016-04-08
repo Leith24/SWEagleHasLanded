@@ -1,6 +1,6 @@
 # models.py
 from app import db
-from sqlalchemy import  Table, Column, Integer, String, Float, ForeignKey, create_engine
+from sqlalchemy import  *
 from sqlalchemy.orm import sessionmaker, relationship
 from sqlalchemy.ext.declarative import declarative_base
 from geopy.geocoders import Nominatim
