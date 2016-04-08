@@ -92,7 +92,7 @@ class Country(db.Model):
 	area = db.Column(db.Integer)
 	centroid = db.Column(db.String(50))
 	numberFound = db.Column(db.Integer)
-	recent = db.Column(db.String(50))
+	#recent = db.Column(db.String(50))
 
 	#Many to one relationship btwn Countries and Meteorites (meteorite.country)
 	meteorites= db.relationship('Meteorite',backref='country', lazy='dynamic')

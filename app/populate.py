@@ -18,11 +18,10 @@ def populateCountries(countries_json_data):
 
         #this was never right, I think this may need to be done another way
         #largest_year = db.session.query(db.func.max(Meteorite.year))
-
         #recent_meteorite =  db.session(Meteorite).filter(Meteorite.year == largest_year).filter(Meteorite.year == c['name']).all()
-
+        centroid = c['latlng'][0] + ', ' c[latlng][1]
         #model creation
-        country_model = Country(c['name'], c['area'], c['latlng'], meteorites_count)
+        country_model = Country(c['name'], c['area'], centroid, meteorites_count)
         db.session.add(country_model)
         db.session.commit()
 
