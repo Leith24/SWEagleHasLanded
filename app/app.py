@@ -1,6 +1,7 @@
 #Module containing Flask application
 from flask import Flask, send_file, send_from_directory, make_response, jsonify, json
 from flask.ext.sqlalchemy import SQLAlchemy
+from db import db, app, manager
 import requests
 from flask_script import Manager
 import os
@@ -10,23 +11,7 @@ import sys
 
 GOOGLE_API_KEY = "AIzaSyCL_AcVa4WucI3grBntaNB7QGxTOQW_iMg"
 COUNTRIES_API_KEY = "gFg7FXcHPWmshS7mUcHPw1wWR2cup132sJnjsntcFkuO3xN6oO"
-app = Flask(__name__)
 
-db = SQLAlchemy(app)
-manager = Manager(app)
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:Crzd1245!@127.0.0.1/test_models'
-
-SQLALCHEMY_DATABASE_URI = \
-    '{engine}://{username}:{password}@{hostname}/{database}'.format(
-        engine='mysql+pymysql',
-        username=os.getenv('MYSQL_USER'),
-        password=os.getenv('MYSQL_PASSWORD'),
-        hostname=os.getenv('MYSQL_HOST'),
-        database=os.getenv('MYSQL_DATABASE'))
-
-app.config['SQLALCHEMY_DATABASE_URI'] = SQLALCHEMY_DATABASE_URI
-app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = True
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 #from models import *
 
