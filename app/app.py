@@ -41,11 +41,6 @@ def index(**kwargs):
     return make_response(open('static/index.html').read())
 
 @manager.command
-def createdb():
-    db.drop_all()
-    db.create_all()
-
-@manager.command
 def getfiles():
     #remove existing files
     os.remove('countries.json')

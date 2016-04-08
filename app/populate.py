@@ -32,7 +32,7 @@ def populateClassifications(classifications_json_data):
         cjo = json.load(data_file)
 
     for c in cjo:
-        cmodel = Classification(c['name'], c['pclass'], c['composition'], c['origin'])
+        cmodel = Classification(c['name'], c['pclass'], c['composition'], c['origin'], 0)
         
 
         db.session.add(cmodel)
@@ -76,7 +76,11 @@ def parseClass(clname):
     parsed = re.sub("\d+", "", clname)
     return parsed
 
+def createdb():
+    db.drop_all()
+    db.create_all()
+    populateClassifications('classes.json')
+    populateCountries('countries.json')
+    populateMeteorites('meteorites.json')
 
-populateClassifications('classes.json')
-populateCountries('countries.json')
-populateMeteorites('meteorites.json')
+createdb()
