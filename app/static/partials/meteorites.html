@@ -60,6 +60,13 @@
                                     </a>
                                 </td>
 		            			<td>
+                                    <a href="#" ng-click="sortType = 'country'; sortReverse = !sortReverse">
+                                        Country
+                                        <span ng-show="sortType == 'country' && !sortReverse" class="fa fa-caret-down"></span>
+                                        <span ng-show="sortType == 'country' && sortReverse" class="fa fa-caret-up"></span>
+                                    </a>
+                                </td>
+		            			<td>
                                     <a href="#" ng-click="sortType = 'class'; sortReverse = !sortReverse">
                                         Class
                                         <span ng-show="sortType == 'class' && !sortReverse" class="fa fa-caret-down"></span>
@@ -86,9 +93,10 @@
 		        			<tr dir-paginate="meteorite in meteorites | orderBy:sortType:sortReverse | itemsPerPage: pageSize">
 					            <td><a href="meteorite/{{ meteorite.name}}">{{ meteorite.name }}</a></td>
 					            <td>{{ meteorite.mass }}</td>
+                                <td>{{meteorite.country}}</td>
 					            <td><a href="classification/{{ meteorite.recclass }}"> {{ meteorite.recclass }}</a></td>
 					            <td>{{ meteorite.year }}</td>
-					            <td>{{ meteorite.reclong }},{{ meteorite.reclat }}</td>
+					            <td>{{ meteorite.reclat }},{{ meteorite.reclong }}</td>
 		        			</tr>
 		    			</tbody>
                         <dir-pagination-controls>
