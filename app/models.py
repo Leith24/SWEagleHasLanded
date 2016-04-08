@@ -20,7 +20,7 @@ class Meteorite(db.Model):
 	"""
 	__tablename__ = 'meteorites'
 	id = db.Column(db.Integer, primary_key = True)
-	name = db.Column(db.String(50))
+	name = db.Column(db.String(50), unique = True)
 	mass = db.Column(db.Float)
 	recclass = db.Column(db.String(50))
 	year = db.Column(db.Integer)
@@ -29,10 +29,10 @@ class Meteorite(db.Model):
 	geolocation = db.Column(db.String(50))
 	
 	#One to many relationship between Meteorites and Countries
-	country_id = db.Column(db.String(50), db.ForeignKey('country.id'))
+	country_id = db.Column(db.Integer, db.ForeignKey('country.id'))
 
 	#One to many relationship between Meteorites and Classifications
-	classification_id = db.Column(db.String(50), db.ForeignKey('classification.id'))
+	classification_id = db.Column(db.Integer, db.ForeignKey('classification.id'))
 
 
 	def __init__(self, name = None, mass = 0, recclass = None, year = None, country = None, reclat = 0.0, reclong = 0.0, geolocation = "0.0, 0.0"):
@@ -58,7 +58,7 @@ class Classification(db.Model):
 	"""
 	__tablename__ = 'classifications'
 	id = db.Column(db.Integer, primary_key = True)
-	name = db.Column(db.String(50))
+	name = db.Column(db.String(50), unique = True)
 	pclass = db.Column(db.String(50))
 	composition = db.Column(db.String(50))
 	origin = db.Column(db.String(50))
@@ -89,7 +89,7 @@ class Country(db.Model):
 	__tablename__ = 'countries'
 
 	id = db.Column(db.Integer, primary_key = True)
-	name = db.Column(db.String(50))
+	name = db.Column(db.String(50), unique = True)
 	area = db.Column(db.Integer)
 	centroid = db.Column(db.String(50))
 	numberFound = db.Column(db.Integer)
