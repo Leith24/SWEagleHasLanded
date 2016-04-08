@@ -8,6 +8,7 @@ import os
 import unicodedata
 import re
 import sys
+import subprocess
 
 GOOGLE_API_KEY = "AIzaSyCL_AcVa4WucI3grBntaNB7QGxTOQW_iMg"
 COUNTRIES_API_KEY = "gFg7FXcHPWmshS7mUcHPw1wWR2cup132sJnjsntcFkuO3xN6oO"
@@ -71,6 +72,14 @@ def get_country(name):
             return jsonify(coun)
     return 'No classification by that name found :('
 
+# ---------
+# run_tests
+# ---------
+
+@app.route('/run_unit_tests')
+def run_tests():
+    output = subprocess.getoutput("python tests.py")
+    return json.dumps({'output': str(output)})
 
 # Use Angular to do user/client routing
 @app.route('/meteorites')
@@ -84,9 +93,9 @@ def index(**kwargs):
 
 @manager.command
 def createdb():
-    from app import db
     db.drop_all()
     db.create_all()
+
 
 
 @manager.command

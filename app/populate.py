@@ -63,3 +63,8 @@ def create_tracks_album(countries_json_data):
                                 tracks_model.artists2.append(artist)
                         db.session.add(tracks_model)
                         db.session.commit()
+
+
+populateMeteorites('meteorites.json')
+populateCountries('countries.json')
+populateClassifications('classes.json')
