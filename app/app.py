@@ -19,58 +19,7 @@ COUNTRIES_API_KEY = "gFg7FXcHPWmshS7mUcHPw1wWR2cup132sJnjsntcFkuO3xN6oO"
 #Flask handles API calls
 
 #Returns a list of dictionaries, each of which contains information about a single meteorite
-@app.route('/api/get_meteorites')
-def get_meteorites():
-    with open('meteorites.json', 'r') as datafile:
-        m = json.load(datafile)
-        r = json.dumps(m)
-    return r
 
-
-@app.route('/api/get_meteorite/<name>')
-def get_meteorite(name):
-    with open('meteorites.json', 'r') as datafile:
-        m = json.load(datafile)
-    for meteorite in m:
-        if meteorite['name'] == name:
-            return jsonify(meteorite)
-    return 'No meteorite by that name found :('
-
-
-
-@app.route('/api/get_classifications')
-def get_classifications() :
-    with open('classes.json', 'r') as datafile:
-        cls = json.load(datafile)
-        r = json.dumps(cls)
-    return r
-
-@app.route('/api/get_classification/<name>')
-def get_classification(name) :
-
-    with open('classes.json', 'r') as datafile:
-        cls = json.load(datafile)
-    for classification in cls:
-        if classification['name'] == name:
-            return jsonify(classification)
-    return 'No classification by that name found :('
-
-@app.route('/api/get_countries')
-def get_countries():
-    with open('classes.json', 'r') as datafile:
-        c = json.load(datafile)
-        r = json.dumps(c)
-    return r
-
-@app.route('/api/get_country/name')
-def get_country(name):
-    with open('classes.json', 'r') as datafile:
-        c = json.load(datafile)
-        r = json.dumps(c)
-    for coun in r:
-        if coun['name'] == name:
-            return jsonify(coun)
-    return 'No classification by that name found :('
 
 # ---------
 # run_tests
@@ -132,9 +81,10 @@ def getfiles():
     x = open('classes.json', 'w+')
     cls = []
     classifications = requests.get('https://raw.githubusercontent.com/Leith24/cs373-idb/dev/classifications.json').json()
+
     for classification in classifications:
-        class_id = classification['Class_ID']
-        comp_type = classification['Compositional_Type']
+        class_id = classifications[classification]['Class_ID']
+        comp_type = classifications[classification]['Compositional_Type']
 
         if classifications[classification]['Api-Call'] == "Unknown":
             parent = "Unknown"
