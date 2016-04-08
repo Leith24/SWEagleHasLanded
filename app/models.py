@@ -3,14 +3,14 @@ from app import db
 from sqlalchemy import  *
 from sqlalchemy.orm import sessionmaker, relationship
 from sqlalchemy.ext.declarative import declarative_base
-from geopy.geocoders import Nominatim
+
 
 #engine = create_engine('sqlite:///')
 #session = sessionmaker()
 #session.configure(bind=engine)
 
 #Base = declarative_base()
-geolocator = Nominatim()
+
 
 class Meteorite(db.Model):
 
@@ -18,7 +18,9 @@ class Meteorite(db.Model):
 	Model for Meteorites, has an name mass, recclass, year, and country
 
 	"""
-	name = db.Column(db.String(50), primary_key=True)
+	__tablename__ = 'meteorites'
+	id = db.Column(db.Integer, primary_key = True)
+	name = db.Column(db.String(50))
 	mass = db.Column(db.Float)
 	recclass = db.Column(db.String(50))
 	year = db.Column(db.Integer)
@@ -27,30 +29,25 @@ class Meteorite(db.Model):
 	geolocation = db.Column(db.String(50))
 	
 	#One to many relationship between Meteorites and Countries
-	country = db.Column(db.String(50), db.ForeignKey('country.name'))
+	country_id = db.Column(db.String(50), db.ForeignKey('country.id'))
 
 	#One to many relationship between Meteorites and Classifications
-	recclass = db.Column(db.String(50), db.ForeignKey('classification.name'))
+	classification_id = db.Column(db.String(50), db.ForeignKey('classification.id'))
 
 
-	def __init__(self, name = None, mass = 0, recclass = None, year = None, reclat = 0.0, reclong = 0.0):
+	def __init__(self, name = None, mass = 0, recclass = None, year = None, country = None, reclat = 0.0, reclong = 0.0, geolocation = "0.0, 0.0"):
 		self.name = name
 		self.mass = mass
 		self.recclass = recclass
 		self.year = year
-		self.reclat = reclat
-		self.reclong = reclong
-		self.geolocation = str(reclat) + ', ' + str(reclong)
-		self.country = locate(geolocation)
+		self.country = country
+		self.reclat = float(reclat)
+		self.reclong = float(reclong)
+		self.geolocation = geolocation
+		
 
 	def __repr__(self):
 		return '<Meteorite %r>' % (self.name)
-
-	def locate(geolocation):
-		country = geolocator.reverse(geolocation, language ='en')
-		country = country.address.split(',')
-		return country[-1]
-
 
 class Classification(db.Model):
 
@@ -59,25 +56,27 @@ class Classification(db.Model):
 	numberFound, and meteorites
 
 	"""
-	name = db.Column(db.String(50), primary_key = True)
+	__tablename__ = 'classifications'
+	id = db.Column(db.Integer, primary_key = True)
+	name = db.Column(db.String(50))
 	pclass = db.Column(db.String(50))
 	composition = db.Column(db.String(50))
 	origin = db.Column(db.String(50))
 	numberFound = db.Column(db.Integer)
 
-	#Many to one relationship btwn Classifications and Meteorites
-	meteorites = db.relationship('Meteorite',backref='recclass', lazy='dynamic')
+	#Many to one relationship btwn Classifications and Meteorites (meteorite.class)
+	meteorites = db.relationship('Meteorite', backref='class', lazy='dynamic')
 
-	def __init__(self, name = None, class_id = None, composition = None, parentBody = None):
+	def __init__(self, name = None, pclass = None, composition = None, origin = None):
 		
 		self.name = name
-		self.pclass = class_id
+		self.pclass = pclass
 		self.composition = composition
 		self.origin = parentBody
 		self.numberFound = numberFound
 
 	def __repr__(self):
-		return '<Classification %r>' % (self.name)
+		return '<Classification %r>' % (self.id)
 
 
 class Country(db.Model):
@@ -87,13 +86,16 @@ class Country(db.Model):
 	earliestYear, and numberFound
 
 	"""
-	name = db.Column(db.String(50), primary_key=True)
+	__tablename__ = 'countries'
+
+	id = db.Column(db.Integer, primary_key = True)
+	name = db.Column(db.String(50))
 	area = db.Column(db.Integer)
 	centroid = db.Column(db.String(50))
 	numberFound = db.Column(db.Integer)
 	recent = db.Column(db.String(50))
 
-	#Many to one relationship btwn Countries and Meteorites
+	#Many to one relationship btwn Countries and Meteorites (meteorite.country)
 	meteorites= db.relationship('Meteorite',backref='country', lazy='dynamic')
 
 	def __init__(self, name, area = 0, centroid = "0.0, 0.0", recent= "None", numberFound = 0):
@@ -104,7 +106,7 @@ class Country(db.Model):
 		self.numberFound = numberFound
 
 	def __repr__(self):
-		return '<Country %r>' % (self.name)
+		return '<Country %r>' % (self.id)
 
 	# def add_meteorite(meteorite):
 	# 	country = geolocator.reverse(meteorite.geolocation, language ='en')

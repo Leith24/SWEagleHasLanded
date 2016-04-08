@@ -96,13 +96,12 @@ def createdb():
     db.drop_all()
     db.create_all()
 
-
-
 @manager.command
 def getfiles():
     #remove existing files
     os.remove('countries.json')
     os.remove('meteorites.json')
+    os.remove('classes.json')
 
     #create countries
     x = open('countries.json', 'w+')
@@ -134,8 +133,8 @@ def getfiles():
     cls = []
     classifications = requests.get('https://raw.githubusercontent.com/Leith24/cs373-idb/dev/classifications.json').json()
     for classification in classifications:
-        class_id = classifications[classification]['Class_ID']
-        comp_type = classifications[classification]['Compositional_Type']
+        class_id = classification['Class_ID']
+        comp_type = classification['Compositional_Type']
 
         if classifications[classification]['Api-Call'] == "Unknown":
             parent = "Unknown"
@@ -149,7 +148,7 @@ def getfiles():
             s = re.search('(\[\[([0-9]*?[ ]?[A-z]+)\]\])', s)
             parent = s.group(2)
 
-        cls.append({"name" : classification, "class_id" : class_id, "composition" : comp_type, "parentBody" : parent, "numberFound" : 0})
+        cls.append({"name" : classification, "pclass" : class_id, "composition" : comp_type, "origin" : parent, "numberFound" : 0})
     json.dump(cls, x)
     x.close()
 
