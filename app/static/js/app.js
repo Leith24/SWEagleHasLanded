@@ -93,8 +93,16 @@ meteoriteApp.config(function($stateProvider, $urlRouterProvider, $locationProvid
         })
         .state('about', {
             url: "/about",
-            controller: "aboutController",
-            templateUrl: "static/partials/about.html"
+            templateUrl: "static/partials/about.html",
+            resolve: {
+                unitTestData: ['$http', function ($http){
+                    return $http({
+                        method: 'GET',
+                        url: '/run_unit_tests'
+                    });
+                }]
+            },
+            controller: "aboutController"
         });
     $locationProvider.html5Mode(true);
 

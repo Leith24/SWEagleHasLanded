@@ -54,12 +54,11 @@ meteoriteApp.controller('countryController', function($scope, $stateParams, coun
     $scope.message = $stateParams;
 
 });
-meteoriteApp.controller('aboutController', ['$scope', 'unit_test_service', function($scope, unit_test_service) {
-    $scope.run_u_tests = function() {
-        $scope.test_output = "Tests are running..."
-        unit_test_service.run_unit_tests().then(function(output) {
-            $scope.test_output = output.output;
-        })
-    }
+meteoriteApp.controller('aboutController', function ( $scope, unitTestData) {
 
-}]);
+    $scope.run_tests = function() {
+        $scope.test_output = "Tests are running...";
+        $scope.test_output = unitTestData.data;
+
+    }
+});
