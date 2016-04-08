@@ -33,3 +33,7 @@ def populateClassifications(classifications_json_data):
         classifications_model = Classification(ind_classifications, ind_classifications['Class_ID'], ind_classifications['Compositional_Type'], ind_classifications[''])
         db.session.add(classifications_model)
         db.session.commit()
+
+populateMeteorites('meteorites.json')
+populateCountries('countries.json')
+populateClassifications('classes.json')
