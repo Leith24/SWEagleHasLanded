@@ -20,68 +20,56 @@ COUNTRIES_API_KEY = "gFg7FXcHPWmshS7mUcHPw1wWR2cup132sJnjsntcFkuO3xN6oO"
 #Returns a list of dictionaries, each of which contains information about a single meteorite
 @app.route('/api/get_meteorites')
 def get_meteorites():
-    # #these are the only keys we care about.
-    # with open(meteorites.json) as datafile:
-    #     m = json.load(datafile)
-    # return m
-    meteorites = requests.get('https://data.nasa.gov/resource/y77d-th95.json').json()
-
-    #these are the only keys we care about.
-    meteorite_keys = ['mass', 'name', 'year', 'reclong', 'recclass', 'reclat']
-    m = []
-    for meteorite in meteorites:
-        meteorite = { meteorite_key : meteorite[meteorite_key] for meteorite_key in meteorite_keys if meteorite_key in meteorite}
-        m.append(meteorite)
-
-    return json.dumps(m)
+    with open('meteorites.json', 'r') as datafile:
+        m = json.load(datafile)
+        r = json.dumps(m)
+    return r
 
 
 @app.route('/api/get_meteorite/<name>')
 def get_meteorite(name):
-    # with open(meteorites.json) as datafile:
-    #     m = json.load(datafile)
-    # meteorite = [item for item in m if item['name'] == name]
-    # return meteorite
+    with open('meteorites.json', 'r') as datafile:
+        m = json.load(datafile)
+    for meteorite in m:
+        if meteorite['name'] == name:
+            return jsonify(meteorite)
+    return 'No meteorite by that name found :('
 
-
-    meteorite = requests.get('https://data.nasa.gov/resource/y77d-th95.json?name=' + name).json()
-    id = str(meteorite[0]['id'])
-    mass = str(meteorite[0]['mass'])
-    name = str(meteorite[0]['name'])
-    year = str(meteorite[0]['year'])
-    classification = str(meteorite[0]['recclass'])
-    #TODO: Determine country from geolocation
-    #longitude = float(meteorite[0]['reclong'])
-    #lattitude = float(meteorite[0]['reclat'])
-
-    return jsonify( mass = mass, name = name, year = year, classification = classification )
 
 
 @app.route('/api/get_classifications')
 def get_classifications() :
-
-    with open(classes.json) as datafile:
+    with open('classes.json', 'r') as datafile:
         cls = json.load(datafile)
-    return cls
+        r = json.dumps(cls)
+    return r
 
 @app.route('/api/get_classification/<name>')
 def get_classification(name) :
 
-    with open(classes.json) as datafile:
+    with open('classes.json', 'r') as datafile:
         cls = json.load(datafile)
-    return cls['name']
+    for classification in cls:
+        if classification['name'] == name:
+            return jsonify(classification)
+    return 'No classification by that name found :('
 
 @app.route('/api/get_countries')
 def get_countries():
-    with open(countries.json) as datafile:
+    with open('classes.json', 'r') as datafile:
         c = json.load(datafile)
-    return c
+        r = json.dumps(c)
+    return r
 
-@app.route('/api/get_country/<id>')
+@app.route('/api/get_country/name')
 def get_country(name):
-    with open(countries.json) as datafile:
+    with open('classes.json', 'r') as datafile:
         c = json.load(datafile)
-    return c['name']
+        r = json.dumps(c)
+    for coun in r:
+        if coun['name'] == name:
+            return jsonify(coun)
+    return 'No classification by that name found :('
 
 
 # Use Angular to do user/client routing

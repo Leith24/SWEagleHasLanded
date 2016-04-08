@@ -14,6 +14,7 @@ meteoriteApp.controller('meteoritesController', function($scope, meteoritesObj) 
 
 meteoriteApp.controller('meteoriteController', function($scope, $stateParams, meteoriteObj) {
     $scope.meteorite = meteoriteObj.data;
+    console.log(meteoriteObj);
     //TODO: Get country from geolocation
     //$scope.country = geolocation bs
     $scope.message = $stateParams;
