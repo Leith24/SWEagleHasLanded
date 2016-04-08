@@ -15,7 +15,7 @@ from sqlalchemy.ext.declarative import declarative_base
 class Meteorite(db.Model):
 
 	"""
-	Model for Meteorites, has an name mass, recclass, year, and country
+	Model for Meteorites, has a name, mass, classification, year, and country
 
 	"""
 	__tablename__ = 'meteorites'
@@ -29,18 +29,17 @@ class Meteorite(db.Model):
 	geolocation = db.Column(db.String(50))
 	
 	#One to many relationship between Meteorites and Countries
-	country_id = db.Column(db.Integer, db.ForeignKey('country.id'))
+	country_id = db.Column(db.Integer, db.ForeignKey('countries.id'))
 
 	#One to many relationship between Meteorites and Classifications
-	classification_id = db.Column(db.Integer, db.ForeignKey('classification.id'))
+	classification_id = db.Column(db.Integer, db.ForeignKey('classifications.id'))
 
 
-	def __init__(self, name = None, mass = 0, recclass = None, year = None, country = None, reclat = 0.0, reclong = 0.0, geolocation = "0.0, 0.0"):
+	def __init__(self, name = None, mass = 0, recclass = None, year = None, reclat = 0.0, reclong = 0.0, geolocation = "0.0, 0.0"):
 		self.name = name
 		self.mass = mass
 		self.recclass = recclass
 		self.year = year
-		self.country = country
 		self.reclat = float(reclat)
 		self.reclong = float(reclong)
 		self.geolocation = geolocation
@@ -67,12 +66,12 @@ class Classification(db.Model):
 	#Many to one relationship btwn Classifications and Meteorites (meteorite.class)
 	meteorites = db.relationship('Meteorite', backref='class', lazy='dynamic')
 
-	def __init__(self, name = None, pclass = None, composition = None, origin = None):
+	def __init__(self, name = None, pclass = None, composition = None, origin = None, numberFound = 0):
 		
 		self.name = name
 		self.pclass = pclass
 		self.composition = composition
-		self.origin = parentBody
+		self.origin = origin
 		self.numberFound = numberFound
 
 	def __repr__(self):
@@ -98,11 +97,11 @@ class Country(db.Model):
 	#Many to one relationship btwn Countries and Meteorites (meteorite.country)
 	meteorites= db.relationship('Meteorite',backref='country', lazy='dynamic')
 
-	def __init__(self, name, area = 0, centroid = "0.0, 0.0", recent= "None", numberFound = 0):
+	def __init__(self, name, area = 0, centroid = "0.0, 0.0", numberFound = 0):
 		self.name = name
 		self.area = area 
 		self.centroid = centroid
-		self.recent = recent
+		#self.recent = recent
 		self.numberFound = numberFound
 
 	def __repr__(self):

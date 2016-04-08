@@ -8,47 +8,58 @@ from geopy.geocoders import Nominatim
 geolocator = Nominatim()
 
 def populateCountries(countries_json_data):
-    countries_json_object = json.load(countries_json_data)
 
-    for ind_country in countries_json_object:
-        #queries
-        meteorites_count = db.session.query(Meteorite).filter(Meteorite.country == ind_country['name']).count()
+    with open(countries_json_data) as data_file:
+          cjo = json.load(data_file)
 
-        largest_year = db.session.query(db.func.max(Meteorite.year))
-        recent_meteorite = db.session(Meteorite).filter(Meteorite.year == largest_year).filter(Meteorite.year == ind_country['name']).all()
+    for c in cjo:
+        #The other code breaks it because there are no relations, let alone meteorites, made yet. 
+        meteorites_count = 0 #db.session.query(Meteorite).filter(Meteorite.country == c['name']).count()
+
+        #this was never right, I think this may need to be done another way
+        #largest_year = db.session.query(db.func.max(Meteorite.year))
+
+        #recent_meteorite =  db.session(Meteorite).filter(Meteorite.year == largest_year).filter(Meteorite.year == c['name']).all()
 
         #model creation
-        country_model = Country(ind_country['name'], ind_country['area'], ind_country['latlng'], recent_meteorite, meteorites_count)
+        country_model = Country(c['name'], c['area'], c['latlng'], meteorites_count)
         db.session.add(country_model)
         db.session.commit()
 
 
 def populateClassifications(classifications_json_data):
-    class_json_object = json.load(classifications_json_data)
+    with open(classifications_json_data) as data_file:
+        cjo = json.load(data_file)
 
-    for ind_classifications in class_json_object:
-        classifications_model = Classification(ind_classifications['name'], ind_classifications['pclass'],
-        ind_classifications['composition'], ind_classifications['origin'])
-        db.session.add(classifications_model)
+    for c in cjo:
+        cmodel = Classification(c['name'], c['pclass'], c['composition'], c['origin'])
+        
+
+        db.session.add(cmodel)
         db.session.commit()
 
 
 def populateMeteorites(meteorites_json_data):
-    meteorites_json_object = json.load(meteorites_json_data)
+    with open(meteorites_json_data) as data_file:
+        mjo = json.load(data_file)
 
-    for ind_meteorite in meteorites_json_object:
-        lat = ind_meteorite['reclat']
-        lng = ind_meteorite['reclong']
-        clname = ind_meteorite['recclass']
-        parsed_clname = parseRecclass(clname)
+    for m in mjo:
+        lat = m['reclat']
+        lng = m['reclong']
+        clname = m['recclass']
+        parsed_clname = parseClass(clname)
         geolocation = lat + ', ' + lng
         cname = locate(geolocation)
+
         country = countries.query.filter(Country.name ==  cname)
         classify = classifications.query.filter(Classification.name == parsed_clname)
-        parsed_year = parseYear(ind_meteorite['year'])
+        parsed_year = parseYear(m['year'])
 
-        meteorite_model = Meteorite(ind_meteorite['name'], ind_meteorite['mass'], classify, parsed_year,
-            country, lat, lng, geolocation)
+        meteorite_model = Meteorite(m['name'], m['mass'], classify.name, parsed_year,
+            country, lat, lng, geolocation, country_id, classification_id)
+
+        country.meteorites.append(meteorite_model)
+        classify.meteorites.append(meteorite_model)
         db.session.add(meteorite_model)
         db.session.commit()
 
@@ -61,11 +72,11 @@ def parseYear(year):
     year_parsed = parser.parse(year).year
     return year_parsed
 
-def parseRecclass(recclass):
-    recclass_parsed = re.sub("\d+", "", recclass)
-    return recclass_parsed
+def parseClass(clname):
+    parsed = re.sub("\d+", "", clname)
+    return parsed
 
 
-populateCountries('countries.json')
 populateClassifications('classes.json')
+populateCountries('countries.json')
 populateMeteorites('meteorites.json')
