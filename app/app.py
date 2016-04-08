@@ -93,9 +93,9 @@ def index(**kwargs):
 
 @manager.command
 def createdb():
-    from app import db
     db.drop_all()
     db.create_all()
+
 
 
 @manager.command
