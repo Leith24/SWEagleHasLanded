@@ -1,5 +1,6 @@
 import json
 import dateutil.parser as parser
+import re
 from models import *
 from db import db
 from geopy.geocoders import Nominatim
@@ -39,14 +40,15 @@ def populateMeteorites(meteorites_json_data):
         lat = ind_meteorite['reclat']
         lng = ind_meteorite['reclong']
         clname = ind_meteorite['recclass']
+        parsed_clname = parseRecclass(clname)
         geolocation = lat + ', ' + lng
         cname = locate(geolocation)
         country = countries.query.filter(Country.name ==  cname)
-        classify = classifications.query.filter(Classification.name == clname)
+        classify = classifications.query.filter(Classification.name == parsed_clname)
         parsed_year = parseYear(ind_meteorite['year'])
 
-        meteorite_model = Meteorite(ind_meteorite['name'], ind_meteorite['mass'], classify, 
-            country, parsed_year, lat, lng, geolocation)
+        meteorite_model = Meteorite(ind_meteorite['name'], ind_meteorite['mass'], classify, parsed_year,
+            country, lat, lng, geolocation)
         db.session.add(meteorite_model)
         db.session.commit()
 
@@ -58,6 +60,10 @@ def locate(geolocation):
 def parseYear(year):
     year_parsed = parser.parse(year).year
     return year_parsed
+
+def parseRecclass(recclass):
+    recclass_parsed = re.sub("\d+", "", recclass)
+    return recclass_parsed
 
 
 populateCountries('countries.json')
