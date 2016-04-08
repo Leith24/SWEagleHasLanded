@@ -118,8 +118,8 @@ def createdb():
 @manager.command
 def getfiles():
     #remove existing files
-    # os.remove('countries.json')
-    # os.remove('meteorites.json')
+    os.remove('countries.json')
+    os.remove('meteorites.json')
 
     #create countries
     x = open('countries.json', 'w+')
