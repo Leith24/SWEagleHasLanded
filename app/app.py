@@ -88,6 +88,7 @@ def createdb():
     db.drop_all()
     db.create_all()
 
+
 @manager.command
 def getfiles():
     #remove existing files

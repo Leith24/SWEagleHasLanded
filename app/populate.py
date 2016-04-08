@@ -1,6 +1,6 @@
 import json
 from models import *
-from app import db
+from db import db
 
 def populateMeteorites(meteorites_json_data):
     meteorites_json_object = json.load(meteorites_json_data)
