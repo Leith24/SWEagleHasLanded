@@ -9,7 +9,8 @@ meteoriteApp.controller('meteoritesController', function($scope, meteoritesObj) 
     $scope.currentPage = 1;
     $scope.pageSize = 15;
 
-    $scope.meteorites = meteoritesObj.data;
+    $scope.meteorites = meteoritesObj.data.objects;
+    console.log(meteoritesObj.data);
 });
 
 meteoriteApp.controller('meteoriteController', function($scope, $stateParams, meteoriteObj) {
@@ -26,14 +27,14 @@ meteoriteApp.controller('classificationsController', function($scope, classifica
     $scope.searchClassifications   = '';     // set the default search/filter term
     $scope.currentPage = 1;
     $scope.pageSize = 15;
-
-    $scope.classifications = classificationsObj.data;
+    console.log(classificationsObj.data);
+    $scope.classifications = classificationsObj.data.objects;
 });
 
 meteoriteApp.controller('classificationController', function($scope, $stateParams, classificationObj) {
     $scope.classification = classificationObj.data;
     //TODO: Get country from geolocation
-    //$scope.country = geolocation b
+    //console.log(classificationObj.data);
 
 });
 
@@ -44,13 +45,16 @@ meteoriteApp.controller('countriesController', function($scope, countriesObj) {
     $scope.currentPage = 1;
     $scope.pageSize = 15;
 
-    $scope.countries = countriesObj.data;
+    $scope.countries = countriesObj.data.objects;
+    console.log(countriesObj.data);
 });
 
 meteoriteApp.controller('countryController', function($scope, $stateParams, countryObj) {
-    $scope.meteorite = countryObj.data;
     //TODO: Get country from geolocation
     //$scope.country = geolocation bs
+    $scope.country = countryObj.data;
+    console.log($stateParams);
+
     $scope.message = $stateParams;
 
 });

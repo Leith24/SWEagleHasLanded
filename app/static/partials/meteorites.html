@@ -91,9 +91,9 @@
 		    			</thead>
 		    			<tbody>
 		        			<tr dir-paginate="meteorite in meteorites | orderBy:sortType:sortReverse | itemsPerPage: pageSize">
-					            <td><a href="meteorite/{{ meteorite.name}}">{{ meteorite.name }}</a></td>
+					            <td><a href="meteorites/{{ meteorite.id}}">{{ meteorite.name }}</a></td>
 					            <td>{{ meteorite.mass }}</td>
-                                <td>{{meteorite.country}}</td>
+                                <td>{{meteorite.country.name}}</td>
 					            <td><a href="classification/{{ meteorite.recclass }}"> {{ meteorite.recclass }}</a></td>
 					            <td>{{ meteorite.year }}</td>
 					            <td>{{ meteorite.reclat }},{{ meteorite.reclong }}</td>

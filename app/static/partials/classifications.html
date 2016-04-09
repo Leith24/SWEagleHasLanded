@@ -60,13 +60,13 @@
                                         <span ng-show="sortType == 'classID' && sortReverse" class="fa fa-caret-up"></span>
                                     </a>
                                 </td>
-		            			<td>
+		            			<!--<td>
                                     <a href="#" ng-click="sortType = 'composition'; sortReverse = !sortReverse">
                                         Composition Type
                                         <span ng-show="sortType == 'composition' && !sortReverse" class="fa fa-caret-down"></span>
                                         <span ng-show="sortType == 'composition' && sortReverse" class="fa fa-caret-up"></span>
                                     </a>
-                                </td>
+                                </td>-->
 		            			<td>
                                     <a href="#" ng-click="sortType = 'parentBody'; sortReverse = !sortReverse">
                                         Parent Body
@@ -85,10 +85,10 @@
 		    			</thead>
 		    			<tbody>
 		        			<tr dir-paginate="classification in classifications | orderBy:sortType:sortReverse | itemsPerPage: pageSize">
-					            <td><a href="classification/{{classification.name}}">{{ classification.name }}</a></td>
-					            <td>{{ classification.class_id }}</td>
+					            <td><a href="classification/{{classification.id}}">{{ classification.name }}</a></td>
+					            <!--td>{{ classification.class_id.meteorites.classification_id }}</td>-->
                                 <td>{{ classification.composition }}</td>
-					            <td>{{ classification.parentBody }}</td>
+					            <td>{{ classification.pclass }}</td>
                                 <td>{{ classification.numberFound}}</td>
 
 		        			</tr>

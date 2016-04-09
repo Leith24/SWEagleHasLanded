@@ -111,8 +111,7 @@ class Country(db.Model):
 	def __repr__(self):
 		return '<Country %r>' % (self.id)
 
-#populatedb()
 APIManager = flask.ext.restless.APIManager(app, flask_sqlalchemy_db = db)
-APIManager.create_api(Meteorite, methods=['GET'])
-APIManager.create_api(Country, methods=['GET'])
-APIManager.create_api(Classification, methods=['GET'])
+APIManager.create_api(Meteorite, methods=['GET'], results_per_page=0)
+APIManager.create_api(Country, methods=['GET'], results_per_page=0)
+APIManager.create_api(Classification, methods=['GET'], results_per_page=0)

@@ -83,12 +83,12 @@
 		    			</thead>
 		    			<tbody>
 		        			<tr dir-paginate="country in countries | orderBy:sortType:sortReverse | itemsPerPage: pageSize">
-					            <td><a href="country/{{ country.name}}">{{ mcountry.name }}</a></td>
+					            <td><a href="countries/{{ country.id }}">{{ country.name }}</a></td>
 					            <td>{{ country.area }}</td>
 					            <td>{{ country.centroid }}</td>
-					            <td>{{ country.numFound }}</td>
-					            <td>{{ country.lastFound }}</td>
-		        			</tr>
+					            <td>{{ country.numberFound }}</td>
+					            <td>{{ country.recent }}</td>
+		        			</tr>.
 		    			</tbody>
                         <dir-pagination-controls>
                             template-url="../static/partials/dirPagination.tpl.html"

@@ -20,20 +20,20 @@ meteoriteApp.config(function($stateProvider, $urlRouterProvider, $locationProvid
                 meteoritesObj: ['$http', function ($http){
                     return $http({
                         method: 'GET',
-                        url: '/api/get_meteorites'
+                        url: '/api/meteorites'
                     });
                 }]
             },
             controller: 'meteoritesController'
         })
         .state('meteorite', {
-            url: "/meteorite/:name",
+            url: "/meteorites/:id",
             templateUrl: "../static/partials/meteorite.html",
             resolve: {
                 meteoriteObj:['$http', '$stateParams', function ($http, $stateParams){
                     return $http({
                         method:'GET',
-                        url:'/api/get_meteorite/' + $stateParams.name
+                        url:'/api/meteorites/' + $stateParams.id
                     });
                 }]
             },
@@ -43,27 +43,27 @@ meteoriteApp.config(function($stateProvider, $urlRouterProvider, $locationProvid
             url: "/countries",
             templateUrl: "static/partials/countries.html",
             resolve: {
-                countriesObj:['$http', '$stateParams', function ($http){
+                countriesObj:['$http', function ($http){
                     return $http({
                         method:'GET',
-                        url:'/api/get_country/'
+                        url:'/api/countries'
                     });
                 }]
             },
             controller: 'countriesController'
         })
         .state('country', {
-            url: "/country/:id",
-            templateUrl: "static/partials/country.html",
+            url: "/countries/:id",
+            templateUrl: "../static/partials/country.html",
             resolve: {
-                countryObj:['$http', '$stateParams', function ($http){
+                countryObj:['$http', '$stateParams', function ($http, $stateParams){
                     return $http({
                         method:'GET',
-                        url:'/api/get_country/' + $stateParams.id
+                        url:'/api/countries/' + $stateParams.id
                     });
                 }]
             },
-            controller: 'countriesController'
+            controller: 'countryController'
         })
         .state('classifications', {
             url: "/classifications",
@@ -72,20 +72,20 @@ meteoriteApp.config(function($stateProvider, $urlRouterProvider, $locationProvid
                 classificationsObj:['$http', '$stateParams', function ($http){
                     return $http({
                         method:'GET',
-                        url:'/api/get_classifications'
+                        url:'/api/classifications'
                     });
                 }]
             },
             controller: 'classificationsController'
         })
         .state('classification', {
-            url: "/classification/:name",
+            url: "/classification/:id",
             templateUrl: "../static/partials/classification.html",
             resolve: {
                 classificationObj:['$http', '$stateParams', function ($http, $stateParams){
                     return $http({
                         method:'GET',
-                        url:'/api/get_classification/' + $stateParams.name
+                        url:'/api/classifications/' + $stateParams.id
                     });
                 }]
             },
