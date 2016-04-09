@@ -67,7 +67,7 @@ class TestClassifications(TestCase):
     # Tests simple selections from the db match expected values
     def test_filtering_classifications(self):   
         classification_1 = Classification.query.filter(Classification.name == 'Brachinite').first()
-        assert classification_1.class_id == "Primitive Achondrite"
+        assert classification_1.pclass == "Primitive Achondrite"
 
         classification_2 = Classification.query.filter(Classification.class_id == "Achondrite").first()
         assert classification_2.parentBody == 'Mars'
@@ -95,8 +95,8 @@ class TestCountries(TestCase):
 
     def setUp(self):
         db.create_all()
-        country_1 = Country("Australia", 7692000, "-25.274398, 133.775136", "Bunburra Rockhole", 1)
-        country_2 = Country("France", 643801, "46.227638, 22.13749", "Ensisheim", 1)
+        country_1 = Country("Australia", 7692000, "-25.274398, 133.775136", 1)
+        country_2 = Country("France", 643801, "46.227638, 22.13749", 1)
         db.session.add(country_1)
         db.session.add(country_2)
         db.session.commit()
@@ -117,7 +117,7 @@ class TestCountries(TestCase):
 
     # Tests adding a new country to the table and then removing it
     def test_add_delete_countries(self):
-        country = Country("Kenya", 582650, "-0.023559, 37.906193", "Thika", 1)
+        country = Country("Kenya", 582650, "-0.023559, 37.906193", 1)
         db.session.add(country)
         db.session.commit()
         assert len(Country.query.all()) == 3
