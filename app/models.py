@@ -24,6 +24,7 @@ class Meteorite(db.Model):
 	mass = db.Column(db.Float)
 	recclass = db.Column(db.String(50))
 	year = db.Column(db.Integer)
+	cname = db.Column(db.String(100))
 	reclat = db.Column(db.Float)
 	reclong = db.Column(db.Float)
 	geolocation = db.Column(db.String(50))
@@ -35,11 +36,12 @@ class Meteorite(db.Model):
 	classification_id = db.Column(db.Integer, db.ForeignKey('classifications.id'))
 
 
-	def __init__(self, name = None, mass = 0, recclass = None, year = None, reclat = 0.0, reclong = 0.0, geolocation = "0.0, 0.0"):
+	def __init__(self, name = None, mass = 0, recclass = None, year = None, cname = 'N/A', reclat = 0.0, reclong = 0.0, geolocation = "0.0, 0.0"):
 		self.name = name
 		self.mass = mass
 		self.recclass = recclass
 		self.year = year
+		self.cname = cname
 		self.reclat = float(reclat)
 		self.reclong = float(reclong)
 		self.geolocation = geolocation

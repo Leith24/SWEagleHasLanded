@@ -10,7 +10,6 @@
 		<link rel="stylesheet" type="text/css" href="static/css/custom.css">
 		<link href='https://fonts.googleapis.com/css?family=Advent+Pro' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Advent+Pro:100' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" type="text/css" href="static/DataTables/datatables.css"/>
 	</head>
 
 	<body>
@@ -18,19 +17,19 @@
 			<div class="row" style="padding-top: 10px;">
         		<div class="col-sm-2 hidden-xs">
                     <ul class="nav nav-pills nav-stacked" id = "nav_links">
-                        <li><a href="meteorites">Meteorites</a></li>
-                        <li><a href="classifications">Classifications</a></li>
-                        <li><a href="countries">Countries</a></li>
-                         <li><a href="about">About</a></li>
+                        <li><a ui-sref="meteorites">Meteorites</a></li>
+                        <li><a ui-sref="classifications">Classifications</a></li>
+                        <li><a ui-sref="countries">Countries</a></li>
+                         <li><a ui-sref="about">About</a></li>
                     </ul>
                 </div>
 
                 <div class="col-sx-2 hidden-sm hidden-md hidden-lg">
                     <ul class="nav nav-pills" id = "nav_links_mobile">
-                        <li><a href="meteorites">Meteorites</a></li>
-                        <li><a href="classifications">Classifications</a></li>
-                        <li><a href="countries">Countries</a></li>
-                        <li><a href="about">About</a></li>
+                        <li><a ui-sref="meteorites">Meteorites</a></li>
+                        <li><a ui-sref="classifications">Classifications</a></li>
+                        <li><a ui-sref="countries">Countries</a></li>
+                        <li><a ui-sref="about">About</a></li>
                     </ul>
                 </div>
 
@@ -104,17 +103,6 @@
         	<p>&copy; Copyright 2016 | All rights reserved</p>
         </div>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-
-			<script type="text/javascript" src="../DataTables/datatables.js"></script>
-			<script type='text/javascript'>
-			$(document).ready( function () {
-						$('#classes-table').dataTable({
-							paging : false,
-							searching : false
-						});
-					} );
-					</script>
 
 	</body>
 

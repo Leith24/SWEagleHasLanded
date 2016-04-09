@@ -8,8 +8,8 @@ app = Flask(__name__)
 
 db = SQLAlchemy(app)
 manager = Manager(app)
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:Crzd1245!@127.0.0.1/test_models'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:tripl3horseflip@127.0.0.1:3306/'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:Crzd1245!@127.0.0.1/test_models'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:tripl3horseflip@127.0.0.1:3306/'
 
 
 #SQLALCHEMY_DATABASE_URI = \

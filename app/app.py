@@ -67,8 +67,9 @@ def getfiles():
     meteorite_keys = ['name', 'mass', 'year', 'reclong', 'reclat', 'recclass']
     m = []
     for meteorite in meteorites:
-        meteorite = { meteorite_key : meteorite[meteorite_key] for meteorite_key in meteorite_keys if meteorite_key in meteorite}
-        m.append(meteorite)
+        if ('mass' in meteorite) and ('year' in meteorite) and ('reclong' in meteorite)  and ('reclat' in meteorite) and ('recclass' in meteorite):
+            meteorite = {meteorite_key : meteorite[meteorite_key] for meteorite_key in meteorite_keys if meteorite_key in meteorite}
+            m.append(meteorite)
     json.dump(m, x)
     x.close()
 
@@ -94,6 +95,15 @@ def getfiles():
             parent = s.group(2)
 
         cls.append({"name" : classification, "pclass" : class_id, "composition" : comp_type, "origin" : parent, "numberFound" : 0})
+
+    cls.append({"name" : "C", "pclass" : "Chondrite", "composition" : "Stony", "origin" : "Medium Meteorites", "numberFound" : 0})
+    cls.append({"name" : "CBa", "pclass" : "Chondrite", "composition" : "Stony", "origin" : "Medium Meteorites", "numberFound" : 0})
+    cls.append({"name" : "Stone", "pclass" : "Chrondite", "composition" : "Stony", "origin" : "Unknown", "numberFound" : 0})
+    cls.append({"name" : "Iron", "pclass" : "Iron", "composition" : "Iron", "origin" : "M-type Asteroid", "numberFound" : 0})
+    cls.append({"name" : "Pallasite, PMG", "pclass" : "Achrondite", "composition" : "Stony-Iron", "origin" : "N/A", "numberFound" : 0})
+    cls.append({"name" : "Unknown", "pclass" : "N/A", "composition" : "N/A", "origin" : "N/A", "numberFound" : 0})
+
+
     json.dump(cls, x)
     x.close()
 

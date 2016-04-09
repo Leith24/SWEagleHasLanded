@@ -44,7 +44,7 @@ meteoriteApp.controller('countriesController', function($scope, countriesObj) {
     $scope.currentPage = 1;
     $scope.pageSize = 15;
 
-    $scope.countries = countryObj.data;
+    $scope.countries = countriesObj.data;
 });
 
 meteoriteApp.controller('countryController', function($scope, $stateParams, countryObj) {
