@@ -13,60 +13,93 @@ Meteorites is an API for information on meteorites that have landed on Earth as 
         
         [
             {
-                "name" : "Ensisheim",
-                "meteor_id" : "1",
-                "mass" : "127000",
-                "country" :
-                    {
-                        "name" : "France",
-                        "country_id": "2"
-                    },
-                "class" :
-                    {
-                        "name" : "LL6",
-                        "classification_id": "1"
-                     },
-                "year" : "1492"
-                "longitude" : "7.350000",
-                "latitude" : "47.866670"
+            "class : {
+                "composition": "Stony",
+                "id": 30,
+                "name": "L",
+                "numberFound": 0,
+                "origin": "433 Eros",
+                "pclass": "Chondrite"
+             },
+            "classification_id": 30,
+            "cname": "Germany",
+            "country": {
+                "area": 357114,
+                "centroid": "51.0, 9.0",
+                "id": 83,
+                "name": "Germany",
+                "numberFound": 0,
+                "recent": "None"
+            },
+            "country_id": 83,
+            "geolocation": "50.775000, 6.083330",
+            "id": 1,
+            "mass": 21.0,
+            "name": "Aachen",
+            "recclass": "L",
+            "reclat": 50.775,
+            "reclong": 6.08333,
+            "year": 1880
             },
             {
-                "name" : "Thika",
-                "meteor_id" : "2",
-                "mass" : "14200",
-                "country" :
-                    {
-                        "name" : "Kenya",
-                        "country_id": "3"
-                    },
-                "class" :
-                    {
-                        "name" : "L6",
-                        "classification_id": "2"
-                     },
-                "year" : "2011"
-                "longitude" : "37.150280",
-                "latitude" : "-1.002780"
+          "class": {
+                "composition": "Stony",
+                "id": 17,
+                "name": "H",
+                "numberFound": 0,
+                "origin": "6 Hebe",
+                "pclass": "Chondrite"
+            },
+            "classification_id": 17,
+            "cname": "Denmark",
+            "country": {
+                "area": 43094,
+                "centroid": "56.0, 10.0",
+                "id": 61,
+                "name": "Denmark",
+                "numberFound": 0,
+                "recent": "None"
+            },
+            "country_id": 61,
+            "geolocation": "56.183330, 10.233330",
+            "id": 2,
+            "mass": 720.0,
+            "name": "Aarhus",
+            "recclass": "H",
+            "reclat": 56.1833,
+            "reclong": 10.2333,
+            "year": 1951
             },
             {
-                "name" : "Bunburra Rockhole",
-                "meteor_id" : "3",
-                "mass" : "324",
-                "country" :
-                    {
-                        "name" : "Australia",
-                        "country_id": "1"
-                    },
-                "class" :
-                    {
-                        "name" : "Eucrite",
-                        "classification_id": "3"
-                     },
-                "year" : "2007"
-                "longitude" : "129.190000",
-                "latitude" : "-31.350000"
-            }
-        ]
+            "class": {
+                "composition": "Stony",
+                "id": 25,
+                "name": "EH",
+                "numberFound": 0,
+                "origin": "16 Psyche",
+                "pclass": "Chondrite"
+            },
+            "classification_id": 25,
+            "cname": "Canada",
+            "country": {
+                "area": 9984670,
+                "centroid": "60.0, -95.0",
+                "id": 41,
+                "name": "Canada",
+                "numberFound": 0,
+                "recent": "None"
+            },
+            "country_id": 41,
+            "geolocation": "54.216670, -113.000000",
+            "id": 3,
+            "mass": 107000.0,
+            "name": "Abee",
+            "recclass": "EH",
+            "reclat": 54.2167,
+            "reclong": -113.0,
+            "year": 1952
+            },
+        ],
 
 ## Single Meteor [/meteorites/{meteor_id}]
 
@@ -78,23 +111,34 @@ Meteorites is an API for information on meteorites that have landed on Earth as 
 + Response 200 (application/json)
         
         {
-            "name" : "Ensisheim",
-            "meteor_id" : "1",
-            "mass" : "127000",
-            "country" :
-                {
-                    "name" : "France",
-                    "country_id": "2"
-                },
-            "class" :
-                {
-                    "name" : "LL6",
-                    "classification_id": "1"
-                 },
-            "year" : "1492"
-            "longitude" : "7.350000",
-            "latitude" : "47.866670"
-        }
+            "class": {
+                "composition": "Stony",
+                "id": 25,
+                "name": "EH",
+                "numberFound": 0,
+                "origin": "16 Psyche",
+                "pclass": "Chondrite"
+            },
+            "classification_id": 25,
+            "cname": "Canada",
+            "country": {
+                "area": 9984670,
+                "centroid": "60.0, -95.0",
+                "id": 41,
+                "name": "Canada",
+                "numberFound": 0,
+                "recent": "None"
+            },
+            "country_id": 41,
+            "geolocation": "54.216670, -113.000000",
+            "id": 3,
+            "mass": 107000.0,
+            "name": "Abee",
+            "recclass": "EH",
+            "reclat": 54.2167,
+            "reclong": -113.0,
+            "year": 1952
+            },
 
 # Group Classes
 
