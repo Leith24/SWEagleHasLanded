@@ -42,7 +42,7 @@ Meteorites is an API for information on meteorites that have landed on Earth as 
             "year": 1880
             },
             {
-          "class": {
+            "class": {
                 "composition": "Stony",
                 "id": 17,
                 "name": "H",
@@ -149,46 +149,69 @@ Meteorites is an API for information on meteorites that have landed on Earth as 
         
         [
             {
-                "name": "LL6",
-                "classification_id": "1",
-                "class_ID": "Chondrite",
-                "compositional_Type": "Stony",
-                "parent_Body": "Unknown"
-                "number_Found": "1"
-                "meteorites": 
-                    [
-                        {"name": "Ensisheim",
-                        "meteor_id": "1"
-                        }
-                    ]
+            "composition": "Stony",
+            "id": 1,
+            "meteorites": [],
+            "name": "Brachinite",
+            "numberFound": 0,
+            "origin": "Unknown",
+            "pclass": "Primitive Achondrite"
             },
             {
-                "name": "L6",
-                "classification_id": "2",
-                "class_ID": "Chondrite",
-                "compositional_Type": "Stony",
-                "parent_Body": "Flora Family"
-                "number_Found": "1"
-                "meteorites": 
-                    [
-                        {"name": "Thika",
-                        "meteor_id": "2"
-                        }
-                    ]
+            "composition": "Stony",
+            "id": 2,
+            "meteorites": [
+            {
+                "classification_id": 2,
+                "cname": "France",
+                "country_id": 76,
+                "geolocation": "45.821330, 6.015330",
+                "id": 22,
+                "mass": 252.0,
+                "name": "Alby sur Ch\u00e9ran",
+                "recclass": "Eucrite",
+                "reclat": 45.8213,
+                "reclong": 6.01533,
+                "year": 2002
             },
             {
-                "name": "Eucrite",
-                "classification_id": "3",
-                "class_ID": "Achondrite",
-                "compositional_Type": "Stony",
-                "parent_Body": "Asteroid 4 Vesta"
-                "number_Found": "1"
-                "meteorites": 
-                    [
-                        {"name": "Bunburra Rockhole",
-                        "meteor_id": "3"
-                        }
-                    ]
+                "classification_id": 2,
+                "cname": "Burkina Faso",
+                "country_id": 37,
+                "geolocation": "11.650000, -3.650000",
+                "id": 98,
+                "mass": 18000.0,
+                "name": "B\u00e9r\u00e9ba",
+                "recclass": "Eucrite",
+                "reclat": 11.65,
+                "reclong": -3.65,
+                "year": 1924
+            },
+            {
+                "classification_id": 2,
+                "cname": "United States",
+                "country_id": 237,
+                "geolocation": "40.305830, -105.023250",
+                "id": 100,
+                "mass": 960.0,
+                "name": "Berthoud",
+                "recclass": "Eucrite",
+                "reclat": 40.3058,
+                "reclong": -105.023,
+                "year": 2004
+            },
+            {
+                "classification_id": 2,
+                "cname": "Poland",
+                "country_id": 176,
+                "geolocation": "53.100000, 23.200000",
+                "id": 109,
+                "mass": 4000.0,
+                "name": "Bialystok",
+                "recclass": "Eucrite",
+                "reclat": 53.1,
+                "reclong": 23.2,
+                "year": 1827
             }
         ]
 
@@ -202,19 +225,70 @@ Meteorites is an API for information on meteorites that have landed on Earth as 
 
 + Response 200 (application/json)
         
-        {
-                "name": "LL6",
-                "classification_id": "1",
-                "class_ID": "Chondrite",
-                "compositional_Type": "Stony",
-                "parent_Body": "Unknown"
-                "number_Found": "1"
-                "meteorites": 
-                    [
-                        {"name": "Ensisheim",
-                        "meteor_id": "1"
-                        }
-                    ]
+            {
+            "composition": "Stony",
+            "id": 1,
+            "meteorites": [],
+            "name": "Brachinite",
+            "numberFound": 0,
+            "origin": "Unknown",
+            "pclass": "Primitive Achondrite"
+            },
+            {
+            "composition": "Stony",
+            "id": 2,
+            "meteorites": [
+            {
+                "classification_id": 2,
+                "cname": "France",
+                "country_id": 76,
+                "geolocation": "45.821330, 6.015330",
+                "id": 22,
+                "mass": 252.0,
+                "name": "Alby sur Ch\u00e9ran",
+                "recclass": "Eucrite",
+                "reclat": 45.8213,
+                "reclong": 6.01533,
+                "year": 2002
+            },
+            {
+                "classification_id": 2,
+                "cname": "Burkina Faso",
+                "country_id": 37,
+                "geolocation": "11.650000, -3.650000",
+                "id": 98,
+                "mass": 18000.0,
+                "name": "B\u00e9r\u00e9ba",
+                "recclass": "Eucrite",
+                "reclat": 11.65,
+                "reclong": -3.65,
+                "year": 1924
+            },
+            {
+                "classification_id": 2,
+                "cname": "United States",
+                "country_id": 237,
+                "geolocation": "40.305830, -105.023250",
+                "id": 100,
+                "mass": 960.0,
+                "name": "Berthoud",
+                "recclass": "Eucrite",
+                "reclat": 40.3058,
+                "reclong": -105.023,
+                "year": 2004
+            },
+            {
+                "classification_id": 2,
+                "cname": "Poland",
+                "country_id": 176,
+                "geolocation": "53.100000, 23.200000",
+                "id": 109,
+                "mass": 4000.0,
+                "name": "Bialystok",
+                "recclass": "Eucrite",
+                "reclat": 53.1,
+                "reclong": 23.2,
+                "year": 1827
             }
 
 # Group Countries
