@@ -38,7 +38,7 @@ def populateMeteorites(meteorites_json_data):
 
     for m in mjo:
         name = m['name']
-        print(name)
+        #print(name)
 
         mass = m['mass']
         lat = m['reclat']
@@ -48,17 +48,17 @@ def populateMeteorites(meteorites_json_data):
         geolocation = lat + ', ' + lng
         cname = locate(geolocation)
         cname = parseCname(cname)
-        #print (cname)
+        print (cname + ' = cname after locating')
         #print(parsed_clname)
         classify = Classification.query.filter(Classification.name == parsed_clname).first()
         #print(classify.name)
         if "Atlas Buoy" in cname or "Grande Terre" in cname or "Europe" == cname:
             continue
         elif "United States" == cname or "India" == cname:
-            country = Country.query.filter(Country.name == cname)
-        else
+            country = Country.query.filter(Country.name == cname).first()
+        else:
             country = Country.query.filter(Country.name.contains(cname)).first()
-        #print(country.name)
+        print(country.name + ' = country.name ')
         parsed_year = parseYear(m['year'])
         meteorite_model = Meteorite(name, mass, classify.name, parsed_year, country.name, lat, lng, geolocation)
 
@@ -84,8 +84,8 @@ def populateRelations():
 
 def locate(geolocation):
     country = geolocator.reverse(geolocation, language ='en')
-    country = country.address.split(',').strip(' ')
-    return country[-1]
+    country = country.address.split(',')
+    return country[-1].strip(' ')
 
 def parseYear(year):
     year_parsed = parser.parse(year).year
@@ -123,11 +123,12 @@ def parseCname(cname):
     return cname
 
 def createdb():
-    db.drop_all()
-    db.create_all()
-    populateClassifications('classes.json')
-    populateCountries('countries.json')
-    populateMeteorites('meteorites.json')
+    #db.drop_all()
+    #db.create_all()
+    #populateClassifications('classes.json')
+    #populateCountries('countries.json')
+    #populateMeteorites('meteorites.json')
     populateRelations()
 
-createdb()
+if __name__ == '__main__':
+    createdb()

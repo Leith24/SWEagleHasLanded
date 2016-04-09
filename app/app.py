@@ -1,7 +1,9 @@
 #Module containing Flask application
 from flask import Flask, send_file, send_from_directory, make_response, jsonify, json
 from flask.ext.sqlalchemy import SQLAlchemy
+import flask.ext.restless
 from db import db, app, manager
+from populate import createdb
 import requests
 from flask_script import Manager
 import os
@@ -13,6 +15,7 @@ import subprocess
 GOOGLE_API_KEY = "AIzaSyCL_AcVa4WucI3grBntaNB7QGxTOQW_iMg"
 COUNTRIES_API_KEY = "gFg7FXcHPWmshS7mUcHPw1wWR2cup132sJnjsntcFkuO3xN6oO"
 
+createdb
 
 #from models import *
 
@@ -24,6 +27,10 @@ COUNTRIES_API_KEY = "gFg7FXcHPWmshS7mUcHPw1wWR2cup132sJnjsntcFkuO3xN6oO"
 # ---------
 # run_tests
 # ---------
+@app.route('/api/get_meteorites')
+def get_meteorites():
+    return 'hi'
+
 
 @app.route('/run_unit_tests')
 def run_tests():
@@ -35,7 +42,6 @@ def run_tests():
 @app.route('/countries')
 @app.route('/classifications')
 @app.route('/about')
-#@app.route('/<path:path>')
 @app.route('/', defaults={'path': ''})
 def index(**kwargs):
     return make_response(open('static/index.html').read())

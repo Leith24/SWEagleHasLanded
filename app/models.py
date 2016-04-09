@@ -1,8 +1,10 @@
 # models.py
-from app import db
+from db import app, db
 from sqlalchemy import  *
 from sqlalchemy.orm import sessionmaker, relationship
 from sqlalchemy.ext.declarative import declarative_base
+#from populate import populatedb
+import flask.ext.restless
 
 
 #engine = create_engine('sqlite:///')
@@ -109,24 +111,8 @@ class Country(db.Model):
 	def __repr__(self):
 		return '<Country %r>' % (self.id)
 
-	# def add_meteorite(meteorite):
-	# 	country = geolocator.reverse(meteorite.geolocation, language ='en')
-	# 	country = country.address.split(',')
-	# 	name = country[-1]
-	# 	exists = False
-	# 	for loc in Country.getinstances():
-	# 		if(loc.name == name):
-	# 			exists = loc
-	# 			break
-	# 	if exists is not False:
-	# 		exists.meteorites += meteorite
-	# 		exists.set_recent(meteorite)
-	# 	else:
-	# 		exists = Country(name, meteorite)
-	# 		session.add(exists)
-	# 		session.commit()
-	# 	return exists
-
-	# def set_recent(meteorite):
-	# 	if self.recent.year < meteorite.year:
-	# 		self.recent = meteorite
+#populatedb()
+APIManager = flask.ext.restless.APIManager(app, flask_sqlalchemy_db = db)
+APIManager.create_api(Meteorite, methods=['GET'])
+APIManager.create_api(Country, methods=['GET'])
+APIManager.create_api(Classification, methods=['GET'])
