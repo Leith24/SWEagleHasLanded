@@ -68,16 +68,16 @@ def populateMeteorites(meteorites_json_data):
         db.session.commit()
 
 def populateRelations():
-    for c in db.session.query(Country).all():
+    for c in Country.query.all():
         #recent
-        recent = session.query(c.meteorites, db.func.max(Meteorite.year))
+        recent = c.meteorites.order_by(Meteorite.year).first()
         c.recent = recent.name
-        #num
-        num = session.query(c.meteorites).count()
+        #num found
+        num = c.meteorites.count()
         c.numberFound = num
         db.session.commit()
-    for c in db.session.query(Classification).all():
-        num = session.query(c.meteorites).count()
+    for c in Classification.query.all():
+        num = c.meteorites.count()
         c.numberFound = num
         db.session.commit()
 
