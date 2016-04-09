@@ -38,13 +38,15 @@ def populateMeteorites(meteorites_json_data):
 
     for m in mjo:
         name = m['name']
+        print(name)
+
         mass = m['mass']
         lat = m['reclat']
         lng = m['reclong']
         clname = m['recclass']
         parsed_clname = parseClass(clname)
         geolocation = lat + ', ' + lng
-        cname = locate(geolocation).strip(' ')
+        cname = locate(geolocation)
         cname = parseCname(cname)
         #print (cname)
         #print(parsed_clname)
@@ -52,7 +54,10 @@ def populateMeteorites(meteorites_json_data):
         #print(classify.name)
         if "Atlas Buoy" in cname or "Grande Terre" in cname or "Europe" == cname:
             continue
-        country = Country.query.filter(Country.name.contains(cname)).first()
+        elif "United States" == cname or "India" == cname:
+            country = Country.query.filter(Country.name == cname)
+        else
+            country = Country.query.filter(Country.name.contains(cname)).first()
         #print(country.name)
         parsed_year = parseYear(m['year'])
         meteorite_model = Meteorite(name, mass, classify.name, parsed_year, country.name, lat, lng, geolocation)
@@ -78,9 +83,8 @@ def populateRelations():
 
 
 def locate(geolocation):
-    try country = geolocator.reverse(geolocation, language ='en')
-    catch 
-    country = country.  address.split(',')
+    country = geolocator.reverse(geolocation, language ='en')
+    country = country.address.split(',').strip(' ')
     return country[-1]
 
 def parseYear(year):
@@ -124,6 +128,6 @@ def createdb():
     populateClassifications('classes.json')
     populateCountries('countries.json')
     populateMeteorites('meteorites.json')
-
+    populateRelations()
 
 createdb()
