@@ -13,16 +13,9 @@ def populateCountries(countries_json_data):
           cjo = json.load(data_file)
 
     for c in cjo:
-        #The other code breaks it because there are no relations, let alone meteorites, made yet. 
-        meteorites_count = 0 #db.session.query(Meteorite).filter(Meteorite.country == c['name']).count()
-
-        #this was never right, I think this may need to be done another way
-        #largest_year = db.session.query(db.func.max(Meteorite.year))
-        #recent_meteorite =  db.session(Meteorite).filter(Meteorite.year == largest_year).filter(Meteorite.year == c['name']).all()
         centroid = str(c['latlng'])
         n = len(centroid)
-        #model creation
-        country_model = Country(c['name'], c['area'], centroid[1:n-1], meteorites_count)
+        country_model = Country(c['name'], c['area'], centroid[1:n-1], 'None', 0)
         db.session.add(country_model)
         db.session.commit()
 
@@ -69,8 +62,24 @@ def populateMeteorites(meteorites_json_data):
         db.session.add(meteorite_model)
         db.session.commit()
 
+def populateRelations():
+    for c in Country:
+        #recent
+        recent = session.query(c.meteorites, db.func.max(Meteorite.year))
+        c.recent = recent.name
+        #num
+        num = session.query(c.meteorites).count()
+        c.numberFound = num
+        db.session.commit()
+    for c in Classification:
+        num = session.query(c.meteorites).count()
+        c.numberFound = num
+        db.session.commit()
+
+
 def locate(geolocation):
-    country = geolocator.reverse(geolocation, language ='en')
+    try country = geolocator.reverse(geolocation, language ='en')
+    catch 
     country = country.  address.split(',')
     return country[-1]
 
@@ -115,5 +124,6 @@ def createdb():
     populateClassifications('classes.json')
     populateCountries('countries.json')
     populateMeteorites('meteorites.json')
+
 
 createdb()
