@@ -10,8 +10,8 @@ class TestMeteorites(TestCase):
 
     def setUp(self):
         db.create_all()
-        meteorite_1 = Meteorite("Aachen", 21.0, "L", 1880, 50.775000, 6.083330, "50.775000, 6.083330")
-        meteorite_2 = Meteorite("Aarhus", 720.0, "H", 1951, 56.183330, 10.233330, "56.183330, 10.233330")
+        meteorite_1 = Meteorite("Aachen", 21.0, "L", 1880, "Algeria", 50.775000, 6.083330, "50.775000, 6.083330")
+        meteorite_2 = Meteorite("Aarhus", 720.0, "H", 1951, "Germany", 56.183330, 10.233330, "56.183330, 10.233330")
         db.session.add(meteorite_1)
         db.session.add(meteorite_2)
         db.session.commit()
@@ -32,7 +32,7 @@ class TestMeteorites(TestCase):
 
     # Tests adding a new meteorite and removing that meteorite from the db
     def test_add_delete_meteorites(self):
-        meteorite = Meteorite("Abee", 107000.0, "EH", 1952, 54.216670, -113.000000, "54.216670, -113.000000")
+        meteorite = Meteorite("Abee", 107000.0, "EH", 1952, 'Bulgaria', 54.216670, -113.000000, "54.216670, -113.000000")
         db.session.add(meteorite)
         db.session.commit()
         assert len(Meteorite.query.all()) == 3
@@ -52,8 +52,8 @@ class TestClassifications(TestCase):
 
     def setUp(self):
         db.create_all()
-        classification_1 = Classification("Brachinite", "Primitive Achondrite", "Stony", "Unknown")
-        classification_2 = Classification("Chassignites", "Achondrite", "Stony", "Mars")
+        classification_1 = Classification("Brachinite", "Primitive Achondrite", "Stony", "Unknown", 1)
+        classification_2 = Classification("Chassignites", "Achondrite", "Stony", "Mars", 1)
         db.session.add(classification_1)
         db.session.add(classification_2)
         db.session.commit()
@@ -74,7 +74,7 @@ class TestClassifications(TestCase):
 
     # Tests adding a new classification to the table and removing it
     def test_add_delete_classification(self):
-        classification = Classification("Iron, IAB", "Primitive Achondrite", "Iron", "kamacite")
+        classification = Classification("Iron, IAB", "Primitive Achondrite", "Iron", "kamacite", 1)
         db.session.add(classification)
         db.session.commit()
         assert len(Classification.query.all()) == 3
@@ -95,8 +95,8 @@ class TestCountries(TestCase):
 
     def setUp(self):
         db.create_all()
-        country_1 = Country("Australia", 7692000, "-25.274398, 133.775136", 1)
-        country_2 = Country("France", 643801, "46.227638, 22.13749", 1)
+        country_1 = Country("Australia", 7692000, "-25.274398, 133.775136", "None", 1)
+        country_2 = Country("France", 643801, "46.227638, 22.13749", "None", 1)
         db.session.add(country_1)
         db.session.add(country_2)
         db.session.commit()
@@ -117,7 +117,7 @@ class TestCountries(TestCase):
 
     # Tests adding a new country to the table and then removing it
     def test_add_delete_countries(self):
-        country = Country("Kenya", 582650, "-0.023559, 37.906193", 1)
+        country = Country("Kenya", 582650, "-0.023559, 37.906193", "None", 1)
         db.session.add(country)
         db.session.commit()
         assert len(Country.query.all()) == 3
