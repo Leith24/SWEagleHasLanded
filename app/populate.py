@@ -70,7 +70,7 @@ def populateMeteorites(meteorites_json_data):
 def populateRelations():
     for c in Country.query.all():
         #recent
-        recent = c.meteorites.order_by(Meteorite.year).first()
+        recent = db.session.query(Meteorite).filter(Meteorite.cname == c.name).order_by(Meteorite.year).first()
         c.recent = recent.name
         #num found
         num = c.meteorites.count()
@@ -89,7 +89,7 @@ def locate(geolocation):
 
 def parseYear(year):
     year_parsed = parser.parse(year).year
-    return year_parsed
+    return int(year_parsed)
 
 def parseClass(clname):
     parsed = re.sub("\d+", "", clname)
