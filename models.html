@@ -9,8 +9,8 @@
 <td valign=bottom>&nbsp;<br>
 <font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>models</strong></big></big></font></td
 ><td align=right valign=bottom
-><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/Users/gavinleith/cs373-idb/models.py">/Users/gavinleith/cs373-idb/models.py</a></font></td></tr></table>
-    <p><tt>#&nbsp;models.py</tt></p>
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/cygdrive/c/Users/Adam/Documents/GitHub/cs373-idb/models.pyc">/cygdrive/c/Users/Adam/Documents/GitHub/cs373-idb/models.pyc</a></font></td></tr></table>
+    <p></p>
 <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#ee77aa">
@@ -69,7 +69,7 @@ Data descriptors defined here:<br>
 </dl>
 <hr>
 Data and other attributes defined here:<br>
-<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x1070bd510; Classification&gt;</dl>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x6fffe555510; Classification&gt;</dl>
 
 <dl><dt><strong>__table__</strong> = Table('Classifications', MetaData(bind=None), Co... String(), table=&lt;Classifications&gt;), schema=None)</dl>
 
@@ -110,12 +110,16 @@ Methods defined here:<br>
 
 <dl><dt><a name="Country-add_meteorite"><strong>add_meteorite</strong></a>(meteorite)</dt></dl>
 
+<dl><dt><a name="Country-set_recent"><strong>set_recent</strong></a>(meteorite)</dt></dl>
+
 <hr>
 Class methods defined here:<br>
 <dl><dt><a name="Country-getinstances"><strong>getinstances</strong></a>(cls)<font color="#909090"><font face="helvetica, arial"> from <a href="sqlalchemy.ext.declarative.api.html#DeclarativeMeta">sqlalchemy.ext.declarative.api.DeclarativeMeta</a></font></font></dt></dl>
 
 <hr>
 Data descriptors defined here:<br>
+<dl><dt><strong>area</strong></dt>
+</dl>
 <dl><dt><strong>country</strong></dt>
 </dl>
 <dl><dt><strong>earliestYear</strong></dt>
@@ -124,11 +128,13 @@ Data descriptors defined here:<br>
 </dl>
 <dl><dt><strong>numberFound</strong></dt>
 </dl>
+<dl><dt><strong>recent</strong></dt>
+</dl>
 <hr>
 Data and other attributes defined here:<br>
-<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x1070bd910; Country&gt;</dl>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x6fffe555a10; Country&gt;</dl>
 
-<dl><dt><strong>__table__</strong> = Table('Countries', MetaData(bind=None), Column('...und', Integer(), table=&lt;Countries&gt;), schema=None)</dl>
+<dl><dt><strong>__table__</strong> = Table('Countries', MetaData(bind=None), Column('...cent', String(), table=&lt;Countries&gt;), schema=None)</dl>
 
 <dl><dt><strong>__tablename__</strong> = 'Countries'</dl>
 
@@ -187,7 +193,7 @@ Data descriptors defined here:<br>
 </dl>
 <hr>
 Data and other attributes defined here:<br>
-<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x107094d10; Meteorite&gt;</dl>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x6fffe531ed0; Meteorite&gt;</dl>
 
 <dl><dt><strong>__table__</strong> = Table('meteorite', MetaData(bind=None), Column('...ntry', String(), table=&lt;meteorite&gt;), schema=None)</dl>
 
