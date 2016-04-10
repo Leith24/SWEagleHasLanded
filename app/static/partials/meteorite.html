@@ -48,6 +48,7 @@
 
 				        	<div id = "stats_names">
 				        		<p>Mass</p>
+				        		<p>Country</p>
 				        		<p>Class</p>
 				        		<p>Year</p>
 				        		<p>Geolocation</p>
@@ -55,9 +56,10 @@
 
 							<div id = "stats">
 		        				<p>{{meteorite.mass}}</p>
-		        				<p><a href="../classifications/{{meteorite.recclass}}">{{meteorite.recclass}}</a></p>
+		        				<p><a href="../countries/{{meteorite.country_id}}">{{meteorite.cname}}</a></p>
+		        				<p><a href="../classification/{{meteorite.classification_id}}">{{meteorite.recclass}}</a></p>
 		        				<p>{{meteorite.year}}</p>
-		        				<p>{{meteorite.reclat}}, {{meteorite.reclong}} </p>
+		        				<p>{{meteorite.geolocation}}</p>
         					</div>
 						</div>
 					</div>
@@ -68,8 +70,7 @@
 							  width="400"
 							  height="300"
 							  frameborder="0" style="border:0"
-							  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBMRg5inrD7lBnA8EivUn1k-TuOlBhdNMw
-							    &q={{meteorite.reclat}}, {{meteorite.reclong}}&zoom=6" allowfullscreen>
+							  src="https://www.google.com/maps/embed/v1/place?q={{meteorite.reclat}},{{meteorite.recclong}}&key=AIzaSyBCO89GZlhoE-NTQ30O_WbiGeYUsjPzAoU" allowfullscreen>
 							</iframe>
 						</div>
 					</div>
