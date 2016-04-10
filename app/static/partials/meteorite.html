@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Bunburra Rockhole</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="../static/css/custom.css">
+		<link href='https://fonts.googleapis.com/css?family=Advent+Pro' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Advent+Pro:100' rel='stylesheet' type='text/css'>
+
+	</head>
+
+	<body>
+
+		<div id="content">
+			<div class="row">
+				<div class="col-sm-2 hidden-xs" id="navbarbackground">
+					<ul class="nav nav-pills nav-stacked" id = "nav_links">
+							<li><a ui-sref="meteorites">Meteorites</a></li>
+							<li><a ui-sref="classifications">Classifications</a></li>
+							<li><a ui-sref="countries">Countries</a></li>
+							<li><a ui-sref="about">About</a></li>
+					</ul>
+				</div>
+
+				<div class="col-sx-2 hidden-sm hidden-md hidden-lg">
+                    <ul class="nav nav-pills" id = "nav_links_mobile">
+                        <li><a ui-sref="meteorites">Meteorites</a></li>
+                        <li><a ui-sref="classifications">Classifications</a></li>
+                        <li><a ui-sref="countries">Countries</a></li>
+                        <li><a ui-sref="about">About</a></li>
+                    </ul>
+                </div>
+
+				<div class="col-sm-10">
+					<div class="row">
+						<div class="col-sm-7 col-md-6">
+							<div id = "main_header">
+								<h1>Meteorite Name</h1>
+							</div>
+
+							<div id = "meteorite_name">
+								<h2>{{meteorite.name}}<h2>
+							</div>
+
+				        	<div id = "stats_names">
+				        		<p>Mass</p>
+				        		<p>Class</p>
+				        		<p>Year</p>
+				        		<p>Geolocation</p>
+				        	</div>
+
+							<div id = "stats">
+		        				<p>{{meteorite.mass}}</p>
+		        				<p><a href="../classifications/{{meteorite.recclass}}">{{meteorite.recclass}}</a></p>
+		        				<p>{{meteorite.year}}</p>
+		        				<p>{{meteorite.reclat}}, {{meteorite.reclong}} </p>
+        					</div>
+						</div>
+					</div>
+                    <!--PUT A IMAGE IF CAN IF NOT OH WELL -->
+					<div class="row">
+						<div class="col-sm-10">
+							<iframe
+							  width="400"
+							  height="300"
+							  frameborder="0" style="border:0"
+							  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBMRg5inrD7lBnA8EivUn1k-TuOlBhdNMw
+							    &q={{meteorite.reclat}}, {{meteorite.reclong}}&zoom=6" allowfullscreen>
+							</iframe>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id = "footer">
+			<p>&copy; Copyright 2016 | All rights reserved</p>
+		</div>
+
+	</body>
+
+</html>

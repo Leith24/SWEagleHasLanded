@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Classes Table</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="static/css/custom.css">
+		<link href='https://fonts.googleapis.com/css?family=Advent+Pro' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Advent+Pro:100' rel='stylesheet' type='text/css'>
+
+	</head>
+
+	<body>
+		<div id = "content">
+			<div class="row" style="padding-top: 10px;">
+        		<div class="col-sm-2 hidden-xs">
+                    <ul class="nav nav-pills nav-stacked" id = "nav_links">
+                        <li><a ui-sref="meteorites">Meteorites</a></li>
+                        <li><a ui-sref="classifications">Classifications</a></li>
+                        <li><a ui-sref="countries">Countries</a></li>
+                         <li><a ui-sref="about">About</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-sx-2 hidden-sm hidden-md hidden-lg">
+                    <ul class="nav nav-pills" id = "nav_links_mobile">
+                        <li><a ui-sref="meteorites">Meteorites</a></li>
+                        <li><a ui-sref="classifications">Classifications</a></li>
+                        <li><a ui-sref="countries">Countries</a></li>
+                         <li><a ui-sref="about">About</a></li>
+                    </ul>
+                </div>
+
+        		<div class="col-sm-10">
+
+        			<div id = main_header>
+						<h1>Classifications</h1>
+					</div>
+
+        			<table class="table table-bordered" id="classes-table">
+
+		    			</tbody>
+                        <thead>
+		        			<tr>
+		           				<td>
+                                    <a href="#" ng-click="sortType = 'name'; sortReverse = !sortReverse">
+                                        Class Name
+                                        <span ng-show="sortType == 'name' && !sortReverse" class="fa fa-caret-down"></span>
+                                        <span ng-show="sortType == 'name' && sortReverse" class="fa fa-caret-up"></span>
+
+                                    </a>
+                                </td>
+		            			<td>
+                                    <a href="#" ng-click="sortType = 'classID'; sortReverse = !sortReverse">
+                                        Classification ID
+                                        <span ng-show="sortType == 'classID' && !sortReverse" class="fa fa-caret-down"></span>
+                                        <span ng-show="sortType == 'classID' && sortReverse" class="fa fa-caret-up"></span>
+                                    </a>
+                                </td>
+		            			<!--<td>
+                                    <a href="#" ng-click="sortType = 'composition'; sortReverse = !sortReverse">
+                                        Composition Type
+                                        <span ng-show="sortType == 'composition' && !sortReverse" class="fa fa-caret-down"></span>
+                                        <span ng-show="sortType == 'composition' && sortReverse" class="fa fa-caret-up"></span>
+                                    </a>
+                                </td>-->
+		            			<td>
+                                    <a href="#" ng-click="sortType = 'parentBody'; sortReverse = !sortReverse">
+                                        Parent Body
+                                        <span ng-show="sortType == 'parentBody' && !sortReverse" class="fa fa-caret-down"></span>
+                                        <span ng-show="sortType == 'parentBody' && sortReverse" class="fa fa-caret-up"></span>
+                                    </a>
+                                </td>
+		            			<td>
+                                    <a href="#" ng-click="sortType = 'numFound'; sortReverse = !sortReverse">
+                                        Number Found
+                                        <span ng-show="sortType == 'numFound' && !sortReverse" class="fa fa-caret-down"></span>
+                                        <span ng-show="sortType == 'numFound' && sortReverse" class="fa fa-caret-up"></span>
+                                    </a>
+                                </td>
+		        			</tr>
+		    			</thead>
+		    			<tbody>
+		        			<tr dir-paginate="classification in classifications | orderBy:sortType:sortReverse | itemsPerPage: pageSize">
+					            <td><a href="classification/{{classification.id}}">{{ classification.name }}</a></td>
+					            <!--td>{{ classification.class_id.meteorites.classification_id }}</td>-->
+                                <td>{{ classification.composition }}</td>
+					            <td>{{ classification.pclass }}</td>
+                                <td>{{ classification.numberFound}}</td>
+
+		        			</tr>
+		    			</tbody>
+                        <dir-pagination-controls>
+                            template-url="../static/partials/dirPagination.tpl.html"
+                            on-page-change="pageChange(newPageNumber)">
+                        </dir-pagination-controls>
+					</table>
+        		</div>
+    		</div>
+		</div>
+
+		<div id = "footer">
+        	<p>&copy; Copyright 2016 | All rights reserved</p>
+        </div>
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+         <script type="text/javascript" src="static/DataTables/datatables.js"></script>
+
+
+
+	</body>
+
+</html>

@@ -1,12 +1,12 @@
 FILES :=                              \
     .travis.yml                       \
     models.html                      \
-    IDB1.log                       \
+    IDB2.log                       \
     apiary.apib                     \
     makefile                  \
-    models.py                     \
+    app/models.py                     \
     UML.pdf                   \
-    tests.py
+    app/tests.py
 
 check:
 	@not_found=0;                                 \
@@ -38,9 +38,9 @@ status:
 test: Runidb.tmp Testidb.tmp
 
 
-model.html: models.py
+model.html: app/models.py
 	pydoc -w models
 
 IDB.log:
-	git log > IDB1.log
+	git log > IDB2.log
 
