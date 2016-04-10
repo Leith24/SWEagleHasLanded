@@ -71,7 +71,10 @@ def populateRelations():
     for c in Country.query.all():
         #recent
         recent = db.session.query(Meteorite).filter(Meteorite.cname == c.name).order_by(Meteorite.year).first()
-        c.recent = recent.name
+        if recent:
+            c.recent = recent.name
+        else: 
+            c.recent = 'None'
         #num found
         num = c.meteorites.count()
         c.numberFound = num
