@@ -93,8 +93,8 @@
 		        			<tr dir-paginate="meteorite in meteorites | orderBy:sortType:sortReverse | itemsPerPage: pageSize">
 					            <td><a href="meteorites/{{ meteorite.id}}">{{ meteorite.name }}</a></td>
 					            <td>{{ meteorite.mass }}</td>
-                                <td>{{meteorite.country.name}}</td>
-					            <td><a href="classification/{{ meteorite.recclass }}"> {{ meteorite.recclass }}</a></td>
+                                <td><a href = "countries/{{ meteorite.country_id }}"> {{ meteorite.cname }}</a></td>
+					            <td><a href="classification/{{ meteorite.classification_id }}"> {{ meteorite.recclass }}</a></td>
 					            <td>{{ meteorite.year }}</td>
 					            <td>{{ meteorite.reclat }},{{ meteorite.reclong }}</td>
 		        			</tr>

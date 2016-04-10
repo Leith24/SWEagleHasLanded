@@ -40,7 +40,7 @@
                         <div class="col-sm-10">
 
                             <div id = "main_header">
-                                <h1>Classification Name</h1>
+                                <h1>Class</h1>
                             </div>
 
                             <div id = "meteorite_name">
@@ -52,16 +52,16 @@
                     <div class="row">
                         <div class="col-sm-7 col-md-6">
                             <div id = "stats_names">
-                                <!--<p>Classification ID</p>-->
+                                <p>Parent Class</p>
                                 <p>Composition</p>
-        				        <p>Parent Body</p>
+        				        <p>Origin</p>
         				        <p>Number Found</p>
                             </div>
 
                 			<div id = "stats">
-                				<!--<p></p>-->
+                				<p>{{ classification.pclass}}</p>
                 				<p>{{ classification.composition }}</p>
-                				<p>{{ classification.pclass }}</p>
+                				<p>{{ classification.origin }}</p>
                                 <p>{{ classification.numberFound }}</p>
                 			</div>
                         </div>

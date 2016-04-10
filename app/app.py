@@ -15,8 +15,6 @@ import subprocess
 GOOGLE_API_KEY = "AIzaSyCL_AcVa4WucI3grBntaNB7QGxTOQW_iMg"
 COUNTRIES_API_KEY = "gFg7FXcHPWmshS7mUcHPw1wWR2cup132sJnjsntcFkuO3xN6oO"
 
-createdb
-
 #from models import *
 
 #Flask handles API calls

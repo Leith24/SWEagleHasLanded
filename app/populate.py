@@ -86,7 +86,7 @@ def populateRelations():
 
 
 def locate(geolocation):
-    country = geolocator.reverse(geolocation, language ='en')
+    country = geolocator.reverse(geolocation, language ='en', timeout = 60)
     country = country.address.split(',')
     return country[-1].strip(' ')
 
