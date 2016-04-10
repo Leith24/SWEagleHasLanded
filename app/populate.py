@@ -126,11 +126,11 @@ def parseCname(cname):
     return cname
 
 def createdb():
-    #db.drop_all()
-    #db.create_all()
-    #populateClassifications('classes.json')
-    #populateCountries('countries.json')
-    #populateMeteorites('meteorites.json')
+    db.drop_all()
+    db.create_all()
+    populateClassifications('classes.json')
+    populateCountries('countries.json')
+    populateMeteorites('meteorites.json')
     populateRelations()
 
 if __name__ == '__main__':
