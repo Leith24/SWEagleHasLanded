@@ -10,9 +10,13 @@
 		<link rel="stylesheet" type="text/css" href="static/css/custom.css">
 		<link href='https://fonts.googleapis.com/css?family=Advent+Pro' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Advent+Pro:100' rel='stylesheet' type='text/css'>
+		<style type="text/css">
+			#map { height: 100%; width: 100%; position: absolute;}
+		</style>
 	</head>
 
 	<body>
+		<div id="map"></div>
 		<div id = "content">
 			<div class="row">
         		<div class="col-sm-12" id="splash">
@@ -26,12 +30,42 @@
     		</div>
 		</div>
 
-		<div style="margin-left: 41%" class="col-sm-12" id = "footer">
+		<div class="col-sm-12" id = "footer">
         	<p>&copy; Copyright 2016 | All rights reserved</p>
         </div>
 
+        
+    <script>
+      var map;
+      function initMap() {
 
-
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 53.4129, lng: 8.2439},
+          zoom: 3
+        });
+        
+        map.set('styles', [
+	    {
+	      stylers: [
+	        { hue: "#502958" },
+	        { saturation: -50 },
+	        { lightness: -65}
+	      ]
+	    },{
+	      	featureType: "road",
+	      	elementType: "labels",
+	      	stylers: [
+	        	{ visibility: "off" }
+	      	]
+	    	}
+	  	]);
+        
+	  	map.data.loadGeoJson('static/geolocations.geojson');
+	  	
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMRg5inrD7lBnA8EivUn1k-TuOlBhdNMw&callback=initMap"
+    async defer></script>
 
 	</body>
 
