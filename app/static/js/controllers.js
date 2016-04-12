@@ -52,14 +52,17 @@ meteoriteApp.controller('countriesController', function($scope, countriesObj) {
     console.log(countriesObj.data);
 });
 
-meteoriteApp.controller('countryController', function($scope, $stateParams, countryObj) {
+meteoriteApp.controller('countryController', function($scope, $sce, $stateParams, countryObj) {
     //TODO: Get country from geolocation
     //$scope.country = geolocation bs
     $scope.country = countryObj.data;
     console.log($stateParams);
 
     $scope.message = $stateParams;
-
+    $scope.urlString = "https://www.google.com/maps/embed/v1/place?key=AIzaSyBMRg5inrD7lBnA8EivUn1k-TuOlBhdNMw"
+                                    + "&q=" + ($scope.country).centroid
+                                    + "&zoom=6";
+    $scope.mapURL = $sce.trustAsResourceUrl($scope.urlString);
 });
 meteoriteApp.controller('aboutController', function ( $scope, unitTestData) {
 

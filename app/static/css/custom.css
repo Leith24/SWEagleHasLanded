@@ -56,6 +56,13 @@ p
 	padding-left: 280px;
 }
 
+#country_name
+{
+	float: middle;
+	padding-top: 15px;
+	padding-left: 280px;
+}
+
 #stats_names
 {
 	float: left;
