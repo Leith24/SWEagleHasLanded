@@ -13,13 +13,16 @@ meteoriteApp.controller('meteoritesController', function($scope, meteoritesObj) 
     console.log(meteoritesObj.data);
 });
 
-meteoriteApp.controller('meteoriteController', function($scope, $stateParams, meteoriteObj) {
+meteoriteApp.controller('meteoriteController', function($scope, $sce, $stateParams, meteoriteObj) {
     $scope.meteorite = meteoriteObj.data;
     console.log(meteoriteObj);
     //TODO: Get country from geolocation
     //$scope.country = geolocation bs
     $scope.message = $stateParams;
-
+    $scope.urlString = "https://www.google.com/maps/embed/v1/place?key=AIzaSyBMRg5inrD7lBnA8EivUn1k-TuOlBhdNMw"
+                                    + "&q=" + ($scope.meteorite).geolocation
+                                    + "&zoom=6";
+    $scope.mapURL = $sce.trustAsResourceUrl($scope.urlString);
 });
 meteoriteApp.controller('classificationsController', function($scope, classificationsObj) {
     $scope.sortType     = 'name'; // set the default sort type
