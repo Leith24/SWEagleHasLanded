@@ -11,9 +11,6 @@ import unicodedata
 import re
 import sys
 import subprocess
-from geopy.geocoders import Nominatim
-
-geolocator = Nominatim()
 
 GOOGLE_API_KEY = "AIzaSyCL_AcVa4WucI3grBntaNB7QGxTOQW_iMg"
 COUNTRIES_API_KEY = "gFg7FXcHPWmshS7mUcHPw1wWR2cup132sJnjsntcFkuO3xN6oO"
@@ -76,14 +73,7 @@ def getfiles():
     for meteorite in meteorites:
         if ('mass' in meteorite) and ('year' in meteorite) and ('reclong' in meteorite)  and ('reclat' in meteorite) and ('recclass' in meteorite):
             meteorite = {meteorite_key : meteorite[meteorite_key] for meteorite_key in meteorite_keys if meteorite_key in meteorite}
-            
-            geolocation = meteorite['reclat'] + ', ' + meteorite['reclong']
-            cname = locate(geolocation)
-            cname = parseCname(cname)
-            meteorite['cname'] = cname
-            meteorite['geolocation'] = geolocation
             m.append(meteorite)
-
     json.dump(m, x)
     x.close()
 
@@ -120,26 +110,6 @@ def getfiles():
 
     json.dump(cls, x)
     x.close()
-
-def locate(geolocation):
-    country = geolocator.reverse(geolocation, language ='en', timeout = 60)
-    country = country.address.split(',')
-    return country[-1].strip(' ')
-
-def parseCname(cname):
-    if cname == 'Congo-Kinshasa':
-        cname = 'Democratic Republic of the Congo'
-    elif cname == 'United States of America':
-        cname = 'United States'
-    elif cname == 'Russian Federation':
-        cname = 'Russia'
-    elif cname == 'RSA':
-        cname = 'South Africa'
-    elif cname == 'The Netherlands':
-        cname = 'Netherlands'
-    elif cname == 'Islamic Republic of Iran':
-        cname = 'Iran'
-    return cname
 
 if __name__ == '__main__':
     manager.run()
