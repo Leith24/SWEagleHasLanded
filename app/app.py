@@ -129,6 +129,8 @@ def locate(geolocation):
 def parseCname(cname):
     if cname == 'Congo-Kinshasa':
         cname = 'Democratic Republic of the Congo'
+    elif cname == 'Czechia'
+        cname == 'Czech Republic'
     elif cname == 'United States of America':
         cname = 'United States'
     elif cname == 'Russian Federation':
