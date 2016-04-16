@@ -3,9 +3,7 @@ import dateutil.parser as parser
 import re
 from models import Country, Meteorite, Classification
 from db import db
-from geopy.geocoders import Nominatim
 
-geolocator = Nominatim()
 
 def populateCountries(countries_json_data):
 
@@ -26,8 +24,6 @@ def populateClassifications(classifications_json_data):
 
     for c in cjo:
         cmodel = Classification(c['name'], c['pclass'], c['composition'], c['origin'], 0)
-        
-
         db.session.add(cmodel)
         db.session.commit()
 
@@ -38,17 +34,14 @@ def populateMeteorites(meteorites_json_data):
 
     for m in mjo:
         name = m['name']
-        #print(name)
-
         mass = m['mass']
         lat = m['reclat']
         lng = m['reclong']
+        cname = m['cname']
         clname = m['recclass']
+        geolocation = m['geolocation']
         parsed_clname = parseClass(clname)
-        geolocation = lat + ', ' + lng
-        cname = locate(geolocation)
-        cname = parseCname(cname)
-        print (cname + ' = cname after locating')
+        # print (cname + ' = cname after locating')
         #print(parsed_clname)
         classify = Classification.query.filter(Classification.name == parsed_clname).first()
         #print(classify.name)
@@ -58,7 +51,7 @@ def populateMeteorites(meteorites_json_data):
             country = Country.query.filter(Country.name == cname).first()
         else:
             country = Country.query.filter(Country.name.contains(cname)).first()
-        print(country.name + ' = country.name ')
+        # print(country.name + ' = country.name ')
         parsed_year = parseYear(m['year'])
         meteorite_model = Meteorite(name, mass, classify.name, parsed_year, country.name, lat, lng, geolocation)
 
@@ -84,12 +77,6 @@ def populateRelations():
         c.numberFound = num
         db.session.commit()
 
-
-def locate(geolocation):
-    country = geolocator.reverse(geolocation, language ='en', timeout = 60)
-    country = country.address.split(',')
-    return country[-1].strip(' ')
-
 def parseYear(year):
     year_parsed = parser.parse(year).year
     return int(year_parsed)
@@ -109,21 +96,6 @@ def parseClass(clname):
     if parsed == 'Iron, IIF':
         parsed = 'Iron, ungrouped'
     return parsed
-
-def parseCname(cname):
-    if cname == 'Congo-Kinshasa':
-        cname = 'Democratic Republic of the Congo'
-    elif cname == 'United States of America':
-        cname = 'United States'
-    elif cname == 'Russian Federation':
-        cname = 'Russia'
-    elif cname == 'RSA':
-        cname = 'South Africa'
-    elif cname == 'The Netherlands':
-        cname = 'Netherlands'
-    elif cname == 'Islamic Republic of Iran':
-        cname = 'Iran'
-    return cname
 
 def createdb():
     db.drop_all()
