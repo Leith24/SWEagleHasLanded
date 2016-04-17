@@ -47,12 +47,13 @@ def populateMeteorites(meteorites_json_data):
         #print(classify.name)
         if "Atlas Buoy" in cname or "Grande Terre" in cname or "Europe" == cname:
             continue
-        elif "United States" == cname or "India" == cname:
+        elif "United States" == cname or "India"  == cname:
             country = Country.query.filter(Country.name == cname).first()
         else:
             country = Country.query.filter(Country.name.contains(cname)).first()
         # print(country.name + ' = country.name ')
         parsed_year = parseYear(m['year'])
+        print(cname)
         meteorite_model = Meteorite(name, mass, classify.name, parsed_year, country.name, lat, lng, geolocation)
 
         country.meteorites.append(meteorite_model)

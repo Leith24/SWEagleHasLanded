@@ -5,7 +5,7 @@ from models import Meteorite, Classification, Country
 class TestMeteorites(TestCase):
 
     def create_app(self):
-        app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
+        app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:Crzd1245!@127.0.0.1/test_models'
         return app
 
     def setUp(self):
