@@ -39,6 +39,7 @@ meteoriteApp.controller('classificationsController', function($scope, classifica
 
 meteoriteApp.controller('classificationController', function($scope, $stateParams, classificationObj) {
     $scope.classification = classificationObj.data;
+    $scope.meteorites = classificationObj.data.meteorites;
 
 
 });
@@ -62,14 +63,25 @@ meteoriteApp.controller('countriesController', function($scope, countriesObj) {
 });
 
 meteoriteApp.controller('countryController', function($scope, $sce, $stateParams, countryObj) {
+    //Table of meteorites that have landed in the country
     $scope.country = countryObj.data;
+    $scope.meteorites = countryObj.data.meteorites;
+    $scope.cname = capFirstLetter(countryObj.data.name);
+
+    $scope.sortType     = 'name'; // set the default sort type
+    $scope.sortReverse  = false;  // set the default sort order
+    $scope.searchMeteorites   = '';     // set the default search/filter term
+    $scope.currentPage = 1;
+    $scope.pageSize = 15;
+
+
 
     //Google Maps embedding
-    $scope.message = $stateParams;
     $scope.urlString = "https://www.google.com/maps/embed/v1/place?key=AIzaSyBMRg5inrD7lBnA8EivUn1k-TuOlBhdNMw"
                                     + "&q=" + ($scope.country).centroid
                                     + "&zoom=6";
     $scope.mapURL = $sce.trustAsResourceUrl($scope.urlString);
+
 });
 meteoriteApp.controller('aboutController', function ( $scope, unitTestData) {
 
@@ -79,3 +91,7 @@ meteoriteApp.controller('aboutController', function ( $scope, unitTestData) {
 
     }
 });
+
+function capFirstLetter(string){
+     return string.charAt(0).toUpperCase() + string.slice(1);
+}
