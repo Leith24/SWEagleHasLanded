@@ -87,10 +87,10 @@
                                             </a>
                                         </td>
                                         <td>
-                                            <a href="#" ng-click="sortType = 'class'; sortReverse = !sortReverse">
+                                            <a href="#" ng-click="sortType = 'recclass'; sortReverse = !sortReverse">
                                                 Class
-                                                <span ng-show="sortType == 'class' && !sortReverse" class="fa fa-caret-down"></span>
-                                                <span ng-show="sortType == 'class' && sortReverse" class="fa fa-caret-up"></span>
+                                                <span ng-show="sortType == 'recclass' && !sortReverse" class="fa fa-caret-down"></span>
+                                                <span ng-show="sortType == 'recclass' && sortReverse" class="fa fa-caret-up"></span>
                                             </a>
                                         </td>
                                         <td>
@@ -111,17 +111,10 @@
                                 </thead>
                                 <tbody>
                                     <tr dir-paginate="meteorite in meteorites | orderBy:sortType:sortReverse | itemsPerPage: pageSize">
-<<<<<<< HEAD
                                         <td><a href="/meteorites/{{ meteorite.id}}">{{ meteorite.name }}</a></td>
                                         <td>{{ meteorite.mass }}</td>
                                         <td><a href = "countries/{{ meteorite.country_id }}"> {{ meteorite.cname }}</a></td>
                                         <td><a href="/classification/{{ meteorite.classification_id }}"> {{ meteorite.recclass }}</a></td>
-=======
-                                        <td><a href="meteorites/{{ meteorite.id}}">{{ meteorite.name }}</a></td>
-                                        <td>{{ meteorite.mass }}</td>
-                                        <td><a href = "countries/{{ meteorite.country_id }}"> {{ meteorite.cname }}</a></td>
-                                        <td><a href="classification/{{ meteorite.classification_id }}"> {{ meteorite.recclass }}</a></td>
->>>>>>> e91421832f9f3e0b6e963364c6efac461f095a34
                                         <td>{{ meteorite.year }}</td>
                                         <td>{{ meteorite.reclat }} , {{ meteorite.reclong }}</td>
                                     </tr>
