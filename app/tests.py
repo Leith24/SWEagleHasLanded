@@ -5,7 +5,7 @@ from models import Meteorite, Classification, Country
 class TestMeteorites(TestCase):
 
     def create_app(self):
-        app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
+        app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:Crzd1245!@127.0.0.1/test_models'
         return app
 
     def setUp(self):
@@ -69,7 +69,7 @@ class TestClassifications(TestCase):
         classification_1 = Classification.query.filter(Classification.name == 'Brachinite').first()
         assert classification_1.pclass == "Primitive Achondrite"
 
-        classification_2 = Classification.query.filter(Classification.class_id == "Achondrite").first()
+        classification_2 = Classification.query.filter(Classification.name == "Achondrite").first()
         assert classification_2.parentBody == 'Mars'
 
     # Tests adding a new classification to the table and removing it

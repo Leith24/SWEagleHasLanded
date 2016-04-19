@@ -3,11 +3,11 @@
 <html>
 
 	<head>
-		<title>Classes Table</title>
+		<title>Countries Table</title>
 
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="static/css/custom.css">
+		<link rel="stylesheet" type="text/css" href="../static/css/custom.css">
 		<link href='https://fonts.googleapis.com/css?family=Advent+Pro' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Advent+Pro:100' rel='stylesheet' type='text/css'>
 	</head>
@@ -88,7 +88,7 @@
 					            <td>{{ country.centroid }}</td>
 					            <td>{{ country.numberFound }}</td>
 					            <td> <a href="meteorites/{{ country.meteoriteID }}">{{ country.recent }}</a></td>
-		        			</tr>.
+		        			</tr>
 		    			</tbody>
                         <dir-pagination-controls>
                             template-url="../static/partials/dirPagination.tpl.html"

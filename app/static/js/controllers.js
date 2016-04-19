@@ -58,7 +58,10 @@ meteoriteApp.controller('countriesController', function($scope, countriesObj) {
         if(countriesObj.data.objects[i].meteorites.length != 0){
             countriesObj.data.objects[i].meteoriteID = countriesObj.data.objects[i].meteorites[0].id;
         }
+<<<<<<< HEAD
         console.log(numResults);
+=======
+>>>>>>> e91421832f9f3e0b6e963364c6efac461f095a34
     }
     $scope.countries = countriesObj.data.objects;
 });

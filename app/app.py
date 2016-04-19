@@ -11,11 +11,12 @@ import unicodedata
 import re
 import sys
 import subprocess
+from geopy.geocoders import Nominatim
+
+geolocator = Nominatim()
 
 GOOGLE_API_KEY = "AIzaSyCL_AcVa4WucI3grBntaNB7QGxTOQW_iMg"
 COUNTRIES_API_KEY = "gFg7FXcHPWmshS7mUcHPw1wWR2cup132sJnjsntcFkuO3xN6oO"
-
-createdb
 
 #from models import *
 
@@ -48,13 +49,10 @@ def index(**kwargs):
 
 @manager.command
 def getfiles():
-    #remove existing files
-    os.remove('countries.json')
-    os.remove('meteorites.json')
-    os.remove('classes.json')
 
     #create countries
     x = open('countries.json', 'w+')
+    deleteContent(x)
     countries = requests.get('https://restcountries-v1.p.mashape.com/all',
          headers={"X-Mashape-Key": COUNTRIES_API_KEY, "Accept": "application/json"}).json()
     c = []
@@ -67,6 +65,7 @@ def getfiles():
 
     #create meteorites
     x = open('meteorites.json', 'w+')
+    deleteContent(x)
     meteorites = requests.get('https://data.nasa.gov/resource/y77d-th95.json').json()
 
     #these are the only keys we care about.
@@ -75,12 +74,21 @@ def getfiles():
     for meteorite in meteorites:
         if ('mass' in meteorite) and ('year' in meteorite) and ('reclong' in meteorite)  and ('reclat' in meteorite) and ('recclass' in meteorite):
             meteorite = {meteorite_key : meteorite[meteorite_key] for meteorite_key in meteorite_keys if meteorite_key in meteorite}
+            
+            geolocation = meteorite['reclat'] + ', ' + meteorite['reclong']
+            cname = locate(geolocation)
+            cname = parseCname(cname)
+            meteorite['cname'] = cname
+            meteorite['geolocation'] = geolocation
+            #print(meteorite['year'])
             m.append(meteorite)
+
     json.dump(m, x)
     x.close()
 
     #create classifications
     x = open('classes.json', 'w+')
+    deleteContent(x)
     cls = []
     classifications = requests.get('https://raw.githubusercontent.com/Leith24/cs373-idb/dev/classifications.json').json()
 
@@ -112,6 +120,38 @@ def getfiles():
 
     json.dump(cls, x)
     x.close()
+
+def deleteContent(pfile):
+    pfile.seek(0)
+    pfile.truncate()
+
+def locate(geolocation):
+    country = geolocator.reverse(geolocation, language ='en', timeout = 60)
+    country = country.address.split(',')
+    return country[-1].strip(' ')
+
+def parseCname(cname):
+    if cname == 'Congo-Kinshasa':
+        cname = 'Democratic Republic of the Congo'
+    elif cname == 'Czechia':
+        cname = 'Czech Republic'
+    elif cname == 'United States of America':
+        cname = 'United States'
+    elif cname == 'Russian Federation':
+        cname = 'Russia'
+    elif cname == 'RSA':
+        cname = 'South Africa'
+    elif cname == 'The Netherlands':
+        cname = 'Netherlands'
+    elif cname == 'Islamic Republic of Iran':
+        cname = 'Iran'
+    return cname
+
+@manager.command
+def create_db():
+    #logger.debug("create_db")
+    app.config['SQLALCHEMY_ECHO'] = True
+    createdb()
 
 if __name__ == '__main__':
     manager.run()

@@ -56,6 +56,13 @@ p
 	padding-left: 280px;
 }
 
+#country_name
+{
+	float: middle;
+	padding-top: 15px;
+	padding-left: 280px;
+}
+
 #stats_names
 {
 	float: left;
@@ -79,6 +86,9 @@ p
 .align_right
 {
 	float: right;
+}
+.class-image{
+	padding-top: 20px;
 }
 
 .col-sm-2
@@ -182,10 +192,6 @@ p
 	padding-top: 80px;
 }
 
-.col-sm-4
-{
-	padding-top: 100px;
-}
 
 #github_links a:hover
 {
@@ -197,10 +203,14 @@ p
 
 #map
 {
-	padding-top: 80px;
+	padding-top: 60px;
 }
 
 #footer
 {
 	padding: 10px;
+}
+
+.country-table{
+	margin-top: 20px;
 }
