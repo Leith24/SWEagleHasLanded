@@ -3,7 +3,7 @@
 <html>
 
 	<head>
-		<title>LL6</title>
+		<title>{{classification.name}}</title>
 
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -14,65 +14,124 @@
 	</head>
 
 	<body>
-		<div id = "content">
-			<div class="row">
-        		<div class="col-sm-2 hidden-xs" id="navbarbackground">
+		<div id="content">
+            <div class="row">
+                <div class="col-sm-2 hidden-xs" id="navbarbackground">
                     <ul class="nav nav-pills nav-stacked" id = "nav_links">
-                            <li><a ui-sref="meteorites">Meteorites</a></li>
-                            <li><a ui-sref="classifications">Classifications</a></li>
-                            <li><a ui-sref="countries">Countries</a></li>
-                            <li><a ui-sref="about">About</a></li>
+                        <li><a href="/meteorites">Meteorites</a></li>
+                        <li><a href="/classifications">Classifications</a></li>
+                        <li><a href="/countries">Countries</a></li>
+                        <li><a href="/about">About</a></li>
                     </ul>
                 </div>
 
-                <div class="col-sx-2 hidden-sm hidden-md hidden-lg">
+                <div class="col-xs-2 hidden-sm hidden-md hidden-lg">
                     <ul class="nav nav-pills" id = "nav_links_mobile">
-                        <li><a ui-sref="meteorites">Meteorites</a></li>
-                        <li><a ui-sref="classifications">Classifications</a></li>
-                        <li><a ui-sref="countries">Countries</a></li>
-                        <li><a ui-sref="about">About</a></li>
+                        <li><a href="/meteorites">Meteorites</a></li>
+                        <li><a href="/classifications">Classifications</a></li>
+                        <li><a href="/countries">Countries</a></li>
+                        <li><a href="/about">About</a></li>
                     </ul>
                 </div>
-
-        		<div class="col-sm-10">
-
-                    <div class="row">
-                        <div class="col-sm-10">
-
+                <div class="col-sm-10">
+                        <!--Main C;assification Information-->
+                        <div class="col-sm-8 col-md-6">
                             <div id = "main_header">
-                                <h1>Classification Name</h1>
+                                <h1>Class Name</h1>
                             </div>
 
-                            <div id = "meteorite_name">
-                                <h2>{{ classification.name }}</h2>
+                            <div id = "country_name">
+                                <h2>{{classification.name}}<h2>
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="row">
-                        <div class="col-sm-7 col-md-6">
                             <div id = "stats_names">
-                                <!--<p>Classification ID</p>-->
+                                <p>ParentClass</p>
                                 <p>Composition</p>
-        				        <p>Parent Body</p>
-        				        <p>Number Found</p>
+                                <p>Origin</p>
+                                <p>NumberFound</p>
                             </div>
 
-                			<div id = "stats">
-                				<!--<p></p>-->
-                				<p>{{ classification.composition }}</p>
-                				<p>{{ classification.pclass }}</p>
-                                <p>{{ classification.numberFound }}</p>
-                			</div>
+                            <div id = "stats">
+                                <p>{{classification.pclass}}</p>
+                                <p>{{classification.composition}}</p>
+                                <p>{{classification.origin}}</p>
+                                <p>{{classification.numberFound}}</p>
+                            </div>
+                        </div>
+                        <!-- Table for Meteorites that have landed in the Country -->
+
+                    <div class="col-sm-4 col-md-5 class-image">
+                        <img src="../static/images/classifications_table.png"  alt="Rounded Image" >
+                    </div>
+                    <div class="col-sm-12  country-table">
+                            <table class="table table-bordered" >
+                                <thead>
+                                    <tr>
+                                        <td>
+                                            <a href="#" ng-click="sortType = 'name'; sortReverse = !sortReverse">
+                                                Name
+                                                <span ng-show="sortType == 'name' && !sortReverse" class="fa fa-caret-down"></span>
+                                                <span ng-show="sortType == 'name' && sortReverse" class="fa fa-caret-up"></span>
+
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a href="#" ng-click="sortType = 'mass'; sortReverse = !sortReverse">
+                                                Mass
+                                                <span ng-show="sortType == 'mass' && !sortReverse" class="fa fa-caret-down"></span>
+                                                <span ng-show="sortType == 'mass' && sortReverse" class="fa fa-caret-up"></span>
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a href="#" ng-click="sortType = 'country'; sortReverse = !sortReverse">
+                                                Country
+                                                <span ng-show="sortType == 'country' && !sortReverse" class="fa fa-caret-down"></span>
+                                                <span ng-show="sortType == 'country' && sortReverse" class="fa fa-caret-up"></span>
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a href="#" ng-click="sortType = 'class'; sortReverse = !sortReverse">
+                                                Class
+                                                <span ng-show="sortType == 'class' && !sortReverse" class="fa fa-caret-down"></span>
+                                                <span ng-show="sortType == 'class' && sortReverse" class="fa fa-caret-up"></span>
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a href="#" ng-click="sortType = 'year'; sortReverse = !sortReverse">
+                                                Year
+                                                <span ng-show="sortType == 'year' && !sortReverse" class="fa fa-caret-down"></span>
+                                                <span ng-show="sortType == 'year' && sortReverse" class="fa fa-caret-up"></span>
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a href="#" ng-click="sortType = 'geolocation'; sortReverse = !sortReverse">
+                                                Geolocation
+                                                <span ng-show="sortType == 'geolocation' && !sortReverse" class="fa fa-caret-down"></span>
+                                                <span ng-show="sortType == 'geolocation' && sortReverse" class="fa fa-caret-up"></span>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr dir-paginate="meteorite in meteorites | orderBy:sortType:sortReverse | itemsPerPage: pageSize">
+                                        <td><a href="/meteorites/{{ meteorite.id}}">{{ meteorite.name }}</a></td>
+                                        <td>{{ meteorite.mass }}</td>
+                                        <td><a href = "countries/{{ meteorite.country_id }}"> {{ meteorite.cname }}</a></td>
+                                        <td><a href="classifications/{{ meteorite.classification_id }}"> {{ meteorite.recclass }}</a></td>
+                                        <td>{{ meteorite.year }}</td>
+                                        <td>{{ meteorite.reclat }} , {{ meteorite.reclong }}</td>
+                                    </tr>
+                                </tbody>
+                                <dir-pagination-controls>
+                                    template-url="../../static/partials/dirPagination.tpl.html"
+                                    on-page-change="pageChange(newPageNumber)">
+                                </dir-pagination-controls>
+                            </table>
                         </div>
 
-                        <div class="col-sm-3">
-                            <img src="../static/images/classifications_table.png" class="img-rounded" alt="Rounded Image" height="250" width="450">
-                        </div>
-                    </div>
-        		</div>
-    		</div>
-		</div>
+                </div>
+            </div>
+        </div>
 
 		<div id = "footer">
         	<p>&copy; Copyright 2016 | All rights reserved</p>

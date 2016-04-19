@@ -79,7 +79,7 @@ meteoriteApp.config(function($stateProvider, $urlRouterProvider, $locationProvid
             controller: 'classificationsController'
         })
         .state('classification', {
-            url: "/classification/:id",
+            url: "/classifications/:id",
             templateUrl: "../static/partials/classification.html",
             resolve: {
                 classificationObj:['$http', '$stateParams', function ($http, $stateParams){
