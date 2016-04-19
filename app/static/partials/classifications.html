@@ -7,7 +7,7 @@
 
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="static/css/custom.css">
+		<link rel="stylesheet" type="text/css" href="../static/css/custom.css">
 		<link href='https://fonts.googleapis.com/css?family=Advent+Pro' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Advent+Pro:100' rel='stylesheet' type='text/css'>
 
@@ -18,19 +18,19 @@
 			<div class="row" style="padding-top: 10px;">
         		<div class="col-sm-2 hidden-xs">
                     <ul class="nav nav-pills nav-stacked" id = "nav_links">
-                        <li><a ui-sref="meteorites">Meteorites</a></li>
-                        <li><a ui-sref="classifications">Classifications</a></li>
-                        <li><a ui-sref="countries">Countries</a></li>
-                         <li><a ui-sref="about">About</a></li>
+                        <li><a href="/meteorites">Meteorites</a></li>
+                        <li><a href="/classifications">Classifications</a></li>
+                        <li><a href="/countries">Countries</a></li>
+                        <li><a href="/about">About</a></li>
                     </ul>
                 </div>
 
                 <div class="col-sx-2 hidden-sm hidden-md hidden-lg">
                     <ul class="nav nav-pills" id = "nav_links_mobile">
-                        <li><a ui-sref="meteorites">Meteorites</a></li>
-                        <li><a ui-sref="classifications">Classifications</a></li>
-                        <li><a ui-sref="countries">Countries</a></li>
-                         <li><a ui-sref="about">About</a></li>
+                        <li><a href="/meteorites">Meteorites</a></li>
+                        <li><a href="/classifications">Classifications</a></li>
+                        <li><a href="/countries">Countries</a></li>
+                        <li><a href="/about">About</a></li>
                     </ul>
                 </div>
 
@@ -85,7 +85,7 @@
 		    			</thead>
 		    			<tbody>
 		        			<tr dir-paginate="classification in classifications | orderBy:sortType:sortReverse | itemsPerPage: pageSize">
-					            <td><a href="classifications/{{classification.id}}">{{ classification.name }}</a></td>
+					            <td><a href="/classifications/{{classification.id}}">{{ classification.name }}</a></td>
 					            <td>{{ classification.pclass }}</td>
                                 <td>{{ classification.composition }}</td>
 					            <td>{{ classification.origin }}</td>

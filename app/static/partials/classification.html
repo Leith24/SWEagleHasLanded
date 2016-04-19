@@ -18,19 +18,19 @@
             <div class="row">
                 <div class="col-sm-2 hidden-xs" id="navbarbackground">
                     <ul class="nav nav-pills nav-stacked" id = "nav_links">
-                            <li><a ui-sref="meteorites">Meteorites</a></li>
-                            <li><a ui-sref="classifications">Classifications</a></li>
-                            <li><a ui-sref="countries">Countries</a></li>
-                            <li><a ui-sref="about">About</a></li>
+                        <li><a href="/meteorites">Meteorites</a></li>
+                        <li><a href="/classifications">Classifications</a></li>
+                        <li><a href="/countries">Countries</a></li>
+                        <li><a href="/about">About</a></li>
                     </ul>
                 </div>
 
                 <div class="col-xs-2 hidden-sm hidden-md hidden-lg">
                     <ul class="nav nav-pills" id = "nav_links_mobile">
-                        <li><a ui-sref="meteorites">Meteorites</a></li>
-                        <li><a ui-sref="classifications">Classifications</a></li>
-                        <li><a ui-sref="countries">Countries</a></li>
-                        <li><a ui-sref="about">About</a></li>
+                        <li><a href="/meteorites">Meteorites</a></li>
+                        <li><a href="/classifications">Classifications</a></li>
+                        <li><a href="/countries">Countries</a></li>
+                        <li><a href="/about">About</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-10">
@@ -114,10 +114,10 @@
                                 </thead>
                                 <tbody>
                                     <tr dir-paginate="meteorite in meteorites | orderBy:sortType:sortReverse | itemsPerPage: pageSize">
-                                        <td><a href="meteorites/{{ meteorite.id}}">{{ meteorite.name }}</a></td>
+                                        <td><a href="/meteorites/{{ meteorite.id}}">{{ meteorite.name }}</a></td>
                                         <td>{{ meteorite.mass }}</td>
-                                        <td><a href = "countries/{{ meteorite.country_id }}"> {{ meteorite.cname }}</a></td>
-                                        <td><a href="classifications/{{ meteorite.classification_id }}"> {{ meteorite.recclass }}</a></td>
+                                        <td><a href="/countries/{{ meteorite.country_id }}"> {{ meteorite.cname }}</a></td>
+                                        <td><a href="/classifications/{{ meteorite.classification_id }}"> {{ meteorite.recclass }}</a></td>
                                         <td>{{ meteorite.year }}</td>
                                         <td>{{ meteorite.reclat }} , {{ meteorite.reclong }}</td>
                                     </tr>

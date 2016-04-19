@@ -25,7 +25,8 @@ meteoriteApp.config(function($stateProvider, $urlRouterProvider, $locationProvid
                     });
                 }]
             },
-            controller: 'meteoritesController'
+            controller: 'meteoritesController',
+            css: 'static/css/custom.css'
         })
         .state('meteorite', {
             url: "/meteorites/:id",
@@ -51,7 +52,8 @@ meteoriteApp.config(function($stateProvider, $urlRouterProvider, $locationProvid
                     });
                 }]
             },
-            controller: 'countriesController'
+            controller: 'countriesController',
+            css: 'static/css/custom.css'
         })
         .state('country', {
             url: "/countries/:id",
@@ -64,20 +66,22 @@ meteoriteApp.config(function($stateProvider, $urlRouterProvider, $locationProvid
                     });
                 }]
             },
-            controller: 'countryController'
+            controller: 'countryController',
+            css: '../static/css/custom.css'
         })
         .state('classifications', {
             url: "/classifications",
             templateUrl: "static/partials/classifications.html",
             resolve: {
-                classificationsObj:['$http', '$stateParams', function ($http){
+                classificationsObj:['$http', function ($http){
                     return $http({
                         method:'GET',
                         url:'/api/classifications'
                     });
                 }]
             },
-            controller: 'classificationsController'
+            controller: 'classificationsController',
+            css: 'static/css/custom.css'
         })
         .state('classification', {
             url: "/classifications/:id",
@@ -90,7 +94,8 @@ meteoriteApp.config(function($stateProvider, $urlRouterProvider, $locationProvid
                     });
                 }]
             },
-            controller: 'classificationController'
+            controller: 'classificationController',
+            css: '../static/css/custom.css'
         })
         .state('about', {
             url: "/about",
