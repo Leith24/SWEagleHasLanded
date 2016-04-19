@@ -5,7 +5,8 @@ var meteoriteApp = angular.module('meteoriteApp', ['ui.router', 'angularUtils.di
 meteoriteApp.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
   //
   // For any unmatched url, redirect to /state1
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider
+        .otherwise('/');
   //
   // Now set up the states
     $stateProvider
@@ -79,7 +80,7 @@ meteoriteApp.config(function($stateProvider, $urlRouterProvider, $locationProvid
             controller: 'classificationsController'
         })
         .state('classification', {
-            url: "/classification/:id",
+            url: "/classifications/:id",
             templateUrl: "../static/partials/classification.html",
             resolve: {
                 classificationObj:['$http', '$stateParams', function ($http, $stateParams){
@@ -108,4 +109,5 @@ meteoriteApp.config(function($stateProvider, $urlRouterProvider, $locationProvid
 
 
 });
+
 

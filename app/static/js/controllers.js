@@ -1,8 +1,10 @@
+//Need to declare a mainController for Angular but it doesn't do anything
 meteoriteApp.controller('mainController', function($scope) {
 
 });
-//DATA TABLE SORTING WILL BE BROKEN ON INTEGERS NEED TO FIX IN DATABASE
+
 meteoriteApp.controller('meteoritesController', function($scope, meteoritesObj) {
+     //Parameters for pagination
     $scope.sortType     = 'name'; // set the default sort type
     $scope.sortReverse  = false;  // set the default sort order
     $scope.searchMeteorites   = '';     // set the default search/filter term
@@ -10,54 +12,59 @@ meteoriteApp.controller('meteoritesController', function($scope, meteoritesObj) 
     $scope.pageSize = 15;
 
     $scope.meteorites = meteoritesObj.data.objects;
-    console.log(meteoritesObj.data);
+
 });
 
 meteoriteApp.controller('meteoriteController', function($scope, $sce, $stateParams, meteoriteObj) {
     $scope.meteorite = meteoriteObj.data;
-    console.log(meteoriteObj);
-    //TODO: Get country from geolocation
-    //$scope.country = geolocation bs
+
     $scope.message = $stateParams;
+    //Google Maps embedding
     $scope.urlString = "https://www.google.com/maps/embed/v1/place?key=AIzaSyBMRg5inrD7lBnA8EivUn1k-TuOlBhdNMw"
                                     + "&q=" + ($scope.meteorite).geolocation
                                     + "&zoom=6";
     $scope.mapURL = $sce.trustAsResourceUrl($scope.urlString);
 });
+
 meteoriteApp.controller('classificationsController', function($scope, classificationsObj) {
+    //Parameters for pagination
     $scope.sortType     = 'name'; // set the default sort type
     $scope.sortReverse  = false;  // set the default sort order
     $scope.searchClassifications   = '';     // set the default search/filter term
     $scope.currentPage = 1;
     $scope.pageSize = 15;
-    console.log(classificationsObj.data);
+
     $scope.classifications = classificationsObj.data.objects;
 });
 
 meteoriteApp.controller('classificationController', function($scope, $stateParams, classificationObj) {
     $scope.classification = classificationObj.data;
-    //TODO: Get country from geolocation
-    //console.log(classificationObj.data);
+
 
 });
 
 meteoriteApp.controller('countriesController', function($scope, countriesObj) {
+    //Parameters for pagination
     $scope.sortType     = 'name'; // set the default sort type
     $scope.sortReverse  = false;  // set the default sort order
     $scope.searchMeteorites   = '';     // set the default search/filter term
     $scope.currentPage = 1;
     $scope.pageSize = 15;
 
+    //Generate meteorite ID for 'Last Found' so we can link to individual meteorites
+    var numResults = countriesObj.data.num_results;
+    for(var i=0; i < numResults; i++){
+        if(countriesObj.data.objects[i].meteorites.length != 0){
+            countriesObj.data.objects[i].meteoriteID = countriesObj.data.objects[i].meteorites[0].id;
+        }
+    }
     $scope.countries = countriesObj.data.objects;
-    console.log(countriesObj.data);
 });
 
 meteoriteApp.controller('countryController', function($scope, $sce, $stateParams, countryObj) {
-    //TODO: Get country from geolocation
-    //$scope.country = geolocation bs
     $scope.country = countryObj.data;
-    console.log($stateParams);
 
+    //Google Maps embedding
     $scope.message = $stateParams;
     $scope.urlString = "https://www.google.com/maps/embed/v1/place?key=AIzaSyBMRg5inrD7lBnA8EivUn1k-TuOlBhdNMw"
                                     + "&q=" + ($scope.country).centroid

@@ -87,8 +87,8 @@
 					            <td>{{ country.area }}</td>
 					            <td>{{ country.centroid }}</td>
 					            <td>{{ country.numberFound }}</td>
-					            <td>{{ country.recent }}</td>
-		        			</tr>.
+					            <td> <a href="meteorites/{{ country.meteoriteID }}">{{ country.recent }}</a></td>
+		        			</tr>
 		    			</tbody>
                         <dir-pagination-controls>
                             template-url="../static/partials/dirPagination.tpl.html"

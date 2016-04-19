@@ -4,6 +4,6 @@ from models import Meteorite, Classification, Country
 #OR
 #We do individual model calls on each field
 #Its about the same work I think, its just one makes a bunch of database calls
-#and the other makes 3 databases calls and the figures out the rest. 
+#and the other makes 3 databases calls and the figures out the rest.
 
 
