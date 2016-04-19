@@ -49,13 +49,10 @@ def index(**kwargs):
 
 @manager.command
 def getfiles():
-    #remove existing files
-    os.remove('countries.json')
-    os.remove('meteorites.json')
-    os.remove('classes.json')
 
     #create countries
     x = open('countries.json', 'w+')
+    deleteContent(x)
     countries = requests.get('https://restcountries-v1.p.mashape.com/all',
          headers={"X-Mashape-Key": COUNTRIES_API_KEY, "Accept": "application/json"}).json()
     c = []
@@ -68,6 +65,7 @@ def getfiles():
 
     #create meteorites
     x = open('meteorites.json', 'w+')
+    deleteContent(x)
     meteorites = requests.get('https://data.nasa.gov/resource/y77d-th95.json').json()
 
     #these are the only keys we care about.
@@ -82,6 +80,7 @@ def getfiles():
             cname = parseCname(cname)
             meteorite['cname'] = cname
             meteorite['geolocation'] = geolocation
+            #print(meteorite['year'])
             m.append(meteorite)
 
     json.dump(m, x)
@@ -89,6 +88,7 @@ def getfiles():
 
     #create classifications
     x = open('classes.json', 'w+')
+    deleteContent(x)
     cls = []
     classifications = requests.get('https://raw.githubusercontent.com/Leith24/cs373-idb/dev/classifications.json').json()
 
@@ -120,6 +120,10 @@ def getfiles():
 
     json.dump(cls, x)
     x.close()
+
+def deleteContent(pfile):
+    pfile.seek(0)
+    pfile.truncate()
 
 def locate(geolocation):
     country = geolocator.reverse(geolocation, language ='en', timeout = 60)
