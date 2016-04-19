@@ -38,8 +38,15 @@ meteoriteApp.controller('classificationsController', function($scope, classifica
 });
 
 meteoriteApp.controller('classificationController', function($scope, $stateParams, classificationObj) {
+    $scope.sortType     = 'name'; // set the default sort type
+    $scope.sortReverse  = false;  // set the default sort order
+    $scope.searchMeteorites   = '';     // set the default search/filter term
+    $scope.currentPage = 1;
+    $scope.pageSize = 15;
+
     $scope.classification = classificationObj.data;
     $scope.meteorites = classificationObj.data.meteorites;
+    console.log(classificationObj.data.meteorites);
 
 
 });
@@ -64,6 +71,7 @@ meteoriteApp.controller('countriesController', function($scope, countriesObj) {
 
 meteoriteApp.controller('countryController', function($scope, $sce, $stateParams, countryObj) {
     //Table of meteorites that have landed in the country
+
     $scope.country = countryObj.data;
     $scope.meteorites = countryObj.data.meteorites;
     $scope.cname = capFirstLetter(countryObj.data.name);
@@ -73,6 +81,8 @@ meteoriteApp.controller('countryController', function($scope, $sce, $stateParams
     $scope.searchMeteorites   = '';     // set the default search/filter term
     $scope.currentPage = 1;
     $scope.pageSize = 15;
+
+
 
 
 
