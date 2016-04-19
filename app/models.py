@@ -52,6 +52,26 @@ class Meteorite(db.Model):
 	def __repr__(self):
 		return '<Meteorite %r>' % (self.name)
 
+	#Querying all fields in meteorites to find a match based on
+	#each term in the search terms.
+	@staticmethod
+	def search(search_terms):
+		search_terms = ['aachen', 'none']
+		fields =['id','name', 'mass', 'recclass', 'year', 'cname', 'reclat', 'reclong', 'geolocation']
+		and_results = []
+		#Right now just trying to
+		or_result = []
+		for field in fields :
+			and_result = (Meteorite[field].like("%{:s}%".format(term)) for term in search_terms)
+			if and_result:
+				and_results.append(and_result)
+				print(and_result)
+
+		return and_results
+
+
+
+
 class Classification(db.Model):
 
 	"""

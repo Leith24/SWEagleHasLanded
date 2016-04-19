@@ -6,7 +6,6 @@ from db import db
 
 
 def populateCountries(countries_json_data):
-
     with open(countries_json_data) as data_file:
           cjo = json.load(data_file)
 
