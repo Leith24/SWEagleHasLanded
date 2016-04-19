@@ -69,7 +69,7 @@ class TestClassifications(TestCase):
         classification_1 = Classification.query.filter(Classification.name == 'Brachinite').first()
         assert classification_1.pclass == "Primitive Achondrite"
 
-        classification_2 = Classification.query.filter(Classification.class_id == "Achondrite").first()
+        classification_2 = Classification.query.filter(Classification.name == "Achondrite").first()
         assert classification_2.parentBody == 'Mars'
 
     # Tests adding a new classification to the table and removing it

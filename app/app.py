@@ -12,7 +12,6 @@ import re
 import sys
 import subprocess
 from geopy.geocoders import Nominatim
-from models import Meteorite, Classification, Country
 
 geolocator = Nominatim()
 
@@ -25,23 +24,19 @@ COUNTRIES_API_KEY = "gFg7FXcHPWmshS7mUcHPw1wWR2cup132sJnjsntcFkuO3xN6oO"
 
 #Returns a list of dictionaries, each of which contains information about a single meteorite
 
-#<String:search_terms> is the characters after /search in the url
-@app.route('/search/<string:search_terms>')
-def search(search_terms):
-    #Send entire search to Meteorite to handle
-    r_and = Meteorite.search()
-    return json.dumps(r_and)
 
-# ---------.
+# ---------
 # run_tests
 # ---------
+@app.route('/api/get_meteorites')
+def get_meteorites():
+    return 'hi'
 
 
 @app.route('/run_unit_tests')
 def run_tests():
     output = subprocess.getoutput("python tests.py")
     return json.dumps({'output': str(output)})
-
 
 # Use Angular to do user/client routing
 @app.route('/meteorites')
@@ -147,6 +142,12 @@ def parseCname(cname):
     elif cname == 'Islamic Republic of Iran':
         cname = 'Iran'
     return cname
+
+@manager.command
+def create_db():
+    #logger.debug("create_db")
+    app.config['SQLALCHEMY_ECHO'] = True
+    createdb()
 
 if __name__ == '__main__':
     manager.run()
