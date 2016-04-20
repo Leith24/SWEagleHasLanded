@@ -56,7 +56,7 @@
                                 <p>{{country.area}}</p>
                                 <p>{{country.centroid}}</p>
                                 <p>{{country.numberFound}}</p>
-                                <p>{{country.recent}}</p>
+                                <p><a href="meteorites/{{ country.recent_id }}">{{ country.recent }}</a></p>
                             </div>
                         </div>
                         <!-- Table for Meteorites that have landed in the Country -->
@@ -101,26 +101,30 @@
                                             </a>
                                         </td>
                                         <td>
-                                            <a href="#" ng-click="sortType = 'geolocation'; sortReverse = !sortReverse">
-                                                Geolocation
-                                                <span ng-show="sortType == 'geolocation' && !sortReverse" class="fa fa-caret-down"></span>
-                                                <span ng-show="sortType == 'geolocation' && sortReverse" class="fa fa-caret-up"></span>
+                                            <a href="#" ng-click="sortType = 'reclat'; sortReverse = !sortReverse">
+                                                Latitude
+                                                <span ng-show="sortType == 'reclat' && !sortReverse" class="fa fa-caret-down"></span>
+                                                <span ng-show="sortType == 'reclat' && sortReverse" class="fa fa-caret-up"></span>
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a href="#" ng-click="sortType = 'reclong'; sortReverse = !sortReverse">
+                                                Longitude
+                                                <span ng-show="sortType == 'reclong' && !sortReverse" class="fa fa-caret-down"></span>
+                                                <span ng-show="sortType == 'reclong' && sortReverse" class="fa fa-caret-up"></span>
                                             </a>
                                         </td>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr dir-paginate="meteorite in meteorites | orderBy:sortType:sortReverse | itemsPerPage: pageSize">
-                                        <td><a href="/meteorites/{{ meteorite.id}}">{{ meteorite.name }}</a></td>
+                                        <td><a href="/meteorites/{{ meteorite.id }}">{{ meteorite.name }}</a></td>
                                         <td>{{ meteorite.mass }}</td>
-<<<<<<< HEAD
                                         <td><a href = "countries/{{ meteorite.country_id }}"> {{ meteorite.cname }}</a></td>
-                                        <td><a href="/classification/{{ meteorite.classification_id }}"> {{ meteorite.recclass }}</a></td>
-=======
                                         <td><a href="/classifications/{{ meteorite.classification_id }}"> {{ meteorite.recclass }}</a></td>
->>>>>>> a6e657bd78eb53a9b117f78d5e68cf46c8ff9723
                                         <td>{{ meteorite.year }}</td>
-                                        <td>{{ meteorite.reclat }} , {{ meteorite.reclong }}</td>
+                                        <td>{{ meteorite.reclat }}</td>
+                                        <td>{{ meteorite.reclong }}</td>
                                     </tr>
                                 </tbody>
                                 <dir-pagination-controls>

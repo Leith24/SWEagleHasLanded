@@ -66,8 +66,7 @@ def populateRelations():
         recent = db.session.query(Meteorite).filter(Meteorite.cname == c.name).order_by(Meteorite.year).first()
         if recent:
             c.recent = recent.name
-        else: 
-            c.recent = 'None'
+            c.recent_id = recent.id
         #num found
         num = c.meteorites.count()
         c.numberFound = num

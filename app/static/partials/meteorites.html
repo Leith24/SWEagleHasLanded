@@ -81,10 +81,17 @@
                                     </a>
                                 </td>
 		            			<td>
-                                    <a href="#" ng-click="sortType = 'geolocation'; sortReverse = !sortReverse">
-                                        Geolocation
-                                        <span ng-show="sortType == 'geolocation' && !sortReverse" class="fa fa-caret-down"></span>
-                                        <span ng-show="sortType == 'geolocation' && sortReverse" class="fa fa-caret-up"></span>
+                                    <a href="#" ng-click="sortType = 'reclat'; sortReverse = !sortReverse">
+                                        Latitude
+                                        <span ng-show="sortType == 'reclat' && !sortReverse" class="fa fa-caret-down"></span>
+                                        <span ng-show="sortType == 'reclat' && sortReverse" class="fa fa-caret-up"></span>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#" ng-click="sortType = 'reclong'; sortReverse = !sortReverse">
+                                        Longitude
+                                        <span ng-show="sortType == 'reclong' && !sortReverse" class="fa fa-caret-down"></span>
+                                        <span ng-show="sortType == 'reclong' && sortReverse" class="fa fa-caret-up"></span>
                                     </a>
                                 </td>
 		        			</tr>
@@ -96,7 +103,8 @@
                                 <td><a href = "countries/{{ meteorite.country_id }}"> {{ meteorite.cname }}</a></td>
 					            <td><a href="classifications/{{ meteorite.classification_id }}"> {{ meteorite.recclass }}</a></td>
 					            <td>{{ meteorite.year }}</td>
-					            <td>{{ meteorite.reclat }},{{ meteorite.reclong }}</td>
+					            <td>{{ meteorite.reclat }}</td>
+                                <td>{{ meteorite.reclong }}</td>
 		        			</tr>
 		    			</tbody>
                         <dir-pagination-controls>

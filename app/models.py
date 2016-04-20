@@ -115,17 +115,19 @@ class Country(db.Model):
 	name = db.Column(db.String(50), unique = True)
 	area = db.Column(db.Integer)
 	centroid = db.Column(db.String(50))
-	numberFound = db.Column(db.Integer)
 	recent = db.Column(db.String(50))
+	recent_id = db.Column(db.Integer)
+	numberFound = db.Column(db.Integer)
 
 	#Many to one relationship btwn Countries and Meteorites (meteorite.country)
 	meteorites= db.relationship('Meteorite',backref='country', lazy='dynamic')
 
-	def __init__(self, name, area = 0, centroid = "0.0, 0.0", recent = 'None', numberFound = 0):
+	def __init__(self, name, area = 0, centroid = "0.0, 0.0", recent = 'None', recent_id = None, numberFound = 0):
 		self.name = name
 		self.area = area 
 		self.centroid = centroid
 		self.recent = recent
+		self.recent_id = recent_id
 		self.numberFound = numberFound
 
 	def __repr__(self):
