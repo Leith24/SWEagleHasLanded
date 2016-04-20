@@ -6,360 +6,422 @@ HOST: http://meteorite-landings.me/
 Meteorites is an API for information on meteorites that have landed on Earth as well as their classifications and countries.
 # Group Meteorites
 
-## Meteorites Collection [/meteorites]
+## Meteorites Collection [/api/meteorites]
 ### Get a list of all meteorites [GET]
 
 + Response 200 (application/json)
         
-        [
+        {
+          "num_results": 3,
+          "objects": [
             {
-            "class : {
+              "class": {
                 "composition": "Stony",
-                "id": 30,
+                "id": 1,
                 "name": "L",
                 "numberFound": 0,
                 "origin": "433 Eros",
                 "pclass": "Chondrite"
-             },
-            "classification_id": 30,
-            "cname": "Germany",
-            "country": {
+              },
+              "classification_id": 1,
+              "cname": "Germany",
+              "country": {
                 "area": 357114,
                 "centroid": "51.0, 9.0",
                 "id": 83,
                 "name": "Germany",
                 "numberFound": 0,
                 "recent": "None"
-            },
-            "country_id": 83,
-            "geolocation": "50.775000, 6.083330",
-            "id": 1,
-            "mass": 21.0,
-            "name": "Aachen",
-            "recclass": "L",
-            "reclat": 50.775,
-            "reclong": 6.08333,
-            "year": 1880
+              },
+              "country_id": 83,
+              "geolocation": "50.775000, 6.083330",
+              "id": 1,
+              "mass": 21.0,
+              "name": "Aachen",
+              "recclass": "L",
+              "reclat": 50.775,
+              "reclong": 6.08333,
+              "year": 1880
             },
             {
-            "class": {
+              "class": {
                 "composition": "Stony",
-                "id": 17,
+                "id": 37,
                 "name": "H",
                 "numberFound": 0,
                 "origin": "6 Hebe",
                 "pclass": "Chondrite"
-            },
-            "classification_id": 17,
-            "cname": "Denmark",
-            "country": {
+              },
+              "classification_id": 37,
+              "cname": "Denmark",
+              "country": {
                 "area": 43094,
                 "centroid": "56.0, 10.0",
                 "id": 61,
                 "name": "Denmark",
                 "numberFound": 0,
                 "recent": "None"
-            },
-            "country_id": 61,
-            "geolocation": "56.183330, 10.233330",
-            "id": 2,
-            "mass": 720.0,
-            "name": "Aarhus",
-            "recclass": "H",
-            "reclat": 56.1833,
-            "reclong": 10.2333,
-            "year": 1951
+              },
+              "country_id": 61,
+              "geolocation": "56.183330, 10.233330",
+              "id": 2,
+              "mass": 720.0,
+              "name": "Aarhus",
+              "recclass": "H",
+              "reclat": 56.1833,
+              "reclong": 10.2333,
+              "year": 1951
             },
             {
-            "class": {
+              "class": {
                 "composition": "Stony",
-                "id": 25,
+                "id": 21,
                 "name": "EH",
                 "numberFound": 0,
                 "origin": "16 Psyche",
                 "pclass": "Chondrite"
-            },
-            "classification_id": 25,
-            "cname": "Canada",
-            "country": {
+              },
+              "classification_id": 21,
+              "cname": "Canada",
+              "country": {
                 "area": 9984670,
                 "centroid": "60.0, -95.0",
                 "id": 41,
                 "name": "Canada",
                 "numberFound": 0,
                 "recent": "None"
-            },
-            "country_id": 41,
-            "geolocation": "54.216670, -113.000000",
-            "id": 3,
-            "mass": 107000.0,
-            "name": "Abee",
-            "recclass": "EH",
-            "reclat": 54.2167,
-            "reclong": -113.0,
-            "year": 1952
-            },
-        ],
+              },
+              "country_id": 41,
+              "geolocation": "54.216670, -113.000000",
+              "id": 3,
+              "mass": 107000.0,
+              "name": "Abee",
+              "recclass": "EH",
+              "reclat": 54.2167,
+              "reclong": -113.0,
+              "year": 1952
+            }
+          ],
+          "page": 1,
+          "total_pages": 1
+        }
 
-## Single Meteor [/meteorites/{meteor_id}]
+## Single Meteor [/api/meteorites/{id}]
 
 + Parameters 
-    + meteor_id (number) - Unique id of the meteor requested
+    + id (number) - Unique id of the meteor requested
     
 ### Get information about a specific meteor [GET]
 
 + Response 200 (application/json)
         
         {
-            "class": {
-                "composition": "Stony",
-                "id": 25,
-                "name": "EH",
-                "numberFound": 0,
-                "origin": "16 Psyche",
-                "pclass": "Chondrite"
-            },
-            "classification_id": 25,
-            "cname": "Canada",
-            "country": {
-                "area": 9984670,
-                "centroid": "60.0, -95.0",
-                "id": 41,
-                "name": "Canada",
-                "numberFound": 0,
-                "recent": "None"
-            },
-            "country_id": 41,
-            "geolocation": "54.216670, -113.000000",
-            "id": 3,
-            "mass": 107000.0,
-            "name": "Abee",
-            "recclass": "EH",
-            "reclat": 54.2167,
-            "reclong": -113.0,
-            "year": 1952
-            },
+          "class": {
+            "composition": "Stony",
+            "id": 1,
+            "name": "L",
+            "numberFound": 0,
+            "origin": "433 Eros",
+            "pclass": "Chondrite"
+          },
+          "classification_id": 1,
+          "cname": "Germany",
+          "country": {
+            "area": 357114,
+            "centroid": "51.0, 9.0",
+            "id": 83,
+            "name": "Germany",
+            "numberFound": 0,
+            "recent": "None"
+          },
+          "country_id": 83,
+          "geolocation": "50.775000, 6.083330",
+          "id": 1,
+          "mass": 21.0,
+          "name": "Aachen",
+          "recclass": "L",
+          "reclat": 50.775,
+          "reclong": 6.08333,
+          "year": 1880
+        }
 
 # Group Classes
 
-## Classes Collection [/classes]
+## Classes Collection [/api/classifications]
 ### Get a list of all classes [GET]
 
 + Response 200 (application/json)
         
-        [
+        {
+          "num_results": 3,
+          "objects": [
             {
-            "composition": "Stony",
-            "id": 1,
-            "meteorites": [],
-            "name": "Brachinite",
-            "numberFound": 0,
-            "origin": "Unknown",
-            "pclass": "Primitive Achondrite"
+              "composition": "Iron",
+              "id": 7,
+              "meteorites": [
+                {
+                  "classification_id": 7,
+                  "cname": "Thailand",
+                  "country_id": 222,
+                  "geolocation": "16.666670, 101.183330",
+                  "id": 68,
+                  "mass": 16700.0,
+                  "name": "Ban Rong Du",
+                  "recclass": "Iron, ungrouped",
+                  "reclat": 16.6667,
+                  "reclong": 101.183,
+                  "year": 1993
+                }
+              ],
+              "name": "Iron, ungrouped",
+              "numberFound": 0,
+              "origin": "Unknown",
+              "pclass": "Achondrite"
             },
             {
-            "composition": "Stony",
-            "id": 2,
-            "meteorites": [
-            {
-                "classification_id": 2,
-                "cname": "France",
-                "country_id": 76,
-                "geolocation": "45.821330, 6.015330",
-                "id": 22,
-                "mass": 252.0,
-                "name": "Alby sur Ch\u00e9ran",
-                "recclass": "Eucrite",
-                "reclat": 45.8213,
-                "reclong": 6.01533,
-                "year": 2002
+              "composition": "Iron",
+              "id": 8,
+              "meteorites": [
+                {
+                  "classification_id": 8,
+                  "cname": "Turkey",
+                  "country_id": 229,
+                  "geolocation": "39.916670, 42.816670",
+                  "id": 16,
+                  "mass": 50000.0,
+                  "name": "Akyumak",
+                  "recclass": "Iron, IVA",
+                  "reclat": 39.9167,
+                  "reclong": 42.8167,
+                  "year": 1981
+                },
+                {
+                  "classification_id": 8,
+                  "cname": "United States",
+                  "country_id": 237,
+                  "geolocation": "36.166670, -87.333330",
+                  "id": 181,
+                  "mass": 4300.0,
+                  "name": "Charlotte",
+                  "recclass": "Iron, IVA",
+                  "reclat": 36.1667,
+                  "reclong": -87.3333,
+                  "year": 1835
+                }
+              ],
+              "name": "Iron, IVA",
+              "numberFound": 0,
+              "origin": "Unknown",
+              "pclass": "Achondrite"
             },
             {
-                "classification_id": 2,
-                "cname": "Burkina Faso",
-                "country_id": 37,
-                "geolocation": "11.650000, -3.650000",
-                "id": 98,
-                "mass": 18000.0,
-                "name": "B\u00e9r\u00e9ba",
-                "recclass": "Eucrite",
-                "reclat": 11.65,
-                "reclong": -3.65,
-                "year": 1924
-            },
-            {
-                "classification_id": 2,
-                "cname": "United States",
-                "country_id": 237,
-                "geolocation": "40.305830, -105.023250",
-                "id": 100,
-                "mass": 960.0,
-                "name": "Berthoud",
-                "recclass": "Eucrite",
-                "reclat": 40.3058,
-                "reclong": -105.023,
-                "year": 2004
-            },
-            {
-                "classification_id": 2,
-                "cname": "Poland",
-                "country_id": 176,
-                "geolocation": "53.100000, 23.200000",
-                "id": 109,
-                "mass": 4000.0,
-                "name": "Bialystok",
-                "recclass": "Eucrite",
-                "reclat": 53.1,
-                "reclong": 23.2,
-                "year": 1827
+              "composition": "Stony",
+              "id": 9,
+              "meteorites": [
+                {
+                  "classification_id": 9,
+                  "cname": "Mauritania",
+                  "country_id": 139,
+                  "geolocation": "16.398060, -9.570280",
+                  "id": 11,
+                  "mass": 1000.0,
+                  "name": "Aioun el Atrouss",
+                  "recclass": "Diogenite",
+                  "reclat": 16.3981,
+                  "reclong": -9.57028,
+                  "year": 1974
+                },
+                {
+                  "classification_id": 9,
+                  "cname": "Burkina Faso",
+                  "country_id": 37,
+                  "geolocation": "12.450000, -0.083330",
+                  "id": 111,
+                  "mass": 25000.0,
+                  "name": "Bilanga",
+                  "recclass": "Diogenite",
+                  "reclat": 12.45,
+                  "reclong": -0.08333,
+                  "year": 1999
+                },
+                {
+                  "classification_id": 9,
+                  "cname": "Netherlands",
+                  "country_id": 155,
+                  "geolocation": "51.750000, 4.000000",
+                  "id": 271,
+                  "mass": 1470.0,
+                  "name": "Ellemeet",
+                  "recclass": "Diogenite",
+                  "reclat": 51.75,
+                  "reclong": 4.0,
+                  "year": 1925
+                },
+                {
+                  "classification_id": 9,
+                  "cname": "United States",
+                  "country_id": 237,
+                  "geolocation": "41.683330, -112.133330",
+                  "id": 310,
+                  "mass": 102.0,
+                  "name": "Garland",
+                  "recclass": "Diogenite",
+                  "reclat": 41.6833,
+                  "reclong": -112.133,
+                  "year": 1950
+                },
+                {
+                  "classification_id": 9,
+                  "cname": "Germany",
+                  "country_id": 83,
+                  "geolocation": "52.283330, 7.700000",
+                  "id": 376,
+                  "mass": 2000.0,
+                  "name": "Ibbenb\u00fcren",
+                  "recclass": "Diogenite",
+                  "reclat": 52.2833,
+                  "reclong": 7.7,
+                  "year": 1870
+                },
+                {
+                  "classification_id": 9,
+                  "cname": "United States",
+                  "country_id": 237,
+                  "geolocation": "40.350000, -104.900000",
+                  "id": 405,
+                  "mass": 40300.0,
+                  "name": "Johnstown",
+                  "recclass": "Diogenite",
+                  "reclat": 40.35,
+                  "reclong": -104.9,
+                  "year": 1924
+                }
+              ],
+              "name": "Diogenite",
+              "numberFound": 0,
+              "origin": "4 Vesta",
+              "pclass": "Achondrite"
             }
-        ]
+          ],
+          "page": 1,
+          "total_pages": 1
+        }
 
-
-## Single Class [/classes/{classification_id}]
+## Single Class [/api/classifications/{id}]
 
 + Parameters 
-    + classification_id (number) - Unique id of the class requested
+    + id (number) - Unique id of the class requested
 
 ### Get information about a specific class [GET]
 
 + Response 200 (application/json)
         
             {
-            "composition": "Stony",
-            "id": 1,
-            "meteorites": [],
-            "name": "Brachinite",
-            "numberFound": 0,
-            "origin": "Unknown",
-            "pclass": "Primitive Achondrite"
-            },
-            {
-            "composition": "Stony",
-            "id": 2,
-            "meteorites": [
-            {
-                "classification_id": 2,
-                "cname": "France",
-                "country_id": 76,
-                "geolocation": "45.821330, 6.015330",
-                "id": 22,
-                "mass": 252.0,
-                "name": "Alby sur Ch\u00e9ran",
-                "recclass": "Eucrite",
-                "reclat": 45.8213,
-                "reclong": 6.01533,
-                "year": 2002
-            },
-            {
-                "classification_id": 2,
-                "cname": "Burkina Faso",
-                "country_id": 37,
-                "geolocation": "11.650000, -3.650000",
-                "id": 98,
-                "mass": 18000.0,
-                "name": "B\u00e9r\u00e9ba",
-                "recclass": "Eucrite",
-                "reclat": 11.65,
-                "reclong": -3.65,
-                "year": 1924
-            },
-            {
-                "classification_id": 2,
-                "cname": "United States",
-                "country_id": 237,
-                "geolocation": "40.305830, -105.023250",
-                "id": 100,
-                "mass": 960.0,
-                "name": "Berthoud",
-                "recclass": "Eucrite",
-                "reclat": 40.3058,
-                "reclong": -105.023,
-                "year": 2004
-            },
-            {
-                "classification_id": 2,
-                "cname": "Poland",
-                "country_id": 176,
-                "geolocation": "53.100000, 23.200000",
-                "id": 109,
-                "mass": 4000.0,
-                "name": "Bialystok",
-                "recclass": "Eucrite",
-                "reclat": 53.1,
-                "reclong": 23.2,
-                "year": 1827
+              "composition": "Iron",
+              "id": 7,
+              "meteorites": [
+                {
+                  "classification_id": 7,
+                  "cname": "Thailand",
+                  "country_id": 222,
+                  "geolocation": "16.666670, 101.183330",
+                  "id": 68,
+                  "mass": 16700.0,
+                  "name": "Ban Rong Du",
+                  "recclass": "Iron, ungrouped",
+                  "reclat": 16.6667,
+                  "reclong": 101.183,
+                  "year": 1993
+                }
+              ],
+              "name": "Iron, ungrouped",
+              "numberFound": 0,
+              "origin": "Unknown",
+              "pclass": "Achondrite"
             }
 
 # Group Countries
 
-## Countries Collection [/countries]
+## Countries Collection [/api/countries]
 ### Get a list of all countries where a meteor has fallen [GET]
 
 + Response 200 (application/json)
         
-        [
+        {
+          "num_results": 247,
+          "objects": [
             {
-                "name": "Australia",
-                "country_id": "1",
-                "area": "7692024",
-                "centroid": "-25.274398, 133.775136",
-                "number_found": "1",
-                "meteorites": 
-                    [
-                        {"name" : "Bunburra Rockhole",
-                        "meteor_id" : "3"
-                        }
-                    ]
+              "area": 652230,
+              "centroid": "33.0, 65.0",
+              "id": 1,
+              "meteorites": [
+                {
+                  "classification_id": 1,
+                  "cname": "Afghanistan",
+                  "country_id": 1,
+                  "geolocation": "31.600000, 65.783330",
+                  "id": 428,
+                  "mass": 299.0,
+                  "name": "Kandahar (Afghanistan)",
+                  "recclass": "L",
+                  "reclat": 31.6,
+                  "reclong": 65.7833,
+                  "year": 1959
+                }
+              ],
+              "name": "Afghanistan",
+              "numberFound": 0,
+              "recent": "None"
             },
             {
-                "name": "France",
-                "country_id": "2",
-                "area": "643801",
-                "centroid": "46.227638, 2.213749",
-                "number_found": "1",
-                "meteorites": 
-                    [
-                        {"name" : "Ensisheim",
-                        "meteor_id" : "1"
-                        }
-                    ]
+              "area": 1580,
+              "centroid": "60.116667, 19.9",
+              "id": 2,
+              "meteorites": [],
+              "name": "\u00c5land Islands",
+              "numberFound": 0,
+              "recent": "None"
             },
             {
-                "name": "Kenya",
-                "country_id": "3",
-                "area": "581309",
-                "centroid": "-0.023559, 37.906193",
-                "number_found": "1",
-                "meteorites": 
-                    [
-                        {"name" : "Thika",
-                        "meteor_id" : "2"
-                        }
-                    ]
+              "area": 28748,
+              "centroid": "41.0, 20.0",
+              "id": 3,
+              "meteorites": [],
+              "name": "Albania",
+              "numberFound": 0,
+              "recent": "None"
             }
-        ]
 
 
-## Single Country [/countries/{country_id}]
+## Single Country [/countries/{id}]
 
 + Parameters 
-    + country_id (number) - Unique id of the country requested
+    + id (number) - Unique id of the country requested
 
 ### Get information about a specific country [GET]
 
 + Response 200 (application/json)
         
         {
-                "name": "Australia",
-                "country_id": "1",
-                "area": "7692024",
-                "centroid": "-25.274398, 133.775136",
-                "number_found": "1",
-                "meteorites": 
-                    [
-                        {"name" : "Bunburra Rockhole",
-                        "meteor_id" : "3",
-                        }
-                    ]
-            },
+          "area": 652230,
+          "centroid": "33.0, 65.0",
+          "id": 1,
+          "meteorites": [
+            {
+              "classification_id": 1,
+              "cname": "Afghanistan",
+              "country_id": 1,
+              "geolocation": "31.600000, 65.783330",
+              "id": 428,
+              "mass": 299.0,
+              "name": "Kandahar (Afghanistan)",
+              "recclass": "L",
+              "reclat": 31.6,
+              "reclong": 65.7833,
+              "year": 1959
+            }
+          ],
+          "name": "Afghanistan",
+          "numberFound": 0,
+          "recent": "None"
+        }
