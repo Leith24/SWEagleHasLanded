@@ -5,12 +5,14 @@ from db import db
 
 
 
+
 def search(query):
 	terms = query.split(' ')
 	print(terms)
 	
 	ors = {}
 	for term in terms:
+		term = str.lower(term)
 		print("\n" + term + ": \n")
 		if term not in ors:
 			ors[term] = {}
@@ -23,8 +25,9 @@ def search(query):
 	models = ['meteorites', 'countries', 'classifications']
 	for model in models:
 		term_iter = iter(terms)
-		ands[model] = ors[next(term_iter)][model]
+		ands[model] = ors[str.lower(next(term_iter))][model]
 		for term in term_iter:
+			term = str.lower(term)
 			ands[model] = list(set(ands[model]) & set(ors[term][model]))
 
 	print("\nands: \n")
@@ -39,7 +42,7 @@ def search_meteorites(term):
 	results = []
 
 	for m in ms:
-		if (term in m.name) or (term in m.cname) or (term in m.recclass) or (term in m.geolocation):
+		if (term in str.lower(m.name)) or (term in str.lower(m.cname)) or (term in str.lower(m.recclass)) or (term in str.lower(m.geolocation)):
 			results.append(m)
 			print (m)
 
@@ -50,7 +53,7 @@ def search_countries(term):
 	results = []
 
 	for c in cs:
-		if (term in c.name) or (term in c.centroid) or (term in c.recent):
+		if (term in str.lower(c.name)) or (term in str.lower(c.centroid)) or (term in str.lower(c.recent)):
 			results.append(c)
 			print (c)
 
@@ -61,10 +64,10 @@ def search_classifications(term):
 	results = []
 
 	for c in cs:
-		if (term in c.name) or (term in c.pclass) or (term in c.composition) or (term in c.origin):
+		if (term in str.lower(c.name)) or (term in str.lower(c.pclass)) or (term in str.lower(c.composition)) or (term in str.lower(c.origin)):
 			results.append(c)
 			print (c)
 
 	return results
 
-search('al cr')
+search('Aachen')
