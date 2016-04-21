@@ -43,8 +43,8 @@ def search_meteorites(term):
 
 	for m in ms:
 		if (term in str.lower(m.name)) or (term in str.lower(m.cname)) or (term in str.lower(m.recclass)) or (term in str.lower(m.geolocation)):
-			results.append(m)
-			print (m.id)
+			results.append(m.id)
+			print (m)
 
 	return results
 
@@ -54,8 +54,8 @@ def search_countries(term):
 
 	for c in cs:
 		if (term in str.lower(c.name)) or (term in str.lower(c.centroid)) or (term in str.lower(c.recent)):
-			results.append(c)
-			print (c.id)
+			results.append(c.id)
+			print (c)
 
 	return results
 
