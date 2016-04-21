@@ -7,12 +7,6 @@ from sqlalchemy.ext.declarative import declarative_base
 import flask.ext.restless
 
 
-#engine = create_engine('sqlite:///')
-#session = sessionmaker()
-#session.configure(bind=engine)
-
-#Base = declarative_base()
-
 
 class Meteorite(db.Model):
 
@@ -37,7 +31,6 @@ class Meteorite(db.Model):
 	#One to many relationship between Meteorites and Classifications
 	classification_id = db.Column(db.Integer, db.ForeignKey('classifications.id'))
 
-
 	def __init__(self, name = None, mass = 0, recclass = 'None', year = 0, cname = 'None', reclat = 0.0, reclong = 0.0, geolocation = "0.0, 0.0"):
 		self.name = name
 		self.mass = mass
@@ -48,27 +41,8 @@ class Meteorite(db.Model):
 		self.reclong = float(reclong)
 		self.geolocation = geolocation
 		
-
 	def __repr__(self):
 		return '<Meteorite %r>' % (self.name)
-
-	#Querying all fields in meteorites to find a match based on
-	#each term in the search terms.
-	@staticmethod
-	def search(search_terms):
-		search_terms = ['aachen', 'none']
-		fields =['id','name', 'mass', 'recclass', 'year', 'cname', 'reclat', 'reclong', 'geolocation']
-		and_results = []
-		#Right now just trying to
-		or_result = []
-		for field in fields :
-			and_result = (Meteorite[field].like("%{:s}%".format(term)) for term in search_terms)
-			if and_result:
-				and_results.append(and_result)
-				print(and_result)
-
-		return and_results
-
 
 
 
@@ -99,7 +73,8 @@ class Classification(db.Model):
 		self.numberFound = numberFound
 
 	def __repr__(self):
-		return '<Classification %r>' % (self.id)
+		return '<Classification %r>' % (self.name)
+
 
 
 class Country(db.Model):
@@ -131,7 +106,9 @@ class Country(db.Model):
 		self.numberFound = numberFound
 
 	def __repr__(self):
-		return '<Country %r>' % (self.id)
+		return '<Country %r>' % (self.name)
+
+
 
 APIManager = flask.ext.restless.APIManager(app, flask_sqlalchemy_db = db)
 APIManager.create_api(Meteorite, methods=['GET'], results_per_page=0)
