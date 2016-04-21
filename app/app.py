@@ -37,20 +37,22 @@ def search_(search_query):
     #Each key in 'ands' and 'ors' has a list of integers that represent
     #the ids of the meteorites.
 
-    ands = {'countries':[],'meteorites':[], 'classifications':[]}
-    ors = {'countries':[],'meteorites':[], 'classifications':[]}
+    ands = {'countries': [], 'meteorites': [], 'classifications': []}
+    ors = {'countries': [], 'meteorites': [], 'classifications': []}
 
     for model, ids in and_ids.items():
         for id in ids:
             m_info = requests.get('http://meteorite-landings.me/api/' + model + '/' + str(id)).json()
             ands[model].append(m_info)
 
-    # for model, ids in or_ids.items():
-    #     for id in ids:
-    #         m_info = requests.get('http://meteorite-landings.me/api/' + model + '/' + str(id)).json()
-    #         ors[model].append(m_info)
 
-    return str(ands)
+    for values in or_ids.values():
+        for model, ids in values.items():
+            for id in ids:
+                m_info = requests.get('http://meteorite-landings.me/api/' + model + '/' + str(id)).json()
+                ors[model].append(m_info)
+
+    return jsonify(ors = ors, ands = ands)
 
 
 
