@@ -82,9 +82,13 @@ meteoriteApp.controller('countryController', function($scope, $sce, $stateParams
     $scope.currentPage = 1;
     $scope.pageSize = 15;
 
+    $scope.flagString = "http://www.free-country-flags.com/countries/"
+                        +$scope.cname
+                        +"/1/large/"
+                        +$scope.cname
+                        +".png";
 
-
-
+    $scope.flagURL = $sce.trustAsResourceUrl($scope.flagString);            
 
     //Google Maps embedding
     $scope.urlString = "https://www.google.com/maps/embed/v1/place?key=AIzaSyBMRg5inrD7lBnA8EivUn1k-TuOlBhdNMw"
