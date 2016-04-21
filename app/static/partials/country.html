@@ -10,7 +10,6 @@
         <link rel="stylesheet" type="text/css" href="../static/css/custom.css">
         <link href='https://fonts.googleapis.com/css?family=Advent+Pro' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Advent+Pro:100' rel='stylesheet' type='text/css'>
-
     </head>
 
     <body>
@@ -34,9 +33,12 @@
                         <li><a href="/about">About</a></li>
                     </ul>
                 </div>
+
                 <div class="col-sm-10">
+
+                    <div class="row">
                         <!--Main Country Information-->
-                        <div class="col-sm-5 col-md-4">
+                        <div class="col-sm-6 col-md-6">
                             <div id = "main_header">
                                 <h1>Country Name</h1>
                             </div>
@@ -59,8 +61,36 @@
                                 <p><a href="/meteorites/{{ country.recent_id }}">{{ country.recent }}</a></p>
                             </div>
                         </div>
-                        <!-- Table for Meteorites that have landed in the Country -->
-                        <div class="col-sm-7 col-md-8 country-table">
+
+                        <div class="col-sm-4 col-md-4">
+                            <div class="col-sm-5">
+                                <div id="flag">
+                                    <img ng-src="{{flagURL}}" class="img-rounded" alt="Rounded Image" height="300" width="400">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        
+                        
+                    <!--Google Map Stuff -->
+                    <div class="row">
+
+                        <div class="col-sm-5">
+                            <div id="country_map">
+                                <iframe
+                                    width="400"
+                                    height="300"
+                                    frameborder="0" style="border:0"
+                                    ng-src= "{{mapURL}}" allowfullscreen>
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Table for Meteorites that have landed in the Country -->
+
+                    <div class="row">
+                        <div class="col-sm-10 col-md-10 country-table">
                             <table class="table table-bordered" >
                                 <thead>
                                     <tr>
@@ -132,18 +162,6 @@
                                     on-page-change="pageChange(newPageNumber)">
                                 </dir-pagination-controls>
                             </table>
-                        </div>
-                    <!--Google Map Stuff -->
-                    <div class="row">
-                        <div class="col-sm-10">
-                            <div id="map">
-                                <iframe
-                                    width="400"
-                                    height="300"
-                                    frameborder="0" style="border:0"
-                                    ng-src= "{{mapURL}}" allowfullscreen>
-                                </iframe>
-                            </div>
                         </div>
                     </div>
                 </div>
