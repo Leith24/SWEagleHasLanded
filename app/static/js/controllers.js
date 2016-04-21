@@ -1,10 +1,6 @@
 //Need to declare a mainController for Angular but it doesn't do anything
 meteoriteApp.controller('mainController', function($scope) {
-    $scope.searchQuery = searchQuery;
 
-    $scope.search = function (){
-        console.log(searchQuery)
-    };
 });
 
 meteoriteApp.controller('meteoritesController', function($scope, meteoritesObj) {

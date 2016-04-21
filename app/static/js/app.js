@@ -111,7 +111,7 @@ meteoriteApp.config(function($stateProvider, $urlRouterProvider, $locationProvid
             controller: "aboutController"
         })
         .state('search', {
-            url: "/search?query",
+            url: "/search/:query",
             templateUrl: "static/partials/search.html",
             resolve: {
                 searchResult: ['$http', '$stateParams', function ($http, $stateParams){
@@ -120,7 +120,8 @@ meteoriteApp.config(function($stateProvider, $urlRouterProvider, $locationProvid
                         url: 'api/search/' + $stateParams.query
                     });
                 }]
-            }
+            },
+            controller: "searchController"
         });
     $locationProvider.html5Mode(true);
 
