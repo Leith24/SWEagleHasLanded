@@ -12,6 +12,7 @@ import re
 import sys
 import subprocess
 from geopy.geocoders import Nominatim
+from search import search
 
 geolocator = Nominatim()
 
@@ -25,14 +26,37 @@ COUNTRIES_API_KEY = "gFg7FXcHPWmshS7mUcHPw1wWR2cup132sJnjsntcFkuO3xN6oO"
 #Returns a list of dictionaries, each of which contains information about a single meteorite
 
 
+
+@app.route('/search/<string:search_query>')
+def search_(search_query):
+    search_results = search(search_query)
+
+    and_ids = search(search_query)['ands']
+    or_ids = search(search_query)['ors']
+
+    #Each key in 'ands' and 'ors' has a list of integers that represent
+    #the ids of the meteorites.
+
+    ands = {'countries':[],'meteorites':[], 'classifications':[]}
+    ors = {'countries':[],'meteorites':[], 'classifications':[]}
+
+    for model, ids in and_ids.items():
+        for id in ids:
+            m_info = requests.get('http://meteorite-landings.me/api/' + model + '/' + str(id)).json()
+            ands[model].append(m_info)
+
+    # for model, ids in or_ids.items():
+    #     for id in ids:
+    #         m_info = requests.get('http://meteorite-landings.me/api/' + model + '/' + str(id)).json()
+    #         ors[model].append(m_info)
+
+    return str(ands)
+
+
+
 # ---------
 # run_tests
 # ---------
-@app.route('/api/get_meteorites')
-def get_meteorites():
-    return 'hi'
-
-
 @app.route('/run_unit_tests')
 def run_tests():
     output = subprocess.getoutput("python tests.py")

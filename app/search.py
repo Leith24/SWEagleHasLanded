@@ -30,8 +30,7 @@ def search(query):
 			term = str.lower(term)
 			ands[model] = list(set(ands[model]) & set(ors[term][model]))
 
-	print("\nands: \n")
-	print(str(ands))
+
 
 	return {'ands' : ands, 'ors' : ors}
 		
