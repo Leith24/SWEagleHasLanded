@@ -1,7 +1,10 @@
 import unittest
+from search import *
 from flask.ext.testing import TestCase
 from db import db, app
 from models import Meteorite, Classification, Country
+
+
 class TestMeteorites(TestCase):
 
     def create_app(self):
@@ -40,6 +43,16 @@ class TestMeteorites(TestCase):
         Meteorite.query.filter(Meteorite.name == 'Abee').delete()
         db.session.commit()
         assert len(Meteorite.query.all()) == 2
+
+    def test_search_meteor(self):
+        results = search('Aachen')
+        # print (len(results))
+        assert len(results) == 2
+
+    def test_invalid_search_met(self):
+        results = search_meteorites("Abee")
+        # print (len(results))
+        assert len(results) == 0
 
     def tearDown(self):
         db.session.remove()
@@ -83,6 +96,16 @@ class TestClassifications(TestCase):
         db.session.commit()
         assert len(Classification.query.all()) == 2
 
+    def test_search_class(self):
+        results = search('Brachinite')
+        # print (len(results))
+        assert len(results) == 2
+
+    def test_invalid_search_class(self):
+        results = search_classifications('Iron')
+        # print (len(results))
+        assert len(results) == 0
+
     def tearDown(self):
         db.session.remove()
         db.drop_all()
@@ -125,6 +148,16 @@ class TestCountries(TestCase):
         Country.query.filter(Country.centroid == "-0.023559, 37.906193").delete()
         db.session.commit()
         assert len(Country.query.all()) == 2
+
+    def test_search_countries(self):
+        results = search('Franch')
+        # print (len(results))
+        assert len(results) == 2
+
+    def test_invalid_search_country(self):
+        results = search_meteorites('Kenya')
+        # print (len(results))
+        assert len(results) == 0
 
     def tearDown(self):
         db.session.remove()

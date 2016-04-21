@@ -69,5 +69,3 @@ def search_classifications(term):
 			print (c)
 
 	return results
-
-search('Aachen')
