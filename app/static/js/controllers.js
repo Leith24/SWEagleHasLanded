@@ -106,6 +106,20 @@ meteoriteApp.controller('aboutController', function ( $scope, unitTestData) {
     }
 });
 
+meteoriteApp.controller('searchController', function ( $scope, $stateParams, searchResult) {
+
+    //$stateparams.query is going to be the string that gets passeed in after search so /search/stateparams
+    //searchResult is a json Object that has all of the and/or information
+    //Access searchResult by searchResult.data, maybe searchResult.data.objects
+    //Right now just focus on the getting any information from searchResult onto your html page
+    //if you define a variable and preface it with '$scope' in this controller, like this
+    //$scope.irish = 'irish people';
+    //then you can access it in the html with {{irish}} on the search.html page
+    //so, if you go $scope.search = searchResult.data, you should be able to get all the searchResult info
+    // onto the html page. From there, its looking into the searchResul object and putting th einformation where it needs to go,
+    // so like searchResult.data.or and searchResult.data.and
+});
+
 function capFirstLetter(string){
      return string.charAt(0).toUpperCase() + string.slice(1);
 }
