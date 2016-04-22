@@ -224,3 +224,26 @@ p
 .country-table{
 	margin-top: 20px;
 }
+
+#searchform {
+                width:100%;
+                background-color: #652672;
+                text-align: right;
+}
+.searchbox {
+                padding:8px 15px;
+                background:rgba(50, 50, 50, 0.2);
+                border:0px solid #dbdbdb;
+}
+.searchbutton {
+                position:relative;
+                padding:6px 15px;
+                left:-8px;
+                border:2px solid #e12e77;
+                background-color:#e12e77;
+                color:#fafafa;
+}
+.searchbutton:hover  {
+                background-color:#fafafa;
+                color:#e12e77;
+}

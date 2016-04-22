@@ -11,7 +11,7 @@ manager = Manager(app)
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:password@127.0.0.1/test_models'
 app.config['DEBUG'] = True
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:Crzd1245!@127.0.0.1:3306/test_models'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:O6xu3W2HCvK656@127.0.0.1:3306/test_models'
 # SQLALCHEMY_DATABASE_URI = \
 #     '{engine}://{username}:{password}@{hostname}/{database}'.format(
 #         engine='mysql+pymysql',
