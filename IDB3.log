@@ -1,0 +1,1960 @@
+commit a5b86ff98e41f654ad8ecffb4eeda4923e3feddd
+Author: Leith24 <gavinleith@utexas.edu>
+Date:   Thu Apr 21 21:50:09 2016 -0500
+
+    changed make
+
+commit 59eb4e4e6ac6bc9aca14ea96e8b400e9d0e8c57a
+Author: Dazmurphy <daz.murphy.94@gmail.com>
+Date:   Thu Apr 21 19:59:18 2016 -0500
+
+    returned removed css
+
+commit 1048fe365abeddc49a90f053b92d0cbb102ca3d1
+Author: Dazmurphy <daz.murphy.94@gmail.com>
+Date:   Thu Apr 21 19:55:12 2016 -0500
+
+    fixed css for searchbar
+
+commit db2bfd33c9865be7759b8384866fbe282adf741f
+Author: Declan Duffy <declan.duffy94@hotmail.com>
+Date:   Thu Apr 21 19:51:28 2016 -0500
+
+    Empty search results page added
+
+commit ff1eea149657d9bd0a6d11c86189221fd2f103ef
+Merge: 7503d8d c819a3e
+Author: Dazmurphy <daz.murphy.94@gmail.com>
+Date:   Thu Apr 21 19:48:00 2016 -0500
+
+    Merge branch 'dev' of https://github.com/Leith24/cs373-idb into dev
+
+commit 7503d8da0e43a6587d7dc6f0152361d6b7ca7514
+Merge: 1c7bf41 1c33f8a
+Author: Dazmurphy <daz.murphy.94@gmail.com>
+Date:   Thu Apr 21 19:47:45 2016 -0500
+
+    added search bar with styling
+
+commit c819a3e0a41cdcbc0d638f533d9deb6029469a43
+Merge: d75afc2 1c33f8a
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Thu Apr 21 19:47:11 2016 -0500
+
+    Merge branch 'dev' of https://github.com/Leith24/cs373-idb into dev
+
+commit 1c7bf41f3f4621944cbc3e3d7ebbb89f5829ab99
+Author: Dazmurphy <daz.murphy.94@gmail.com>
+Date:   Thu Apr 21 19:43:30 2016 -0500
+
+    added search bar with styling
+
+commit 1c33f8ad2cf9df14d1a321071854d258fbbcabf3
+Author: Leith24 <gavinleith@utexas.edu>
+Date:   Thu Apr 21 19:42:30 2016 -0500
+
+    added stats
+
+commit b70b4db3dc9d41b3bf2ca789a2e246c5fec49d22
+Author: Leith24 <gavinleith@utexas.edu>
+Date:   Thu Apr 21 19:26:54 2016 -0500
+
+    moved tests to the test section and added speakerdeck
+
+commit d75afc2a4020a27b08912f4b8ad1d54c414987ab
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Thu Apr 21 18:56:25 2016 -0500
+
+    set up controller and state for earch
+
+commit d4fcd511c33f494b730407ffd563d53c0730a5fb
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Thu Apr 21 18:51:33 2016 -0500
+
+    stuff
+
+commit 9fdc4a822014fceda0caa8a02cab0a41b1272780
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Thu Apr 21 18:37:49 2016 -0500
+
+    search returns json!
+
+commit d3ff5bba0967a2be0af6f9f5da1ce8de677d6961
+Merge: 687b291 de838b9
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Thu Apr 21 17:12:05 2016 -0500
+
+    serach stuff
+
+commit 687b291e8f596de88aa3e0bdec1ff97e58871380
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Thu Apr 21 17:08:15 2016 -0500
+
+    search.py
+
+commit de838b9cbe89f74914a890bd9004a20273a0b0cd
+Author: Leith24 <gavinleith@utexas.edu>
+Date:   Thu Apr 21 15:12:57 2016 -0500
+
+    added search tests
+
+commit 6e3d1ac25233e912a79c8bf6d39144acca4800e8
+Author: Declan Duffy <declan.duffy94@hotmail.com>
+Date:   Thu Apr 21 14:20:11 2016 -0500
+
+    Home button added
+
+commit aec5d172968632e12923a0dc925af4849a8311b9
+Author: Declan Duffy <declan.duffy94@hotmail.com>
+Date:   Thu Apr 21 13:53:55 2016 -0500
+
+    Image fixed in classification
+
+commit efc9a7da06902d5d22d77d26a1e6ee8691f4bf1f
+Author: Leith24 <gavinleith@utexas.edu>
+Date:   Thu Apr 21 13:43:48 2016 -0500
+
+    got carina db fully populated with relations
+
+commit b86815a0947125745a59a6d5a27d57ba7c2c4087
+Author: Declan Duffy <declan.duffy94@hotmail.com>
+Date:   Thu Apr 21 13:35:42 2016 -0500
+
+    Made mistake in countries page
+
+commit c34dbd8bc8bcc60160e0008d798e196aeeb8856b
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Thu Apr 21 13:30:51 2016 -0500
+
+    Messed up and did prints instead of appends
+
+commit 948768900fac564f555e6c54c06ca0b23d2c07b6
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Thu Apr 21 13:29:59 2016 -0500
+
+    Made search return id's instead of objects
+
+commit 3baf969aff42fa55f0aa92eeebf99fd31ba7dd27
+Author: Declan Duffy <declan.duffy94@hotmail.com>
+Date:   Thu Apr 21 13:18:51 2016 -0500
+
+    Flags added to countries - subtable position fixed
+
+commit 946b0a14474023d6203ccf2517fb7693041d3afd
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Thu Apr 21 11:46:57 2016 -0500
+
+    Making search case insensitive
+
+commit 3ed353d0f7adc027188f56be59a036eb595a7d4c
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Thu Apr 21 10:28:26 2016 -0500
+
+    Tiny link fix
+
+commit f2284cf4c162da10bcd8175c3a83befc7815afb3
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Wed Apr 20 22:21:40 2016 -0500
+
+    Created Search Function
+
+commit 4b50dcefd9f39b92052b38776cc730861d70819a
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Wed Apr 20 15:03:02 2016 -0500
+
+    Oops. See previous commit.
+
+commit d97779178ac71d99a2dc3e4589818391033e2116
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Wed Apr 20 15:02:36 2016 -0500
+
+    Fixed Recent linking by adding recent_id
+    
+    Also changed all instances of geolocation to be  separate latitude and
+    longitude for better sorting.
+
+commit f13e3671b4bcb9a3f2b9df47fae872ca331ddbf8
+Author: Leith24 <gavinleith@utexas.edu>
+Date:   Tue Apr 19 22:58:11 2016 -0500
+
+    fixed tests and changed prod env
+
+commit 1c4c40d8a31873995de825c59738bfc7b18ab0d9
+Author: Mohammed Ovais Panjwani <ovais.panjwani@utexas.edu>
+Date:   Tue Apr 19 21:22:42 2016 -0500
+
+    Transferring API Description file from Apiary.io
+
+commit 1aa6150f099b3e26f149efbac00e1148f3492cde
+Merge: 1c25cb7 a6e657b
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Tue Apr 19 17:14:46 2016 -0500
+
+    fixed
+
+commit 1c25cb7e05060b549983d3cdbf7d7096d88b2267
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Tue Apr 19 17:13:31 2016 -0500
+
+    fixing jordans dumb shit 2
+
+commit e843859d534d1312b295aac3da30b8e94481002a
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Tue Apr 19 17:13:22 2016 -0500
+
+    fixing jordans dumb shit 2
+
+commit a6e657bd78eb53a9b117f78d5e68cf46c8ff9723
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Tue Apr 19 17:09:08 2016 -0500
+
+    Fixing Jordan's dumb shit
+
+commit a80adb7ae20274c68e846cea914c739f1f22a0e0
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Tue Apr 19 16:55:53 2016 -0500
+
+    pagination works on classifications
+
+commit 4cb034cb987c08d97c7538d139b83c46c7578710
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Tue Apr 19 16:43:22 2016 -0500
+
+    sort on countries last meteorite found is fixed
+
+commit a8f4625815f888bc53a1dc892bb3cd9fa0b75996
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Tue Apr 19 16:42:25 2016 -0500
+
+    fixed sorting on number found for class and country
+
+commit 62330a43699a2af445a269deaadec8aefe858020
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Tue Apr 19 16:38:43 2016 -0500
+
+    Minor change before sync
+
+commit eb1072817fb20361b8d6a8636f3e9cff40868a53
+Merge: dd2b921 e914218
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Tue Apr 19 16:36:53 2016 -0500
+
+    finished merging
+
+commit dd2b9218512fb91f3e9c16f5b48fd4c5e7dcb2eb
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Tue Apr 19 16:31:33 2016 -0500
+
+    fixed everything that oddly broke
+
+commit e91421832f9f3e0b6e963364c6efac461f095a34
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Tue Apr 19 16:00:58 2016 -0500
+
+    Changed remove to just clearing the file
+
+commit ba0bc5df122ae47ba19884643b7513b5ab2edf90
+Merge: 92d400e a73d925
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Tue Apr 19 14:53:19 2016 -0500
+
+    Merge branch 'dev' of https://github.com/Leith24/cs373-idb into dev
+
+commit 92d400ea4c5f6ab6c35984963177774d6ae1ce79
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Tue Apr 19 14:47:44 2016 -0500
+
+    routing should be done??
+
+commit a73d9259051bc6c56bee60d82fd010231b758c5d
+Author: Leith24 <gavinleith@utexas.edu>
+Date:   Tue Apr 19 14:45:57 2016 -0500
+
+    updated files that work on carina, db will need editing for your local hosts
+
+commit c1d057a778b489d12cb894825d7f3cb3b1b5698e
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Tue Apr 19 14:26:53 2016 -0500
+
+     tables on classifications and countries
+
+commit 55e4ad2aa5c3756d2d1d95b12bae844b64a1777a
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Tue Apr 19 13:02:13 2016 -0500
+
+    Countries now links to meteorites in the last meteorite found column
+
+commit 12a7069489f0ed3ec7d19ea952064ada9b4448e4
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Tue Apr 19 11:35:50 2016 -0500
+
+    search stuff broke
+
+commit 059c484041adcd36c7347ad90485aeead59976e4
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Sat Apr 16 20:59:59 2016 -0500
+
+    fixed adams bullshit
+
+commit 250affed312adf0185491fbde92a11d466fc11d3
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Sat Apr 16 15:23:48 2016 -0500
+
+    Fuck Czechia
+    
+    Honestly, who just changes the name of a country.
+
+commit 0594b5a037fa9d9f782c01aaa90b9075efdb70d4
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Sat Apr 16 15:22:17 2016 -0500
+
+    Revert "Revert "Meant to be in previous commit""
+    
+    This reverts commit d9b6a98d5fb0e54b2be5c067f63786c32d5a2298.
+
+commit f24e06f4a47e149517cd09a08581102c415cc8af
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Sat Apr 16 15:22:11 2016 -0500
+
+    Revert "Revert "Refactored Locate to App.py to lower number of locate calls during testing""
+    
+    This reverts commit 7d7ff7732dbe7f0709fa695bc11f3bea42e85523.
+
+commit 7d7ff7732dbe7f0709fa695bc11f3bea42e85523
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Sat Apr 16 15:16:07 2016 -0500
+
+    Revert "Refactored Locate to App.py to lower number of locate calls during testing"
+    
+    This reverts commit b84031066a4b0ba95b21424f57b50a34b79f6236.
+
+commit d9b6a98d5fb0e54b2be5c067f63786c32d5a2298
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Sat Apr 16 15:15:57 2016 -0500
+
+    Revert "Meant to be in previous commit"
+    
+    This reverts commit 1e23d088729dd0a563ced8b5ca78decb9386f30c.
+
+commit ed04989104f31fe12722ccccd28926f8502710f1
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Sat Apr 16 12:25:57 2016 -0500
+
+    Update README.md
+
+commit 1e23d088729dd0a563ced8b5ca78decb9386f30c
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Sat Apr 16 12:20:22 2016 -0500
+
+    Meant to be in previous commit
+
+commit b84031066a4b0ba95b21424f57b50a34b79f6236
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Sat Apr 16 12:20:08 2016 -0500
+
+    Refactored Locate to App.py to lower number of locate calls during testing
+
+commit 852c825e8e238bac8541b7c66f0e70d53a6e5db8
+Author: Dazmurphy <daz.murphy.94@gmail.com>
+Date:   Tue Apr 12 01:28:08 2016 -0600
+
+    added interactive 2D map to splash page
+
+commit 74f3ebaf1956518e05b2399a78a644c4faa3f11a
+Author: Declan Duffy <declan.duffy94@hotmail.com>
+Date:   Mon Apr 11 21:09:51 2016 -0500
+
+    Dynamic maps for countries & meteors working -- formatting fixed for countries
+
+commit 63abcf4e45653edd4bcc65b8aeb71cadcc3d315f
+Author: Declan Duffy <declan.duffy94@hotmail.com>
+Date:   Mon Apr 11 20:48:32 2016 -0500
+
+    Dynamic maps working for countries
+
+commit a50945adeb4abad8b7cebebe8201d5a53791be94
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Sun Apr 10 16:17:16 2016 -0500
+
+    Tab header fixes
+
+commit 345b0e72a6184b7872166d7303fbb7206108124c
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Sun Apr 10 16:14:23 2016 -0500
+
+    Missed one
+
+commit 06752a9e4146c14e3bc119a5155cf2f3e3b51ad0
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Sun Apr 10 16:14:10 2016 -0500
+
+    Front end fixes that I shouldn't have had to do
+
+commit fc92ca85234a1f1edcaed49e24624d8a63a2ae31
+Author: Gavin Leith <gavinleith@utexas.edu>
+Date:   Sat Apr 9 21:42:00 2016 -0500
+
+    Create IDB2.log
+
+commit 809b7d59fccb00ae6b9b5cdc001dfcad7c05457e
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Sat Apr 9 21:37:51 2016 -0500
+
+    Added html and logs
+
+commit 52117acc9ea27f3184788cc231117edca0c2dd95
+Merge: a409a17 bbbe4d0
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Sat Apr 9 21:31:25 2016 -0500
+
+    Merge pull request #32 from Leith24/dev
+    
+    Dev
+
+commit bbbe4d0ead9864505c8c03c22025287b412adcc0
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Sat Apr 9 19:39:30 2016 -0500
+
+    Tests updated to match mode changes
+
+commit e0a0152b9ecd4dc8699aad1f15288b7babbc1942
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Sat Apr 9 19:26:22 2016 -0500
+
+    Uncomment populate commands.
+
+commit 05dd6ed646ba18de50391dd23cce930ebbd90af5
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Sat Apr 9 19:16:10 2016 -0500
+
+    Forgot not all countries are created equal
+
+commit 0c78f77ce175da8f27f5422c7bc590cee8f0c401
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Sat Apr 9 19:12:27 2016 -0500
+
+    Ugh
+
+commit b3c72b4bb332720fa0e26c901f9118497acd3d7a
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Sat Apr 9 18:54:15 2016 -0500
+
+    routing done
+
+commit ddcfad124b5e95a02d6c4ed1586976ae30b1e2a9
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Sat Apr 9 18:21:11 2016 -0500
+
+    Populate relations fixed?
+
+commit 531840bf17eac52d2e18fda2590a2cfd732c0b49
+Merge: 8414285 f75c1c2
+Author: Leith24 <gavinleith@utexas.edu>
+Date:   Sat Apr 9 17:21:02 2016 -0500
+
+    Merge branch 'dev' of https://github.com/Leith24/cs373-idb into dev
+
+commit 8414285195d2eb0e57a57d93328f9088986fadda
+Author: Leith24 <gavinleith@utexas.edu>
+Date:   Sat Apr 9 17:20:36 2016 -0500
+
+    updating tests and requirements
+
+commit f75c1c25bb92e81e9d14e5900778b25b5238921e
+Author: Gavin Leith <gavinleith@utexas.edu>
+Date:   Sat Apr 9 17:16:31 2016 -0500
+
+    Committing Classifications update to apiary
+
+commit 69ef2476a860e6fec120948dc6d2a04ea28c95d2
+Author: Gavin Leith <gavinleith@utexas.edu>
+Date:   Sat Apr 9 17:08:51 2016 -0500
+
+    Updated apiary description for meteorites
+
+commit a506ba77e303955e22012edda023158684bd9a90
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Sat Apr 9 17:06:14 2016 -0500
+
+    Populate Relations fix
+
+commit fbc28aab85e14731182cb05b1e343f3b5414a945
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Sat Apr 9 16:46:03 2016 -0500
+
+    need some more api fixes
+
+commit cc4b79b0876f3dc6fc9fc0c9779906cec1ed10c3
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Sat Apr 9 14:28:21 2016 -0500
+
+    Fixed the India and USA problem
+    
+    Not a political statement. Stupid Islands.
+
+commit 4279465ebd0091708c50c1ea1b9683ba971f3ae6
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Sat Apr 9 13:48:00 2016 -0500
+
+    Added Related info populating
+
+commit 600a35e8c991b9ff923ef687113279bbbcf058af
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Sat Apr 9 00:43:02 2016 -0500
+
+    Adam made all this code
+
+commit adc35ea96b5a4e56d83e984aed6338af9f3c3f5f
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Fri Apr 8 19:16:09 2016 -0500
+
+    Different parsing
+
+commit c036d2ccd232d1eb8195e6ccfb28a9f9ddb1b159
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Fri Apr 8 18:46:53 2016 -0500
+
+    Dumb mistake
+
+commit bc630660b0625abba9fe7ffa6cb5556f15fbe419
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Fri Apr 8 18:45:37 2016 -0500
+
+    More bug fixes
+
+commit f09b3eb6615ab977e8e035a00cbb9ba1b6083705
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Fri Apr 8 17:35:28 2016 -0500
+
+    Moved Createdb command into populate.py
+
+commit 5958531889cf45315bf2cb386c7197ee53cc8705
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Fri Apr 8 17:25:11 2016 -0500
+
+    Populate bug fixes
+
+commit daf622b28e5fbad3818fe086a5f22614d5dc0c08
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Fri Apr 8 16:14:59 2016 -0500
+
+    local db comment
+
+commit 92cf027de27b5a76951b9215f4bf2f96eec75fdd
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Fri Apr 8 16:02:28 2016 -0500
+
+    fixed getfiles
+
+commit 15d171c1b60d8414870fe3e3f79b7bc5e305ce3b
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Fri Apr 8 15:42:57 2016 -0500
+
+    Fix column types
+
+commit af840e541fd858f7b5a45e7a494502b378ed2310
+Author: Dazmurphy <daz.murphy.94@gmail.com>
+Date:   Fri Apr 8 15:26:49 2016 -0600
+
+    added parsing for recclass
+
+commit 6b5a00e8b2370fa9fa978ec1272ea003e2e1724a
+Author: Dazmurphy <daz.murphy.94@gmail.com>
+Date:   Fri Apr 8 15:05:16 2016 -0600
+
+    parse year complete
+
+commit a04ab2ad67b5a90e5ff112a57c6a36615517c0b9
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Fri Apr 8 14:19:52 2016 -0500
+
+    Refactoring and relationships
+    
+    Refactoring names to be consistent and moving parsing into populate as
+    well as fixing the addition
+
+commit d05a922b1438196bc4fa9482129254b9ca29a779
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Fri Apr 8 11:28:02 2016 -0500
+
+    can now run tests from about page
+
+commit 8ba81a53f4dd52ef3f6e0146c8fbdc348f62f1ba
+Merge: aa68ca2 6b74952
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Fri Apr 8 11:07:48 2016 -0500
+
+    Merge branch 'dev' of https://github.com/Leith24/cs373-idb into dev
+
+commit aa68ca24aa4166ad6c0b194320811d82941d8522
+Merge: 6277837 5261b75
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Fri Apr 8 11:07:43 2016 -0500
+
+    Merge remote-tracking branch 'origin/dev' into dev
+    
+    # Conflicts:
+    #	app/populate.py
+
+commit 6b74952892a58b73d061679a785e8ee3c8f3a3f6
+Author: Declan Duffy <declan.duffy94@hotmail.com>
+Date:   Thu Apr 7 21:58:00 2016 -0500
+
+    added correct iframe for dynamic maps - not fully working yet
+
+commit 57ed2a2f4658e63809dc0d2a08b25da1d29d6c73
+Author: Ovais Panjwani <opanjwani@underarmour.com>
+Date:   Thu Apr 7 21:38:35 2016 -0500
+
+    controller is messed up for some reason
+
+commit 62778378da7ea6325a68a5a312c6e5988877500d
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Thu Apr 7 21:34:25 2016 -0500
+
+    Adding intertable relationships
+
+commit da5d34a76f2fd032e5bb92c3c62f64eac4ab4050
+Merge: 276b33d 5c13d25
+Author: Dazmurphy <daz.murphy.94@gmail.com>
+Date:   Thu Apr 7 20:31:31 2016 -0600
+
+    Merge branch 'dev' of https://github.com/Leith24/cs373-idb into dev
+
+commit 276b33df9332e131582e53964aa9f8b6f84e66ed
+Author: Dazmurphy <daz.murphy.94@gmail.com>
+Date:   Thu Apr 7 20:31:03 2016 -0600
+
+    changed db.py to test locally
+
+commit 5261b756c62dc3a44fe4f84be024b4f14ccc6796
+Merge: ac3adde ca4f05b
+Author: Ovais Panjwani <opanjwani@underarmour.com>
+Date:   Thu Apr 7 21:13:05 2016 -0500
+
+    Merge branch 'dev' of https://github.com/Leith24/cs373-idb into dev
+
+commit ca4f05b3a28c2eebad8e23b6e69a62d62f1258ea
+Author: Dazmurphy <daz.murphy.94@gmail.com>
+Date:   Thu Apr 7 20:53:45 2016 -0600
+
+    updated populate to be run itself
+
+commit ac3addefe153398457a604c7b445efad5adcc01d
+Author: Ovais Panjwani <opanjwani@underarmour.com>
+Date:   Thu Apr 7 21:12:44 2016 -0500
+
+    Tried to run tests on About page
+
+commit 5c13d256ce5932f1893b2fb7452b4d3e5d27bbbe
+Author: Declan Duffy <declan.duffy94@hotmail.com>
+Date:   Thu Apr 7 20:31:12 2016 -0500
+
+    Country put back in meteorite table
+
+commit 746a992b14dce500449663202a03706063772fc2
+Author: Declan Duffy <declan.duffy94@hotmail.com>
+Date:   Thu Apr 7 20:25:11 2016 -0500
+
+    Country removed from meteorite table
+
+commit 07b54589b22cfdb260f5d5099228c01e5035702b
+Author: Leith24 <gavinleith@utexas.edu>
+Date:   Thu Apr 7 20:20:22 2016 -0500
+
+    tests run but fail, models updated import
+
+commit 7bec69535f318a6cdcdf2493489f9a3dc551e768
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Thu Apr 7 20:19:23 2016 -0500
+
+    still need to do routing
+
+commit de433b11c5eba151fa03e760871c72c4bf28e17c
+Merge: 1a4226b bd679b3
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Thu Apr 7 19:06:22 2016 -0500
+
+    Merge branch 'dev' of https://github.com/Leith24/cs373-idb into dev
+
+commit 1a4226b62227db33476a8ee6a8e3563e851287e6
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Thu Apr 7 19:06:19 2016 -0500
+
+    forgot to uncomment os.remove()
+
+commit 48d20142787ba1e0a14fbeeceb9094cb47fe197c
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Thu Apr 7 19:04:49 2016 -0500
+
+    should be working now
+
+commit bd679b31e198ff9f4ca3ebb5a3a0c6f58e19f17e
+Author: Leith24 <gavinleith@utexas.edu>
+Date:   Thu Apr 7 18:58:45 2016 -0500
+
+    screwed up the travis file, should be fine now
+
+commit 9db06a56bc41151241b08fe83865a81080e8acd7
+Author: Leith24 <gavinleith@utexas.edu>
+Date:   Thu Apr 7 18:56:59 2016 -0500
+
+    reorganized app.py and added db.py to aid with tests.py, coverage is bad
+
+commit 8fc82113795d138b1e1e7cfa8edacb3ad660b841
+Author: Leith24 <gavinleith@utexas.edu>
+Date:   Thu Apr 7 18:39:43 2016 -0500
+
+    finished tests.py with countries
+
+commit b417bd388f4c2da2ebbb32c11952885007924ccd
+Merge: dcfa5fd 047dd31
+Author: Declan Duffy <declan.duffy94@hotmail.com>
+Date:   Thu Apr 7 17:30:17 2016 -0500
+
+    Refactored classification.html - added classification image
+
+commit 047dd313bb138a6b38ee3c1800ef3b4e99eb4ab4
+Merge: b3b790d 575a382
+Author: Dazmurphy <daz.murphy.94@gmail.com>
+Date:   Thu Apr 7 17:04:35 2016 -0600
+
+    fixed merge issue
+
+commit b3b790df9d030595a17c03e651d42a8dfeeb0280
+Author: Dazmurphy <daz.murphy.94@gmail.com>
+Date:   Thu Apr 7 17:01:43 2016 -0600
+
+    created populateClassifications()
+
+commit 91698ebee0a3f3ff886fb62cc6dffecaaffbe690
+Author: Dazmurphy <daz.murphy.94@gmail.com>
+Date:   Thu Apr 7 17:01:21 2016 -0600
+
+    created populateClassifications()
+
+commit dcfa5fd5e4bc28483fd162d1c4629c4d65122a50
+Author: Declan Duffy <declan.duffy94@hotmail.com>
+Date:   Thu Apr 7 17:28:31 2016 -0500
+
+    Refactored classification.html - added classification image
+
+commit af1fa46fa9aa11707369dad85f93c436b94b1660
+Merge: 3aa1c5d 0d112ec
+Author: Dazmurphy <daz.murphy.94@gmail.com>
+Date:   Thu Apr 7 16:02:55 2016 -0600
+
+    Merge branch 'dev' of https://github.com/Leith24/cs373-idb into dev
+
+commit 3aa1c5dcc46d3a903a94436eab4d8ad2d09e06b9
+Merge: bce976b 13aac5f
+Author: Dazmurphy <daz.murphy.94@gmail.com>
+Date:   Thu Apr 7 16:02:44 2016 -0600
+
+    added populate_classificatins and fixed merge issues
+
+commit 575a38276e3a394caef40b1a137d81549033cc03
+Author: Ovais Panjwani <opanjwani@underarmour.com>
+Date:   Thu Apr 7 17:00:22 2016 -0500
+
+    Added classes.json
+
+commit a33d7f13761e664f1ed2fc7d9b2c525395c205fb
+Author: Ovais Panjwani <opanjwani@underarmour.com>
+Date:   Thu Apr 7 16:50:46 2016 -0500
+
+    unit tests almost done.
+
+commit 4bfb98725fe004f7a7b28f70437b4c93b0cbd0ed
+Merge: 16d3c97 c1dfcf4
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Thu Apr 7 16:41:54 2016 -0500
+
+    Merge branch 'dev' of https://github.com/Leith24/cs373-idb into dev
+
+commit 16d3c9729aef439faf5d9f53da9ba135986ca816
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Thu Apr 7 16:41:48 2016 -0500
+
+    fixed classification.html routing, need better css etc
+
+commit ff96746eff4a9204cf2cda5fa2bb755fd8079f81
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Thu Apr 7 16:37:46 2016 -0500
+
+    fixed
+
+commit c1dfcf45b43b5457468e383323af35a93239e329
+Author: Declan Duffy <declan.duffy94@hotmail.com>
+Date:   Thu Apr 7 16:35:21 2016 -0500
+
+    Image paths fixed
+
+commit 99980ac48e4c7f771c43a7d9413839158fdd0b51
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Thu Apr 7 16:25:19 2016 -0500
+
+    fixed about href
+
+commit 8e9844df13d99a61b0f0123cfd027c43824ba07e
+Merge: 0aa24c6 54be6a9
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Thu Apr 7 16:24:31 2016 -0500
+
+    Merge branch 'dev' of https://github.com/Leith24/cs373-idb into dev
+
+commit 0aa24c638ac94f89e4c40bc701519f29224497be
+Merge: 3fdc3cf 70a6497
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Thu Apr 7 16:24:27 2016 -0500
+
+    fixed merge and added classifications
+
+commit 54be6a94a447a53243cf20e52e812fb1e9a4c3bd
+Author: Declan Duffy <declan.duffy94@hotmail.com>
+Date:   Thu Apr 7 16:23:02 2016 -0500
+
+    Random characters fixed - images path fixed
+
+commit 3fdc3cfaf6bb8cefcedbcafca2d3ee228d3692ae
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Thu Apr 7 16:21:50 2016 -0500
+
+    classifications using fake api calls bur done
+
+commit 70a64971c026ed8314c0545b519fd8484f56b778
+Author: Declan Duffy <declan.duffy94@hotmail.com>
+Date:   Thu Apr 7 16:18:20 2016 -0500
+
+    About page refactored - fixed navbar css - problem with random chars on about
+
+commit bce976bd882b8c1fdb7c4c102e9522b1d893cbd5
+Author: Dazmurphy <daz.murphy.94@gmail.com>
+Date:   Thu Apr 7 15:11:53 2016 -0600
+
+    added populateCountries() method
+
+commit dc46170b2341cbd235b20ecc173d8d92304aff0f
+Merge: 29ac078 af1fa46
+Author: Leith24 <gavinleith@utexas.edu>
+Date:   Thu Apr 7 16:04:05 2016 -0500
+
+    Merge branch 'dev' of https://github.com/Leith24/cs373-idb into dev
+
+commit 29ac078e4381355cc33049fff43ba766c9a306dd
+Author: Leith24 <gavinleith@utexas.edu>
+Date:   Thu Apr 7 16:03:56 2016 -0500
+
+    fixed carina isses, had no install for requests
+
+commit 0d112ec9c98c839f04296d62b2b0b26a1ea6ff39
+Author: Ovais Panjwani <opanjwani@underarmour.com>
+Date:   Thu Apr 7 15:23:29 2016 -0500
+
+    Fixed Adams stuff
+
+commit 13aac5f5acfb907a70436d2350d811f1562b7063
+Merge: 98f494e 1b73f0e
+Author: Ovais Panjwani <opanjwani@underarmour.com>
+Date:   Thu Apr 7 15:08:00 2016 -0500
+
+    Merge branch 'dev' of https://github.com/Leith24/cs373-idb into dev
+
+commit 98f494e77704d7fc36983d21aeb07c0f75052fd6
+Author: Ovais Panjwani <opanjwani@underarmour.com>
+Date:   Thu Apr 7 15:07:40 2016 -0500
+
+    get_classifications works
+
+commit 1b73f0ef25f7bd9330399b5e757d2fd3ad0095d9
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Thu Apr 7 15:07:28 2016 -0500
+
+    Get Countries and Meteorites both updated
+    
+    Still working on get meteorite and get country
+
+commit 0d9d1f321598f5c744c22ac8c42132712902670c
+Merge: 89c1c9d 0216bae
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Thu Apr 7 14:55:25 2016 -0500
+
+     merge changes
+
+commit 89c1c9d6959095982b643e9f9863193a234678c7
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Thu Apr 7 14:54:01 2016 -0500
+
+    angular stuff
+
+commit 316e65e710f3aaa76a6d75f27e7d21f665b2229c
+Merge: f9439fb 2b3033b
+Author: Dazmurphy <daz.murphy.94@gmail.com>
+Date:   Thu Apr 7 13:49:05 2016 -0600
+
+    Merge branch 'dev' of https://github.com/Leith24/cs373-idb into dev
+
+commit f9439fb60bde8e09fe082cc99755bd27cec5347b
+Author: Dazmurphy <daz.murphy.94@gmail.com>
+Date:   Thu Apr 7 13:48:42 2016 -0600
+
+    created populateMeteorites method
+
+commit 0216bae0bf0ec855e95fd1a1b4a313095e192e39
+Merge: 752aeed f36161a
+Author: Ovais Panjwani <opanjwani@underarmour.com>
+Date:   Thu Apr 7 14:46:20 2016 -0500
+
+    Merge branch 'dev' of https://github.com/Leith24/cs373-idb into dev
+
+commit 752aeed0a78b143eab6290c94051339d5cb78fbd
+Author: Ovais Panjwani <opanjwani@underarmour.com>
+Date:   Thu Apr 7 14:45:55 2016 -0500
+
+    Fixed json file for classifications
+
+commit f36161afe1b2e864764a737033bf867d2984b3e3
+Author: Leith24 <gavinleith@utexas.edu>
+Date:   Thu Apr 7 14:42:24 2016 -0500
+
+    modified getfiles()
+
+commit fcedf794470333a2755f4edb09e9dfaf6d239ad9
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Thu Apr 7 14:39:06 2016 -0500
+
+    Create newclassifications.json
+
+commit a409a17efc5dc73f87700c26a4c9ddcc0474db3a
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Thu Apr 7 14:38:49 2016 -0500
+
+    Create newclassifications.json
+
+commit ee7d8b2dde8a547da7ea80a8895c04946598ac1d
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Thu Apr 7 14:37:53 2016 -0500
+
+    classifications change
+
+commit cbcb1e448e5e48e76aac0c6935cba46937a7c9d5
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Thu Apr 7 14:17:02 2016 -0500
+
+    Json files builder added
+
+commit e17158023634f54d8489c60be85dbf51ef5134cc
+Author: Gavin Leith <gavinleith@utexas.edu>
+Date:   Thu Apr 7 13:55:46 2016 -0500
+
+    Added files via upload
+
+commit 2b3033b725b4d2865d8f5b62b3bb2bbea03047ab
+Merge: 06baaf6 3fd35a8
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Thu Apr 7 13:26:12 2016 -0500
+
+    Merge branch 'dev' of https://github.com/Leith24/cs373-idb into dev
+
+commit 3fd35a8f8b8279202602ae2685e4d6d3fca1833e
+Author: Leith24 <gavinleith@utexas.edu>
+Date:   Thu Apr 7 13:15:10 2016 -0500
+
+    added in SQL database set up. still have models commented out
+
+commit 1dd56b64a2da25c5676aa8f022c40f1e416a5a9b
+Author: Leith24 <gavinleith@utexas.edu>
+Date:   Thu Apr 7 13:08:29 2016 -0500
+
+    forgot to change the models.html make check
+
+commit 59ce49188d90f46af0f0140dbfafe729dec5a8fa
+Author: Leith24 <gavinleith@utexas.edu>
+Date:   Thu Apr 7 13:05:38 2016 -0500
+
+    changed makefile for travis
+
+commit 1dcbe4406512c3e2b56093984980937d9ea3e622
+Author: Leith24 <gavinleith@utexas.edu>
+Date:   Thu Apr 7 13:03:37 2016 -0500
+
+    commmented out some imports to get carina working
+
+commit 5695f62063cad0fbbd91613e675e2705bc1ef3ee
+Merge: 398ae3a f991bde
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Thu Apr 7 11:29:32 2016 -0500
+
+    Merge branch 'dev' of https://github.com/Leith24/cs373-idb into dev
+
+commit 398ae3a4a2af8baa18eacb18ea12812c4e33f6f7
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Thu Apr 7 11:26:53 2016 -0500
+
+    reverse order for tables added, pagination added
+
+commit f991bde2108abf8a7701b1a3a0e6ec1c496410cc
+Author: Leith24 <gavinleith@utexas.edu>
+Date:   Thu Apr 7 09:12:01 2016 -0500
+
+    updated carina files, added db folder. Carina still down
+
+commit c5dd588a8af73ca34fe53f7bf9bdb984e0ed1ab0
+Author: Ovais Panjwani <opanjwani@underarmour.com>
+Date:   Thu Apr 7 00:02:21 2016 -0500
+
+    Just added API calls for classifications
+
+commit da5edafa3b1a226e96317981576618a292068896
+Merge: e1d916e d9df65a
+Author: Ovais Panjwani <opanjwani@underarmour.com>
+Date:   Wed Apr 6 23:26:51 2016 -0500
+
+    Merge branch 'dev' of https://github.com/Leith24/cs373-idb into dev
+
+commit d9df65a9240f9dcd8ecc5bc632cd7ccd3a3c4e49
+Author: Dazmurphy <daz.murphy.94@gmail.com>
+Date:   Wed Apr 6 22:52:41 2016 -0600
+
+    updated app.py to contain manager commands
+
+commit e1d916e86b49c445d9c5d75b05bb2e2e902c6b09
+Author: Ovais Panjwani <opanjwani@underarmour.com>
+Date:   Wed Apr 6 23:26:08 2016 -0500
+
+    Json file for classifications
+
+commit 06baaf640803de0ee240a049f8c15034e2171c2e
+Merge: 65290b6 d9df65a
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Wed Apr 6 23:08:53 2016 -0500
+
+    Merge remote-tracking branch 'origin/dev' into dev
+    
+    # Conflicts:
+    #	app/models.py
+
+commit 65290b6f8b682d1c94c0646a72435b41358321e5
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Wed Apr 6 23:06:51 2016 -0500
+
+    Tables error
+
+commit 5035721a873f80e0619677f01eda3ccd7a443246
+Author: Dazmurphy <daz.murphy.94@gmail.com>
+Date:   Wed Apr 6 21:51:44 2016 -0600
+
+    fixed relationships
+
+commit 3a475e1bc5fc964823f6b2fdf9c97a87fd5cd070
+Author: Dazmurphy <daz.murphy.94@gmail.com>
+Date:   Wed Apr 6 21:41:08 2016 -0600
+
+    removed models.py from parent directory
+
+commit c1d0dcf0ee7ab11435e08c44a1e2c472cc856e0c
+Author: Dazmurphy <daz.murphy.94@gmail.com>
+Date:   Wed Apr 6 21:32:37 2016 -0600
+
+    database working locally except for relationships issue
+
+commit 0fa7e1df630d6b5d44039264f10f0d3f9834c520
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Wed Apr 6 19:57:42 2016 -0500
+
+    Fixed missing relations and variable name changes
+
+commit 1246e85ffb7fca807fc5f1bf4bb2503240cebfe8
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Wed Apr 6 18:55:12 2016 -0500
+
+    fixed about page
+
+commit 419894d4c9bd2a4d0f89ffc2a64e045704e6ce62
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Wed Apr 6 17:34:58 2016 -0500
+
+    Moved models back bcs it broke things
+
+commit 28664e1e9be7d06da6d8cb75371c855f26740293
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Wed Apr 6 17:31:51 2016 -0500
+
+    Moved models.py to app folder
+
+commit 7ba381c36c90d5170a23d0ffa8f5363ac8b630fb
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Wed Apr 6 17:30:35 2016 -0500
+
+    Updated models with SQLalchemy relations and other fixes
+
+commit 3922e75a8b9606afc866f9e513bb2a2a80cfae29
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Tue Apr 5 22:06:44 2016 -0500
+
+    meteorites + meteorite
+
+commit 33772dabcb312f2f2cb59ab2a0a6780e24ca8937
+Author: Leith24 <gavinleith@utexas.edu>
+Date:   Mon Apr 4 13:43:11 2016 -0500
+
+    got carina working again, moved some folders and shit
+
+commit cf9f594ea5ee44c0598cfe3c53781b8e4e18ab78
+Author: Leith24 <gavinleith@utexas.edu>
+Date:   Mon Apr 4 08:36:50 2016 -0500
+
+    updated docker-compose files
+
+commit 8c84c13775046089b4219f3a9acbcd1a86bc3b4a
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Sun Apr 3 18:44:11 2016 -0500
+
+    meteorites and meteorite routing finished
+
+commit 27d5ec9a51500c13022edf76a9b738270edce344
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Sun Apr 3 10:57:41 2016 -0500
+
+    fixed merge errors
+
+commit e379b6a9de4121f4bcd4045bfeb6900929926de8
+Merge: 4bf4533 fd78b1c
+Author: Dazmurphy <daz.murphy.94@gmail.com>
+Date:   Thu Mar 31 23:41:33 2016 -0600
+
+    Merge branch 'dev' of https://github.com/Leith24/cs373-idb into dev
+
+commit 4bf45332f5a82b60edf8021bfd7c30b841d24eeb
+Author: Dazmurphy <daz.murphy.94@gmail.com>
+Date:   Thu Mar 31 23:41:24 2016 -0600
+
+    fixed datatables for individual countries
+
+commit fd78b1ce44290fc878e82dd36c7ae603ed539ccb
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Thu Mar 31 17:44:39 2016 -0500
+
+    added api routes for meteorites
+
+commit a85d33bc32af8c91db536d2efd76f4e4ca8b1989
+Author: Leith24 <gavinleith@utexas.edu>
+Date:   Thu Mar 31 15:52:51 2016 -0500
+
+    adding import for flash sqlalchemy to app.py
+
+commit 0ad52b751a2356bfbc728bccd7facfc88efa75d8
+Author: Leith24 <gavinleith@utexas.edu>
+Date:   Thu Mar 31 15:48:16 2016 -0500
+
+     adding initial db changes based off previous semester dbs
+
+commit ea8e0db7b917350cfb421fa9b2ea5686501f9b20
+Author: Dazmurphy <daz.murphy.94@gmail.com>
+Date:   Thu Mar 31 13:42:01 2016 -0600
+
+    reformatted columns for year pages and country pages
+
+commit 8d52a9e89e4bcbac02bda8f15b5e8a9dbd0a77de
+Author: Declan Duffy <declan.duffy94@hotmail.com>
+Date:   Wed Mar 30 19:35:34 2016 -0500
+
+    Mobile working for all pages except about - updates to classifications nav
+
+commit 61b58566bdd59264d7d53fc3116bc9c95504eb46
+Merge: a36f6d6 7631f81
+Author: Declan Duffy <declan.duffy94@hotmail.com>
+Date:   Wed Mar 30 19:22:52 2016 -0500
+
+    Fixing merge issues Merge branch 'dev' of https://github.com/Leith24/cs373-idb into dev
+
+commit 7631f819d23e004843d006785350300009c1532f
+Author: Dazmurphy <daz.murphy.94@gmail.com>
+Date:   Wed Mar 30 19:08:56 2016 -0600
+
+    completed column re-styling of individual classifications pages
+
+commit 11cc09b0e06a2968d4df45b6bf1e4bc4ed1147b9
+Author: Dazmurphy <daz.murphy.94@gmail.com>
+Date:   Wed Mar 30 18:38:11 2016 -0600
+
+    updated individual meteorites layout
+
+commit a36f6d6e7921a84377a46a8bae4a49c6382887b7
+Author: Declan Duffy <declan.duffy94@hotmail.com>
+Date:   Wed Mar 30 19:22:19 2016 -0500
+
+    Mobile nav bar for meteorites updated
+
+commit fb4f79143915ccda3b8e97a969c3cc0a83bb9b18
+Author: Dazmurphy <daz.murphy.94@gmail.com>
+Date:   Wed Mar 30 17:01:50 2016 -0600
+
+    completed meteorites column styling
+
+commit 2af1cc53f109e0536c602db945adf45db09460a1
+Author: Dazmurphy <daz.murphy.94@gmail.com>
+Date:   Tue Mar 29 16:04:49 2016 -0600
+
+    more style changes
+
+commit e24c1acccc0e48bebfab235aa32b772d7e4a160e
+Author: Dazmurphy <daz.murphy.94@gmail.com>
+Date:   Tue Mar 29 15:45:29 2016 -0600
+
+    minor style adjustments
+
+commit 7d22784a70ed3b08f3185f925ec7542365d2d699
+Author: Dazmurphy <daz.murphy.94@gmail.com>
+Date:   Tue Mar 29 15:45:14 2016 -0600
+
+    minor style adjustments
+
+commit 1b4755e112142f9e1207a05efa1fb95094564ab1
+Author: Dazmurphy <daz.murphy.94@gmail.com>
+Date:   Tue Mar 29 15:38:06 2016 -0600
+
+    adjusted splash page, added links for countries, other minor adjustments in html
+
+commit 77736bdf8b5788bcdf8b0ac48af984149b49eb1d
+Merge: 18a6102 00bed64
+Author: Dazmurphy <daz.murphy.94@gmail.com>
+Date:   Mon Mar 28 21:48:00 2016 -0600
+
+    Merge branch 'dev' of https://github.com/Leith24/cs373-idb into dev
+
+commit 18a6102704fb99e5b13cbadc8506724f73fbc638
+Author: Dazmurphy <daz.murphy.94@gmail.com>
+Date:   Mon Mar 28 21:47:37 2016 -0600
+
+    added tables to individual pages - still have to arrange layout properly
+
+commit 00bed64e7b4715d14fc83c0634b05f4a8c810d77
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Mon Mar 28 19:11:20 2016 -0500
+
+    fixed page titles
+
+commit 13e840cd5241cb547b23f9dabfb20f9337a26917
+Merge: 9b564e1 2fb2a4e
+Author: Dazmurphy <daz.murphy.94@gmail.com>
+Date:   Mon Mar 28 17:05:18 2016 -0600
+
+    Merge branch 'dev' of https://github.com/Leith24/cs373-idb into dev
+
+commit 9b564e1b4275af1093e4ca491023699fc158d0e1
+Author: Dazmurphy <daz.murphy.94@gmail.com>
+Date:   Mon Mar 28 16:59:55 2016 -0600
+
+    added individual year tables for meteorites, completed some visual and functionality TODOs
+
+commit 2fb2a4e45f707dfbdcb0aa10bf9d2321877d470a
+Author: Leith24 <gavinleith@utexas.edu>
+Date:   Mon Mar 28 16:50:25 2016 -0500
+
+    adding carina files
+
+commit 76607baa8c8cf05e1feaf66f3fdc874d17d8ad1c
+Author: Dazmurphy <daz.murphy.94@gmail.com>
+Date:   Sun Mar 27 14:42:13 2016 -0600
+
+    got css for tables working
+
+commit a1c360cbe026549c413bd042c471c3fb7cc58c22
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Sun Mar 27 15:11:56 2016 -0500
+
+    fix this shit
+
+commit 2c0955b042b8f00892bee11844cb287bb00b0b5d
+Author: Dazmurphy <daz.murphy.94@gmail.com>
+Date:   Fri Mar 25 22:35:06 2016 -0600
+
+    updated tools listed on about page
+
+commit 6872c8fe70a243b7f32896fe3e34ab9c1486bcb0
+Author: Dazmurphy <daz.murphy.94@gmail.com>
+Date:   Fri Mar 25 22:31:02 2016 -0600
+
+    finished about page
+
+commit d403754996110748534412de61b33ae7514404f4
+Author: Dazmurphy <daz.murphy.94@gmail.com>
+Date:   Fri Mar 25 22:29:34 2016 -0600
+
+    finished about page
+
+commit 87ac1105c1598649c005d3459f0d6b7e23c6bd2d
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Fri Mar 25 14:22:57 2016 -0500
+
+    Delete :
+
+commit 59bd09abfeef326478173d4a29dada36a40af50f
+Merge: 87687aa a862ab9
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Thu Mar 24 21:57:09 2016 -0500
+
+    Merge pull request #17 from Leith24/dev
+    
+    Dev
+
+commit a862ab944643714607b28106117594fde1535e06
+Author: Leith24 <gavinleith@utexas.edu>
+Date:   Thu Mar 24 21:55:43 2016 -0500
+
+    log
+
+commit 286cfccf73f1447875b39ef393a7783e1de7c1c1
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Thu Mar 24 21:53:10 2016 -0500
+
+    About Page
+
+commit beaeceec61c8454eac116a0f43571e7e7060b861
+Merge: ad734b0 671c0f6
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Thu Mar 24 21:42:07 2016 -0500
+
+    Merge branch 'dev' of https://github.com/Leith24/cs373-idb into dev
+
+commit ad734b0975f3290322d5ffd8cf702731db7341fd
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Thu Mar 24 21:42:05 2016 -0500
+
+    formatting issues.
+
+commit 671c0f64b525df950f65fdf8cf087a9335e21f20
+Author: Declan Duffy <declan.duffy94@hotmail.com>
+Date:   Thu Mar 24 21:13:08 2016 -0500
+
+    Fixing pages that say locations to countries
+
+commit 0bcafa7b770cb12082db895bc595260a02f232a9
+Merge: fc09a75 beb3aa9
+Author: Declan Duffy <declan.duffy94@hotmail.com>
+Date:   Thu Mar 24 21:04:45 2016 -0500
+
+    Fixing merge issue Merge branch 'dev' of https://github.com/Leith24/cs373-idb into dev
+
+commit fc09a750860aaf5736e5e059805bc7a082964e2a
+Author: Declan Duffy <declan.duffy94@hotmail.com>
+Date:   Thu Mar 24 21:04:30 2016 -0500
+
+    Nav bar alternative added for mobile
+
+commit beb3aa902db7cea3da0b246d804fe9d9a4f46070
+Merge: bdebd8e 69bcb09
+Author: Ovais Panjwani <opanjwani@underarmour.com>
+Date:   Thu Mar 24 20:31:08 2016 -0500
+
+    Unit tests are finished
+
+commit bdebd8e1063f34bc5708f1468b889d3873025dd7
+Author: Ovais Panjwani <opanjwani@underarmour.com>
+Date:   Thu Mar 24 20:27:46 2016 -0500
+
+    Unit tests are finished
+
+commit 69bcb093744a3eef983be36abb87b9b6f948cad4
+Author: Declan Duffy <declan.duffy94@hotmail.com>
+Date:   Thu Mar 24 20:08:04 2016 -0500
+
+    Last meteorite found added to countries
+
+commit 9d1d5118316f88bf352f7cac7baa4b9a3fba78b7
+Author: Declan Duffy <declan.duffy94@hotmail.com>
+Date:   Thu Mar 24 19:58:08 2016 -0500
+
+    css fix for ensisheim
+
+commit ef17fc1312a1d0330a06cdde68a00b1a8821e53e
+Merge: ba47309 f63bc0f
+Author: Declan Duffy <declan.duffy94@hotmail.com>
+Date:   Thu Mar 24 19:48:11 2016 -0500
+
+    Fixing merge issuesMerge branch 'dev' of https://github.com/Leith24/cs373-idb into dev
+
+commit f63bc0f00e235d2aa49325e89c0db30a1b5929ac
+Merge: e9f1f88 304e399
+Author: Dazmurphy <daz.murphy.94@gmail.com>
+Date:   Thu Mar 24 19:42:06 2016 -0600
+
+    Merge branch 'dev' of https://github.com/Leith24/cs373-idb into dev
+
+commit e9f1f8815bcefea1a9292045d602f1506c502f86
+Author: Dazmurphy <daz.murphy.94@gmail.com>
+Date:   Thu Mar 24 19:41:56 2016 -0600
+
+    updated the ll6 background image
+
+commit ba473096355619b884d8d080edeff4774ca36b7d
+Author: Declan Duffy <declan.duffy94@hotmail.com>
+Date:   Thu Mar 24 19:48:01 2016 -0500
+
+    Clickable attributes for countries and classifications
+
+commit 390d25083b19ec0bb38e2e75eba2f04607f1ebb3
+Author: Dazmurphy <daz.murphy.94@gmail.com>
+Date:   Thu Mar 24 18:42:29 2016 -0600
+
+    fixed some formatting
+
+commit 304e399203feb1d3a1113c8e57a207feac668a7b
+Merge: 82276d8 866a37f
+Author: Declan Duffy <declan.duffy94@hotmail.com>
+Date:   Thu Mar 24 19:40:20 2016 -0500
+
+    Clickable attributes for meteorites - removed twitter feed
+
+commit 82276d8acf113de87610329b4ed0ab037a94c3d9
+Author: Declan Duffy <declan.duffy94@hotmail.com>
+Date:   Thu Mar 24 19:38:22 2016 -0500
+
+    Clickable attributes for meteorites - removed twitter feed
+
+commit 866a37f81fd8818f7228ab096e1a08b3a134bf7b
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Thu Mar 24 19:34:55 2016 -0500
+
+    Routing fixed
+
+commit 23d89636df2cfab52eea7ad48ec35f3a82fd2096
+Author: Mohammed Ovais Panjwani <ovais.panjwani@utexas.edu>
+Date:   Thu Mar 24 19:21:01 2016 -0500
+
+    Documenting API is complete!
+
+commit 9168fe73b480e003bdd738f7546c8158ec393316
+Author: Mohammed Ovais Panjwani <ovais.panjwani@utexas.edu>
+Date:   Thu Mar 24 19:20:47 2016 -0500
+
+    Documenting API is complete!
+
+commit 97fe294f8228cf16321ac24de72264f6e172ed05
+Merge: df2010d 61a6108
+Author: Declan Duffy <declan.duffy94@hotmail.com>
+Date:   Thu Mar 24 19:09:14 2016 -0500
+
+    iFixing countriesMerge branch 'dev' of https://github.com/Leith24/cs373-idb into dev
+
+commit df2010d237e5662e3a16b548b6c64258328f07f3
+Author: Declan Duffy <declan.duffy94@hotmail.com>
+Date:   Thu Mar 24 19:08:48 2016 -0500
+
+    country attributes updated
+
+commit 61a6108b09468b646fe9d54aa4e47adb410df480
+Author: Mohammed Ovais Panjwani <ovais.panjwani@utexas.edu>
+Date:   Thu Mar 24 19:08:35 2016 -0500
+
+    Added data for location and revised others
+
+commit 3960006ddebb5407ebae4ff44fbb6384026c1964
+Author: Mohammed Ovais Panjwani <ovais.panjwani@utexas.edu>
+Date:   Thu Mar 24 19:07:44 2016 -0500
+
+    Added data for location and revised others
+
+commit cc41ea99d7d02fe19d91e69d3e6d1f15de731d63
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Thu Mar 24 19:00:13 2016 -0500
+
+    added recent and related function
+
+commit e59b1f2bca1294a51329815427228e5f66bc0388
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Thu Mar 24 18:21:15 2016 -0500
+
+    Uml change, centroid spelling error
+
+commit d2a9f97315d0177a3ae25e08f1c08944dbf41962
+Author: Leith24 <gavinleith@utexas.edu>
+Date:   Thu Mar 24 18:16:45 2016 -0500
+
+     travis should pass
+
+commit e9ed5cc722aa5ff382a56df7e1a63ed5742acb71
+Author: Leith24 <gavinleith@utexas.edu>
+Date:   Thu Mar 24 18:13:12 2016 -0500
+
+     adding models.html
+
+commit 09b98f2f532d5a611f5da5e4e5b97ec6dff4598d
+Author: Leith24 <gavinleith@utexas.edu>
+Date:   Thu Mar 24 17:32:41 2016 -0500
+
+    added session info
+
+commit 2cf33148a974ae3f6a4bcade1c06422e77566a85
+Author: Leith24 <gavinleith@utexas.edu>
+Date:   Thu Mar 24 17:25:30 2016 -0500
+
+    adding documentation for realsies
+
+commit a17ffa612edc6acb27ea6766d89ebbb3fdac791f
+Merge: 584fb64 d8f25c5
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Thu Mar 24 17:21:37 2016 -0500
+
+    Merge branch 'dev' of https://github.com/Leith24/cs373-idb into dev
+
+commit d8f25c56809dbba6ea718d0d226624a06119f22d
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Thu Mar 24 17:21:17 2016 -0500
+
+    fixed routing for enssiushsemmm
+
+commit 584fb641c16bcf178ef7251de76f0b84c4acc8e6
+Merge: 6f2ca30 5a4a1f5
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Thu Mar 24 17:20:38 2016 -0500
+
+    Merge remote-tracking branch 'origin/dev' into dev
+    
+    # Conflicts:
+    #	models.py
+
+commit 6f2ca306ca6f00d0512e42c9da503d3f514648fd
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Thu Mar 24 17:19:51 2016 -0500
+
+    testing and fixes
+
+commit 5a4a1f5175800589c31d05ce4036a05d210b3a99
+Author: Gavin Leith <gavinleith@utexas.edu>
+Date:   Thu Mar 24 17:19:28 2016 -0500
+
+    Delete models.py
+
+commit aae59f8c9ab541a932016d25cebb401de0ec1167
+Author: Leith24 <gavinleith@utexas.edu>
+Date:   Thu Mar 24 17:16:13 2016 -0500
+
+    updating travis
+
+commit e6ed94476e38de5bc46eb401723cff10d45e8575
+Author: Leith24 <gavinleith@utexas.edu>
+Date:   Thu Mar 24 17:12:22 2016 -0500
+
+    forgot a :
+
+commit a7db43fb2c1c748a2def75d016d500af92dff5fa
+Merge: 3c3569b 5bf09f3
+Author: Dazmurphy <daz.murphy.94@gmail.com>
+Date:   Thu Mar 24 17:11:19 2016 -0600
+
+    Merge branch 'dev' of https://github.com/Leith24/cs373-idb into dev
+
+commit 3c3569bcd59c4784212be4308a820cb5eb80efb4
+Merge: 78772ff f743716
+Author: Dazmurphy <daz.murphy.94@gmail.com>
+Date:   Thu Mar 24 17:10:23 2016 -0600
+
+    Merge branch 'dev' of https://github.com/Leith24/cs373-idb into dev
+
+commit 78772ff86607c48d37392ce424429b296f5d51e0
+Author: Dazmurphy <daz.murphy.94@gmail.com>
+Date:   Thu Mar 24 17:10:10 2016 -0600
+
+    corrected problems with classifications linking
+
+commit 5bf09f3c5c789281dbf430929457559bd467fe23
+Author: Leith24 <gavinleith@utexas.edu>
+Date:   Thu Mar 24 17:10:30 2016 -0500
+
+    updating models to have pydoc documentation
+
+commit eb06c5fd687bc0330c156737ff3cbac5d7938a34
+Merge: 974dfda 9a17da7
+Author: Dazmurphy <daz.murphy.94@gmail.com>
+Date:   Thu Mar 24 16:10:05 2016 -0600
+
+    fixed merge issue
+
+commit 974dfda547a0891669e08750488f448ef34e648f
+Author: Dazmurphy <daz.murphy.94@gmail.com>
+Date:   Thu Mar 24 16:04:36 2016 -0600
+
+    adjusted about page
+
+commit f7437161422bf9a445db2a2ef9c327b850b91960
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Thu Mar 24 16:42:33 2016 -0500
+
+    Added function and changed location to country, started unit tests
+
+commit 9a17da72467b853d088e6fb161b74693d18ff0e8
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Thu Mar 24 15:47:20 2016 -0500
+
+    stuff'
+    '
+
+commit 7e815dba4e90301efdbbff96b751fcfda629bc1b
+Author: Declan Duffy <declan.duffy94@hotmail.com>
+Date:   Thu Mar 24 15:41:33 2016 -0500
+
+    Centroid maps on countries - removed twitter feed
+
+commit 3b92d5bb5c6d3b579a97811d958e085aa6c1eed4
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Thu Mar 24 15:32:31 2016 -0500
+
+    lord adam yelled at me
+
+commit c9cc7a48cdd4fa1e5ed1ad2e071161b649b39fc1
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Thu Mar 24 15:16:56 2016 -0500
+
+    fixed splash countries
+
+commit 137dcb3794381b8ee5f8e3f6911de15e5cb7ef49
+Merge: 4ea63f0 c653e38
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Thu Mar 24 15:15:46 2016 -0500
+
+    Merge branch 'dev' of https://github.com/Leith24/cs373-idb into dev
+
+commit 4ea63f067776158a5cf739b0acd4ce57bfd75060
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Thu Mar 24 15:15:18 2016 -0500
+
+    fixed location
+
+commit c653e38188bb005df04747d77d4533040b63ee03
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Thu Mar 24 15:14:53 2016 -0500
+
+    Models and UMLs
+    
+    Added function that creates country when one doesn't exist for added
+    meteorite
+
+commit 40f92c9817ffc6e5d51c86e6e6a23bcfac931f85
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Thu Mar 24 15:13:51 2016 -0500
+
+    fixed locations + countries
+
+commit ebc21ef70189441997d5bfa3a5806fa682a21426
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Thu Mar 24 15:01:18 2016 -0500
+
+    figuring out html
+
+commit 9080d2a6a05dda20a189787c456f7e84d9f10765
+Author: Declan Duffy <declan.duffy94@hotmail.com>
+Date:   Thu Mar 24 15:00:30 2016 -0500
+
+    css fixed for locations - images updated
+
+commit 0a390ad340cab9836be8a6b5ac3a00715ead0574
+Author: Mohammed Ovais Panjwani <ovais.panjwani@utexas.edu>
+Date:   Thu Mar 24 14:33:52 2016 -0500
+
+    Put in data for Meteorites and Classes
+
+commit 7ed06effec9c0af1b9f2526dcbc3c318906a2553
+Author: Declan Duffy <declan.duffy94@hotmail.com>
+Date:   Thu Mar 24 14:30:30 2016 -0500
+
+    navbar css fixed
+
+commit 536e127787f2e211f22a47a8bd81c50577815d9f
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Thu Mar 24 14:17:23 2016 -0500
+
+    fixed routes for location
+
+commit 79e4c7f06fa48a372afd25db0159dab2a11867fb
+Author: Declan Duffy <declan.duffy94@hotmail.com>
+Date:   Thu Mar 24 14:13:26 2016 -0500
+
+    locations.html updated
+
+commit 0992562f0faa8281f34ccfb6d85a0c78b83ef112
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Thu Mar 24 14:04:40 2016 -0500
+
+    fixed
+
+commit 38f6837fc2564f0048e23c183c40d72c3b204ed6
+Author: Declan Duffy <declan.duffy94@hotmail.com>
+Date:   Thu Mar 24 13:57:03 2016 -0500
+
+    Basic country pages created
+
+commit e049f0fc2f867d89f9df522a83587f0ca2524777
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Thu Mar 24 13:26:16 2016 -0500
+
+    for real
+
+commit a886ea2238bd1d5afabe0849fa01465c4a4f66eb
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Thu Mar 24 13:25:09 2016 -0500
+
+    finished with routes
+
+commit d6ed0a4ae358b6a77263e6a94cec2fde5ecaca0c
+Merge: 5ffae40 766729e
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Thu Mar 24 13:07:07 2016 -0500
+
+    Merge branch 'dev' of https://github.com/Leith24/cs373-idb into dev
+
+commit 5ffae40a665172e63a2f084598018cf947981622
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Thu Mar 24 13:06:21 2016 -0500
+
+    took navbar off
+
+commit e8d5d5466af3304ae2f50556848017bdc3cf1288
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Thu Mar 24 12:21:07 2016 -0500
+
+    switched routing to ui-router for nested and state-based views
+
+commit 766729e02c41a28cd4e73fdc2724c6cbde57b9c0
+Author: Adam Thompson <adamthompson@utexas.edu>
+Date:   Thu Mar 24 11:12:28 2016 -0500
+
+    Uml Diagram
+
+commit bef85bc62aa66ac53c552d3af561cb2a0b32f482
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Thu Mar 24 10:57:54 2016 -0500
+
+    fixed app.js
+
+commit 024f6a1fb23385fcb6c73f24a625bdde4e00cfb6
+Author: Gavin Leith <gavinleith@utexas.edu>
+Date:   Wed Mar 23 23:32:59 2016 -0500
+
+    Rename test.py to tests.py
+
+commit 1602f35192fddccc5dbbaa0f7dce31aaa564de0a
+Author: Leith24 <gavinleith@utexas.edu>
+Date:   Wed Mar 23 23:30:49 2016 -0500
+
+    updated travis and added test initial file
+
+commit 5a782de638348acebcfffe5c403ff9f158590d3b
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Wed Mar 23 23:00:26 2016 -0500
+
+    fixed up main location pillar
+
+commit a332c6d28acba305a6dfcaf81c235efde64a47da
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Wed Mar 23 22:47:33 2016 -0500
+
+    Routing almost complete, still need to do routing from pillars to examples
+
+commit 4f1f6399e1140f75ce37cd6a2063124597437b74
+Merge: ad5d7f9 8ecda87
+Author: Dazmurphy <daz.murphy.94@gmail.com>
+Date:   Wed Mar 23 22:19:41 2016 -0600
+
+    added splash page
+
+commit ad5d7f9f26c7ccd0e40f75e81f4af93dc3619df0
+Author: Dazmurphy <daz.murphy.94@gmail.com>
+Date:   Wed Mar 23 22:17:00 2016 -0600
+
+    added splash page
+
+commit 98b2426d87b910b322a7cf5fc818ffa33e6d5ef5
+Merge: 6725bf5 87687aa
+Author: Dazmurphy <daz.murphy.94@gmail.com>
+Date:   Wed Mar 23 22:16:45 2016 -0600
+
+    Merge https://github.com/Leith24/cs373-idb into dev
+
+commit 8ecda87f086319e4219fa1bf8d0653b3f6fc40c0
+Author: Mohammed Ovais Panjwani <ovais.panjwani@utexas.edu>
+Date:   Wed Mar 23 20:55:48 2016 -0500
+
+    Outlined some of the API
+
+commit 87687aa643b6eb406ff73cd4fb944bb7cf3096bd
+Author: Gavin Leith <gavinleith@utexas.edu>
+Date:   Wed Mar 23 14:06:50 2016 -0500
+
+    changed name
+
+commit 30630fda14dafaf1e6219c9a416fcc2aa332ec6d
+Author: Gavin Leith <gavinleith@utexas.edu>
+Date:   Wed Mar 23 14:03:19 2016 -0500
+
+    Transferring API Description file from Apiary.io
+
+commit 6725bf52e16ad46073c1852c999d578ea1167cfb
+Author: Dazmurphy <daz.murphy.94@gmail.com>
+Date:   Wed Mar 23 02:10:48 2016 -0600
+
+    fixed broken links
+
+commit 512e47fcd955b3f6d32669ce16aaca7d89e2b238
+Author: Dazmurphy <daz.murphy.94@gmail.com>
+Date:   Wed Mar 23 02:07:39 2016 -0600
+
+    created classification pages - still have to find media to embed in these pages
+
+commit c04aae14a814b1d98105e006d0ad84d61ff7f119
+Author: Leith24 <gavinleith@utexas.edu>
+Date:   Tue Mar 22 23:01:20 2016 -0500
+
+    updated makefile again
+
+commit 909f6aea1a9136d37dea3f645f1828bd7e576902
+Author: Leith24 <gavinleith@utexas.edu>
+Date:   Tue Mar 22 22:50:37 2016 -0500
+
+    forgot to track makefile
+
+commit 57f70b1e473296a52bf2e5083ab9f001ab87fc14
+Author: Leith24 <gavinleith@utexas.edu>
+Date:   Tue Mar 22 22:44:07 2016 -0500
+
+    added new carina folders that need editing. Added makefile and updated travis
+
+commit 49ad79b7371b41658310ed1ec142fd35ed35d290
+Merge: 95e69c3 9172dc9
+Author: Declan Duffy <declan.duffy94@hotmail.com>
+Date:   Tue Mar 22 19:51:18 2016 -0500
+
+    Merging to push merge branch 'dev' of https://github.com/Leith24/cs373-idb into dev
+
+commit 95e69c3cd97b01aaab6687df54a6780ebcb376f6
+Author: Declan Duffy <declan.duffy94@hotmail.com>
+Date:   Tue Mar 22 19:50:15 2016 -0500
+
+    Maps and twitter feed embedded in meteor pages
+
+commit 9172dc95ef7f2e5002dcb67cb5192c435bd50837
+Merge: b6e0d63 ee74355
+Author: Dazmurphy <daz.murphy.94@gmail.com>
+Date:   Tue Mar 22 16:16:21 2016 -0600
+
+    Merge branch 'dev' of https://github.com/Leith24/cs373-idb into dev
+
+commit b6e0d634e8c100077e064a8475ab4b40fea5a582
+Author: Dazmurphy <daz.murphy.94@gmail.com>
+Date:   Tue Mar 22 16:13:40 2016 -0600
+
+    finished classifications table
+
+commit 59cc82afe8486f46277cd3ce2f9b125180c81fad
+Author: Dazmurphy <daz.murphy.94@gmail.com>
+Date:   Tue Mar 22 15:26:48 2016 -0600
+
+    added datatables to meteorite page and repo
+
+commit ee743559b1a61711d3938760484e37b1e8f1e789
+Author: Declan Duffy <declan.duffy94@hotmail.com>
+Date:   Tue Mar 22 16:03:46 2016 -0500
+
+    Links added
+
+commit f4aa21ffe4190221629e3306940546b385dd230d
+Author: Declan Duffy <declan.duffy94@hotmail.com>
+Date:   Tue Mar 22 15:47:39 2016 -0500
+
+    3 meteor pages added - table updated
+
+commit f74889f66f62adbb49bcc0378f7df1704a9e60eb
+Merge: c2573c5 1eead42
+Author: Dazmurphy <daz.murphy.94@gmail.com>
+Date:   Tue Mar 22 13:46:00 2016 -0600
+
+    Merge branch 'dev' of https://github.com/Leith24/cs373-idb into dev
+
+commit 1eead42f3fa6b0fa7b537cb77ed12f54fc2c3d36
+Author: Declan Duffy <declan.duffy94@hotmail.com>
+Date:   Tue Mar 22 12:29:49 2016 -0500
+
+    Meteorite table added - not sortable yet
+
+commit 05942d366fd0ad5ba07eecff7aab175d99f7bcca
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Fri Mar 18 11:48:20 2016 -0500
+
+    almost done restructuring
+
+commit d861aad6b7bae20b36b6e8db72abf113dd2ef973
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Fri Mar 18 10:41:30 2016 -0500
+
+    restructured project organization
+
+commit 2d8601d07326511e9a84d8ea10d84daf2acc197f
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Thu Mar 17 10:30:48 2016 -0500
+
+    adding virtual env with flask, adding run.py to start localhost for development
+
+commit 2bec93430b45d505cdf3d12599d4e2015a188704
+Author: Jlavatai <jordanlavatai@gmail.com>
+Date:   Thu Mar 17 10:29:58 2016 -0500
+
+    Setting up project skeleton code
+
+commit 6aa7f4f3164d22aa706049d5a4f71bf04d09c129
+Author: Leith24 <gavinleith@utexas.edu>
+Date:   Thu Mar 17 09:59:39 2016 -0500
+
+    models compiles now
+
+commit f072d32aeb08cbb1057eda3fadc2785fc434cb4f
+Author: Gavin Leith <gavinleith@utexas.edu>
+Date:   Thu Mar 17 09:40:43 2016 -0500
+
+    Update models.py
+    
+    Other models added in. Need to put in unit tests for these
+
+commit 6a8c170c4f5bd2ea4f080b9ac88104b7aca40fe5
+Author: Gavin Leith <gavinleith@utexas.edu>
+Date:   Thu Mar 17 09:16:18 2016 -0500
+
+    Create models.py
+    
+    Initial push of models.py, need to add two more models
+
+commit c2573c54c0fb4bb887f58f17cc546b5d290dbac2
+Author: Leith24 <gavinleith@utexas.edu>
+Date:   Sun Mar 13 13:15:19 2016 -0500
+
+    travis push
+
+commit d76e3bc07eb87653a43099e5f60421442552d559
+Author: Leith24 <gavinleith@utexas.edu>
+Date:   Sun Mar 13 13:11:54 2016 -0500
+
+    travis push
+
+commit 9d3aefb7922f69af11e035d5feaf3ee6c6c459df
+Author: Gavin Leith <gavinleith@utexas.edu>
+Date:   Sun Mar 13 13:09:08 2016 -0500
+
+    Update .travis.yml
+
+commit a1040999014bc8d2b6a0e70ed54ff7a5ca077277
+Author: Gavin Leith <gavinleith@utexas.edu>
+Date:   Sun Mar 13 12:55:38 2016 -0500
+
+    Create .travis.yml
+
+commit 852599e848f051e3dfa8b57ad9768b8dc69ba04c
+Author: Gavin Leith <gavinleith@utexas.edu>
+Date:   Sun Mar 13 12:53:40 2016 -0500
+
+    Create .gitignore
+
+commit a6127114186363df0aa25968e87168a77859e79b
+Author: Gavin Leith <gavinleith@utexas.edu>
+Date:   Sun Mar 13 12:50:40 2016 -0500
+
+    Initial commit
