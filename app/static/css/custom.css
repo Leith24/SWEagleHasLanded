@@ -33,6 +33,12 @@ p
 	float: left;
 }
 
+#main_header_search h1
+{
+	width: 330px;
+}
+
+
 #about_header
 {
 	text-align: center;
