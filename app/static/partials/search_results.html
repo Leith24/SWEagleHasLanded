@@ -1,0 +1,461 @@
+
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Search Results</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="../static/css/custom.css">
+		<link href='https://fonts.googleapis.com/css?family=Advent+Pro' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Advent+Pro:100' rel='stylesheet' type='text/css'>
+
+
+	</head>
+
+	<body>
+		<div id = "content">
+			<div class="row " style="padding-top: 10px;">
+        		<div class="col-sm-2 hidden-xs">
+                    <ul class="nav nav-pills nav-stacked" id = "nav_links">
+                        <li><a href="/splash">Home</a></li>
+                        <li><a href="/meteorites">Meteorites</a></li>
+                        <li><a href="/classifications">Classifications</a></li>
+                        <li><a href="/countries">Countries</a></li>
+                        <li><a href="/about">About</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-sx-2 hidden-sm hidden-md hidden-lg">
+                    <ul class="nav nav-pills" id = "nav_links_mobile">
+                        <li><a href="/splash">Home</a></li>
+                        <li><a href="/meteorites">Meteorites</a></li>
+                        <li><a href="/classifications">Classifications</a></li>
+                        <li><a href="/countries">Countries</a></li>
+                        <li><a href="/about">About</a></li>
+                    </ul>
+                </div>
+
+        		<div class="col-sm-10">
+
+                    <div class="row">
+            			<div id = "main_header_search">
+    						<h1>Search Results (AND)</h1>
+    					</div>
+                    </div>
+
+                    <div class="row">
+                        <h2>Meteorites</h2>
+
+            			<table class="table table-bordered">
+    		    			<thead>
+    		        			<tr>
+    		           				<td>
+                                        <a href="#" ng-click="sortType = 'name'; sortReverse = !sortReverse">
+                                            Name
+                                            <span ng-show="sortType == 'name' && !sortReverse" class="fa fa-caret-down"></span>
+                                            <span ng-show="sortType == 'name' && sortReverse" class="fa fa-caret-up"></span>
+                                        </a>
+                                    </td>
+    		            			<td>
+                                        <a href="#" ng-click="sortType = 'mass'; sortReverse = !sortReverse">
+                                            Mass
+                                            <span ng-show="sortType == 'mass' && !sortReverse" class="fa fa-caret-down"></span>
+                                            <span ng-show="sortType == 'mass' && sortReverse" class="fa fa-caret-up"></span>
+                                        </a>
+                                    </td>
+    		            			<td>
+                                        <a href="#" ng-click="sortType = 'cname'; sortReverse = !sortReverse">
+                                            Country
+                                            <span ng-show="sortType == 'cname' && !sortReverse" class="fa fa-caret-down"></span>
+                                            <span ng-show="sortType == 'cname' && sortReverse" class="fa fa-caret-up"></span>
+                                        </a>
+                                    </td>
+    		            			<td>
+                                        <a href="#" ng-click="sortType = 'recclass'; sortReverse = !sortReverse">
+                                            Class
+                                            <span ng-show="sortType == 'recclass' && !sortReverse" class="fa fa-caret-down"></span>
+                                            <span ng-show="sortType == 'recclass' && sortReverse" class="fa fa-caret-up"></span>
+                                        </a>
+                                    </td>
+    		            			<td>
+                                        <a href="#" ng-click="sortType = 'year'; sortReverse = !sortReverse">
+                                            Year
+                                            <span ng-show="sortType == 'year' && !sortReverse" class="fa fa-caret-down"></span>
+                                            <span ng-show="sortType == 'year' && sortReverse" class="fa fa-caret-up"></span>
+                                        </a>
+                                    </td>
+    		            			<td>
+                                        <a href="#" ng-click="sortType = 'reclat'; sortReverse = !sortReverse">
+                                            Latitude
+                                            <span ng-show="sortType == 'reclat' && !sortReverse" class="fa fa-caret-down"></span>
+                                            <span ng-show="sortType == 'reclat' && sortReverse" class="fa fa-caret-up"></span>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="#" ng-click="sortType = 'reclong'; sortReverse = !sortReverse">
+                                            Longitude
+                                            <span ng-show="sortType == 'reclong' && !sortReverse" class="fa fa-caret-down"></span>
+                                            <span ng-show="sortType == 'reclong' && sortReverse" class="fa fa-caret-up"></span>
+                                        </a>
+                                    </td>
+    		        			</tr>
+    		    			</thead>
+    		    			<tbody>
+    		        			<tr dir-paginate="meteorite in meteorites | orderBy:sortType:sortReverse | itemsPerPage: pageSize">
+    					            <td><a href="meteorites/{{ meteorite.id}}">{{ meteorite.name }}</a></td>
+    					            <td>{{ meteorite.mass }}</td>
+                                    <td><a href = "countries/{{ meteorite.country_id }}"> {{ meteorite.cname }}</a></td>
+    					            <td><a href="classifications/{{ meteorite.classification_id }}"> {{ meteorite.recclass }}</a></td>
+    					            <td>{{ meteorite.year }}</td>
+    					            <td>{{ meteorite.reclat }}</td>
+                                    <td>{{ meteorite.reclong }}</td>
+    		        			</tr>
+    		    			</tbody>
+                            <dir-pagination-controls>
+                                template-url="../static/partials/dirPagination.tpl.html"
+                                on-page-change="pageChange(newPageNumber)">
+                            </dir-pagination-controls>
+    					</table>
+                    </div>
+
+                    <div class="row">
+                        <h2>Classifications</h2>
+
+                        <table class="table table-bordered" id="classes-table">
+
+                        <thead>
+                            <tr>
+                                <td>
+                                    <a href="#" ng-click="sortType = 'name'; sortReverse = !sortReverse">
+                                        Class
+                                        <span ng-show="sortType == 'name' && !sortReverse" class="fa fa-caret-down"></span>
+                                        <span ng-show="sortType == 'name' && sortReverse" class="fa fa-caret-up"></span>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#" ng-click="sortType = 'pclass'; sortReverse = !sortReverse">
+                                        Parent Class
+                                        <span ng-show="sortType == 'pclass' && !sortReverse" class="fa fa-caret-down"></span>
+                                        <span ng-show="sortType == 'pclass' && sortReverse" class="fa fa-caret-up"></span>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#" ng-click="sortType = 'composition'; sortReverse = !sortReverse">
+                                        Composition
+                                        <span ng-show="sortType == 'composition' && !sortReverse" class="fa fa-caret-down"></span>
+                                        <span ng-show="sortType == 'composition' && sortReverse" class="fa fa-caret-up"></span>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#" ng-click="sortType = 'origin'; sortReverse = !sortReverse">
+                                        Origin
+                                        <span ng-show="sortType == 'origin' && !sortReverse" class="fa fa-caret-down"></span>
+                                        <span ng-show="sortType == 'origin' && sortReverse" class="fa fa-caret-up"></span>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#" ng-click="sortType = 'numberFound'; sortReverse = !sortReverse">
+                                        Number Found
+                                        <span ng-show="sortType == 'numberFound' && !sortReverse" class="fa fa-caret-down"></span>
+                                        <span ng-show="sortType == 'numberFound' && sortReverse" class="fa fa-caret-up"></span>
+                                    </a>
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr dir-paginate="classification in classifications | orderBy:sortType:sortReverse | itemsPerPage: pageSize">
+                                <td><a href="/classifications/{{classification.id}}">{{ classification.name }}</a></td>
+                                <td>{{ classification.pclass }}</td>
+                                <td>{{ classification.composition }}</td>
+                                <td>{{ classification.origin }}</td>
+                                <td>{{ classification.numberFound}}</td>
+
+                            </tr>
+                        </tbody>
+                        <dir-pagination-controls>
+                            template-url="../static/partials/dirPagination.tpl.html"
+                            on-page-change="pageChange(newPageNumber)">
+                        </dir-pagination-controls>
+                        </table>
+                    </div>
+
+                    <div class="row">
+                        <h2>Countries</h2>
+
+                        <table class="table table-bordered" id="classes-table">
+                        <table class="table table-bordered" >
+                        <thead>
+                            <tr>
+                                <td>
+                                    <a href="#" ng-click="sortType = 'name'; sortReverse = !sortReverse">
+                                        Country Name
+                                        <span ng-show="sortType == 'name' && !sortReverse" class="fa fa-caret-down"></span>
+                                        <span ng-show="sortType == 'name' && sortReverse" class="fa fa-caret-up"></span>
+
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#" ng-click="sortType = 'area'; sortReverse = !sortReverse">
+                                        Area(km²)
+                                        <span ng-show="sortType == 'area' && !sortReverse" class="fa fa-caret-down"></span>
+                                        <span ng-show="sortType == 'area' && sortReverse" class="fa fa-caret-up"></span>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#" ng-click="sortType = 'centroid'; sortReverse = !sortReverse">
+                                        Centroid
+                                        <span ng-show="sortType == 'centroid' && !sortReverse" class="fa fa-caret-down"></span>
+                                        <span ng-show="sortType == 'centroid' && sortReverse" class="fa fa-caret-up"></span>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#" ng-click="sortType = 'numberFound'; sortReverse = !sortReverse">
+                                        Number Found
+                                        <span ng-show="sortType == 'numberFound' && !sortReverse" class="fa fa-caret-down"></span>
+                                        <span ng-show="sortType == 'numberFound' && sortReverse" class="fa fa-caret-up"></span>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#" ng-click="sortType = 'recent'; sortReverse = !sortReverse">
+                                        Last Meteorite Found
+                                        <span ng-show="sortType == 'recent' && !sortReverse" class="fa fa-caret-down"></span>
+                                        <span ng-show="sortType == 'recent' && sortReverse" class="fa fa-caret-up"></span>
+                                    </a>
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr dir-paginate="country in countries | orderBy:sortType:sortReverse | itemsPerPage: pageSize">
+                                <td><a href="countries/{{ country.id }}">{{ country.name }}</a></td>
+                                <td>{{ country.area }}</td>
+                                <td>{{ country.centroid }}</td>
+                                <td>{{ country.numberFound }}</td>
+                                <td> <a href="meteorites/{{ country.recent_id }}">{{ country.recent }}</a></td>
+                            </tr>
+                        </tbody>
+                        <dir-pagination-controls>
+                            template-url="../static/partials/dirPagination.tpl.html"
+                            on-page-change="pageChange(newPageNumber)">
+                        </dir-pagination-controls>
+                        </table>
+                    </div>
+
+                    <div class="row">
+                        <div id = "main_header_search">
+                            <h1>Search Results (OR)</h1>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <h2>Meteorites</h2>
+
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <td>
+                                        <a href="#" ng-click="sortType = 'name'; sortReverse = !sortReverse">
+                                            Name
+                                            <span ng-show="sortType == 'name' && !sortReverse" class="fa fa-caret-down"></span>
+                                            <span ng-show="sortType == 'name' && sortReverse" class="fa fa-caret-up"></span>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="#" ng-click="sortType = 'mass'; sortReverse = !sortReverse">
+                                            Mass
+                                            <span ng-show="sortType == 'mass' && !sortReverse" class="fa fa-caret-down"></span>
+                                            <span ng-show="sortType == 'mass' && sortReverse" class="fa fa-caret-up"></span>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="#" ng-click="sortType = 'cname'; sortReverse = !sortReverse">
+                                            Country
+                                            <span ng-show="sortType == 'cname' && !sortReverse" class="fa fa-caret-down"></span>
+                                            <span ng-show="sortType == 'cname' && sortReverse" class="fa fa-caret-up"></span>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="#" ng-click="sortType = 'recclass'; sortReverse = !sortReverse">
+                                            Class
+                                            <span ng-show="sortType == 'recclass' && !sortReverse" class="fa fa-caret-down"></span>
+                                            <span ng-show="sortType == 'recclass' && sortReverse" class="fa fa-caret-up"></span>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="#" ng-click="sortType = 'year'; sortReverse = !sortReverse">
+                                            Year
+                                            <span ng-show="sortType == 'year' && !sortReverse" class="fa fa-caret-down"></span>
+                                            <span ng-show="sortType == 'year' && sortReverse" class="fa fa-caret-up"></span>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="#" ng-click="sortType = 'reclat'; sortReverse = !sortReverse">
+                                            Latitude
+                                            <span ng-show="sortType == 'reclat' && !sortReverse" class="fa fa-caret-down"></span>
+                                            <span ng-show="sortType == 'reclat' && sortReverse" class="fa fa-caret-up"></span>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="#" ng-click="sortType = 'reclong'; sortReverse = !sortReverse">
+                                            Longitude
+                                            <span ng-show="sortType == 'reclong' && !sortReverse" class="fa fa-caret-down"></span>
+                                            <span ng-show="sortType == 'reclong' && sortReverse" class="fa fa-caret-up"></span>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr dir-paginate="meteorite in meteorites | orderBy:sortType:sortReverse | itemsPerPage: pageSize">
+                                    <td><a href="meteorites/{{ meteorite.id}}">{{ meteorite.name }}</a></td>
+                                    <td>{{ meteorite.mass }}</td>
+                                    <td><a href = "countries/{{ meteorite.country_id }}"> {{ meteorite.cname }}</a></td>
+                                    <td><a href="classifications/{{ meteorite.classification_id }}"> {{ meteorite.recclass }}</a></td>
+                                    <td>{{ meteorite.year }}</td>
+                                    <td>{{ meteorite.reclat }}</td>
+                                    <td>{{ meteorite.reclong }}</td>
+                                </tr>
+                            </tbody>
+                            <dir-pagination-controls>
+                                template-url="../static/partials/dirPagination.tpl.html"
+                                on-page-change="pageChange(newPageNumber)">
+                            </dir-pagination-controls>
+                        </table>
+                    </div>
+
+                    <div class="row">
+                        <h2>Classifications</h2>
+
+                        <table class="table table-bordered" id="classes-table">
+
+                        <thead>
+                            <tr>
+                                <td>
+                                    <a href="#" ng-click="sortType = 'name'; sortReverse = !sortReverse">
+                                        Class
+                                        <span ng-show="sortType == 'name' && !sortReverse" class="fa fa-caret-down"></span>
+                                        <span ng-show="sortType == 'name' && sortReverse" class="fa fa-caret-up"></span>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#" ng-click="sortType = 'pclass'; sortReverse = !sortReverse">
+                                        Parent Class
+                                        <span ng-show="sortType == 'pclass' && !sortReverse" class="fa fa-caret-down"></span>
+                                        <span ng-show="sortType == 'pclass' && sortReverse" class="fa fa-caret-up"></span>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#" ng-click="sortType = 'composition'; sortReverse = !sortReverse">
+                                        Composition
+                                        <span ng-show="sortType == 'composition' && !sortReverse" class="fa fa-caret-down"></span>
+                                        <span ng-show="sortType == 'composition' && sortReverse" class="fa fa-caret-up"></span>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#" ng-click="sortType = 'origin'; sortReverse = !sortReverse">
+                                        Origin
+                                        <span ng-show="sortType == 'origin' && !sortReverse" class="fa fa-caret-down"></span>
+                                        <span ng-show="sortType == 'origin' && sortReverse" class="fa fa-caret-up"></span>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#" ng-click="sortType = 'numberFound'; sortReverse = !sortReverse">
+                                        Number Found
+                                        <span ng-show="sortType == 'numberFound' && !sortReverse" class="fa fa-caret-down"></span>
+                                        <span ng-show="sortType == 'numberFound' && sortReverse" class="fa fa-caret-up"></span>
+                                    </a>
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr dir-paginate="classification in classifications | orderBy:sortType:sortReverse | itemsPerPage: pageSize">
+                                <td><a href="/classifications/{{classification.id}}">{{ classification.name }}</a></td>
+                                <td>{{ classification.pclass }}</td>
+                                <td>{{ classification.composition }}</td>
+                                <td>{{ classification.origin }}</td>
+                                <td>{{ classification.numberFound}}</td>
+
+                            </tr>
+                        </tbody>
+                        <dir-pagination-controls>
+                            template-url="../static/partials/dirPagination.tpl.html"
+                            on-page-change="pageChange(newPageNumber)">
+                        </dir-pagination-controls>
+                        </table>
+                    </div>
+
+                    <div class="row">
+                        <h2>Countries</h2>
+
+                        <table class="table table-bordered" id="classes-table">
+                        <table class="table table-bordered" >
+                        <thead>
+                            <tr>
+                                <td>
+                                    <a href="#" ng-click="sortType = 'name'; sortReverse = !sortReverse">
+                                        Country Name
+                                        <span ng-show="sortType == 'name' && !sortReverse" class="fa fa-caret-down"></span>
+                                        <span ng-show="sortType == 'name' && sortReverse" class="fa fa-caret-up"></span>
+
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#" ng-click="sortType = 'area'; sortReverse = !sortReverse">
+                                        Area(km²)
+                                        <span ng-show="sortType == 'area' && !sortReverse" class="fa fa-caret-down"></span>
+                                        <span ng-show="sortType == 'area' && sortReverse" class="fa fa-caret-up"></span>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#" ng-click="sortType = 'centroid'; sortReverse = !sortReverse">
+                                        Centroid
+                                        <span ng-show="sortType == 'centroid' && !sortReverse" class="fa fa-caret-down"></span>
+                                        <span ng-show="sortType == 'centroid' && sortReverse" class="fa fa-caret-up"></span>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#" ng-click="sortType = 'numberFound'; sortReverse = !sortReverse">
+                                        Number Found
+                                        <span ng-show="sortType == 'numberFound' && !sortReverse" class="fa fa-caret-down"></span>
+                                        <span ng-show="sortType == 'numberFound' && sortReverse" class="fa fa-caret-up"></span>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#" ng-click="sortType = 'recent'; sortReverse = !sortReverse">
+                                        Last Meteorite Found
+                                        <span ng-show="sortType == 'recent' && !sortReverse" class="fa fa-caret-down"></span>
+                                        <span ng-show="sortType == 'recent' && sortReverse" class="fa fa-caret-up"></span>
+                                    </a>
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr dir-paginate="country in countries | orderBy:sortType:sortReverse | itemsPerPage: pageSize">
+                                <td><a href="countries/{{ country.id }}">{{ country.name }}</a></td>
+                                <td>{{ country.area }}</td>
+                                <td>{{ country.centroid }}</td>
+                                <td>{{ country.numberFound }}</td>
+                                <td> <a href="meteorites/{{ country.recent_id }}">{{ country.recent }}</a></td>
+                            </tr>
+                        </tbody>
+                        <dir-pagination-controls>
+                            template-url="../static/partials/dirPagination.tpl.html"
+                            on-page-change="pageChange(newPageNumber)">
+                        </dir-pagination-controls>
+                        </table>
+                    </div>
+                </div>
+        		</div>
+    		</div>
+		</div>
+
+		<div id = "footer">
+        	<p>&copy; Copyright 2016 | All rights reserved</p>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+	</body>
+
+</html>
