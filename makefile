@@ -42,5 +42,5 @@ model.html: app/models.py
 	pydoc -w models
 
 IDB.log:
-	git log > IDB2.log
+	git log > IDB3.log
 
