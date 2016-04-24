@@ -112,12 +112,12 @@ meteoriteApp.config(function($stateProvider, $urlRouterProvider, $locationProvid
         })
         .state('search', {
             url: "/search/:query",
-            templateUrl: "static/partials/search.html",
+            templateUrl: "../static/partials/search_results.html",
             resolve: {
                 searchResult: ['$http', '$stateParams', function ($http, $stateParams){
                     return $http({
                         method: 'GET',
-                        url: 'api/search/' + $stateParams.query
+                        url: '/search/' + $stateParams.query
                     });
                 }]
             },

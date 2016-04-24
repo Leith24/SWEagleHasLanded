@@ -103,7 +103,7 @@
     		        			</tr>
     		    			</thead>
     		    			<tbody>
-    		        			<tr dir-paginate="meteorite in meteorites | orderBy:sortType:sortReverse | itemsPerPage: pageSize">
+    		        			<tr dir-paginate="meteorite in and_meteorites | orderBy:sortType:sortReverse | itemsPerPage: pageSize">
     					            <td><a href="meteorites/{{ meteorite.id}}">{{ meteorite.name }}</a></td>
     					            <td>{{ meteorite.mass }}</td>
                                     <td><a href = "countries/{{ meteorite.country_id }}"> {{ meteorite.cname }}</a></td>
@@ -165,7 +165,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr dir-paginate="classification in classifications | orderBy:sortType:sortReverse | itemsPerPage: pageSize">
+                            <tr dir-paginate="classification in and_classifications | orderBy:sortType:sortReverse | itemsPerPage: pageSize">
                                 <td><a href="/classifications/{{classification.id}}">{{ classification.name }}</a></td>
                                 <td>{{ classification.pclass }}</td>
                                 <td>{{ classification.composition }}</td>
@@ -227,7 +227,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr dir-paginate="country in countries | orderBy:sortType:sortReverse | itemsPerPage: pageSize">
+                            <tr dir-paginate="country in and_countries | orderBy:sortType:sortReverse | itemsPerPage: pageSize">
                                 <td><a href="countries/{{ country.id }}">{{ country.name }}</a></td>
                                 <td>{{ country.area }}</td>
                                 <td>{{ country.centroid }}</td>
@@ -306,7 +306,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr dir-paginate="meteorite in meteorites | orderBy:sortType:sortReverse | itemsPerPage: pageSize">
+                                <tr dir-paginate="meteorite in or_meteorites | orderBy:sortType:sortReverse | itemsPerPage: pageSize">
                                     <td><a href="meteorites/{{ meteorite.id}}">{{ meteorite.name }}</a></td>
                                     <td>{{ meteorite.mass }}</td>
                                     <td><a href = "countries/{{ meteorite.country_id }}"> {{ meteorite.cname }}</a></td>
@@ -368,7 +368,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr dir-paginate="classification in classifications | orderBy:sortType:sortReverse | itemsPerPage: pageSize">
+                            <tr dir-paginate="classification in or_classifications | orderBy:sortType:sortReverse | itemsPerPage: pageSize">
                                 <td><a href="/classifications/{{classification.id}}">{{ classification.name }}</a></td>
                                 <td>{{ classification.pclass }}</td>
                                 <td>{{ classification.composition }}</td>
@@ -430,7 +430,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr dir-paginate="country in countries | orderBy:sortType:sortReverse | itemsPerPage: pageSize">
+                            <tr dir-paginate="country in or_countries | orderBy:sortType:sortReverse | itemsPerPage: pageSize">
                                 <td><a href="countries/{{ country.id }}">{{ country.name }}</a></td>
                                 <td>{{ country.area }}</td>
                                 <td>{{ country.centroid }}</td>

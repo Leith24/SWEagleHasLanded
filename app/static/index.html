@@ -26,8 +26,8 @@
         <!-- angular templating -->
         <!-- this is where content will be injected -->
         <form id="searchform">
-            <input class="searchbox" type="text" placeholder="Search..." required>
-            <input class="searchbutton" type="button" value="Search">
+            <input class="searchbox" ng-model="searchQuery" type="text" placeholder="Search..." required>
+            <a ng-href="/search/{{ searchQuery }}"><button class="searchbutton">Search</button></a>
         </form>
         <div ui-view></div>
 
