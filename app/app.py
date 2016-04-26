@@ -27,7 +27,7 @@ COUNTRIES_API_KEY = "gFg7FXcHPWmshS7mUcHPw1wWR2cup132sJnjsntcFkuO3xN6oO"
 
 
 
-@app.route('/search/<string:search_query>')
+@app.route('/api/search/<string:search_query>')
 def search_(search_query):
     search_results = search(search_query)
 
@@ -70,6 +70,7 @@ def run_tests():
 @app.route('/classifications')
 @app.route('/about')
 @app.route('/', defaults={'path': ''})
+@app.route('/search')
 def index(**kwargs):
     return make_response(open('static/index.html').read())
 

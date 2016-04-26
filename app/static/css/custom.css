@@ -27,7 +27,9 @@ p
 {
 	font-size: 18px;
 }
-
+.highlightedText{
+	color:red;
+}
 #main_header
 {
 	float: left;

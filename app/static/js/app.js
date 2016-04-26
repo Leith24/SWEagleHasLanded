@@ -117,7 +117,7 @@ meteoriteApp.config(function($stateProvider, $urlRouterProvider, $locationProvid
                 searchResult: ['$http', '$stateParams', function ($http, $stateParams){
                     return $http({
                         method: 'GET',
-                        url: '/search/' + $stateParams.query
+                        url: '/api/search/' + $stateParams.query
                     });
                 }]
             },

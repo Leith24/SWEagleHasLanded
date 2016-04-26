@@ -104,11 +104,11 @@
     		    			</thead>
     		    			<tbody>
     		        			<tr dir-paginate="meteorite in and_meteorites | orderBy:sortType:sortReverse | itemsPerPage: pageSize">
-    					            <td><a href="meteorites/{{ meteorite.id}}">{{ meteorite.name }}</a></td>
-    					            <td>{{ meteorite.mass }}</td>
-                                    <td><a href = "countries/{{ meteorite.country_id }}"> {{ meteorite.cname }}</a></td>
+    					            <td><a href="meteorites/{{ meteorite.id}}"><span ng-bind-html="highlight('{{ meteorite.name }}')">{{ meteorite.name }}</span></a></td>
+    					            <td><span ng-bind-html="highlight('{{ meteorite.mass }}')">{{ meteorite.mass }}</span></td>
+                                    <td><a href="countries/{{ meteorite.country_id }}"><span ng-bind-html="highlight('{{ meteorite.cname }}')"></span></a></td>
     					            <td><a href="classifications/{{ meteorite.classification_id }}"> {{ meteorite.recclass }}</a></td>
-    					            <td>{{ meteorite.year }}</td>
+    					            <td><span ng-bind-html="highlight('{{ meteorite.year }}')">{{ meteorite.year }}</span></td>
     					            <td>{{ meteorite.reclat }}</td>
                                     <td>{{ meteorite.reclong }}</td>
     		        			</tr>
@@ -166,7 +166,7 @@
                         </thead>
                         <tbody>
                             <tr dir-paginate="classification in and_classifications | orderBy:sortType:sortReverse | itemsPerPage: pageSize">
-                                <td><a href="/classifications/{{classification.id}}">{{ classification.name }}</a></td>
+                                <td><a href="/classifications/{{classification.id}}"><span ng-bind-html="highlight('{{ classification.name }}')">{{ classification.name }}</span></a></td>
                                 <td>{{ classification.pclass }}</td>
                                 <td>{{ classification.composition }}</td>
                                 <td>{{ classification.origin }}</td>
@@ -228,7 +228,7 @@
                         </thead>
                         <tbody>
                             <tr dir-paginate="country in and_countries | orderBy:sortType:sortReverse | itemsPerPage: pageSize">
-                                <td><a href="countries/{{ country.id }}">{{ country.name }}</a></td>
+                                <td><a href="countries/{{ country.id }}"> <span ng-bind-html="highlight('{{ country.name }}')">{{ country.name }}</span></a></td>
                                 <td>{{ country.area }}</td>
                                 <td>{{ country.centroid }}</td>
                                 <td>{{ country.numberFound }}</td>
@@ -307,12 +307,12 @@
                             </thead>
                             <tbody>
                                 <tr dir-paginate="meteorite in or_meteorites | orderBy:sortType:sortReverse | itemsPerPage: pageSize">
-                                    <td><a href="meteorites/{{ meteorite.id}}">{{ meteorite.name }}</a></td>
-                                    <td>{{ meteorite.mass }}</td>
-                                    <td><a href = "countries/{{ meteorite.country_id }}"> {{ meteorite.cname }}</a></td>
-                                    <td><a href="classifications/{{ meteorite.classification_id }}"> {{ meteorite.recclass }}</a></td>
-                                    <td>{{ meteorite.year }}</td>
-                                    <td>{{ meteorite.reclat }}</td>
+                                    <td><a href="meteorites/{{ meteorite.id}}"><span ng-bind-html="highlight('{{ meteorite.name }}')">{{ meteorite.name }}</span></a></td>
+    					            <td><span ng-bind-html="highlight('{{ meteorite.mass }}')">{{ meteorite.mass }}</span></td>
+                                    <td><a href="countries/{{ meteorite.country_id }}"><span ng-bind-html="highlight('{{ meteorite.cname }}')"></span></a></td>
+    					            <td><a href="classifications/{{ meteorite.classification_id }}"> {{ meteorite.recclass }}</a></td>
+    					            <td><span ng-bind-html="highlight('{{ meteorite.year }}')">{{ meteorite.year }}</span></td>
+    					            <td>{{ meteorite.reclat }}</td>
                                     <td>{{ meteorite.reclong }}</td>
                                 </tr>
                             </tbody>
@@ -369,12 +369,11 @@
                         </thead>
                         <tbody>
                             <tr dir-paginate="classification in or_classifications | orderBy:sortType:sortReverse | itemsPerPage: pageSize">
-                                <td><a href="/classifications/{{classification.id}}">{{ classification.name }}</a></td>
+                                <td><a href="/classifications/{{classification.id}}"><span ng-bind-html="highlight('{{ classification.name }}')">{{ classification.name }}</span></a></td>
                                 <td>{{ classification.pclass }}</td>
                                 <td>{{ classification.composition }}</td>
                                 <td>{{ classification.origin }}</td>
                                 <td>{{ classification.numberFound}}</td>
-
                             </tr>
                         </tbody>
                         <dir-pagination-controls>
@@ -431,7 +430,7 @@
                         </thead>
                         <tbody>
                             <tr dir-paginate="country in or_countries | orderBy:sortType:sortReverse | itemsPerPage: pageSize">
-                                <td><a href="countries/{{ country.id }}">{{ country.name }}</a></td>
+                                 <td><a href="countries/{{ country.id }}"> <span ng-bind-html="highlight('{{ country.name }}')">{{ country.name }}</span></a></td>
                                 <td>{{ country.area }}</td>
                                 <td>{{ country.centroid }}</td>
                                 <td>{{ country.numberFound }}</td>

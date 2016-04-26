@@ -109,13 +109,28 @@ meteoriteApp.controller('aboutController', function ( $scope, unitTestData) {
     }
 });
 
-meteoriteApp.controller('searchController', function ( $scope, $stateParams, searchResult) {
+meteoriteApp.controller('searchController', function ( $scope, $stateParams, $sce, searchResult) {
+
+
+
+
+
     $scope.and_meteorites = searchResult.data.ands.meteorites;
     $scope.and_countries = searchResult.data.ands.countries;
     $scope.and_classifications = searchResult.data.ands.classifications;
 
-    $scope.ors = searchResult.ors;
+    $scope.or_meteorites = searchResult.data.ors.meteorites;
+    $scope.or_countries = searchResult.data.ors.countries;
+    $scope.or_classifications = searchResult.data.ors.classifications;
 
+    $scope.highlight = function (text){
+       var query = $stateParams.query;
+
+       if(!query){
+           return $sce.trustAsHtml(text);
+       }
+       return $sce.trustAsHtml(text.replace(new RegExp(query, 'gi'), '<span class="highlightedText">$&</span>'));
+    }
 
 
 });
