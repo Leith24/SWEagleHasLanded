@@ -122,6 +122,11 @@ meteoriteApp.config(function($stateProvider, $urlRouterProvider, $locationProvid
                 }]
             },
             controller: "searchController"
+        })
+        .state('austinfoodforme', {
+            url:'/austinfoodforme',
+            templateUrl: "../static/partials/austinfoodforme.html",
+            controller: "austinfoodformeController"
         });
     $locationProvider.html5Mode(true);
 

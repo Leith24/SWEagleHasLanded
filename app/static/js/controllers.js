@@ -135,6 +135,12 @@ meteoriteApp.controller('searchController', function ( $scope, $stateParams, $sc
 
 });
 
+meteoriteApp.controller('austinfoodformeController', function ( $scope, $stateParams) {
+
+
+});
+
+
 function capFirstLetter(string){
      return string.charAt(0).toUpperCase() + string.slice(1);
 }

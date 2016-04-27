@@ -71,6 +71,7 @@ def run_tests():
 @app.route('/about')
 @app.route('/', defaults={'path': ''})
 @app.route('/search')
+@app.route('/austinfoodforme')
 def index(**kwargs):
     return make_response(open('static/index.html').read())
 
