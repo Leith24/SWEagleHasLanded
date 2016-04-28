@@ -10,64 +10,60 @@
 		<link rel="stylesheet" type="text/css" href="static/css/custom.css">
 		<link href='https://fonts.googleapis.com/css?family=Advent+Pro' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Advent+Pro:100' rel='stylesheet' type='text/css'>
-		<style type="text/css">
-			#map { height: 100%; width: 100%; position: absolute;}
-		</style>
+		<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+
+        <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.17.0/mapbox-gl.css?access_token=pk.eyJ1IjoiYmxvdHRvIiwiYSI6ImNpbmtrb3V1ZzB5MmV1Mm0zcDh6cTlvMngifQ.afQDDAfG20l9BmgnIKO8oA'' rel='stylesheet' />
+        <style>
+            body { margin:0; padding:0; }
+            #map { position:absolute; top:0; bottom:0; width:100%; }
+        </style>
 	</head>
 
 	<body>
 		<div id="map"></div>
-		<div id = "content">
-			<div class="row">
-        		<div class="col-sm-12" id="splash">
-	        		<ul class="nav nav-pills nav-stacked" id = "nav_links">
-	        			<li><a href="/splash">Home</a></li>
-					    <li><a href="/meteorites">Meteorites</a></li>
-                        <li><a href="/classifications">Classifications</a></li>
-                        <li><a href="/countries">Countries</a></li>
-                        <li><a href="/about">About</a></li>
-					</ul>
-        		</div>
-    		</div>
-		</div>
 
-		<div class="col-sm-12" id = "footer">
-        	<p>&copy; Copyright 2016 | All rights reserved</p>
-        </div>
-
-        
     <script>
-      var map;
-      function initMap() {
+    mapboxgl.accessToken = 'pk.eyJ1IjoiYmxvdHRvIiwiYSI6ImNpbmtrb3V1ZzB5MmV1Mm0zcDh6cTlvMngifQ.afQDDAfG20l9BmgnIKO8oA';
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v8',
+        center: [-97.7456, 30.259],
+        zoom: 13
+    });
 
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 53.4129, lng: 8.2439},
-          zoom: 3
+    map.on('load', function () {
+        map.addSource("markers", {
+            "type": "geojson",
+            "data": {
+                "type": "FeatureCollection",
+                "features": [
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [-97.7565, 30.2469]
+                        },
+                        "properties": {
+                            "marker-symbol": "fast-food"
+                        }
+                    }
+                ]
+            }
         });
-        
-        map.set('styles', [
-	    {
-	      stylers: [
-	        { hue: "#502958" },
-	        { saturation: -50 },
-	        { lightness: -65}
-	      ]
-	    },{
-	      	featureType: "road",
-	      	elementType: "labels",
-	      	stylers: [
-	        	{ visibility: "off" }
-	      	]
-	    	}
-	  	]);
-        
-	  	map.data.loadGeoJson('static/otherteam.geojson');
-	  	
-      }
+
+        map.addLayer({
+            "id": "markers",
+            "type": "symbol",
+            "source": "markers",
+            "layout": {
+                "icon-image": "{marker-symbol}-15",
+                "text-field": "{title}",
+                "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
+                "text-offset": [0, 0.6],
+                "text-anchor": "top"
+            }
+        });
+    });
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMRg5inrD7lBnA8EivUn1k-TuOlBhdNMw&callback=initMap"
-    async defer></script>
-
-	</body>
-
+</body>
 </html>
