@@ -1374,6 +1374,29 @@
             }
         });
     });
+
+    map.on('click', function (e) {
+        var features = map.queryRenderedFeatures(e.point, { layers: ['markers'] });
+
+        if (!features.length) {
+            return;
+        }
+
+        var feature = features[0];
+
+    
+        var popup = new mapboxgl.Popup()
+            .setLngLat(feature.geometry.coordinates)
+            .setHTML(feature.properties.description)
+            .addTo(map);
+    });
+
+
+    map.on('mousemove', function (e) {
+        var features = map.queryRenderedFeatures(e.point, { layers: ['markers'] });
+        map.getCanvas().style.cursor = (features.length) ? 'pointer' : '';
+    });
+
     </script>
 </body>
 </html>

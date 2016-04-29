@@ -157,6 +157,7 @@ p
 		transform: translateY(0%);
 	}
 }
+
 #content a
 {
 
@@ -227,6 +228,27 @@ p
 #footer
 {
 	padding: 10px;
+}
+
+#footer ul li
+{
+	display: inline;
+	padding: 5px;
+}
+
+#footer a
+{
+
+	background-color: transparent;
+	text-decoration: none;
+	color: #ffffff;
+}
+
+#footer a:hover
+{
+	background-color: transparent;
+	text-decoration: none;
+	color: #e12e77;
 }
 
 .country-table{
