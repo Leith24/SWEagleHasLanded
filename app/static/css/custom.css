@@ -26,6 +26,7 @@ h3
 p
 {
 	font-size: 18px;
+
 }
 .highlightedText{
 	color:red;
@@ -277,3 +278,8 @@ p
                 background-color:#fafafa;
                 color:#e12e77;
 }
+.marker-title{
+	color: black !important;
+}
+
+
